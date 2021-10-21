@@ -9,9 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Menginstall Libcheck
-        runs: sudo apt install check
+        run: sudo apt install check
       - name: Testing semua TC
-        runs: make test
+        run: make test
   linux:
     needs: test
     name: Build Mobilita untuk Linux
@@ -22,7 +22,7 @@ jobs:
         run: make build
       - name: Membuat Arsip
         run: |
-          mkdir dist
+          mkdir bin dist
           cd bin
           tar -czf ../dist/linux-mobilita.tar.gz mobilita
           cd ..
@@ -52,7 +52,7 @@ jobs:
         run: make build
       - name: Copy ke dist
         run: |
-          mkdir dist
+          mkdir bin dist
           cp ./bin/* ./dist/
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
