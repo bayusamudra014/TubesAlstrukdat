@@ -1,0 +1,74 @@
+name: Build Mobilita
+
+on: push
+
+jobs:
+  test:
+    name: Testing TC
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Menginstall Libcheck
+        runs: sudo apt install check
+      - name: Testing semua TC
+        runs: make test
+  linux:
+    needs: test
+    name: Build Mobilita untuk Linux
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Kompilasi Program
+        run: make build
+      - name: Membuat Arsip
+        run: |
+          mkdir dist
+          cd bin
+          tar -czf ../dist/linux-mobilita.tar.gz mobilita
+          cd ..
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: linux64-bin
+          path: dist/linux-mobilita.tar.gz
+  windows:
+    needs: test
+    name: Build di WIndows
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup mysys2
+        with:
+          msystem: MINGW64
+          update: true
+          install: >-
+            git
+            mingw-w64-x86_64-toolchain
+      - name: Build Mobilita untuk Windows
+        run: make build
+      - name: Copy ke dist
+        run: |
+          mkdir dist
+          cp ./bin/* ./dist/
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: win64-bin
+          path: dist/mobilita.exe
+  packaging:
+    needs: [windows, linux]
+    name: Membuat Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Program Linux
+        uses: actions/download-artifact@v2
+        with:
+          name: linux64-bin
+      - name: Download Program WIndows
+        uses: actions/download-artifact@v2
+        with:
+          name: win64-bin
+      - run: ls -la

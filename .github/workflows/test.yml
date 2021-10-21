@@ -1,0 +1,14 @@
+name: Check Unit Test
+
+on: push
+
+jobs:
+  test:
+    name: Testing TC
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Menginstall Libcheck
+        runs: sudo apt install check
+      - name: Testing semua TC
+        runs: make test
