@@ -10,6 +10,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Menginstall Libcheck
         run: sudo apt install check
+      - name: Membuat Folder
+        run: mkdir bin build
       - name: Testing semua TC
         run: make test
   linux:
