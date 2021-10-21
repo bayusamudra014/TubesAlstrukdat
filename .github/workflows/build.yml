@@ -20,11 +20,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Membuat Folder
+        run: mkdir bin build
       - name: Kompilasi Program
         run: make build
       - name: Membuat Arsip
         run: |
-          mkdir bin dist
+          mkdir dist
           cd bin
           tar -czf ../dist/linux-mobilita.tar.gz mobilita
           cd ..
@@ -48,13 +50,15 @@ jobs:
           msystem: MINGW64
           update: true
           install: >-
-            git
-            mingw-w64-x86_64-toolchain
+            gcc
+            make
+      - name: Membuat Folder
+        run: mkdir bin build
       - name: Build Mobilita untuk Windows
         run: make build
       - name: Copy ke dist
         run: |
-          mkdir bin dist
+          mkdir dist
           cp ./bin/* ./dist/
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
