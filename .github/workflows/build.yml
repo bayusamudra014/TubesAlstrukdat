@@ -44,6 +44,10 @@ jobs:
         shell: msys2 {0}
     steps:
       - uses: actions/checkout@v2
+      - name: Setup mysys2
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
       - name: Membuat Folder
         run: mkdir bin build
       - name: Build Mobilita untuk Windows
