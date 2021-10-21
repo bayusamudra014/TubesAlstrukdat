@@ -46,8 +46,10 @@ int main() {
   Color warnaku = create_text_color(253, 200, 253);
   print_color(warnaku, "Halo, ini warnanya unik.\n");
 
-  Color warnaWarni = create_text_color_cd(0x6BAA75);
-  print_color(warnaWarni, "Halo, ini juga baru.\n");
+  Color warnaWarni = create_text_color_cd(0xCBFF4D);
+  set_decorator(DECORATOR_UNDERLINE);
+  print_color(warnaWarni, "Halo, ini juga baru.\n\n");
+  reset_decorator();
 
   return 0;
 }
