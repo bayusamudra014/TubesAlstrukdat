@@ -1,8 +1,9 @@
 #include <stdio.h>
 
-#include "lib/pcolor/pcolor.h"
+#include "lib/console/console.h"
 
 int main() {
+  clear_screen();
   printf("Halo, Dunia\n");
 
   set_text_color(TEXT_BLUE);

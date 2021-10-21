@@ -14,6 +14,9 @@ functions. We only provide 8 colors. Feel free to modify/add colors if you want
 to.
 **/
 
+#ifndef H_PCOLOR
+#define H_PCOLOR
+
 /* Foreground */
 #define TEXT_NORMAL "\x1B[0m"
 #define TEXT_BLACK "\x1B[30m"
@@ -68,3 +71,5 @@ void set_bg_color(char* color);
 void print_color(char* color, char* string);
 void reset_color();
 void print_colored_char(char* color, char c);
+
+#endif
