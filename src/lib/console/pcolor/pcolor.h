@@ -17,6 +17,8 @@ to.
 #ifndef H_PCOLOR
 #define H_PCOLOR
 
+typedef char* Color;
+
 /* Foreground */
 #define TEXT_NORMAL "\x1B[0m"
 #define TEXT_BLACK "\x1B[30m"
@@ -71,5 +73,10 @@ void set_bg_color(char* color);
 void print_color(char* color, char* string);
 void reset_color();
 void print_colored_char(char* color, char c);
+
+Color create_text_color(unsigned char r, unsigned char g, unsigned char b);
+Color create_bg_color(unsigned char r, unsigned char g, unsigned char b);
+Color create_text_color_cd(unsigned color);
+Color create_text_color_cd(unsigned color);
 
 #endif

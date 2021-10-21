@@ -43,5 +43,11 @@ int main() {
 
   printf("\nOKEY\n");
 
+  Color warnaku = create_text_color(253, 200, 253);
+  print_color(warnaku, "Halo, ini warnanya unik.\n");
+
+  Color warnaWarni = create_text_color_cd(0x6BAA75);
+  print_color(warnaWarni, "Halo, ini juga baru.\n");
+
   return 0;
 }
