@@ -44,13 +44,6 @@ jobs:
         shell: msys2 {0}
     steps:
       - uses: actions/checkout@v2
-      - name: Setup mysys2
-        uses: msys2/setup-msys2@v2
-        with:
-          msystem: MINGW64
-          install: >-
-            gcc
-            make
       - name: Membuat Folder
         run: mkdir bin build
       - name: Build Mobilita untuk Windows
@@ -77,4 +70,14 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: win64-bin
-      - run: ls -la
+      - name: Rename Binary windows
+        run: mv mobilita.exe win-mobilita.exe
+      - name: Buat Release di github
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          automatic_release_tag: "latest"
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: |
+            win-mobilita.exe
+            linux-mobilita.tar.gz
