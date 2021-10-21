@@ -9,6 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Menginstall Libcheck
-        runs: sudo apt install check
+        run: sudo apt install check
       - name: Testing semua TC
-        runs: make test
+        run: make test
