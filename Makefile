@@ -48,10 +48,15 @@ clear:
 	@$(CC) $^ -o $@ $(BUILD_FLAG) $(TEST_FLAG)
 
 build: $(BIN_SRC)
-	@$(CC) $^ -o ./bin/mobilita $(BUILD_FLAG)
+	@$(CC) $^ -o ./bin/mobilita $(BUILD_FLAG) -O3
 
-run: build
+build_debug: $(BIN_SRC)
+	@$(CC) -g $^ -o ./bin/mobilita $(BUILD_FLAG)
+
+run: build_debug
 	@./bin/mobilita
+
+debug: build_debug
 
 test: clean ./bin/test
 	@./bin/test

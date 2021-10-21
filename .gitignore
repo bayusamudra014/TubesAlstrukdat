@@ -2,6 +2,9 @@
 bin/
 build/
 dist/
+.vscode/
+!.vscode/launch.json
+!.vscode/tasks.json
 
 # Prerequisites
 *.d
