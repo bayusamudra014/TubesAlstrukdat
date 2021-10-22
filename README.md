@@ -45,4 +45,4 @@ Dalam project ini ada beberapa folder diantaranya sebagai berikut:
  4. Folder `test` berisi semua Unit Test.
 
 ## Aturan Kontribusi
-Bisa dilihat di (CONTRIBUTE.md)[CONTRIBUTE.md]
+Bisa dilihat di [CONTRIBUTE.md](CONTRIBUTE.md)
