@@ -51,5 +51,8 @@ int main() {
   print_color(warnaWarni, "Halo, ini juga baru.\n\n");
   reset_decorator();
 
+  delete_color(warnaku);
+  delete_color(warnaWarni);
+
   return 0;
 }

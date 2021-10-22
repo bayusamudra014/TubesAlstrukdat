@@ -19,8 +19,10 @@ to.
 
 typedef char* Color;
 
-/* Foreground */
 #define TEXT_NORMAL "\x1B[0m"
+#define __RESET_COLOR TEXT_NORMAL
+
+/* Foreground */
 #define TEXT_BLACK "\x1B[30m"
 #define TEXT_RED "\x1B[31m"
 #define TEXT_GREEN "\x1B[32m"
@@ -59,24 +61,99 @@ typedef char* Color;
 #define BG_BRIGHT_CYAN "\x1B[106m"
 #define BG_BRIGHT_WHITE "\x1B[107m"
 
-#define _RESET_COLOR TEXT_NORMAL
-
+/* Mencetak karakter berwarna merah ke layar */
 void print_red(char c);
+
+/* Mencetak karakter berwarna hijau ke layar */
 void print_green(char c);
+
+/* Mencetak karakter berwarna kuning (atau jingga) ke layar */
 void print_yellow(char c);
+
+/* Mencetak karakter berwarna biru ke layar */
 void print_blue(char c);
+
+/* Mencetak karakter berwarna magent ke layar */
 void print_magenta(char c);
+
+/* Mencetak karakter berwarna cyan ke layar */
 void print_cyan(char c);
 
+/* Prosedur ini akan mengatur warna text default saat print pada console.
+   Untuk mengatur ke warna default, gunakan prosedur reset_color()
+
+   Contoh pakai:
+   set_text_color(TEXT_CYAN);
+*/
 void set_text_color(char* color);
+
+/* Prosedur ini akan mengatur warna background text default saat print pada
+ console. Untuk mengatur ke warna default, gunakan prosedur reset_color()
+
+  Contoh pakai:
+  set_bg_color(BG_GREEN);
+*/
 void set_bg_color(char* color);
+
+/* Prosedur ini akan print text dengan warna pada console. Setelah prosedur
+   ini dijalankan, warna console otomatis tereset.
+
+  Contoh pakai:
+  print_color(TEXT_BLUE, "Halo, Dunia");
+*/
 void print_color(char* color, char* string);
+
+/* Mengembalikan console ke settingan default */
 void reset_color();
+
+/* Prosedur ini akan mencetak karakter berwarna
+
+  Contoh pakai:
+  print_colored_char(TEXT_BLUE, 'H');
+*/
 void print_colored_char(char* color, char c);
 
+/**
+ * Membuat warna custom warna teks sesuai dengan warna rgb.
+ * 
+ * Pastikan melakukan dealokasi warna bila tidak digunakan lagi. Gunakan delete_warna() untuk dealokasi.
+ *
+ * Contoh : create_text_color(102,255,121);
+ */
 Color create_text_color(unsigned char r, unsigned char g, unsigned char b);
+
+/**
+ * Membuat warna custom warna background teks sesuai dengan warna rgb
+ *
+ * Pastikan melakukan dealokasi warna bila tidak digunakan lagi. Gunakan delete_warna() untuk dealokasi.
+ * 
+ * Contoh : create_bg_color(102,255,121);
+ */
 Color create_bg_color(unsigned char r, unsigned char g, unsigned char b);
+
+/*
+  Buat warna teks dari kode heksadesimal
+
+  Pastikan melakukan dealokasi warna bila tidak digunakan lagi. Gunakan delete_warna() untuk dealokasi.
+
+  Contoh : create_text_color_cd(0x6BAA75)
+*/
 Color create_text_color_cd(unsigned color);
+
+/*
+  Buat warna background dari kode heksadesimal
+
+  Pastikan melakukan dealokasi warna bila tidak digunakan lagi. Gunakan delete_warna() untuk dealokasi.
+
+  Contoh : create_bg_color_cd(0x6BAA75)
+*/
 Color create_text_color_cd(unsigned color);
+
+/*
+  Melalukan dealokasi warna.
+
+  Contoh: delete_color(warna);
+*/
+void delete_color(Color color);
 
 #endif
