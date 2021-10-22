@@ -24,4 +24,6 @@ void set_decorator(Decorator dec);
 void reset_decorator();
 void clear_screen();
 
+char* read_word();
+
 #endif

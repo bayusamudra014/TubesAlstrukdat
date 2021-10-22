@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "lib/console/console.h"
+#include "lib/lib.h"
 
 int main() {
   clear_screen();
