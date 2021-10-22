@@ -53,8 +53,8 @@ typedef struct{...} DynamicList;
   Contoh pakai:
   print_color(TEXT_BLUE, "Halo, Dunia");
 */
-
 void print_color(Color color, char* string);
+
 ```
 5. Semua deskripsi tuliskan di header file, jangan di file implementasi.
 
