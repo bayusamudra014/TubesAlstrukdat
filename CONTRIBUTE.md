@@ -42,7 +42,7 @@ typedef struct{...} DynamicList;
 4. Tempatkan kode kalian di folder yang tepat yaa.
 
 ### Pembuatan Prosedur atau Fungsi Implementasi
-1. Jika membuat prosedur, pastikan tulis deskripsinya. Mulai dari Initial State dan Final State.
+1. Jika membuat prosedur, pastikan tulis deskripsinya. Tuliskan Initial State dan Final State jika dibutuhkan.
 2. Jika membuat fungsi, pastikan menuliskan batasan dan juga output dari fungsinya.
 3. Sangat dianjurkan memberi contoh penggunaan fungsinya.
 4. Tuliskan deskripsi sebelum menuliskan _signature_ fungsi/prosedur. Contoh:
