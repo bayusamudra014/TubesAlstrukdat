@@ -40,7 +40,7 @@ clear:
 
 ./bin/test: ${TESTING_OBJ} $(NMAIN_OBJ)
 	@mkdir -p bin
-	$(CC) -g $^ -o $@ $(BUILD_FLAG) $(TEST_FLAG)
+	@$(CC) -g $^ -o $@ $(BUILD_FLAG) $(TEST_FLAG)
 
 ./bin/mobilita: $(BIN_SRC)
 	@mkdir -p bin

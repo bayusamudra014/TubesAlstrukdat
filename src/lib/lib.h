@@ -1,6 +1,7 @@
 #ifndef H_LIB
 #define H_LIB
 
+#include "boolean.h"
 #include "charmachine/charmachine.h"
 #include "console/console.h"
 #include "dynamiclist/dynamiclist.h"
