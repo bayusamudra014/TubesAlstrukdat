@@ -1,7 +1,6 @@
 # Mobilita
 Ini adalah repository Kelompok 7 Kelas K03
 
-
 ## Setup Environment
 
 1. Install `gcc` dan `make` di komputer anda. Jika menggunakan windows, kita bisa pake mingw, mingw-w64, msys2, atau yang lainnya. Jika menggunakan linux berdistro ubuntu, gunakan perintah berikut:
@@ -44,3 +43,6 @@ Dalam project ini ada beberapa folder diantaranya sebagai berikut:
    * Folder `views` berisi prosedur yang digunakan untuk mencetak sebuah halaman pada layar. Contohnya seperti Menu Utama.
    * File `main.c` adalah start point program kita
  4. Folder `test` berisi semua Unit Test.
+
+## Aturan Kontribusi
+Bisa dilihat di (CONTRIBUTE.md)[CONTRIBUTE.md]
