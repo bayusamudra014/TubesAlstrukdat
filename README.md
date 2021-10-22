@@ -1,5 +1,5 @@
 # Mobilita
-Ini adalah repository Kelompok 7 Kelas K03
+Ini adalah repository Tugas Besar Alstrukdat Kelompok 7 Kelas K03
 
 ## Setup Environment
 
