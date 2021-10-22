@@ -45,7 +45,7 @@ clear:
 	@$(CC) $^ -o $@ $(BUILD_FLAG)
 
 ./bin/test: ${TESTING_OBJ} $(NMAIN_OBJ)
-	@$(CC) $^ -o $@ $(BUILD_FLAG) $(TEST_FLAG)
+	$(CC) -g $^ -o $@ $(BUILD_FLAG) $(TEST_FLAG)
 
 build: $(BIN_SRC)
 	@$(CC) $^ -o ./bin/mobilita $(BUILD_FLAG) -O3

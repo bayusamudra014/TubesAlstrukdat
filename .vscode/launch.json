@@ -29,6 +29,32 @@
       "windows": {
         "program": "${workspaceRoot}/bin/mobilita.exe"
       }
+    },
+    {
+      "name": "Debug TC Mobilita",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceRoot}/",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "buildtest",
+      "linux": {
+        "program": "${workspaceFolder}/bin/test"
+      },
+      "windows": {
+        "program": "${workspaceRoot}/bin/test.exe"
+      }
     }
   ]
 }
