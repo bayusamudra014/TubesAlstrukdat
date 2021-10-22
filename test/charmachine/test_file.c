@@ -98,7 +98,6 @@ START_TEST(tc_cm_file_3) {
 
     hasil[i] = '\0';
     ck_assert_str_eq(hasil, "HALO DUNIA APA KABARNYA HEHE");
-
   } else {
     ck_abort_msg("Gagal membuat file");
   }
