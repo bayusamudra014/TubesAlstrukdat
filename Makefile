@@ -38,19 +38,18 @@ all: clear build
 clear:
 	@rm -rf build/* bin/*
 
-./bin/%: $(BUILD_SRC)/m%.o $(BUILD_SRC)/%.o
-	$(CC) $^ -o $@ $(BUILD_FLAG)
-
-./bin/%: $(BUILD_SRC)/main_%.o $(BUILD_SRC)/%.o
-	@$(CC) $^ -o $@ $(BUILD_FLAG)
-
 ./bin/test: ${TESTING_OBJ} $(NMAIN_OBJ)
+	@mkdir -p bin
 	$(CC) -g $^ -o $@ $(BUILD_FLAG) $(TEST_FLAG)
 
-build: $(BIN_SRC)
-	@$(CC) $^ -o ./bin/mobilita $(BUILD_FLAG) -O3
+./bin/mobilita: $(BIN_SRC)
+	@mkdir -p bin
+	@$(CC) $^ -o $@ $(BUILD_FLAG) -O3
+
+build: ./bin/mobilita
 
 build_debug: $(BIN_SRC)
+	@mkdir -p bin
 	@$(CC) -g $^ -o ./bin/mobilita $(BUILD_FLAG)
 
 run: build_debug
