@@ -14,7 +14,7 @@ void print_color(){
 }
 ```
 2. Setiap nama ADT, gunakan semua huruf nonkapital dan tidak ada karakter khusus seperti -, \_, atau yang lainnya.
-3. Jika kalian ingin membuat fungsi atau prosedur yang ga ingin diakses di luar file tersebut, gunakan prefix `__`. contoh `__fungsi_gamau_diakses`.
+3. Jika kalian ingin membuat fungsi, prosedur, ataupun variabel global yang ga ingin diakses di luar file tersebut, gunakan prefix `__`. contoh `__fungsi_gamau_diakses`.
 4. Setiap konstanta harus menggunakan CAPITAL CASE. contoh `TEXT_RED`.
 5. Setiap fungsi atau prosedur dalam ADT kecuali konstruktor menggunakan prefix huruf-huruf awal setiap kata dari nama ADT (bukan nama folder yaa) dilanjutkan dnegan underscore. Contoh, misal aku ingin membuat prosedur append di ADT static list, maka nama prosedurnya `sl_append`. 
 6. Fungsi atau prosedur yang berada pada folder `console`, tidak perlu mengikuti aturan nomor 5.
@@ -40,6 +40,12 @@ typedef struct{...} DynamicList;
 #endif
 ```
 4. Tempatkan kode kalian di folder yang tepat yaa.
+5. Semua folder yang berada di dalam folder `views` mengikuti aturan nomor 2. Selain itu, harus terdapat prosedur yang  diawal dengan `show_` dilanjutkan dengan nama halaman, ini merupakan prosedur khusus jadi agak beda penamaannya yaa. Contoh untuk Halaman Menu Utama:
+```c
+void show_main_menu(){
+  // ...
+}
+```
 
 ### Pembuatan Prosedur atau Fungsi Implementasi
 1. Jika membuat prosedur, pastikan tulis deskripsinya. Tuliskan Initial State dan Final State jika dibutuhkan.
