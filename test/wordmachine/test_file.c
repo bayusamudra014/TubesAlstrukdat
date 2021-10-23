@@ -207,6 +207,42 @@ START_TEST(tc_wm_file_6) {
 }
 END_TEST
 
+START_TEST(tc_wm_file_7) {
+  // Setting endchar
+  FILE* f;
+
+  f = tmpfile();
+
+  if (f) {
+    char str[] = "HALO.";
+    fputs(str, f);
+
+    rewind(f);
+
+    cm_set_end_char(".", 1);
+    wm_start_word(f);
+
+    ck_assert_int_eq(wm_current_word.capacity, 50);
+
+    int i = 0;
+    char ans[][10] = {"HALO"};
+
+    while (!wm_end_word) {
+      wm_current_word.contents[wm_current_word.length] = '\0';
+      ck_assert_str_eq(wm_current_word.contents, ans[i]);
+
+      wm_adv_word();
+      i++;
+    }
+
+    ck_assert(wm_end_word);
+    ck_assert_int_eq(wm_current_word.capacity, 0);
+  } else {
+    ck_abort_msg("Gagal membuat file");
+  }
+}
+END_TEST
+
 TCase* test_wm_file() {
   TCase* tc = tcase_create("Word Machine Test for File");
 
@@ -216,6 +252,7 @@ TCase* test_wm_file() {
   tcase_add_test(tc, tc_wm_file_4);
   tcase_add_test(tc, tc_wm_file_5);
   tcase_add_test(tc, tc_wm_file_6);
+  tcase_add_test(tc, tc_wm_file_7);
 
   return tc;
 }

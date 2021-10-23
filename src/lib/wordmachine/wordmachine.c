@@ -112,13 +112,12 @@ void wm_start_word(FILE* stream) {
 
   __wm_allocate();
   wm_adv_word();
-  __wm_set_status();
 }
 
 void wm_adv_word() {
   __wm_ignore_blank();
-  __wm_copy_word();
   __wm_set_status();
+  __wm_copy_word();
 }
 
 /* Mengakuisisi kata, menyimpan dalam currentWord
