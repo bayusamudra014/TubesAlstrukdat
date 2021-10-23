@@ -3,11 +3,20 @@ Ini adalah repository Tugas Besar Alstrukdat Kelompok 7 Kelas K03
 
 ## Setup Environment
 
+###  Install gcc dan make
+
 1. Install `gcc` dan `make` di komputer anda. Jika menggunakan windows, kita bisa pake mingw, mingw-w64, msys2, atau yang lainnya. Jika menggunakan linux berdistro ubuntu, gunakan perintah berikut:
 ```bash
 sudo apt install build-essential
 ```
 2. Setup PATH environment untuk `gcc` dan `make`
+
+### Install libcheck
+1. Jika menggunakan debian atau turunannya, gunakan perintah berikut
+```shell
+sudo apt install check
+```
+2. Jika menggunakan windows, lihat intruksi  [disini](https://libcheck.github.io/check/web/install.html#mingwsource).
 
 ## Kompilasi dan Run Program
 
