@@ -40,6 +40,12 @@ typedef struct{...} DynamicList;
 #endif
 ```
 4. Tempatkan kode kalian di folder yang tepat yaa.
+5. Semua folder yang berada di dalam folder `views` mengikuti aturan nomor 2. Selain itu, harus terdapat prosedur yang  diawal dengan `show_` dilanjutkan dengan nama halaman, ini merupakan prosedur khusus jadi agak beda penamaannya yaa. Contoh untuk Halaman Menu Utama:
+```c
+void show_main_menu(){
+  // ...
+}
+```
 
 ### Pembuatan Prosedur atau Fungsi Implementasi
 1. Jika membuat prosedur, pastikan tulis deskripsinya. Tuliskan Initial State dan Final State jika dibutuhkan.
