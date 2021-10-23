@@ -45,4 +45,11 @@ void cm_set_end_char(char* endchar, int length);
 */
 void cm_adv();
 
+/* Mengatur behavior mesin kata saat mencapai EOT. Secara default, mesin kata
+   akan menutup stream file.
+
+   Bila autoclose diset true, mesin kata akan menutup setelah mencapai EOT.
+ */
+void cm_set_autoclose(boolean autoclose);
+
 #endif

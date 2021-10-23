@@ -4,55 +4,35 @@
 
 int main() {
   clear_screen();
-  printf("Halo, Dunia\n");
 
-  set_text_color(TEXT_BLUE);
-  printf("Teks ini bakalan berwarna biru.\n");
-  reset_color();
+  FILE* f;
 
-  printf("Text ini Normal.\n");
+  f = tmpfile();
 
-  print_color(TEXT_RED, "Halo, Dunia aku warna merah\n");
+  if (f) {
+    char str[] = "HALO       DUNIA APA     KABAR    ";
+    fputs(str, f);
 
-  print_colored_char(TEXT_BLACK, 'R');
-  print_colored_char(TEXT_RED, 'R');
-  print_colored_char(TEXT_GREEN, 'A');
-  print_colored_char(TEXT_YELLOW, 'I');
-  print_colored_char(TEXT_BLUE, 'N');
-  print_colored_char(TEXT_MAGENTA, 'B');
-  print_colored_char(TEXT_CYAN, 'O');
-  print_colored_char(TEXT_WHITE, 'W');
+    rewind(f);
 
-  printf("\n");
+    // fflush(f);
 
-  print_colored_char(TEXT_GRAY, 'R');
-  print_colored_char(TEXT_BRIGHT_RED, 'A');
-  print_colored_char(TEXT_BRIGHT_GREEN, 'I');
-  print_colored_char(TEXT_BRIGHT_YELLOW, 'N');
-  print_colored_char(TEXT_BRIGHT_BLUE, 'B');
-  print_colored_char(TEXT_BRIGHT_CYAN, 'O');
-  print_colored_char(TEXT_BRIGHT_MAGENTA, 'W');
-  print_colored_char(TEXT_BRIGHT_WHITE, 'W');
+    cm_set_end_char(".", 1);
+    wm_start_word(f);
 
-  printf("\n\n");
+    int i = 0;
+    char ans[][10] = {"HALO", "DUNIA", "APA", "KABAR"};
 
-  set_bg_color(BG_BLUE);
-  set_text_color(TEXT_BLACK);
-  printf("   Testing   ");
-  reset_color();
+    while (!wm_end_word) {
+      wm_current_word.contents[wm_current_word.length] = '\0';
 
-  printf("\nOKEY\n");
+      wm_adv_word();
+      i++;
+    }
 
-  Color warnaku = create_text_color(253, 200, 253);
-  print_color(warnaku, "Halo, ini warnanya unik.\n");
-
-  Color warnaWarni = create_text_color_cd(0xCBFF4D);
-  set_decorator(DECORATOR_UNDERLINE);
-  print_color(warnaWarni, "Halo, ini juga baru.\n\n");
-  reset_decorator();
-
-  delete_color(warnaku);
-  delete_color(warnaWarni);
+  } else {
+    printf("Gagal membuat file");
+  }
 
   return 0;
 }

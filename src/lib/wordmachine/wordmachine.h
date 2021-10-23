@@ -4,24 +4,23 @@
 #include "../lib.h"
 #include <stdio.h>
 
-#define WORD_MACHINE_CAPACITY 200
-#define WORD_MACHINE_BLANK ' '
+#define WM_INIT_CAPACITY 50
+#define WM_SIZE_MAX_FACTOR 0.85
+#define WM_SIZE_MIN_FACTOR 0.25
+#define WM_SIZE_EXPAND 2
+#define WM_SIZE_SHRINK 0.75
 
-typedef struct {
+typedef struct word {
+   char* contents; 
    int length;
-   char contents[WORD_MACHINE_CAPACITY]; /* container penyimpan kata, indeks yang dipakai [0..CAPACITY-1] */
+   int capacity;
 } Word;
 
-/* Word Engine State */
+/* Word Engine End State */
 extern boolean wm_end_word;
+
+/* Word Engine current Word */
 extern Word wm_current_word;
-
-/* Mengabaikan satu atau beberapa BLANK
-
-   I.S. : currentChar sembarang 
-
-   F.S. : currentChar ≠ BLANK atau currentChar = salah satu mark */
-void wm_ignore_blank();
 
 /* Mempersiapkan mesin kata.
    
@@ -44,14 +43,14 @@ void wm_start_word(FILE* stream);
    Proses : Akuisisi kata menggunakan procedure copyWord */
 void wm_adv_word();
 
-/* Mengakuisisi kata, menyimpan dalam currentWord
+/* Mengatur blank dari mesin kata
 
-   I.S. : currentChar adalah karakter pertama dari kata
+   Default : blank diset sebagai " " (Spasi)
 
-   F.S. : currentWord berisi kata yang sudah diakuisisi; 
-          currentChar = BLANK atau currentChar = MARK; 
-          currentChar adalah karakter sesudah karakter terakhir yang diakuisisi.
-          Jika panjang kata melebihi CAPACITY, maka sisa kata terpotong */
-void wm_copy_word();
+   I.S. Mesin kata belum dijalankan.
+        Blank tidak boleh termasuk karakter-karakter eot.
+
+   F.S. Blank dari mesin kata diset */
+void wm_set_blank(char* blank, int length);
 
 #endif
