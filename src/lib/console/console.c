@@ -29,7 +29,7 @@ void read_word(char* word, int length) {
   cm_set_end_char(CHAR_WHITESPACE, sizeof(CHAR_WHITESPACE) - 1);
 
   wm_start_word(stdin);
-  __c_flush_input();
+  if (cm_current_char != '\n') __c_flush_input();
 
   int i;
   for (i = 0; i < length - 1 && i < wm_current_word.length; i++) {

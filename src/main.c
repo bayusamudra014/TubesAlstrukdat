@@ -3,7 +3,7 @@
 #include "lib/lib.h"
 
 int main() {
-  clear_screen();
+  // clear_screen();
   char str[20];
 
   read_line(str, 20);

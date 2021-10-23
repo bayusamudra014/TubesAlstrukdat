@@ -1,7 +1,7 @@
 #ifndef H_POINT
 #define H_POINT
 
-#include "boolean.h"
+#include "../lib.h"
 
 typedef struct { 
 	int x; /* absis   */
