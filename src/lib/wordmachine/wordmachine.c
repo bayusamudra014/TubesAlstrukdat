@@ -109,6 +109,7 @@ void __wm_ignore_blank() {
 
 void wm_start_word(FILE* stream) {
   cm_start(stream);
+  wm_end_word = false;
 
   if (!__wm_allocated) {
     __wm_allocate();

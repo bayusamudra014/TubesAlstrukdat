@@ -6,6 +6,9 @@
 #include "../lib.h"
 
 #define STREAM_STDIN stdin
+#define STREAM_CONSOLE stdin
+#define CHAR_WHITESPACE "\x9\xa\xb\xc\xd\x20\x85\xa0"
+#define CHAR_LINEBREAK "\xa\xb\xc\xd\x85"
 
 /* Char Engine State */
 extern char cm_current_char;

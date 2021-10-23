@@ -5,7 +5,7 @@ boolean cm_eot;
 
 static char* __cm_end_char;
 static int __cm_end_char_ln = -1;
-static boolean __cm_autoclose = true;
+static boolean __cm_autoclose = false;
 static FILE* __cm_tape;
 static int __cm_retval;
 
@@ -26,6 +26,7 @@ boolean __cm_isEndChar(char c) {
 
 void cm_start(FILE* stream) {
   __cm_tape = stream;
+  cm_eot = false;
   cm_adv();
 }
 

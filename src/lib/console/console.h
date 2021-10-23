@@ -33,8 +33,13 @@ void clear_screen();
 /* Membaca sebuah kata pada console.
 
    I.S. word sudah dialokasikan.
-   F.S. Menyalin sebuah kata pada console yang telah diinputkan dan
-   hasilnya disalin ke dalam word dengan maksimal jumlah karakter max */
-void read_word(char* word, int max);
+   F.S. Menyalin sebuah kata pertama pada console yang telah diinputkan dan
+   hasilnya disalin ke dalam word dengan maksimal jumlah karakter max.
+   Jika ukuran string yang diterima melebihi max, maka akan dipotong. */
+void read_word(char* word, int length);
 
+/* Membaca sebuah baris pada console.
+
+*/
+void read_line(char* word, int length);
 #endif
