@@ -110,7 +110,10 @@ void __wm_ignore_blank() {
 void wm_start_word(FILE* stream) {
   cm_start(stream);
 
-  __wm_allocate();
+  if (!__wm_allocated) {
+    __wm_allocate();
+  }
+
   wm_adv_word();
 }
 
@@ -127,7 +130,8 @@ void wm_adv_word() {
    F.S. : currentWord berisi kata yang sudah diakuisisi;
           currentChar = BLANK atau currentChar = MARK;
           currentChar adalah karakter sesudah karakter terakhir yang diakuisisi.
-          Jika panjang kata melebihi CAPACITY, maka sisa kata terpotong */
+          Jika panjang kata melebihi CAPACITY, maka sisa kata terpotong
+*/
 void __wm_copy_word() {
   wm_current_word.length = 0;
 

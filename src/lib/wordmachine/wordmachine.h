@@ -1,8 +1,9 @@
 #ifndef H_WORD_MACHINE
 #define H_WORD_MACHINE
 
-#include "../lib.h"
 #include <stdio.h>
+
+#include "../lib.h"
 
 #define WM_INIT_CAPACITY 50
 #define WM_SIZE_MAX_FACTOR 0.85
@@ -11,9 +12,9 @@
 #define WM_SIZE_SHRINK 0.75
 
 typedef struct word {
-   char* contents; 
-   int length;
-   int capacity;
+  char* contents;
+  int length;
+  int capacity;
 } Word;
 
 /* Word Engine End State */
@@ -23,11 +24,11 @@ extern boolean wm_end_word;
 extern Word wm_current_word;
 
 /* Mempersiapkan mesin kata.
-   
+
    Stream adalah sumber dari pita karakter yang akan dibaca.
 
-   I.S. : currentChar sembarang 
-   F.S. : endWord = true, dan currentChar = salah satu mark; 
+   I.S. : currentChar sembarang
+   F.S. : endWord = true, dan currentChar = salah satu mark;
           atau endWord = false, currentWord adalah kata yang sudah diakuisisi,
           currentChar karakter pertama sesudah karakter terakhir kata */
 void wm_start_word(FILE* stream);
@@ -36,11 +37,10 @@ void wm_start_word(FILE* stream);
 
    I.S. : currentChar adalah karakter pertama kata yang akan diakuisisi
 
-   F.S. : currentWord adalah kata terakhir yang sudah diakuisisi, 
+   F.S. : currentWord adalah kata yang sudah diakuisisi,
           currentChar adalah karakter pertama dari kata berikutnya, mungkin MARK
-          Jika currentChar = MARK, endWord = true.		 
-
-   Proses : Akuisisi kata menggunakan procedure copyWord */
+          Jika currentChar = MARK, endWord = false, kecuali sudah melakukan
+   akuisisi lagi. */
 void wm_adv_word();
 
 /* Mengatur blank dari mesin kata
