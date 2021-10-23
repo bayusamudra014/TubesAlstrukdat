@@ -32,6 +32,7 @@ START_TEST(tc_wm_file_1) {
 
     ck_assert(wm_end_word);
     ck_assert_int_eq(wm_current_word.capacity, 0);
+    ck_assert_int_eq(i, 4);
   } else {
     ck_abort_msg("Gagal membuat file");
   }
@@ -84,6 +85,7 @@ START_TEST(tc_wm_file_2) {
 
     ck_assert(wm_end_word);
     ck_assert_int_eq(wm_current_word.capacity, 0);
+    ck_assert_int_eq(i, 4);
   } else {
     ck_abort_msg("Gagal membuat file");
   }
@@ -122,6 +124,7 @@ START_TEST(tc_wm_file_3) {
 
     ck_assert(wm_end_word);
     ck_assert_int_eq(wm_current_word.capacity, 0);
+    ck_assert_int_eq(i, 4);
   } else {
     ck_abort_msg("Gagal membuat file");
   }
@@ -160,6 +163,7 @@ START_TEST(tc_wm_file_4) {
 
     ck_assert(wm_end_word);
     ck_assert_int_eq(wm_current_word.capacity, 0);
+    ck_assert_int_eq(i, 4);
   } else {
     ck_abort_msg("Gagal membuat file");
   }
@@ -237,6 +241,7 @@ START_TEST(tc_wm_file_7) {
 
     ck_assert(wm_end_word);
     ck_assert_int_eq(wm_current_word.capacity, 0);
+    ck_assert_int_eq(i, 1);
   } else {
     ck_abort_msg("Gagal membuat file");
   }
