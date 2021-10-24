@@ -107,7 +107,7 @@ void __wm_ignore_blank() {
   }
 }
 
-void wm_start_word(FILE* stream) {
+void wm_start_word(void* stream) {
   cm_start(stream);
   wm_end_word = false;
 

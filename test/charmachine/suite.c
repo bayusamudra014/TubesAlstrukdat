@@ -7,6 +7,7 @@ Suite* suite_char_machine() {
 
   // Add All Test Case
   suite_add_tcase(s, test_cm_file());
+  suite_add_tcase(s, test_cm_buffer());
 
   return s;
 }

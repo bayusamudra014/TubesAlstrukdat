@@ -31,7 +31,7 @@ extern Word wm_current_word;
    F.S. : endWord = true, dan currentChar = salah satu mark;
           atau endWord = false, currentWord adalah kata yang sudah diakuisisi,
           currentChar karakter pertama sesudah karakter terakhir kata */
-void wm_start_word(FILE* stream);
+void wm_start_word(void* stream);
 
 /* Melakukan proses akuisisi Kata selanjutnya
 
