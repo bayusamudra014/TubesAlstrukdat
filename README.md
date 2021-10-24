@@ -34,6 +34,18 @@ Untuk melakukan kompilasi dan menjalankan program, kita dapat menggunakan perint
 make run
 ```
 
+### Menjalankan Main Point dari ADT
+
+Untuk menjalankan ADT, gunakan perintah sebagai berikut:
+```
+./run_adt.sh <Nama ADT>
+```
+
+Berikut ini adalah contoh menjalankan main point ADT `point`:
+```bash
+./run_adt.sh point
+```
+
 ### Testing Unit Test
 
 Untuk melakukan unit testing, kita dapat menjalankan perintah berikut
