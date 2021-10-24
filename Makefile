@@ -42,13 +42,13 @@ clear:
 	@mkdir -p bin
 	@$(CC) -g $^ -o $@ $(BUILD_FLAG) $(TEST_FLAG)
 
-./bin/mobilita: $(BIN_OBJ)
+./bin/mobilita: $(NMAIN_OBJ) $(BUILD_SRC)/main.o
 	@mkdir -p bin
 	@$(CC) $^ -o $@ $(BUILD_FLAG) -O3
 
 build: ./bin/mobilita
 
-build_debug: $(BIN_OBJ)
+build_debug: $(NMAIN_OBJ) $(BUILD_SRC)/main.o
 	@mkdir -p bin
 	@$(CC) -g $^ -o ./bin/mobilita $(BUILD_FLAG)
 
@@ -63,8 +63,9 @@ test_debug: clean ./bin/test
 test: clean ./bin/test
 	@./bin/test
 
+main_builder/%: % $(NMAIN_OBJ)
+	@$(CC) -g $^ -o ./bin/ADT_RUNNER $(BUILD_FLAG)
 
 clean: clear
-
 
 .PHONY: test clear all adt tc clean vscode build run

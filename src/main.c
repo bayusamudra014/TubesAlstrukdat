@@ -1,19 +1,14 @@
 #include <stdio.h>
 
+#include "components/components.h"
 #include "lib/lib.h"
 
 int main() {
-  // clear_screen();
-  char str[20];
+  clear_screen();
 
-  read_line(str, 20);
-  printf("Yang dibaca line: %s\n", str);
-
-  read_word(str, 20);
-  printf("Yang dibaca word: %s\n", str);
-
-  read_line(str, 20);
-  printf("Yang dibaca line: %s\n", str);
+  cm_modal_error("Ini adalah contoh error.");
+  cm_modal_warning("Ini adalah contoh warning.");
+  cm_modal_info("Ini adalah contoh info.");
 
   return 0;
 }

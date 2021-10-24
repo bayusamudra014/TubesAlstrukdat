@@ -41,16 +41,13 @@ void print_cyan(char c) {
   printf("%s", TEXT_NORMAL);
 }
 
-void set_color(Color color) {
-  // Helper function
-  printf("%s", color);
-}
+void set_color(Color color) { printf("%s", color); }
 
 void set_text_color(Color color) { set_color(color); }
 
 void set_bg_color(Color color) { set_color(color); }
 
-void print_color(Color color, char* string) {
+void print_color(Color color, const char* string) {
   set_text_color(color);
   printf("%s", string);
   reset_color();

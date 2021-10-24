@@ -85,7 +85,7 @@ void print_cyan(char c);
    Contoh pakai:
    set_text_color(TEXT_CYAN);
 */
-void set_text_color(char* color);
+void set_text_color(Color color);
 
 /* Prosedur ini akan mengatur warna background text default saat print pada
  console. Untuk mengatur ke warna default, gunakan prosedur reset_color()
@@ -93,7 +93,7 @@ void set_text_color(char* color);
   Contoh pakai:
   set_bg_color(BG_GREEN);
 */
-void set_bg_color(char* color);
+void set_bg_color(Color color);
 
 /* Prosedur ini akan print text dengan warna pada console. Setelah prosedur
    ini dijalankan, warna console otomatis tereset.
@@ -101,7 +101,7 @@ void set_bg_color(char* color);
   Contoh pakai:
   print_color(TEXT_BLUE, "Halo, Dunia");
 */
-void print_color(char* color, char* string);
+void print_color(Color color, const char* string);
 
 /* Mengembalikan console ke settingan default */
 void reset_color();
@@ -111,7 +111,7 @@ void reset_color();
   Contoh pakai:
   print_colored_char(TEXT_BLUE, 'H');
 */
-void print_colored_char(char* color, char c);
+void print_colored_char(Color color, char c);
 
 /**
  * Membuat warna custom warna teks sesuai dengan warna rgb.
@@ -147,7 +147,7 @@ Color create_text_color_cd(unsigned color);
 
   Contoh : create_bg_color_cd(0x6BAA75)
 */
-Color create_text_color_cd(unsigned color);
+Color create_bg_color_cd(unsigned color);
 
 /*
   Melalukan dealokasi warna.
