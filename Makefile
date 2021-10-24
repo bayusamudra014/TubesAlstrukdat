@@ -57,8 +57,12 @@ run: build_debug
 
 debug: build_debug
 
+test_debug: clean ./bin/test
+	@./bin/test -tno-fork
+
 test: clean ./bin/test
 	@./bin/test
+
 
 clean: clear
 
