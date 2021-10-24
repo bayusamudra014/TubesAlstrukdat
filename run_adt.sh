@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 #
 # Script ini digunakan untuk menjalankan sebuah ADT dari drivernya
 #
