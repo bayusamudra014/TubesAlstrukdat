@@ -7,7 +7,7 @@
 
 ADT_NAME=$1
 
-if [[ $ADT_NAME == "" ]] 
+if [[ "$ADT_NAME" == "" ]] 
 then
   printf "\x1b[7m\033[38;2;214;36;36m Error \033[0m\n"
   echo "Nama ADT belum diinput."
