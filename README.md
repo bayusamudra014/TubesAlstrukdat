@@ -83,6 +83,16 @@ chmod +x run_adt.wsl.sh
 ./run_adt.wsl.sh
 ```
 
+**NOTE :** Bila terjadi error _"Failed to change permission of temporary output file"_, jalankan perintah berikut:
+
+```shell
+echo -e "[automount]\noption = \"metadata\"" | sudo tee -a /etc/wsl.conf
+```
+
+Setelah menjalankan perintah tersebut, lakukan restart PC kalian.
+
+Source : [Superuser - Unable to change file permissions on Ubuntu Bash for Windows 10](https://superuser.com/questions/1323645/unable-to-change-file-permissions-on-ubuntu-bash-for-windows-10)
+
 #### Menggunakan Powershell
 
 Selain menggunakan WSL, kita juga bisa gunakan powershell:
@@ -97,7 +107,11 @@ Contoh:
 ./run_adt.ps1 pcolor
 ```
 
-**Note :** Pastikan sudah setting PATH environment untuk `gcc` dan `make`
+**Note :** Pastikan sudah setting PATH environment untuk `gcc` dan `make`. Selain itu, pastikan sudah mengatur Policy di Powershell. Untuk mengaturnya, jalankan perintah berikut:
+
+```powershell
+Set-ExecutionPolicy Unrestricted
+```
 
 ### Testing Unit Test
 
