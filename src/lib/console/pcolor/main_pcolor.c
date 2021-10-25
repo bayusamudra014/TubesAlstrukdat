@@ -1,3 +1,6 @@
 #include "stdio.h"
 
-int main() { printf("Ini dari Pcolor") return 0; }
+int main() {
+  printf("Ini dari Pcolor");
+  return 0;
+}
