@@ -7,17 +7,17 @@
 /* - Index top bernilai IDX_UNDEF */
 /* Proses : Melakukan alokasi, membuat sebuah s kosong */
 void s_create_stack(Stack* s){
-    IDX_TOP(*s) = IDX_UNDEF;
+    S_IDX_TOP(*s) = IDX_UNDEF;
 }
 
 /* Mengirim true jika s kosong: lihat definisi di atas */
 boolean s_is_empty(Stack s){
-    return(IDX_TOP(s) == IDX_UNDEF);
+    return(S_IDX_TOP(s) == IDX_UNDEF);
 }
 
 /* Mengirim true jika tabel penampung nilai s stack penuh */
 boolean s_is_full(Stack s){
-    return(IDX_TOP(s) == S_MAX_SIZE-1);
+    return(S_IDX_TOP(s) == S_MAX_SIZE-1);
 }
 
 /* Menambahkan val sebagai elemen Stack s */
@@ -25,8 +25,8 @@ boolean s_is_full(Stack s){
 /* F.S. val menjadi TOP yang baru,IDX_TOP bertambah 1 */
 void s_push(Stack* s, SEltype item){
 
-    IDX_TOP(*s)++;
-    TOP(*s) = item;
+    S_IDX_TOP(*s)++;
+    S_TOP(*s) = item;
 }
 
 /* Menghapus val dari Stack s */
@@ -34,6 +34,6 @@ void s_push(Stack* s, SEltype item){
 /* F.S. val adalah nilai elemen TOP yang lama, IDX_TOP berkurang 1 */
 void s_pop(Stack* s, SEltype* item){
     
-    *item = TOP(*s);
-    IDX_TOP(*s)--;
+    *item = S_TOP(*s);
+    S_IDX_TOP(*s)--;
 }
