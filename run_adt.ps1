@@ -10,7 +10,7 @@ if ($ADT_NAME) {
     $FILE_LOCATION = $LOCATION[0].FullName
     
     make clean
-    make main_builder/$FILE_LOCATION
+    make "main_builder/$FILE_LOCATION"
     
     $RESULT = Get-ChildItem -Path "./bin" ADT_RUNNER*
     

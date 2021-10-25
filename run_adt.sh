@@ -29,7 +29,7 @@ then
   echo "Main point ADT $1 tidak ditemukan."
 else
   make clean
-  make main_builder/$MAIN_FILE
+  make "main_builder/$MAIN_FILE"
   mv ./bin/ADT_RUNNER ./bin/$ADT_NAME
 
   ./bin/$ADT_NAME
