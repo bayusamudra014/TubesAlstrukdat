@@ -83,6 +83,22 @@ chmod +x run_adt.wsl.sh
 ./run_adt.wsl.sh
 ```
 
+#### Menggunakan Powershell
+
+Selain menggunakan WSL, kita juga bisa gunakan powershell:
+
+```powershell
+./run_adt.ps1 <Nama ADT>
+```
+
+Contoh:
+
+```powershell
+./run_adt.ps1 pcolor
+```
+
+**Note :** Pastikan sudah setting PATH environment untuk `gcc` dan `make`
+
 ### Testing Unit Test
 
 Untuk melakukan unit testing, kita dapat menjalankan perintah berikut
