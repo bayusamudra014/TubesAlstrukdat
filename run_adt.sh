@@ -5,6 +5,8 @@
 # Contoh Pakai :
 # run_adt.sh pcolor
 
+set -e
+
 ADT_NAME=$1
 
 if [[ "$ADT_NAME" == "" ]] 

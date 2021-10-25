@@ -6,6 +6,7 @@
 #include "../time/time.h"
 
 typedef struct order {
+  int orderID;
   Item item;
   Building pickUp;
   Building dropOff;

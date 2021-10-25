@@ -1,11 +1,10 @@
 #ifndef H_ITEM
 #define H_ITEM
 
-typedef struct item
-{
+typedef struct item {
+  int itemID;
+  int expired;
   char type;
-  int expired; 
 } Item;
-
 
 #endif
