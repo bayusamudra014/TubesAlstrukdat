@@ -15,10 +15,11 @@ if ($ADT_NAME) {
     $RESULT = Get-ChildItem -Path "./bin" ADT_RUNNER*
     
     if($RESULT.Length -gt 0){
+      Clear-Host
+      
       $EXT=$RESULT[0].Extension
       $EXEC_PATH = $RESULT[0].FullName
-      Write-Output $EXT
-  
+
       Move-Item -Path "$EXEC_PATH" -Destination "./bin/$ADT_NAME$EXT"
       & "./bin/$ADT_NAME$EXT"
       Write-Output ""
