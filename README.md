@@ -45,6 +45,10 @@ Berikut ini adalah contoh menjalankan main point ADT `point`:
 ```bash
 ./run_adt.sh point
 ```
+Pastikan anda telah mengubah file permission agar bisa dieksekusi:
+```bash
+chmod +x run_adt.sh
+```
 
 ### Testing Unit Test
 
