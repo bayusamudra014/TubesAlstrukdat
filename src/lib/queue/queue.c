@@ -57,31 +57,37 @@ void q_enqueue(Queue* q, QEltype order){
     Q_IDX_TAIL(*q) = 0;
     Q_TAIL(*q) = order;
   }else{
+    //Apabila queue nya penuh semu
     if (Q_IDX_TAIL(*q) == Q_SIZE-1){
-            for (int i = Q_IDX_HEAD(*q);i <= Q_IDX_TAIL(*q); i++){
-                (*q).buffer[i-Q_IDX_HEAD(*q)] = (*q).buffer[i];
-            }
-            Q_IDX_TAIL(*q) -= Q_IDX_HEAD(*q);
-            Q_IDX_HEAD(*q) = 0;
-        }
+      for (int i = Q_IDX_HEAD(*q);i <= Q_IDX_TAIL(*q); i++){
+        (*q).buffer[i-Q_IDX_HEAD(*q)] = (*q).buffer[i];
+      }
+      Q_IDX_TAIL(*q) -= Q_IDX_HEAD(*q);
+      Q_IDX_HEAD(*q) = 0;
+    }
         
-        found = false;
+    int i = Q_IDX_HEAD(*q);
+    found = false;
 
-        for(int i = Q_IDX_HEAD(*q); i <= Q_IDX_TAIL(*q); i++){
-            if ((*q).buffer[i].incomingTime > order.incomingTime){
-                for (int j = Q_IDX_TAIL(*q); j >= i; j--){
-                    (*q).buffer[j+1] = (*q).buffer[j];
-                }
-                (*q).buffer[i] = order;
-                found = true;
-            }
-        }
+    while((i <= Q_IDX_TAIL(*q)) && (!found)){
+      if((*q).buffer[i].incomingTime > order.incomingTime){
+        found = true;
+      }else{
+        i++;
+      }
+    }
 
-        Q_IDX_TAIL(*q)++;
+    Q_IDX_TAIL(*q)++;
+    if (!found){
+      Q_TAIL(*q) = order;
+    }else{
+      for(int j = Q_IDX_TAIL(*q); j>=i; j--){
+        (*q).buffer[j+1] = (*q).buffer[j];
+      }
+      (*q).buffer[i] = order;
+    }
 
-        if(!found){
-            Q_TAIL(*q) = order;
-        }
+
   }
 }
 

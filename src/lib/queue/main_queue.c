@@ -68,6 +68,22 @@ int main() {
     printf("\n");
   }
 
+  printf("Status Daftar Pesanan \n");
+  if(q_is_empty(daftarOrder)){
+    printf("Daftar Pesanan Kosong\n");
+  }else if(q_is_full(daftarOrder)){
+    printf("Daftar pesanan penuh\n");
+  }else{
+    printf("Daftar pesanan belum penuh\n");
+  }
+
+  printf("\n");
+  q_dequeue(&daftarOrder, &order);
+  printf("Daftar pesanan setelah satu pesanan dihapus\n");
+  for(int i = 0 ; i < q_length(daftarOrder); i++){
+    printf("%d. %c -> %c (Normal Item)", (i+1), daftarOrder.buffer[i].pickUp.label, daftarOrder.buffer[i].dropOff.label);
+    printf("\n");
+  }
 
   return 0;
 }
