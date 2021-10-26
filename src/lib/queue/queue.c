@@ -1,4 +1,4 @@
-// #include "stdio.h"
+#include <stdio.h>
 #include "queue.h"
 
 // /*Konstruktor*/
@@ -8,52 +8,107 @@
 // /* - Index tail bernilai IDX_UNDEF */
 // /* Proses : Melakukan alokasi, membuat sebuah q kosong */
 void q_create_queue(Queue* q) {
-  q->idxHead = 0;
-  q->idxTail = 0;
+  Q_IDX_HEAD(*q) = IDX_UNDEF;
+  Q_IDX_TAIL(*q) = IDX_UNDEF;
 }
 
-// /* Mengirim true jika q kosong: lihat definisi di atas */
-// boolean q_is_empty(Queue q){
+/* Mengirim true jika q kosong: lihat definisi di atas */
+boolean q_is_empty(Queue q){
 
-// }
+  return ((Q_IDX_HEAD(q) == IDX_UNDEF) && (Q_IDX_TAIL(q) == IDX_UNDEF));
+}
 
-// /* Mengirim true jika tabel penampung elemen q sudah penuh */
-// /* yaitu jika index head bernilai 0 dan index tail bernilai Q_SIZE-1 */
-// boolean q_is_full(Queue q){
+/* Mengirim true jika tabel penampung elemen q sudah penuh */
+/* yaitu jika index head bernilai 0 dan index tail bernilai Q_SIZE-1 */
+boolean q_is_full(Queue q){
 
-// }
+  return((Q_IDX_HEAD(q) == 0) && (Q_IDX_TAIL(q) == Q_SIZE-1));
+}
 
-// /* Mengirimkan banyaknya elemen queue. Mengirimkan 0 jika q kosong. */
-// int q_length(Queue q){
+/* Mengirimkan banyaknya elemen queue. Mengirimkan 0 jika q kosong. */
+int q_length(Queue q){
 
-// }
+  int q_length;
 
-// /* Proses: Menambahkan Order pada pq dengan aturan FIFO */
-// /* I.S. pq mungkin kosong, tabel penampung elemen pq TIDAK penuh */
-// /* F.S. Order menjadi TAIL yang baru, IDX_TAIL "mundur".
-//         Jika pq penuh semu, maka perlu dilakukan aksi penggeseran "maju"
-//         elemen-elemen pq menjadi rata kiri untuk membuat ruang kosong bagi
-//         TAIL baru
-//           */
-// void q_enqueue(Queue* q, QEltype item){
+  if(q_is_empty(q)){
+    q_length = 0;
+  }else{
+    q_length = (Q_IDX_TAIL(q)-Q_IDX_HEAD(q)+1);
+  }
 
-// }
+  return q_length;
+}
 
-// /* Proses: Menghapus val pada q dengan aturan FIFO */
-// /* I.S. pq tidak mungkin kosong */
-// /* F.S. val = nilai elemen HEAD pd
-// I.S., HEAD dan IDX_HEAD "mundur";
-//         pq mungkin kosong */
-// void q_dequeue(Queue* q, QEltype* item){
+/* Proses: Menambahkan Order pada pq dengan aturan FIFO */
+/* I.S. pq mungkin kosong, tabel penampung elemen pq TIDAK penuh */
+/* F.S. Order menjadi TAIL yang baru, IDX_TAIL "mundur".
+        Jika pq penuh semu, maka perlu dilakukan aksi penggeseran "maju"
+        elemen-elemen pq menjadi rata kiri untuk membuat ruang kosong bagi
+        TAIL baru
+        prioritas queue berdasarkan waktu kedatangan order. 
+*/
+void q_enqueue(Queue* q, QEltype order){
 
-// }
+  
+  boolean found;
 
-// /*Getter elemen head dari queue*/
-// QEltype q_get_head(Queue q){
+  if(q_is_empty(*q)){
+    Q_IDX_HEAD(*q) = 0;
+    Q_IDX_TAIL(*q) = 0;
+    Q_TAIL(*q) = order;
+  }else{
+    if (Q_IDX_TAIL(*q) == Q_SIZE-1){
+            for (int i = Q_IDX_HEAD(*q);i <= Q_IDX_TAIL(*q); i++){
+                (*q).buffer[i-Q_IDX_HEAD(*q)] = (*q).buffer[i];
+            }
+            Q_IDX_TAIL(*q) -= Q_IDX_HEAD(*q);
+            Q_IDX_HEAD(*q) = 0;
+        }
+        
+        found = false;
 
-// }
+        for(int i = Q_IDX_HEAD(*q); i <= Q_IDX_TAIL(*q); i++){
+            if ((*q).buffer[i].incomingTime > order.incomingTime){
+                for (int j = Q_IDX_TAIL(*q); j >= i; j--){
+                    (*q).buffer[j+1] = (*q).buffer[j];
+                }
+                (*q).buffer[i] = order;
+                found = true;
+            }
+        }
 
-// /*Getter elemen tail dari queue*/
-// QEltype q_get_tail(Queue q){
+        Q_IDX_TAIL(*q)++;
 
-// }
+        if(!found){
+            Q_TAIL(*q) = order;
+        }
+  }
+}
+
+/* Proses: Menghapus val pada q dengan aturan FIFO */
+/* I.S. pq tidak mungkin kosong */
+/* F.S. val = nilai elemen HEAD pd
+I.S., HEAD dan IDX_HEAD "mundur";
+         pq mungkin kosong */
+void q_dequeue(Queue *q, QEltype *order){
+
+  *order = Q_HEAD(*q);
+    if (Q_IDX_HEAD(*q) == Q_IDX_TAIL(*q)){
+        Q_IDX_HEAD(*q) = IDX_UNDEF;
+        Q_IDX_TAIL(*q) = IDX_UNDEF;
+    }else{
+        Q_IDX_HEAD(*q)++;
+    }
+}
+
+/*Getter elemen head dari queue*/
+QEltype q_get_head(Queue q){
+  return (Q_HEAD(q));
+}
+
+/*Getter elemen tail dari queue*/
+QEltype q_get_tail(Queue q){
+
+  return Q_TAIL(q);
+
+}
