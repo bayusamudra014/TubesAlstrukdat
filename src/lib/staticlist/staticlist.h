@@ -3,19 +3,20 @@
 
 #define SL_CAPACITY 5
 
-#include "../gadget/gadget.h"
+#include "../lib.h"
 
 typedef Gadget SlEltype;
 
 typedef struct staticlist {
   SlEltype buffer[SL_CAPACITY];
+  int length;
 } StaticList;
+
+/* Selektor untuk mengakses element pada static list */
+#define sl_elmt(sl, i) (sl).buffer[(i)]
 
 /* Membuat Objek Static List */
 void sl_create_list(StaticList* sl);
-
-/* Selektor untuk mengakses element pada static list */
-#define sl_elmt(sl, i) sl.buffer[i]
 
 /* Menghitung jumlah elemen yang berada pada static list */
 int sl_length(StaticList sl);
