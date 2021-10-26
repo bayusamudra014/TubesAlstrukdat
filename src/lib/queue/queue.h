@@ -18,10 +18,10 @@ typedef struct queue{
 
 /* ********* AKSES (Selektor) ********* */
 /* Jika pq adalah PrioQueue, maka akses elemen : */
-#define IDX_HEAD(pq) (pq).idxHead
-#define IDX_TAIL(pq) (pq).idxTail
-#define     HEAD(pq) (pq).buffer[(pq).idxHead]
-#define     TAIL(pq) (pq).buffer[(pq).idxTail]
+#define Q_IDX_HEAD(pq) (pq).idxHead
+#define Q_IDX_TAIL(pq) (pq).idxTail
+#define     Q_HEAD(pq) (pq).buffer[(pq).idxHead]
+#define     Q_TAIL(pq) (pq).buffer[(pq).idxTail]
 
 /*Konstruktor*/
 /* I.S. sembarang */
