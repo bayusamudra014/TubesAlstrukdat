@@ -1,8 +1,8 @@
 #ifndef H_QUEUE
 #define H_QUEUE
 
-#include "../order/order.h"
-#include "../boolean.h"
+#include "../lib.h"
+
 #include <stdlib.h>
 
 #define Q_SIZE 35

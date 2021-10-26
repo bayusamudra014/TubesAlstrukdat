@@ -1,13 +1,11 @@
 #ifndef H_BUILDING
 #define H_BUILDING
 
-#include "../point/point.h"
+#include "../lib.h"
 
-typedef struct building
-{
+typedef struct building {
   Point position;
   char label;
 } Building;
-
 
 #endif

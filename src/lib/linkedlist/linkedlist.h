@@ -1,8 +1,7 @@
 #ifndef H_LINKED_LIST
 #define H_LINKED_LIST
 
-#include "../node/node.h"
-#include "../order/order.h"
+#include "../lib.h"
 
 typedef struct node* LinkedList;
 

@@ -1,9 +1,9 @@
-#include "stdio.h"
+#include <stdio.h>
+
 #include "queue.h"
 
-int main(){
+int main() {
+  printf("Ini driver ADT Queue\n");
 
-    printf("Ini driver ADT Queue\n");
-
-    return 0;
+  return 0;
 }

@@ -1,9 +1,7 @@
 #ifndef H_ORDER
 #define H_ORDER
 
-#include "../building/building.h"
-#include "../item/item.h"
-#include "../time/time.h"
+#include "../lib.h"
 
 typedef struct order {
   int orderID;
