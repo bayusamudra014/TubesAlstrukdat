@@ -47,7 +47,7 @@ void s_push(Stack* s, SEltype item);
 /* F.S. val adalah nilai elemen TOP yang lama, IDX_TOP berkurang 1 */
 void s_pop(Stack* s, SEltype* item);
 
-
+/*Getter untuk mendapatkan TOP dari Stack(Tas)*/
 SEltype s_get_top(Stack s);
 
 #endif

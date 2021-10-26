@@ -37,3 +37,9 @@ void s_pop(Stack* s, SEltype* item){
     *item = S_TOP(*s);
     S_IDX_TOP(*s)--;
 }
+
+/*Getter untuk mendapatkan TOP dari Stack(Tas)*/
+SEltype s_get_top(Stack s){
+    
+    return S_TOP(s);
+}
