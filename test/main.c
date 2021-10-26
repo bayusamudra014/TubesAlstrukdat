@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 #include "charmachine/test.h"
+#include "staticlist/test.h"
 #include "wordmachine/test.h"
 
 int main(int argc, char* argv[]) {
@@ -12,6 +13,7 @@ int main(int argc, char* argv[]) {
   SRunner* run = srunner_create(s0);
 
   srunner_add_suite(run, suite_word_machine());
+  srunner_add_suite(run, suite_static_list());
 
   if (argc > 1) {
     if (!strcmp(argv[1], "-tno-fork")) {
