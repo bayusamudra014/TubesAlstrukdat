@@ -12,26 +12,26 @@ START_TEST(tc_sl_delete_1) {
   }
 
   char ans[] = {1, 2, 3, 4, 5};
-  cek_kesamaan(s.buffer, ans, 5);
+  test_kesamaan(s.buffer, ans, 5);
   ck_assert_int_eq(sl_length(s), 5);
 
   sl_delete_first(&s, NULL);
-  cek_kesamaan(s.buffer, ans + 1, 4);
+  test_kesamaan(s.buffer, ans + 1, 4);
   ck_assert_int_eq(sl_length(s), 4);
 
   char val;
   sl_delete_first(&s, &val);
-  cek_kesamaan(s.buffer, ans + 2, 3);
+  test_kesamaan(s.buffer, ans + 2, 3);
   ck_assert_int_eq(sl_length(s), 3);
   ck_assert_int_eq(val, 2);
 
   sl_delete_first(&s, &val);
-  cek_kesamaan(s.buffer, ans + 3, 2);
+  test_kesamaan(s.buffer, ans + 3, 2);
   ck_assert_int_eq(sl_length(s), 2);
   ck_assert_int_eq(val, 3);
 
   sl_delete_first(&s, &val);
-  cek_kesamaan(s.buffer, ans + 4, 1);
+  test_kesamaan(s.buffer, ans + 4, 1);
   ck_assert_int_eq(sl_length(s), 1);
   ck_assert_int_eq(val, 4);
 
@@ -51,26 +51,26 @@ START_TEST(tc_sl_delete_2) {
   }
 
   char ans[] = {1, 2, 3, 4, 5};
-  cek_kesamaan(s.buffer, ans, 5);
+  test_kesamaan(s.buffer, ans, 5);
   ck_assert_int_eq(sl_length(s), 5);
 
   sl_delete_last(&s, NULL);
-  cek_kesamaan(s.buffer, ans, 4);
+  test_kesamaan(s.buffer, ans, 4);
   ck_assert_int_eq(sl_length(s), 4);
 
   char val;
   sl_delete_last(&s, &val);
-  cek_kesamaan(s.buffer, ans, 3);
+  test_kesamaan(s.buffer, ans, 3);
   ck_assert_int_eq(sl_length(s), 3);
   ck_assert_int_eq(val, 4);
 
   sl_delete_last(&s, &val);
-  cek_kesamaan(s.buffer, ans, 2);
+  test_kesamaan(s.buffer, ans, 2);
   ck_assert_int_eq(sl_length(s), 2);
   ck_assert_int_eq(val, 3);
 
   sl_delete_last(&s, &val);
-  cek_kesamaan(s.buffer, ans, 1);
+  test_kesamaan(s.buffer, ans, 1);
   ck_assert_int_eq(sl_length(s), 1);
   ck_assert_int_eq(val, 2);
 
@@ -91,13 +91,13 @@ START_TEST(tc_sl_delete_3) {
 
   sl_delete_at(&s, NULL, 2);
   char ans1[] = {1, 2, 4, 5};
-  cek_kesamaan(s.buffer, ans1, 4);
+  test_kesamaan(s.buffer, ans1, 4);
   ck_assert_int_eq(sl_length(s), 4);
 
   char val;
   sl_delete_at(&s, &val, 1);
   char ans2[] = {1, 4, 5};
-  cek_kesamaan(s.buffer, ans2, 3);
+  test_kesamaan(s.buffer, ans2, 3);
   ck_assert_int_eq(sl_length(s), 3);
   ck_assert_int_eq(val, 2);
 }
