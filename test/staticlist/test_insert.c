@@ -11,7 +11,7 @@ START_TEST(tc_sl_insertf_1) {
   }
 
   char ans[] = {4, 3, 2, 1, 0};
-  ck_assert_mem_eq(s.buffer, ans, 5);
+  test_kesamaan(s.buffer, ans, 5);
   ck_assert_int_eq(sl_length(s), 5);
 }
 END_TEST
@@ -25,7 +25,7 @@ START_TEST(tc_sl_insertf_2) {
   }
 
   char ans[] = {2, 1, 0};
-  ck_assert_mem_eq(s.buffer, ans, 3);
+  test_kesamaan(s.buffer, ans, 3);
   ck_assert_int_eq(sl_length(s), 3);
 }
 END_TEST
@@ -39,7 +39,7 @@ START_TEST(tc_sl_insertf_3) {
   }
 
   char ans[] = {1, 2, 3, 4, 5};
-  ck_assert_mem_eq(s.buffer, ans, 5);
+  test_kesamaan(s.buffer, ans, 5);
   ck_assert_int_eq(sl_length(s), 5);
 }
 END_TEST
@@ -56,7 +56,7 @@ START_TEST(tc_sl_insertf_4) {
   sl_insert_at(&s, 20, 1);
 
   char ans[] = {1, 20, 2, 10, 3};
-  ck_assert_mem_eq(s.buffer, ans, 5);
+  test_kesamaan(s.buffer, ans, 5);
   ck_assert_int_eq(sl_length(s), 5);
 }
 END_TEST

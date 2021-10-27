@@ -12,4 +12,6 @@ TCase* test_sl_attribut();
 
 Suite* suite_static_list();
 
+void test_kesamaan(char* a, char* b, int length);
+
 #endif
