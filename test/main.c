@@ -3,9 +3,9 @@
 #include <stdlib.h>
 
 #include "charmachine/test.h"
+#include "matrix/test.h"
 #include "staticlist/test.h"
 #include "wordmachine/test.h"
-// #include "matrix/test.h"
 
 int main(int argc, char* argv[]) {
   int no_failed = 0;
@@ -15,7 +15,7 @@ int main(int argc, char* argv[]) {
 
   srunner_add_suite(run, suite_word_machine());
   srunner_add_suite(run, suite_static_list());
-  // srunner_add_suite(run, suite_matrix());
+  srunner_add_suite(run, suite_matrix());
 
   if (argc > 1) {
     if (!strcmp(argv[1], "-tno-fork")) {
