@@ -1,16 +1,16 @@
 #include "linkedlist.h"
 
-void CreateList(List *l){
-    FIRST(*l) = NULL;
+void ll_create_list(LinkedList* ll){
+    FIRST(*ll) = NULL;
 }
 
-boolean isEmpty(List l){
-    return (FIRST(l) == NULL);
+boolean isEmpty(LinkedList* ll){
+    return (FIRST(ll) == NULL);
 }
 
-ElType getElmt(List l, int idx){
+LlEltype ll_get_elmt(LinkedList ll, int idx){
     int cnt = 0;
-    Address p = FIRST(l);
+    struct node* p = FIRST(ll);
     while (cnt < idx){
         cnt++;
         p = NEXT(p);
@@ -18,9 +18,9 @@ ElType getElmt(List l, int idx){
     return INFO(p);
 }
 
-void setElmt(List *l, int idx, ElType value){
+void ll_set_elmt(LinkedList* ll, int idx, LlEltype value){
     int cnt = 0;
-    Address p = FIRST(*l);
+    struct node* p = FIRST(*ll);
     while (cnt < idx){
         cnt++;
         p = NEXT(p);
@@ -28,12 +28,12 @@ void setElmt(List *l, int idx, ElType value){
     INFO(p) = value;
 }
 
-int indexOf(List l, ElType val){
-    Address p = FIRST(l);
+int ll_index_of(LinkedList ll, LlEltype value){
+    struct node* p = FIRST(ll);
     boolean found = false;
     int idx = 0;
     while ((!found) && (p != NULL)){
-        if (INFO(p) == val) {
+        if (INFO(p) == value) {
             found = true;
         } 
         else{
@@ -50,22 +50,22 @@ int indexOf(List l, ElType val){
     }
 }
 
-void insertFirst(List *l, ElType val){
-    Address p = newNode(val);
+void ll_insert_first(LinkedList* ll, LlEltype value){
+    struct node* p = newNode(value);
     if (p != NULL){
-        NEXT(p) = FIRST(*l);
-        FIRST(*l) = p;
+        NEXT(p) = FIRST(*ll);
+        FIRST(*ll) = p;
     }
 }
 
-void insertLast(List *l, ElType val){
-    if (isEmpty(*l)){
-        insertFirst(l, val);
+void ll_insert_last(LinkedList* ll, LlEltype value){
+    if (isEmpty(*ll)){
+        insertFirst(ll, value);
     } 
     else{
-        Address p = newNode(val);
+        struct node* p = newNode(value);
         if (p != NULL){
-            Address last = FIRST(*l);
+            struct node* last = FIRST(*ll);
             while (NEXT(last) != NULL){
                 last = NEXT(last);
             }
@@ -74,15 +74,15 @@ void insertLast(List *l, ElType val){
     }
 }
 
-void insertAt(List *l, ElType val, int idx){
+void ll_insert_at(LinkedList* ll, LlEltype value, int idx){
     if (idx == 0){
-        insertFirst(l, val);
+        insertFirst(ll, value);
     } 
     else{
-        Address p = newNode(val);
+        struct node* p = newNode(value);
         if (p != NULL){
             int cnt = 0;
-            Address loc = FIRST(*l);
+            struct node* loc = FIRST(*ll);
             while (cnt < idx-1){
                 cnt++;
                 loc = NEXT(loc);
@@ -93,89 +93,54 @@ void insertAt(List *l, ElType val, int idx){
     }
 }
 
-void deleteFirst(List *l, ElType *val){
-    Address p = FIRST(*l);
-    *val = INFO(p);
-    FIRST(*l) = NEXT(p);
+void ll_delete_first(LinkedList* ll, LlEltype* deletedValue){
+    struct node* p = FIRST(*ll);
+    *deletedValue = INFO(p);
+    FIRST(*ll) = NEXT(p);
     free(p);
 }
 
-void deleteLast(List *l, ElType *val){
-    Address p = FIRST(*l);
-    Address loc = NULL;
+void ll_delete_last(LinkedList* ll, LlEltype* deletedValue){
+    struct node* p = FIRST(*ll);
+    struct node* loc = NULL;
     while (NEXT(p) != NULL){
         loc = p;
         p = NEXT(p);
     }
     if (loc == NULL){
-        FIRST(*l) = NULL;
+        FIRST(*ll) = NULL;
     } 
     else{
         NEXT(loc) = NULL;
     }
-    *val = INFO(p);
+    *deletedValue = INFO(p);
     free(p);
 }
 
-void deleteAt(List *l, int idx, ElType *val){
+void ll_delete_at(LinkedList* ll, LlEltype* deletedValue, int idx){
     if (idx == 0){
-        deleteFirst(l, val);
+        deleteFirst(ll, deletedValue);
     }
     else{
         int cnt = 0;
-        Address loc = FIRST(*l);
+        struct node* loc = FIRST(*ll);
         while (cnt < idx-1){
             cnt++;
             loc = NEXT(loc);
         }
-        Address p = NEXT(loc);
-        *val = INFO(p);
+        struct node* p = NEXT(loc);
+        *deletedValue = INFO(p);
         NEXT(loc) = NEXT(p);
         free(p);
     }
 }
 
-void displayList(List l){
-    if (!isEmpty(l)){
-        Address p = FIRST(l);
-        printf("[");
-        do{
-            printf("%d", INFO(p));
-            p = NEXT(p);
-            if (p != NULL){
-                printf(",");
-            }
-        } 
-        while (p != NULL);
-        printf("]");
-    }
-    else{
-        printf("[]");
-    }
-}
-
-int length(List l) {
+int ll_length(LinkedList ll) {
     int cnt = 0;
-    Address p = FIRST(l);
+    struct node* p = FIRST(ll);
     while (p != NULL){
         cnt++;
         p = NEXT(p);
     }
     return cnt;
-}
-
-List concat(List l1, List l2) {
-    List l3;
-    CreateList(&l3);
-    Address p = FIRST(l1);
-    while (p != NULL){
-        insertLast(&l3, INFO(p));
-        p = NEXT(p);
-    }
-    p = FIRST(l2);
-    while (p != NULL){
-        insertLast(&l3, INFO(p));
-        p = NEXT(p);
-    }
-    return l3;
 }

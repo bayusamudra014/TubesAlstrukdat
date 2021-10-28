@@ -6,6 +6,8 @@
 typedef struct node* LinkedList;
 
 typedef Order LlEltype;
+#define IDX_UNDEF (-1)
+#define FIRST(ll) (ll)
 
 /* Konstrukror List Dinamis */
 void ll_create_list(LinkedList* ll);

@@ -8,6 +8,9 @@ typedef struct node {
   struct node* next;
 } Node;
 
+#define INFO(p) (p)->payload
+#define NEXT(p) (p)->next
+
 void n_create_node(Node* n, Order payload);
 void n_delete_node(Node* n);
 
