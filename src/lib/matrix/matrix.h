@@ -12,9 +12,13 @@ typedef struct matrix {
   MEltype buffer[M_MAX_SIZE][M_MAX_SIZE];
 } Matrix;
 
+/* Membentuk sebuah Matrix "kosong" yang siap diisi berukuran nRow x nCol di "ujung kiri" memori 
+   I.S. row dan cols adalah valid untuk memori matriks yang dibuat 
+   F.S. Matriks m sesuai dengan definisi di atas terbentuk */
 void m_create_matrix(Matrix* m, int row, int cols);
 
-#define m_elmt(M, i, j) (M).contents[(i)][(j)]
+/* Selektor untuk mengakses element matriks pada baris i dan kolom j */
+#define m_elmt(M, i, j) (M).buffer[(i)][(j)]
 
 /* Mengembalikan jumlah baris matriks */
 int m_rows_num(Matrix m);

@@ -1,34 +1,46 @@
-// #include <check.h>
-// #include <stdlib.h>
+#include <check.h>
 
-// #include "../../src/matrix.h"
-// #include "test.h"
+#include "test.h"
 
-// void test() {
-//   Matrix s;
-//   int row = (rand() + 1.0) / RAND_MAX * 100;
-//   int col = (rand() + 1.0) / RAND_MAX * 100;
+START_TEST(tc_m_konstruktor_1)
+{
+    Matrix m;
 
-//   CreateMatrix(row, col, &s);
+    m_create_matrix(&m, 30, 30);
 
-//   ck_assert_int_eq(ROWS(s), row);
-//   ck_assert_int_eq(COLS(s), col);
-// }
+    ck_assert_int_eq(m_rows_num(m), 30);
+    ck_assert_int_eq(m_cols_num(m), 30);
+}
+END_TEST
 
-// START_TEST(tc_konstruktor_1) { test(); }
-// END_TEST
+START_TEST(tc_m_konstruktor_2)
+{
+    Matrix m;
 
-// START_TEST(tc_konstruktor_2) { test(); }
-// END_TEST
+    m_create_matrix(&m, 20, 15);
 
-// START_TEST(tc_konstruktor_3) { test(); }
-// END_TEST
+    ck_assert_int_eq(m_rows_num(m), 20);
+    ck_assert_int_eq(m_cols_num(m), 15);
+}
+END_TEST
 
-// TCase* test_constructor_matrix() {
-//   TCase* tc = tcase_create("Tes Konstruktor");
-//   tcase_add_test(tc, tc_konstruktor_1);
-//   tcase_add_test(tc, tc_konstruktor_2);
-//   tcase_add_test(tc, tc_konstruktor_3);
+START_TEST(tc_m_konstruktor_3)
+{
+    Matrix m;
 
-//   return tc;
-// }
+    m_create_matrix(&m, 25, 25);
+
+    ck_assert_int_eq(m_rows_num(m), 25);
+    ck_assert_int_eq(m_cols_num(m), 25);
+}
+END_TEST
+
+TCase *test_m_constructor()
+{
+    TCase *tc = tcase_create("Tes Konstruktor");
+    tcase_add_test(tc, tc_m_konstruktor_1);
+    tcase_add_test(tc, tc_m_konstruktor_2);
+    tcase_add_test(tc, tc_m_konstruktor_3);
+
+    return tc;
+}

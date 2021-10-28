@@ -1,16 +1,15 @@
-// #include <check.h>
+#include <check.h>
 
-// #include "../../src/matrix.h"
+#include "../../src/lib/lib.h"
 
-// #ifndef POINT_TEST_H
-// #define POINT_TEST_H
+#ifndef H_MATRIX_TEST
+#define H_MATRIX_TEST
 
-// TCase* test_constructor_matrix();
+TCase *test_m_selector();
+TCase *test_m_constructor();
 
-// Suite* matrix_suite();
+Suite* suite_matrix();
 
-// // Helper
-// Matrix arrayToMatrix(int* matrix, int rows, int cols);
-// void isEqualTC(Matrix a, Matrix b);
 
-// #endif
+
+#endif
