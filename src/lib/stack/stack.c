@@ -1,5 +1,6 @@
+
 #include "stdio.h"
-#include "stack.h"
+#include "../lib.h"
 
 /*Konstruktor*/
 /* I.S. sembarang; */

@@ -5,7 +5,6 @@
 #include "../item/item.h"
 
 #define S_MAX_SIZE 100
-#define IDX_UNDEF -1
 
 typedef Item SEltype;
 
