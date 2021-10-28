@@ -1,7 +1,7 @@
 #ifndef H_DYNAMIC_LIST
 #define H_DYNAMIC_LIST
 
-#include "../lib.h"
+#include "../structure.h"
 
 typedef Building DlEltype;
 
@@ -16,7 +16,7 @@ void dl_create_list(DynamicList* dl, int size);
 
 /**
  * Mengubah ukuran buffer DynamicList
- * 
+ *
  * addSize adalah tambahan ukuran yang baru
  */
 void dl_resize_list(DynamicList* dl, int addSize);

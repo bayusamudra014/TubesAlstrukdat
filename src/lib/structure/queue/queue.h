@@ -1,12 +1,13 @@
 #ifndef H_QUEUE
 #define H_QUEUE
 
-#include "../lib.h"
+#include "../structure.h"
 
 #include <stdlib.h>
 
 #define Q_SIZE 35
 #define IDX_UNDEF -1
+
 
 typedef Order QEltype;
 

@@ -3,7 +3,7 @@
 
 #define SL_CAPACITY 5
 
-#include "../lib.h"
+#include "../structure.h"
 
 typedef Gadget SlEltype;
 
@@ -51,7 +51,7 @@ void sl_delete_first(StaticList* sl, SlEltype* deletedValue);
 /* Menghapus elemen di awal list.
 
    I.S. Indeks idx < length list.
-   
+
    F.S. Elemen pada index idx dihapus, bila deletedValue tidak bernilai NULL,
    alamat yang dithunjuk oleh deletedValue akan diassign dengan nilai
    yang sebelumnya dihapus. */
@@ -60,7 +60,7 @@ void sl_delete_at(StaticList* sl, SlEltype* deletedValue, int idx);
 /* Menghapus elemen pada akhir list.
 
    I.S. List tidak kosong.
-   
+
    F.S. Elemen terakhir dihapus. Bila deletedValue tidak bernilai NULL,
    alamat yang ditunjuk oleh deletedValue akan diassign dengan nilai
    yang sebelumnya dihapus.*/

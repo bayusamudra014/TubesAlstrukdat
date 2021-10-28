@@ -1,8 +1,7 @@
 #ifndef H_STACK
 #define H_STACK
 
-#include "../boolean.h"
-#include "../item/item.h"
+#include "../structure.h"
 
 #define S_MAX_SIZE 100
 #define IDX_UNDEF -1

@@ -1,7 +1,9 @@
 #ifndef H_ORDER
 #define H_ORDER
 
-#include "../lib.h"
+#include "building/building.h"
+#include "item/item.h"
+#include "time/time.h"
 
 typedef struct order {
   int orderID;
@@ -10,5 +12,7 @@ typedef struct order {
   Building dropOff;
   Time incomingTime;
 } Order;
+
+boolean o_is_equal(Order order1, Order order2);
 
 #endif

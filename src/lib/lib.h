@@ -5,24 +5,15 @@
 #define IDX_UNDEF -1
 
 #include "boolean.h"
-#include "point/point.h"
-#include "item/item.h"
-#include "time/time.h"
-#include "building/building.h"
-#include "order/order.h"
-#include "node/node.h"
+#include "prototype/prototype.h"
+#include "structure/structure.h"
 
 /* ADT Struktur Data */
 #include "charmachine/charmachine.h"
-#include "console/console.h"
-#include "dynamiclist/dynamiclist.h"
-#include "file/file.h"
-#include "gadget/gadget.h"
-#include "linkedlist/linkedlist.h"
-#include "matrix/matrix.h"
-#include "queue/queue.h"
-#include "stack/stack.h"
-#include "staticlist/staticlist.h"
 #include "wordmachine/wordmachine.h"
+
+// Console
+#include "console/console.h"
+#include "file/file.h"
 
 #endif

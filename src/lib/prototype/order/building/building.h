@@ -1,7 +1,8 @@
 #ifndef H_BUILDING
 #define H_BUILDING
 
-#include "../lib.h"
+#include "../../../boolean.h"
+#include "point/point.h"
 
 typedef struct building {
   Point position;
@@ -10,7 +11,7 @@ typedef struct building {
 
 /**
  * Dibuat untuk testing point dan dynamic list
- * 
+ *
  * Membuat Building dengan koordinat x, y dan
  * memiliki label lab
  */
@@ -18,7 +19,7 @@ void b_create_building(Building* B, int x, int y, char lab);
 
 /**
  * Diperlukan di fungsi dl_index_of
- * 
+ *
  * Menghasilkan true jika Koordinat dan
  * Label kedua building sama
  */

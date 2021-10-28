@@ -1,12 +1,12 @@
 #ifndef H_LINKED_LIST
 #define H_LINKED_LIST
 
-#include "../lib.h"
+#include "../structure.h"
 
 typedef struct node* LinkedList;
 
 typedef Order LlEltype;
-#define IDX_UNDEF (-1)
+
 #define FIRST(ll) (ll)
 
 /* Konstrukror List Dinamis */

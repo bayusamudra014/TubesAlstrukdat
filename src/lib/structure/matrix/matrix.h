@@ -3,7 +3,7 @@
 
 #define M_MAX_SIZE 30
 
-#include "../lib.h"
+#include "../structure.h"
 
 typedef boolean MEltype;
 typedef struct matrix {
@@ -12,9 +12,9 @@ typedef struct matrix {
   MEltype buffer[M_MAX_SIZE][M_MAX_SIZE];
 } Matrix;
 
-/* Membentuk sebuah Matrix "kosong" yang siap diisi berukuran nRow x nCol di "ujung kiri" memori 
-   I.S. row dan cols adalah valid untuk memori matriks yang dibuat 
-   F.S. Matriks m sesuai dengan definisi di atas terbentuk */
+/* Membentuk sebuah Matrix "kosong" yang siap diisi berukuran nRow x nCol di
+   "ujung kiri" memori I.S. row dan cols adalah valid untuk memori matriks yang
+   dibuat F.S. Matriks m sesuai dengan definisi di atas terbentuk */
 void m_create_matrix(Matrix* m, int row, int cols);
 
 /* Selektor untuk mengakses element matriks pada baris i dan kolom j */

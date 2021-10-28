@@ -1,7 +1,7 @@
 #ifndef H_NODE
 #define H_NODE
 
-#include "../lib.h"
+#include "../structure.h"
 
 typedef struct node {
   Order payload;

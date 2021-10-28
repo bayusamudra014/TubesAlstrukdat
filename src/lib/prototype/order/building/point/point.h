@@ -1,7 +1,7 @@
 #ifndef H_POINT
 #define H_POINT
 
-#include "../lib.h"
+#include "../../../../boolean.h"
 
 typedef struct point {
   int x;
@@ -17,7 +17,7 @@ void p_create_point(Point* titik, int x, int y);
 #define p_getY(p) (p).y
 
 /**
- * Return true jika 
+ * Return true jika
  * x dan y dari P1 dan P2 sama
  */
 boolean p_is_equal(Point P1, Point P2);

@@ -1,6 +1,6 @@
 #include <check.h>
 
-#include "../../src/lib/lib.h"
+#include "../../src/lib/structure/staticlist/staticlist.h"
 
 #ifndef H_STATIC_LIST_TEST
 #define H_STATIC_LIST_TEST
