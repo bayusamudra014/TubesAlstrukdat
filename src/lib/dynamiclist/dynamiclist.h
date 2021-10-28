@@ -14,8 +14,20 @@ typedef struct dynamiclist {
 /* Konstrukror List Dinamis */
 void dl_create_list(DynamicList* dl, int size);
 
+/**
+ * Mengubah ukuran buffer DynamicList
+ * 
+ * addSize adalah tambahan ukuran yang baru
+ */
+void dl_resize_list(DynamicList* dl, int addSize);
+
+/**
+ * Membebaskan hasil malloc di buffer
+ */
+void dl_free_list(DynamicList* dl);
+
 /* Selektor untuk mengakses element pada dynamic list */
-#define dl_elmt(dl, i) dl.buffer[i]
+#define dl_elmt(dl, i) (dl).buffer[i]
 
 /* Menghitung jumlah elemen yang berada pada dynamic list */
 int dl_length(DynamicList dl);
@@ -29,7 +41,8 @@ boolean dl_is_empty(DynamicList dl);
 /* Mengembalikan true bila list statis penuh */
 boolean dl_is_full(DynamicList dl);
 
-/* Mengembalikan nilai indeks dari list statis */
+/* Mengembalikan nilai indeks dari kemunculan
+   pertama value di list statis */
 int dl_index_of(DynamicList dl, DlEltype value);
 
 /* Menambahkan elemen baru di awal list */
