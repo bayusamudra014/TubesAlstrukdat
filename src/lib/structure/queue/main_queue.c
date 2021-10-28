@@ -29,9 +29,6 @@ QEltype CreateOrder(){
   DropOff.position.x = 4;
   DropOff.position.y = 5;
 
-  
-  
-
   order.dropOff = DropOff;
   order.pickUp = PickUp;
   order.item = item;
@@ -41,8 +38,6 @@ QEltype CreateOrder(){
   return order;
 
 }
-
-
 
 int main() {
   
