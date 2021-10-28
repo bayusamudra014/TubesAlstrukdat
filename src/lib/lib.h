@@ -1,9 +1,6 @@
 #ifndef H_LIB
 #define H_LIB
 
-#define VAL_UNDEF -1
-#define IDX_UNDEF -1
-
 #include "boolean.h"
 #include "prototype/prototype.h"
 #include "structure/structure.h"

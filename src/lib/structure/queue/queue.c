@@ -1,5 +1,6 @@
+#include "queue.h"
+
 #include <stdio.h>
-#include "../lib.h"
 
 // /*Konstruktor*/
 // /* I.S. sembarang */
@@ -13,27 +14,24 @@ void q_create_queue(Queue* q) {
 }
 
 /* Mengirim true jika q kosong: lihat definisi di atas */
-boolean q_is_empty(Queue q){
-
+boolean q_is_empty(Queue q) {
   return ((Q_IDX_HEAD(q) == IDX_UNDEF) && (Q_IDX_TAIL(q) == IDX_UNDEF));
 }
 
 /* Mengirim true jika tabel penampung elemen q sudah penuh */
 /* yaitu jika index head bernilai 0 dan index tail bernilai Q_SIZE-1 */
-boolean q_is_full(Queue q){
-
-  return((Q_IDX_HEAD(q) == 0) && (Q_IDX_TAIL(q) == Q_SIZE-1));
+boolean q_is_full(Queue q) {
+  return ((Q_IDX_HEAD(q) == 0) && (Q_IDX_TAIL(q) == Q_SIZE - 1));
 }
 
 /* Mengirimkan banyaknya elemen queue. Mengirimkan 0 jika q kosong. */
-int q_length(Queue q){
-
+int q_length(Queue q) {
   int q_length;
 
-  if(q_is_empty(q)){
+  if (q_is_empty(q)) {
     q_length = 0;
-  }else{
-    q_length = (Q_IDX_TAIL(q)-Q_IDX_HEAD(q)+1);
+  } else {
+    q_length = (Q_IDX_TAIL(q) - Q_IDX_HEAD(q) + 1);
   }
 
   return q_length;
@@ -45,49 +43,45 @@ int q_length(Queue q){
         Jika pq penuh semu, maka perlu dilakukan aksi penggeseran "maju"
         elemen-elemen pq menjadi rata kiri untuk membuat ruang kosong bagi
         TAIL baru
-        prioritas queue berdasarkan waktu kedatangan order. 
+        prioritas queue berdasarkan waktu kedatangan order.
 */
-void q_enqueue(Queue* q, QEltype order){
-
-  
+void q_enqueue(Queue* q, QEltype order) {
   boolean found;
 
-  if(q_is_empty(*q)){
+  if (q_is_empty(*q)) {
     Q_IDX_HEAD(*q) = 0;
     Q_IDX_TAIL(*q) = 0;
     Q_TAIL(*q) = order;
-  }else{
-    //Apabila queue nya penuh semu
-    if (Q_IDX_TAIL(*q) == Q_SIZE-1){
-      for (int i = Q_IDX_HEAD(*q);i <= Q_IDX_TAIL(*q); i++){
-        (*q).buffer[i-Q_IDX_HEAD(*q)] = (*q).buffer[i];
+  } else {
+    // Apabila queue nya penuh semu
+    if (Q_IDX_TAIL(*q) == Q_SIZE - 1) {
+      for (int i = Q_IDX_HEAD(*q); i <= Q_IDX_TAIL(*q); i++) {
+        (*q).buffer[i - Q_IDX_HEAD(*q)] = (*q).buffer[i];
       }
       Q_IDX_TAIL(*q) -= Q_IDX_HEAD(*q);
       Q_IDX_HEAD(*q) = 0;
     }
-        
+
     int i = Q_IDX_HEAD(*q);
     found = false;
 
-    while((i <= Q_IDX_TAIL(*q)) && (!found)){
-      if((*q).buffer[i].incomingTime > order.incomingTime){
+    while ((i <= Q_IDX_TAIL(*q)) && (!found)) {
+      if ((*q).buffer[i].incomingTime > order.incomingTime) {
         found = true;
-      }else{
+      } else {
         i++;
       }
     }
 
     Q_IDX_TAIL(*q)++;
-    if (!found){
+    if (!found) {
       Q_TAIL(*q) = order;
-    }else{
-      for(int j = Q_IDX_TAIL(*q); j>=i; j--){
-        (*q).buffer[j+1] = (*q).buffer[j];
+    } else {
+      for (int j = Q_IDX_TAIL(*q); j >= i; j--) {
+        (*q).buffer[j + 1] = (*q).buffer[j];
       }
       (*q).buffer[i] = order;
     }
-
-
   }
 }
 
@@ -96,25 +90,18 @@ void q_enqueue(Queue* q, QEltype order){
 /* F.S. val = nilai elemen HEAD pd
 I.S., HEAD dan IDX_HEAD "mundur";
          pq mungkin kosong */
-void q_dequeue(Queue *q, QEltype *order){
-
+void q_dequeue(Queue* q, QEltype* order) {
   *order = Q_HEAD(*q);
-    if (Q_IDX_HEAD(*q) == Q_IDX_TAIL(*q)){
-        Q_IDX_HEAD(*q) = IDX_UNDEF;
-        Q_IDX_TAIL(*q) = IDX_UNDEF;
-    }else{
-        Q_IDX_HEAD(*q)++;
-    }
+  if (Q_IDX_HEAD(*q) == Q_IDX_TAIL(*q)) {
+    Q_IDX_HEAD(*q) = IDX_UNDEF;
+    Q_IDX_TAIL(*q) = IDX_UNDEF;
+  } else {
+    Q_IDX_HEAD(*q)++;
+  }
 }
 
 /*Getter elemen head dari queue*/
-QEltype q_get_head(Queue q){
-  return (Q_HEAD(q));
-}
+QEltype q_get_head(Queue q) { return (Q_HEAD(q)); }
 
 /*Getter elemen tail dari queue*/
-QEltype q_get_tail(Queue q){
-
-  return Q_TAIL(q);
-
-}
+QEltype q_get_tail(Queue q) { return Q_TAIL(q); }

@@ -1,4 +1,4 @@
-// #include "linkedlist.h"
+#include "linkedlist.h"
 
 // void ll_create_list(LinkedList* ll){
 //     FIRST(*ll) = NULL;

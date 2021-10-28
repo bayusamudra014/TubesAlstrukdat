@@ -1,6 +1,9 @@
 #ifndef H_PROTOTYPE
 #define H_PROTOTYPE
 
+#define VAL_UNDEF -1
+#define IDX_UNDEF -1
+
 #include "../boolean.h"
 #include "../prototype/prototype.h"
 
