@@ -1,5 +1,5 @@
 #include "stdio.h"
-#include "../lib.h"
+#include "../structure.h"
 
 
 SEltype CreateItem(){

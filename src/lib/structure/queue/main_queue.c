@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "../lib.h"
+#include "../structure.h"
 
 
 //CreateOrder dummy buat ngetest prioqueue berdasarkan waktu kedatangan
