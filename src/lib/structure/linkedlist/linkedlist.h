@@ -10,9 +10,9 @@ typedef Order LlEltype;
 #define FIRST(ll) (ll)
 
 /* Konstrukror List Dinamis */
-void ll_create_list(LinkedList* ll);
+void ll_create_list(LinkedList *ll);
 
-void ll_set_elmt(LinkedList* ll, int idx, LlEltype value);
+void ll_set_elmt(LinkedList *ll, int idx, LlEltype value);
 
 LlEltype ll_get_elmt(LinkedList ll, int idx);
 
@@ -29,10 +29,10 @@ int ll_index_of(LinkedList ll, LlEltype value);
 void ll_insert_first(LinkedList* ll, LlEltype value);
 
 /* Menambahkan elemen pada indeks tertentu */
-void ll_insert_at(LinkedList* ll, LlEltype value, int idx);
+void ll_insert_at(LinkedList *ll, LlEltype value, int idx);
 
 /* Menambahkan elemen pada akhir list */
-void ll_insert_last(LinkedList* ll, LlEltype value);
+void ll_insert_last(LinkedList *ll, LlEltype value);
 
 /* Menghapus elemen di awal list.
 
@@ -41,7 +41,7 @@ void ll_insert_last(LinkedList* ll, LlEltype value);
    F.S. Elemen pertama dihapus. Bila deletedValue tidak bernilai NULL,
    alamat yang ditunjuk oleh deletedValue akan diassign dengan nilai
    yang sebelumnya dihapus. */
-void ll_delete_first(LinkedList* ll, LlEltype* deletedValue);
+void ll_delete_first(LinkedList *ll, LlEltype *deletedValue);
 
 /* Menghapus elemen di awal list.
 
@@ -50,7 +50,7 @@ void ll_delete_first(LinkedList* ll, LlEltype* deletedValue);
    F.S. Elemen pada index idx dihapus, bila deletedValue tidak bernilai NULL,
    alamat yang dithunjuk oleh deletedValue akan diassign dengan nilai
    yang sebelumnya dihapus. */
-void ll_delete_at(LinkedList* ll, LlEltype* deletedValue, int idx);
+void ll_delete_at(LinkedList *ll, LlEltype  *deletedValue, int idx);
 
 /* Menghapus elemen pada akhir list.
 
@@ -59,6 +59,10 @@ void ll_delete_at(LinkedList* ll, LlEltype* deletedValue, int idx);
    F.S. Elemen terakhir dihapus. Bila deletedValue tidak bernilai NULL,
    alamat yang ditunjuk oleh deletedValue akan diassign dengan nilai
    yang sebelumnya dihapus.*/
-void ll_delete_last(LinkedList* ll, LlEltype* deletedValue);
+void ll_delete_last(LinkedList  *ll, LlEltype  *deletedValue);
+
+
+//Mencetak list
+void ll_display_list(LinkedList ll);
 
 #endif

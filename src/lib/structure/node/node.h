@@ -3,6 +3,7 @@
 
 #include "../structure.h"
 
+
 typedef struct node {
   Order payload;
   struct node* next;
@@ -11,7 +12,7 @@ typedef struct node {
 #define INFO(p) (p)->payload
 #define NEXT(p) (p)->next
 
-void n_create_node(Node* n, Order payload);
-void n_delete_node(Node* n);
+struct node* n_create_node(Order payload);
+struct node* n_delete_node();
 
 #endif
