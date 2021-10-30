@@ -1,8 +1,8 @@
 #include "linkedlist.h"
 
-// void ll_create_list(LinkedList* ll){
-//     FIRST(*ll) = NULL;
-// }
+//void ll_create_list(LinkedList* ll){
+//    FIRST(*ll) = NULL;
+//}
 
 // boolean isEmpty(LinkedList* ll){
 //     return (FIRST(ll) == NULL);
