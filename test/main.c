@@ -8,6 +8,7 @@
 #include "wordmachine/test.h"
 #include "point/test.h"
 #include "dynamiclist/test.h"
+#include "todolist/test.h"
 
 int main(int argc, char* argv[]) {
   int no_failed = 0;
@@ -20,6 +21,7 @@ int main(int argc, char* argv[]) {
   srunner_add_suite(run, suite_matrix());
   srunner_add_suite(run, suite_point());
   srunner_add_suite(run, suite_dynamic_list());
+  srunner_add_suite(run, suite_td());
 
   if (argc > 1) {
     if (!strcmp(argv[1], "-tno-fork")) {

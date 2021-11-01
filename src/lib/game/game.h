@@ -2,7 +2,8 @@
 #define H_GAME
 
 
-#include "./structure/structure.h"
+#include "../structure/structure.h"
+#include "td_list/td_list.h"
 
 
 
