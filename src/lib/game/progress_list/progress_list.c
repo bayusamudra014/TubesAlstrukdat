@@ -18,7 +18,6 @@ boolean pl_is_empty(ProgressList pl){
     return ll_is_empty(pl);
 }
 
-
 /*Menambahkan order baru kedalam progress list*/
 /*order baru tersebut menjadi elemen terakhir dari progress list*/
 void pl_insert_last(ProgressList *pl, PlElType order){
@@ -35,13 +34,17 @@ void pl_delete_first(ProgressList *pl, PlElType *order){
     ll_delete_first(*pl, &order);
 }
 
+/*Mengembalikan panjang dari progress list*/
+int pl_length(ProgressList pl){
+
+    return ll_length(pl);
+
+}
+
+
 /*Menampilkan isi progress list ke layar*/
 void pl_display_progress(ProgressList pl){
-    Order order;
-    char tujuan;
-    char typeItem;
-
-    tujuan = order.dropOff.label;
-    typeItem = order.item.type;
+    
+    ll_display_list(pl);
 
 }

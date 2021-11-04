@@ -3,7 +3,7 @@
 
 int main(){
 
-    printf("Ini driver buat to do list");
+    printf("Ini driver buat progress list");
 
     return 0;
 }

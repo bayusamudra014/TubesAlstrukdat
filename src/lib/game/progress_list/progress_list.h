@@ -24,4 +24,7 @@ void pl_delete_first(ProgressList *pl, PlElType *order);
 /*Menampilkan isi progress list ke layar*/
 void pl_display_progress(ProgressList pl);
 
+/*Mengembalikan panjang dari progress list*/
+int pl_length(ProgressList pl);
+
 #endif
