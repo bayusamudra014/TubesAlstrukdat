@@ -1,10 +1,10 @@
 #ifndef H_PROGRESS_LIST
 #define H_PROGRESS_LIST
 
-#include "game.h"
+#include "../game.h"
 
 typedef LinkedList ProgressList;
- 
+
 typedef Order PlElType;
 
 /*Membuat progress list yang baru*/
@@ -23,12 +23,5 @@ void pl_delete_first(ProgressList *pl, PlElType *order);
 
 /*Menampilkan isi progress list ke layar*/
 void pl_display_progress(ProgressList pl);
-
-
-
-
-
-
-
 
 #endif
