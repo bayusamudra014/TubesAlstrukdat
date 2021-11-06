@@ -18,8 +18,7 @@ void ll_create_list(LinkedList *ll);
 /* F.S. Mengubah elemen l pada indeks ke-idx menjadi val */
 void ll_set_elmt(LinkedList *ll, int idx, LlEltype value);
 
-/* I.S. l terdefinisi, idx indeks yang valid dalam l, yaitu 0..length(l) */
-/* F.S. Mengembalikan nilai elemen l pada indeks idx */
+/* Mengembalikan nilai elemen l pada indeks idx */
 LlEltype ll_get_elmt(LinkedList ll, int idx);
 
 /* Menghitung jumlah elemen yang berada pada dynamic list */
