@@ -6,8 +6,14 @@
 
 typedef struct StatusGame{
 
+    ProgressList Progress_List;
+    ToDoList ToDoList;
     
 
 }StatusGame;
+
+extern StatusGame s_status_game;
+
+
 
 #endif
