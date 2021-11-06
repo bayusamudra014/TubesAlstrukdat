@@ -6,8 +6,14 @@ void ll_create_list(LinkedList *ll){
     FIRST(*ll) = NULL;
 }
 
-boolean ll_is_empty(LinkedList ll){
-    return (FIRST(ll) == NULL);
+void ll_set_elmt(LinkedList *ll, int idx, LlEltype value){
+    int cnt = 0;
+    struct node* p = FIRST(*ll);
+    while (cnt < idx){
+        cnt++;
+        p = NEXT(p);
+    }
+    INFO(p) = value;
 }
 
 LlEltype ll_get_elmt(LinkedList ll, int idx){
@@ -20,14 +26,19 @@ LlEltype ll_get_elmt(LinkedList ll, int idx){
     return INFO(p);
 }
 
-void ll_set_elmt(LinkedList *ll, int idx, LlEltype value){
+int ll_length(LinkedList ll) {
+    
     int cnt = 0;
-    struct node* p = FIRST(*ll);
-    while (cnt < idx){
+    struct node* p = FIRST(ll);
+    while (p != NULL){
         cnt++;
         p = NEXT(p);
     }
-    INFO(p) = value;
+    return cnt;
+}
+
+boolean ll_is_empty(LinkedList ll){
+    return (FIRST(ll) == NULL);
 }
 
 int ll_index_of(LinkedList ll, LlEltype value){
@@ -63,22 +74,6 @@ void ll_insert_first(LinkedList *ll, LlEltype value){
     }
 }
 
-void ll_insert_last(LinkedList *ll, LlEltype value){
-    
-    if (ll_is_empty(*ll)){
-        FIRST(*ll) = n_create_node(value);
-    }
-    else{
-        struct node* p = n_create_node(value);
-        
-        struct node* last = FIRST(*ll);
-        while (NEXT(last) != NULL){
-            last = NEXT(last);
-        }
-        NEXT(last) = p;
-    }
-}
-
 void ll_insert_at(LinkedList* ll, LlEltype value, int idx){
     
     if (idx == 0){
@@ -100,6 +95,22 @@ void ll_insert_at(LinkedList* ll, LlEltype value, int idx){
     }
 }
 
+void ll_insert_last(LinkedList *ll, LlEltype value){
+    
+    if (ll_is_empty(*ll)){
+        FIRST(*ll) = n_create_node(value);
+    }
+    else{
+        struct node* p = n_create_node(value);
+        
+        struct node* last = FIRST(*ll);
+        while (NEXT(last) != NULL){
+            last = NEXT(last);
+        }
+        NEXT(last) = p;
+    }
+}
+
 void ll_delete_first(LinkedList *ll, LlEltype *deletedValue){
     
     struct node* p = FIRST(*ll);
@@ -107,24 +118,7 @@ void ll_delete_first(LinkedList *ll, LlEltype *deletedValue){
     FIRST(*ll) = NEXT(p);
 }
 
-void ll_delete_last(LinkedList *ll, LlEltype *deletedValue){
-    
-    struct node* p = FIRST(*ll);
-    struct node* loc = NULL;
-    
-    if (NEXT(p) == NULL){
-        ll_delete_first(ll, deletedValue);
-    }else{
-        while (NEXT(p) != NULL){
-            loc = p;
-            p = NEXT(p);
-        }
-        NEXT(loc) = NULL;
-        (*deletedValue) = INFO(p);    
-    }
-}
-
- void ll_delete_at(LinkedList *ll, LlEltype *deletedValue, int idx){
+void ll_delete_at(LinkedList *ll, LlEltype *deletedValue, int idx){
     
     if (idx == 0){
         ll_delete_first(ll, deletedValue);
@@ -142,15 +136,21 @@ void ll_delete_last(LinkedList *ll, LlEltype *deletedValue){
     }
 }
 
-int ll_length(LinkedList ll) {
+void ll_delete_last(LinkedList *ll, LlEltype *deletedValue){
     
-    int cnt = 0;
-    struct node* p = FIRST(ll);
-    while (p != NULL){
-        cnt++;
-        p = NEXT(p);
+    struct node* p = FIRST(*ll);
+    struct node* loc = NULL;
+    
+    if (NEXT(p) == NULL){
+        ll_delete_first(ll, deletedValue);
+    }else{
+        while (NEXT(p) != NULL){
+            loc = p;
+            p = NEXT(p);
+        }
+        NEXT(loc) = NULL;
+        (*deletedValue) = INFO(p);    
     }
-    return cnt;
 }
 
 void ll_display_list(LinkedList ll){

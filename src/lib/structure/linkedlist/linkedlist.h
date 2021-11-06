@@ -10,10 +10,16 @@ typedef Order LlEltype;
 #define FIRST(ll) (ll)
 
 /* Konstrukror List Dinamis */
+/* I.S. sembarang             */
+/* F.S. Terbentuk list kosong */
 void ll_create_list(LinkedList *ll);
 
+/* I.S. l terdefinisi, idx indeks yang valid dalam l, yaitu 0..length(l) */
+/* F.S. Mengubah elemen l pada indeks ke-idx menjadi val */
 void ll_set_elmt(LinkedList *ll, int idx, LlEltype value);
 
+/* I.S. l terdefinisi, idx indeks yang valid dalam l, yaitu 0..length(l) */
+/* F.S. Mengembalikan nilai elemen l pada indeks idx */
 LlEltype ll_get_elmt(LinkedList ll, int idx);
 
 /* Menghitung jumlah elemen yang berada pada dynamic list */
@@ -63,6 +69,12 @@ void ll_delete_last(LinkedList  *ll, LlEltype  *deletedValue);
 
 
 //Mencetak list
+// void printInfo(List l);
+/* I.S. List mungkin kosong */
+/* F.S. Jika list tidak kosong, iai list dicetak ke kanan: [e1,e2,...,en] */
+/* Contoh : jika ada tiga elemen bernilai 1, 20, 30 akan dicetak: [1,20,30] */
+/* Jika list kosong : menulis [] */
+/* Tidak ada tambahan karakter apa pun di awal, akhir, atau di tengah */
 void ll_display_list(LinkedList ll);
 
 #endif
