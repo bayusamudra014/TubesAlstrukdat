@@ -1,6 +1,6 @@
 #include "gadget.h"
 
-char g_get_name(int type){
+Gadget g_get_name(int type){
     if (type == 1){
         return "Kain Pembungkus Waktu";
     }
