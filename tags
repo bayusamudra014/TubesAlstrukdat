@@ -46,6 +46,7 @@ BG_YELLOW	src/lib/console/pcolor/pcolor.h	/^#define BG_YELLOW /;"	d
 BIG_ENDIAN	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@endian.h	/^# define BIG_ENDIAN	/;"	d
 BIN_OBJ	Makefile	/^BIN_OBJ = $(patsubst %.c,build\/%.o,$(BIN_SRC))$/;"	m
 BIN_SRC	Makefile	/^BIN_SRC = $(shell find src -name "*.c")$/;"	m
+BUFSIZ	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#define BUFSIZ /;"	d
 BUILD_FLAG	Makefile	/^BUILD_FLAG = -lm$/;"	m
 BUILD_SRC	Makefile	/^BUILD_SRC = .\/build\/src$/;"	m
 BUILD_TEST	Makefile	/^BUILD_TEST = .\/build\/test$/;"	m
@@ -70,6 +71,7 @@ DlEltype	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@dy
 DlEltype	src/lib/structure/dynamiclist/dynamiclist.h	/^typedef Building DlEltype;$/;"	t	typeref:typename:Building
 DynamicList	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@dynamiclist@dynamiclist.h	/^} DynamicList;$/;"	t	typeref:struct:dynamiclist
 DynamicList	src/lib/structure/dynamiclist/dynamiclist.h	/^} DynamicList;$/;"	t	typeref:struct:dynamiclist
+EOF	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#define EOF /;"	d
 EXEC_PATH	run_adt.ps1	/^      $EXEC_PATH = $RESULT[0].FullName$/;"	v
 EXIT_FAILURE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^#define	EXIT_FAILURE	/;"	d
 EXIT_SUCCESS	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^#define	EXIT_SUCCESS	/;"	d
@@ -79,9 +81,12 @@ FD_ISSET	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@se
 FD_SET	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@select.h	/^#define	FD_SET(/;"	d
 FD_SETSIZE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@select.h	/^#define	FD_SETSIZE	/;"	d
 FD_ZERO	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@select.h	/^#define	FD_ZERO(/;"	d
+FILE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@FILE.h	/^typedef struct _IO_FILE FILE;$/;"	t	typeref:struct:_IO_FILE
+FILENAME_MAX	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@stdio_lim.h	/^#define FILENAME_MAX /;"	d
 FILE_LOCATION	run_adt.ps1	/^    $FILE_LOCATION = $LOCATION[0].FullName$/;"	v
 FIRST	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@linkedlist@linkedlist.h	/^#define FIRST(/;"	d
 FIRST	src/lib/structure/linkedlist/linkedlist.h	/^#define FIRST(/;"	d
+FOPEN_MAX	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@stdio_lim.h	/^#define FOPEN_MAX /;"	d
 Gadget	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@prototype@gadget@gadget.h	/^typedef char Gadget;$/;"	t	typeref:typename:char
 Gadget	src/lib/prototype/gadget/gadget.h	/^typedef char Gadget;$/;"	t	typeref:typename:char
 H_BOOLEAN	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@boolean.h	/^#define H_BOOLEAN$/;"	d
@@ -101,6 +106,7 @@ H_GADGET	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@prototype@ga
 H_GADGET	src/lib/prototype/gadget/gadget.h	/^#define H_GADGET$/;"	d
 H_GAME	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@game.h	/^#define H_GAME$/;"	d
 H_GAME	src/lib/game/game.h	/^#define H_GAME$/;"	d
+H_INVENTORY_GADGET	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@inventory_gadget@inventory_gadget.h	/^#define H_INVENTORY_GADGET$/;"	d
 H_INVENTORY_GADGET	src/lib/game/inventory_gadget/inventory_gadget.h	/^#define H_INVENTORY_GADGET$/;"	d
 H_ITEM	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@prototype@order@item@item.h	/^#define H_ITEM$/;"	d
 H_ITEM	src/lib/prototype/order/item/item.h	/^#define H_ITEM$/;"	d
@@ -114,6 +120,8 @@ H_NODE	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@node
 H_NODE	src/lib/structure/node/node.h	/^#define H_NODE$/;"	d
 H_ORDER	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@prototype@order@order.h	/^#define H_ORDER$/;"	d
 H_ORDER	src/lib/prototype/order/order.h	/^#define H_ORDER$/;"	d
+H_ORDER_LIST	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@orderlist@orderlist.h	/^#define H_ORDER_LIST$/;"	d
+H_ORDER_LIST	src/lib/game/orderlist/orderlist.h	/^#define H_ORDER_LIST$/;"	d
 H_PCOLOR	src/lib/console/pcolor/pcolor.h	/^#define H_PCOLOR$/;"	d
 H_POINT	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@prototype@order@building@point@point.h	/^#define H_POINT$/;"	d
 H_POINT	src/lib/prototype/order/building/point/point.h	/^#define H_POINT$/;"	d
@@ -154,6 +162,9 @@ Kompilasi dan Run Program	README.md	/^## Kompilasi dan Run Program$/;"	s	chapter
 LITTLE_ENDIAN	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@endian.h	/^# define LITTLE_ENDIAN	/;"	d
 LOCATION	run_adt.ps1	/^  $LOCATION = Get-ChildItem -Path ".\/src" -Recurse main_$ADT_NAME.c$/;"	v
 LT_OBJDIR	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^#define LT_OBJDIR /;"	d
+L_ctermid	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@stdio_lim.h	/^# define L_ctermid /;"	d
+L_cuserid	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@stdio_lim.h	/^#  define L_cuserid /;"	d
+L_tmpnam	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@stdio_lim.h	/^#define L_tmpnam /;"	d
 LinkedList	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@linkedlist@linkedlist.h	/^typedef struct node* LinkedList;$/;"	t	typeref:struct:node *
 LinkedList	src/lib/structure/linkedlist/linkedlist.h	/^typedef struct node* LinkedList;$/;"	t	typeref:struct:node *
 LlEltype	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@linkedlist@linkedlist.h	/^typedef Order LlEltype;$/;"	t	typeref:typename:Order
@@ -188,6 +199,7 @@ OrderList	src/lib/game/orderlist/orderlist.h	/^typedef Queue OrderList;$/;"	t	ty
 PDP_ENDIAN	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@endian.h	/^# define PDP_ENDIAN	/;"	d
 PRJOCET_BIN	Makefile	/^PRJOCET_BIN = listpost$/;"	m
 PROJECT_MANAGER	Makefile	/^PROJECT_MANAGER = project$/;"	m
+P_tmpdir	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^# define P_tmpdir	/;"	d
 Pembuatan Prosedur atau Fungsi Implementasi	CONTRIBUTE.md	/^### Pembuatan Prosedur atau Fungsi Implementasi$/;"	S	section:Traktat Kontribusi""Penulisan Program
 Penamaan	CONTRIBUTE.md	/^### Penamaan$/;"	S	section:Traktat Kontribusi""Penulisan Program
 Penulisan Program	CONTRIBUTE.md	/^## Penulisan Program$/;"	s	chapter:Traktat Kontribusi
@@ -213,7 +225,15 @@ Q_TAIL	src/lib/structure/queue/queue.h	/^#define     Q_TAIL(/;"	d
 Queue	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@queue@queue.h	/^} Queue;$/;"	t	typeref:struct:queue
 Queue	src/lib/structure/queue/queue.h	/^} Queue;$/;"	t	typeref:struct:queue
 RAND_MAX	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^#define	RAND_MAX	/;"	d
+RENAME_EXCHANGE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^# define RENAME_EXCHANGE /;"	d
+RENAME_NOREPLACE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^# define RENAME_NOREPLACE /;"	d
+RENAME_WHITEOUT	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^# define RENAME_WHITEOUT /;"	d
 RESULT	run_adt.ps1	/^    $RESULT = Get-ChildItem -Path ".\/bin" ADT_RUNNER*$/;"	v
+SEEK_CUR	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#define SEEK_CUR	/;"	d
+SEEK_DATA	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^# define SEEK_DATA	/;"	d
+SEEK_END	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#define SEEK_END	/;"	d
+SEEK_HOLE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^# define SEEK_HOLE	/;"	d
+SEEK_SET	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#define SEEK_SET	/;"	d
 SEltype	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@stack@stack.h	/^typedef Item SEltype;$/;"	t	typeref:typename:Item
 SEltype	src/lib/structure/stack/stack.h	/^typedef Item SEltype;$/;"	t	typeref:typename:Item
 SL_CAPACITY	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@staticlist@staticlist.h	/^#define SL_CAPACITY /;"	d
@@ -305,6 +325,7 @@ TEXT_NORMAL	src/lib/console/pcolor/pcolor.h	/^#define TEXT_NORMAL /;"	d
 TEXT_RED	src/lib/console/pcolor/pcolor.h	/^#define TEXT_RED /;"	d
 TEXT_WHITE	src/lib/console/pcolor/pcolor.h	/^#define TEXT_WHITE /;"	d
 TEXT_YELLOW	src/lib/console/pcolor/pcolor.h	/^#define TEXT_YELLOW /;"	d
+TMP_MAX	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@stdio_lim.h	/^#define TMP_MAX /;"	d
 Tas	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@tas@tas.h	/^} Tas;$/;"	t	typeref:struct:tas
 Tas	src/lib/game/tas/tas.h	/^} Tas;$/;"	t	typeref:struct:tas
 Testing Unit Test	README.md	/^### Testing Unit Test$/;"	S	section:Mobilita""Kompilasi dan Run Program
@@ -333,6 +354,7 @@ WSTOPPED	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@w
 WSTOPSIG	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^# define WSTOPSIG(/;"	d
 WTERMSIG	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^# define WTERMSIG(/;"	d
 WUNTRACED	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@waitflags.h	/^#define	WUNTRACED	/;"	d
+Waktu_Permainan	src/lib/status_game/status_game.h	/^    Time Waktu_Permainan;$/;"	m	struct:StatusGame	typeref:typename:Time
 Word	src/lib/wordmachine/wordmachine.h	/^} Word;$/;"	t	typeref:struct:word
 _ALLOCA_H	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@alloca.h	/^#define	_ALLOCA_H	/;"	d
 _ATFILE_SOURCE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@features.h	/^# define _ATFILE_SOURCE	/;"	d
@@ -344,6 +366,7 @@ _BITS_FLOATN_H	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@
 _BITS_PTHREADTYPES_ARCH_H	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@pthreadtypes-arch.h	/^#define _BITS_PTHREADTYPES_ARCH_H	/;"	d
 _BITS_PTHREADTYPES_COMMON_H	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@pthreadtypes.h	/^# define _BITS_PTHREADTYPES_COMMON_H	/;"	d
 _BITS_STDINT_INTN_H	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@stdint-intn.h	/^#define _BITS_STDINT_INTN_H	/;"	d
+_BITS_STDIO_LIM_H	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@stdio_lim.h	/^#define _BITS_STDIO_LIM_H /;"	d
 _BITS_TIME64_H	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@time64.h	/^#define	_BITS_TIME64_H	/;"	d
 _BITS_TYPESIZES_H	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@typesizes.h	/^#define	_BITS_TYPESIZES_H	/;"	d
 _BITS_TYPES_H	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types.h	/^#define	_BITS_TYPES_H	/;"	d
@@ -764,6 +787,29 @@ _GLIBCXX_WEAK_DEFINITION	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@us
 _GLIBCXX_X86_RDRAND	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^#define _GLIBCXX_X86_RDRAND /;"	d
 _GLIBCXX_X86_RDSEED	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^#define _GLIBCXX_X86_RDSEED /;"	d
 _GTHREAD_USE_MUTEX_TIMEDLOCK	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^#define _GTHREAD_USE_MUTEX_TIMEDLOCK /;"	d
+_G_fpos64_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__fpos64_t.h	/^typedef struct _G_fpos64_t$/;"	s
+_G_fpos_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__fpos_t.h	/^typedef struct _G_fpos_t$/;"	s
+_IOFBF	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#define _IOFBF /;"	d
+_IOLBF	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#define _IOLBF /;"	d
+_IONBF	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#define _IONBF /;"	d
+_IO_EOF_SEEN	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^#define _IO_EOF_SEEN /;"	d
+_IO_ERR_SEEN	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^#define _IO_ERR_SEEN /;"	d
+_IO_FILE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^struct _IO_FILE$/;"	s
+_IO_FILE_complete	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^struct _IO_FILE_complete$/;"	s
+_IO_USER_LOCK	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^#define _IO_USER_LOCK /;"	d
+_IO_backup_base	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  char *_IO_backup_base;  \/* Pointer to first valid character of backup area *\/$/;"	m	struct:_IO_FILE	typeref:typename:char *
+_IO_buf_base	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  char *_IO_buf_base;	\/* Start of reserve area. *\/$/;"	m	struct:_IO_FILE	typeref:typename:char *
+_IO_buf_end	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  char *_IO_buf_end;	\/* End of reserve area. *\/$/;"	m	struct:_IO_FILE	typeref:typename:char *
+_IO_cookie_io_functions_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@cookie_io_functions_t.h	/^typedef struct _IO_cookie_io_functions_t$/;"	s
+_IO_lock_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^typedef void _IO_lock_t;$/;"	t	typeref:typename:void
+_IO_read_base	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  char *_IO_read_base;	\/* Start of putback+get area. *\/$/;"	m	struct:_IO_FILE	typeref:typename:char *
+_IO_read_end	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  char *_IO_read_end;	\/* End of get area. *\/$/;"	m	struct:_IO_FILE	typeref:typename:char *
+_IO_read_ptr	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  char *_IO_read_ptr;	\/* Current read pointer *\/$/;"	m	struct:_IO_FILE	typeref:typename:char *
+_IO_save_base	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  char *_IO_save_base; \/* Pointer to start of non-current get area. *\/$/;"	m	struct:_IO_FILE	typeref:typename:char *
+_IO_save_end	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  char *_IO_save_end; \/* Pointer to end of non-current get area. *\/$/;"	m	struct:_IO_FILE	typeref:typename:char *
+_IO_write_base	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  char *_IO_write_base;	\/* Start of put area. *\/$/;"	m	struct:_IO_FILE	typeref:typename:char *
+_IO_write_end	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  char *_IO_write_end;	\/* End of put area. *\/$/;"	m	struct:_IO_FILE	typeref:typename:char *
+_IO_write_ptr	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  char *_IO_write_ptr;	\/* Current put pointer. *\/$/;"	m	struct:_IO_FILE	typeref:typename:char *
 _ISOC11_SOURCE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@features.h	/^# define _ISOC11_SOURCE	/;"	d
 _ISOC2X_SOURCE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@features.h	/^# define _ISOC2X_SOURCE	/;"	d
 _ISOC95_SOURCE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@features.h	/^# define _ISOC95_SOURCE	/;"	d
@@ -787,6 +833,7 @@ _RWLOCK_INTERNAL_H	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@incl
 _SIGSET_NWORDS	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__sigset_t.h	/^#define _SIGSET_NWORDS /;"	d
 _SIZE_T	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stddef.h	/^#define _SIZE_T$/;"	d
 _STDC_PREDEF_H	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdc-predef.h	/^#define	_STDC_PREDEF_H	/;"	d
+_STDIO_H	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#define _STDIO_H	/;"	d
 _STDLIB_H	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^#define	_STDLIB_H	/;"	d
 _STRUCT_TIMESPEC	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_timespec.h	/^#define _STRUCT_TIMESPEC /;"	d
 _SYS_CDEFS_H	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@cdefs.h	/^#define	_SYS_CDEFS_H	/;"	d
@@ -795,6 +842,8 @@ _SYS_TYPES_H	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sy
 _Static_assert	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@cdefs.h	/^# define _Static_assert(/;"	d
 _THREAD_MUTEX_INTERNAL_H	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@struct_mutex.h	/^#define _THREAD_MUTEX_INTERNAL_H /;"	d
 _THREAD_SHARED_TYPES_H	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@thread-shared-types.h	/^#define _THREAD_SHARED_TYPES_H /;"	d
+_VA_LIST	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stdarg.h	/^#define _VA_LIST$/;"	d
+_VA_LIST_DEFINED	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#   define _VA_LIST_DEFINED$/;"	d
 _WCHAR_T	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stddef.h	/^#define _WCHAR_T$/;"	d
 _WCHAR_T_DEFINED	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stddef.h	/^#define _WCHAR_T_DEFINED$/;"	d
 _WINT_T	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stddef.h	/^#define _WINT_T$/;"	d
@@ -836,6 +885,8 @@ __FD_MASK	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@s
 __FD_SET	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@select.h	/^#define __FD_SET(/;"	d
 __FD_SETSIZE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@typesizes.h	/^#define __FD_SETSIZE	/;"	d
 __FD_ZERO	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@select.h	/^#define __FD_ZERO(/;"	d
+__FILE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__FILE.h	/^typedef struct _IO_FILE __FILE;$/;"	t	typeref:struct:_IO_FILE
+__FILE_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@FILE.h	/^#define __FILE_defined /;"	d
 __FLOAT_WORD_ORDER	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@endian.h	/^# define __FLOAT_WORD_ORDER /;"	d
 __FSBLKCNT64_T_TYPE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@typesizes.h	/^#define __FSBLKCNT64_T_TYPE	/;"	d
 __FSBLKCNT_T_TYPE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@typesizes.h	/^#define __FSBLKCNT_T_TYPE	/;"	d
@@ -845,6 +896,7 @@ __FSID_T_TYPE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@b
 __FSWORD_T_TYPE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@typesizes.h	/^# define __FSWORD_T_TYPE	/;"	d
 __GID_T_TYPE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@typesizes.h	/^#define __GID_T_TYPE	/;"	d
 __GLIBCXX__	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^#define __GLIBCXX__ /;"	d
+__GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#define __GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION$/;"	d
 __GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^#define __GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION$/;"	d
 __GLIBC_MINOR__	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@features.h	/^#define	__GLIBC_MINOR__	/;"	d
 __GLIBC_PREREQ	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@features.h	/^#define __GLIBC_PREREQ(/;"	d
@@ -860,6 +912,7 @@ __GLIBC_USE_ISOC2X	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@incl
 __GLIBC_USE_LIB_EXT2	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@libc-header-start.h	/^# define __GLIBC_USE_LIB_EXT2 /;"	d
 __GLIBC__	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@features.h	/^#define	__GLIBC__	/;"	d
 __GNUC_PREREQ	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@features.h	/^# define __GNUC_PREREQ(/;"	d
+__GNUC_VA_LIST	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stdarg.h	/^#define __GNUC_VA_LIST /;"	d
 __GNU_LIBRARY__	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@features.h	/^#define __GNU_LIBRARY__ /;"	d
 __HAVE_DISTINCT_FLOAT128	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@floatn.h	/^# define __HAVE_DISTINCT_FLOAT128 /;"	d
 __HAVE_DISTINCT_FLOAT128X	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@floatn-common.h	/^#define __HAVE_DISTINCT_FLOAT128X /;"	d
@@ -966,6 +1019,7 @@ __SLONGWORD_TYPE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@includ
 __SQUAD_TYPE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types.h	/^# define __SQUAD_TYPE	/;"	d
 __SSIZE_T_TYPE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@typesizes.h	/^#define __SSIZE_T_TYPE	/;"	d
 __STATFS_MATCHES_STATFS64	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@typesizes.h	/^# define __STATFS_MATCHES_STATFS64 /;"	d
+__STDARG_H	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stdarg.h	/^#define __STDARG_H$/;"	d
 __STDC_IEC_559_COMPLEX__	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdc-predef.h	/^#  define __STDC_IEC_559_COMPLEX__	/;"	d
 __STDC_IEC_559_COMPLEX__	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdc-predef.h	/^# define __STDC_IEC_559_COMPLEX__	/;"	d
 __STDC_IEC_559__	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdc-predef.h	/^#  define __STDC_IEC_559__	/;"	d
@@ -1046,6 +1100,7 @@ __WIFCONTINUED	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@
 __WIFEXITED	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@waitstatus.h	/^#define	__WIFEXITED(/;"	d
 __WIFSIGNALED	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@waitstatus.h	/^#define __WIFSIGNALED(/;"	d
 __WIFSTOPPED	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@waitstatus.h	/^#define	__WIFSTOPPED(/;"	d
+__WINT_TYPE__	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__mbstate_t.h	/^# define __WINT_TYPE__ /;"	d
 __WNOTHREAD	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@waitflags.h	/^#define __WNOTHREAD /;"	d
 __WORDSIZE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@wordsize.h	/^# define __WORDSIZE	/;"	d
 __WORDSIZE32_PTRDIFF_LONG	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@wordsize.h	/^#define __WORDSIZE32_PTRDIFF_LONG	/;"	d
@@ -1056,6 +1111,10 @@ __WTERMSIG	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits
 __W_CONTINUED	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@waitstatus.h	/^#define __W_CONTINUED	/;"	d
 __W_EXITCODE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@waitstatus.h	/^#define	__W_EXITCODE(/;"	d
 __W_STOPCODE	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@waitstatus.h	/^#define	__W_STOPCODE(/;"	d
+____FILE_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__FILE.h	/^#define ____FILE_defined /;"	d
+_____fpos64_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__fpos64_t.h	/^#define _____fpos64_t_defined /;"	d
+_____fpos_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__fpos_t.h	/^#define _____fpos_t_defined /;"	d
+____mbstate_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__mbstate_t.h	/^#define ____mbstate_t_defined /;"	d
 ____sigset_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__sigset_t.h	/^#define ____sigset_t_defined$/;"	d
 __a	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^    __extension__ unsigned long long int __a;	\/* Factor in congruential$/;"	m	struct:drand48_data	typeref:typename:__extension__ unsigned long long int
 __align	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@pthreadtypes.h	/^  __extension__ long long int __align;$/;"	m	union:__anon10847977040a	typeref:typename:__extension__ long long int
@@ -1085,6 +1144,8 @@ __anon5e0c1fd8030a	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@incl
 __anon5e0c1fd80408	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@thread-shared-types.h	/^    {$/;"	s	union:__pthread_cond_s::__anon5e0c1fd8030a
 __anon5e0c1fd80508	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@thread-shared-types.h	/^{$/;"	s
 __anon6a176de70108	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@select.h	/^  {$/;"	s
+__anonbfe66a300108	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__mbstate_t.h	/^{$/;"	s
+__anonbfe66a30020a	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__mbstate_t.h	/^  {$/;"	u	struct:__anonbfe66a300108
 __anonc3f1080a0108	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^  {$/;"	s
 __anonc3f1080a0208	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^  {$/;"	s
 __anonc3f1080a0308	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^  {$/;"	s
@@ -1174,7 +1235,9 @@ __cm_stream_source	src/lib/charmachine/charmachine.c	/^static char __cm_stream_s
 __cm_tape	src/lib/charmachine/charmachine.c	/^static void* __cm_tape;$/;"	v	typeref:typename:void *	file:
 __compar_d_fn_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^typedef int (*__compar_d_fn_t) (const void *, const void *, void *);$/;"	t	typeref:typename:int (*)(const void *,const void *,void *)
 __compar_fn_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^typedef int (*__compar_fn_t) (const void *, const void *);$/;"	t	typeref:typename:int (*)(const void *,const void *)
+__cookie_io_functions_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@cookie_io_functions_t.h	/^#define __cookie_io_functions_t_defined /;"	d
 __count	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@struct_mutex.h	/^  unsigned int __count;$/;"	m	struct:__pthread_mutex_s	typeref:typename:unsigned int
+__count	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__mbstate_t.h	/^  int __count;$/;"	m	struct:__anonbfe66a300108	typeref:typename:int
 __cpp_lib_char8_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define __cpp_lib_char8_t /;"	d
 __ctype_b	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__locale_t.h	/^  const unsigned short int *__ctype_b;$/;"	m	struct:__locale_struct	typeref:typename:const unsigned short int *
 __ctype_tolower	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__locale_t.h	/^  const int *__ctype_tolower;$/;"	m	struct:__locale_struct	typeref:typename:const int *
@@ -1213,10 +1276,14 @@ __f64	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@floa
 __f64x	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@floatn-common.h	/^#    define __f64x(/;"	d
 __f64x	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@floatn-common.h	/^#   define __f64x(/;"	d
 __fd_mask	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@select.h	/^typedef long int __fd_mask;$/;"	t	typeref:typename:long int
+__feof_unlocked_body	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^#define __feof_unlocked_body(/;"	d
+__ferror_unlocked_body	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^#define __ferror_unlocked_body(/;"	d
 __flags	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@struct_rwlock.h	/^  unsigned char __flags;$/;"	m	struct:__pthread_rwlock_arch_t	typeref:typename:unsigned char
 __flags	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@struct_rwlock.h	/^  unsigned int __flags;$/;"	m	struct:__pthread_rwlock_arch_t	typeref:typename:unsigned int
 __flexarr	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@cdefs.h	/^# define __flexarr	/;"	d
 __fortify_function	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@cdefs.h	/^# define __fortify_function /;"	d
+__fpos64_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__fpos64_t.h	/^} __fpos64_t;$/;"	t	typeref:struct:_G_fpos64_t
+__fpos_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__fpos_t.h	/^} __fpos_t;$/;"	t	typeref:struct:_G_fpos_t
 __fsblkcnt64_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types.h	/^__STD_TYPE __FSBLKCNT64_T_TYPE __fsblkcnt64_t;$/;"	v	typeref:typename:__STD_TYPE __FSBLKCNT64_T_TYPE
 __fsblkcnt_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types.h	/^__STD_TYPE __FSBLKCNT_T_TYPE __fsblkcnt_t;$/;"	v	typeref:typename:__STD_TYPE __FSBLKCNT_T_TYPE
 __fsblkcnt_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^#  define __fsblkcnt_t_defined$/;"	d
@@ -1231,6 +1298,7 @@ __g1_start32	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bi
 __g_refs	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@thread-shared-types.h	/^  unsigned int __g_refs[2] __LOCK_ALIGNMENT;$/;"	m	struct:__pthread_cond_s	typeref:typename:unsigned int[2]__LOCK_ALIGNMENT
 __g_signals	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@thread-shared-types.h	/^  unsigned int __g_signals[2];$/;"	m	struct:__pthread_cond_s	typeref:typename:unsigned int[2]
 __g_size	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@thread-shared-types.h	/^  unsigned int __g_size[2];$/;"	m	struct:__pthread_cond_s	typeref:typename:unsigned int[2]
+__getc_unlocked_body	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^#define __getc_unlocked_body(/;"	d
 __gid_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types.h	/^__STD_TYPE __GID_T_TYPE __gid_t;	\/* Type of group identifications.  *\/$/;"	v	typeref:typename:__STD_TYPE __GID_T_TYPE
 __gid_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^# define __gid_t_defined$/;"	d
 __glibc_c99_flexarr_available	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@cdefs.h	/^# define __glibc_c99_flexarr_available /;"	d
@@ -1251,6 +1319,7 @@ __gnu_cxx	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@1
 __gnu_cxx11_ieee128	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^  inline namespace __gnu_cxx11_ieee128 { }$/;"	n	namespace:std
 __gnu_cxx_ieee128	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^  inline namespace __gnu_cxx_ieee128 { }$/;"	n	namespace:std
 __gnu_cxx_ldbl128	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^  inline namespace __gnu_cxx_ldbl128 { }$/;"	n	namespace:std
+__gnuc_va_list	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stdarg.h	/^typedef __builtin_va_list __gnuc_va_list;$/;"	t	typeref:typename:__builtin_va_list
 __have_pthread_attr_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@pthreadtypes.h	/^# define __have_pthread_attr_t /;"	d
 __high	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@thread-shared-types.h	/^      unsigned int __high;$/;"	m	struct:__pthread_cond_s::__anon5e0c1fd8010a::__anon5e0c1fd80208	typeref:typename:unsigned int
 __high	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@thread-shared-types.h	/^      unsigned int __high;$/;"	m	struct:__pthread_cond_s::__anon5e0c1fd8030a::__anon5e0c1fd80408	typeref:typename:unsigned int
@@ -1289,14 +1358,18 @@ __lock	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@str
 __loff_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types.h	/^typedef __off64_t __loff_t;	\/* Type of file sizes and offsets (LFS).  *\/$/;"	t	typeref:typename:__off64_t
 __low	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@thread-shared-types.h	/^      unsigned int __low;$/;"	m	struct:__pthread_cond_s::__anon5e0c1fd8010a::__anon5e0c1fd80208	typeref:typename:unsigned int
 __low	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@thread-shared-types.h	/^      unsigned int __low;$/;"	m	struct:__pthread_cond_s::__anon5e0c1fd8030a::__anon5e0c1fd80408	typeref:typename:unsigned int
+__mbstate_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__mbstate_t.h	/^} __mbstate_t;$/;"	t	typeref:struct:__anonbfe66a300108
 __mode_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types.h	/^__STD_TYPE __MODE_T_TYPE __mode_t;	\/* Type of file attribute bitmasks.  *\/$/;"	v	typeref:typename:__STD_TYPE __MODE_T_TYPE
 __mode_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^# define __mode_t_defined$/;"	d
 __names	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__locale_t.h	/^  const char *__names[13];$/;"	m	struct:__locale_struct	typeref:typename:const char * [13]
+__need_NULL	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#define __need_NULL$/;"	d
 __need_NULL	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^#define __need_NULL$/;"	d
 __need_NULL	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stddef.h	/^#define __need_NULL$/;"	d
 __need_STDDEF_H_misc	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stddef.h	/^#define __need_STDDEF_H_misc$/;"	d
+__need___va_list	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#define __need___va_list$/;"	d
 __need_ptrdiff_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stddef.h	/^#define __need_ptrdiff_t$/;"	d
 __need_size_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@alloca.h	/^#define	__need_size_t$/;"	d
+__need_size_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#define __need_size_t$/;"	d
 __need_size_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^#define __need_size_t$/;"	d
 __need_size_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^#define	__need_size_t$/;"	d
 __need_size_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stddef.h	/^#define __need_size_t$/;"	d
@@ -1310,8 +1383,10 @@ __nonnull	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@c
 __nusers	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@struct_mutex.h	/^  unsigned int __nusers;$/;"	m	struct:__pthread_mutex_s	typeref:typename:unsigned int
 __o_order_id	src/lib/prototype/order/order.c	/^static int __o_order_id = 0;$/;"	v	typeref:typename:int	file:
 __off64_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types.h	/^__STD_TYPE __OFF64_T_TYPE __off64_t;	\/* Type of file sizes and offsets (LFS).  *\/$/;"	v	typeref:typename:__STD_TYPE __OFF64_T_TYPE
+__off64_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^# define __off64_t_defined$/;"	d
 __off64_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^# define __off64_t_defined$/;"	d
 __off_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types.h	/^__STD_TYPE __OFF_T_TYPE __off_t;	\/* Type of file sizes and offsets.  *\/$/;"	v	typeref:typename:__STD_TYPE __OFF_T_TYPE
+__off_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^# define __off_t_defined$/;"	d
 __off_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^# define __off_t_defined$/;"	d
 __old_x	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^    unsigned short int __old_x[3]; \/* Old state.  *\/$/;"	m	struct:drand48_data	typeref:typename:unsigned short int[3]
 __once_flag	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@thread-shared-types.h	/^} __once_flag;$/;"	t	typeref:struct:__anon5e0c1fd80508
@@ -1322,9 +1397,12 @@ __pad2	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@str
 __pad2	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@struct_rwlock.h	/^  unsigned long int __pad2;$/;"	m	struct:__pthread_rwlock_arch_t	typeref:typename:unsigned long int
 __pad3	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@struct_rwlock.h	/^  unsigned int __pad3;$/;"	m	struct:__pthread_rwlock_arch_t	typeref:typename:unsigned int
 __pad4	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@struct_rwlock.h	/^  unsigned int __pad4;$/;"	m	struct:__pthread_rwlock_arch_t	typeref:typename:unsigned int
+__pad5	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  size_t __pad5;$/;"	m	struct:_IO_FILE_complete	typeref:typename:size_t
 __parallel	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^  inline namespace __parallel { }$/;"	n	namespace:std
 __pid_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types.h	/^__STD_TYPE __PID_T_TYPE __pid_t;	\/* Type of process identifications.  *\/$/;"	v	typeref:typename:__STD_TYPE __PID_T_TYPE
 __pid_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^# define __pid_t_defined$/;"	d
+__pos	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__fpos64_t.h	/^  __off64_t __pos;$/;"	m	struct:_G_fpos64_t	typeref:typename:__off64_t
+__pos	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__fpos_t.h	/^  __off_t __pos;$/;"	m	struct:_G_fpos_t	typeref:typename:__off_t
 __prev	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@thread-shared-types.h	/^  struct __pthread_internal_list *__prev;$/;"	m	struct:__pthread_internal_list	typeref:struct:__pthread_internal_list *
 __pthread_cond_s	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@thread-shared-types.h	/^struct __pthread_cond_s$/;"	s
 __pthread_internal_list	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@thread-shared-types.h	/^typedef struct __pthread_internal_list$/;"	s
@@ -1334,6 +1412,7 @@ __pthread_mutex_s	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@inclu
 __pthread_rwlock_arch_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@struct_rwlock.h	/^struct __pthread_rwlock_arch_t$/;"	s
 __pthread_slist_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@thread-shared-types.h	/^} __pthread_slist_t;$/;"	t	typeref:struct:__pthread_internal_slist
 __ptr_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@cdefs.h	/^#define __ptr_t /;"	d
+__putc_unlocked_body	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^#define __putc_unlocked_body(/;"	d
 __quad_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types.h	/^__extension__ typedef long long int __quad_t;$/;"	t	typeref:typename:long long int
 __quad_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types.h	/^typedef long int __quad_t;$/;"	t	typeref:typename:long int
 __readers	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@struct_rwlock.h	/^  unsigned int __readers;$/;"	m	struct:__pthread_rwlock_arch_t	typeref:typename:unsigned int
@@ -1359,12 +1438,17 @@ __size	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@pth
 __size	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@pthreadtypes.h	/^  char __size[__SIZEOF_PTHREAD_MUTEX_T];$/;"	m	union:__anon10847977030a	typeref:typename:char[]
 __size	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@pthreadtypes.h	/^  char __size[__SIZEOF_PTHREAD_RWLOCKATTR_T];$/;"	m	union:__anon10847977060a	typeref:typename:char[]
 __size	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@pthreadtypes.h	/^  char __size[__SIZEOF_PTHREAD_RWLOCK_T];$/;"	m	union:__anon10847977050a	typeref:typename:char[]
+__sl_swap	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@staticlist@staticlist.c	/^void __sl_swap(StaticList* sl, int idx1, int idx2) {$/;"	f	typeref:typename:void
 __sl_swap	src/lib/structure/staticlist/staticlist.c	/^void __sl_swap(StaticList* sl, int idx1, int idx2) {$/;"	f	typeref:typename:void
 __socklen_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types.h	/^__STD_TYPE __U32_TYPE __socklen_t;$/;"	v	typeref:typename:__STD_TYPE __U32_TYPE
 __spins	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@struct_mutex.h	/^  short __spins;$/;"	m	struct:__pthread_mutex_s	typeref:typename:short
 __spins	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@struct_mutex.h	/^# define __spins /;"	d
 __ssize_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types.h	/^__STD_TYPE __SSIZE_T_TYPE __ssize_t; \/* Type of a byte count, or error.  *\/$/;"	v	typeref:typename:__STD_TYPE __SSIZE_T_TYPE
+__ssize_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^# define __ssize_t_defined$/;"	d
 __ssize_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^# define __ssize_t_defined$/;"	d
+__state	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__fpos64_t.h	/^  __mbstate_t __state;$/;"	m	struct:_G_fpos64_t	typeref:typename:__mbstate_t
+__state	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__fpos_t.h	/^  __mbstate_t __state;$/;"	m	struct:_G_fpos_t	typeref:typename:__mbstate_t
+__struct_FILE_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^#define __struct_FILE_defined /;"	d
 __stub___compat_bdflush	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@gnu@stubs-64.h	/^#define __stub___compat_bdflush$/;"	d
 __stub_chflags	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@gnu@stubs-64.h	/^#define __stub_chflags$/;"	d
 __stub_fchflags	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@gnu@stubs-64.h	/^#define __stub_fchflags$/;"	d
@@ -1415,8 +1499,12 @@ __useconds_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bi
 __useconds_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^#  define __useconds_t_defined$/;"	d
 __va_arg_pack	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@cdefs.h	/^# define __va_arg_pack(/;"	d
 __va_arg_pack_len	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@cdefs.h	/^# define __va_arg_pack_len(/;"	d
+__va_copy	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stdarg.h	/^#define __va_copy(/;"	d
 __val	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__sigset_t.h	/^  unsigned long int __val[_SIGSET_NWORDS];$/;"	m	struct:__anon2544400f0108	typeref:typename:unsigned long int[]
+__value	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__mbstate_t.h	/^  } __value;		\/* Value so far.  *\/$/;"	m	struct:__anonbfe66a300108	typeref:union:__anonbfe66a300108::__anonbfe66a30020a
 __warnattr	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@cdefs.h	/^# define __warnattr(/;"	d
+__wch	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__mbstate_t.h	/^    __WINT_TYPE__ __wch;$/;"	m	union:__anonbfe66a300108::__anonbfe66a30020a	typeref:typename:__WINT_TYPE__
+__wchb	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__mbstate_t.h	/^    char __wchb[4];$/;"	m	union:__anonbfe66a300108::__anonbfe66a30020a	typeref:typename:char[4]
 __wm_allocate	src/lib/wordmachine/wordmachine.c	/^void __wm_allocate() {$/;"	f	typeref:typename:void
 __wm_allocated	src/lib/wordmachine/wordmachine.c	/^static boolean __wm_allocated = false;$/;"	v	typeref:typename:boolean	file:
 __wm_blank	src/lib/wordmachine/wordmachine.c	/^static char* __wm_blank = " ";$/;"	v	typeref:typename:char *	file:
@@ -1436,6 +1524,24 @@ __wseq32	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@t
 __wur	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@cdefs.h	/^#  define __wur /;"	d
 __wur	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@cdefs.h	/^# define __wur /;"	d
 __x	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^    unsigned short int __x[3];	\/* Current state.  *\/$/;"	m	struct:drand48_data	typeref:typename:unsigned short int[3]
+_chain	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  struct _IO_FILE *_chain;$/;"	m	struct:_IO_FILE	typeref:struct:_IO_FILE *
+_codecvt	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  struct _IO_codecvt *_codecvt;$/;"	m	struct:_IO_FILE_complete	typeref:struct:_IO_codecvt *
+_cur_column	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  unsigned short _cur_column;$/;"	m	struct:_IO_FILE	typeref:typename:unsigned short
+_file	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  struct _IO_FILE _file;$/;"	m	struct:_IO_FILE_complete	typeref:struct:_IO_FILE
+_fileno	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  int _fileno;$/;"	m	struct:_IO_FILE	typeref:typename:int
+_flags	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  int _flags;		\/* High-order word is _IO_MAGIC; rest is flags. *\/$/;"	m	struct:_IO_FILE	typeref:typename:int
+_flags2	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  int _flags2;$/;"	m	struct:_IO_FILE	typeref:typename:int
+_freeres_buf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  void *_freeres_buf;$/;"	m	struct:_IO_FILE_complete	typeref:typename:void *
+_freeres_list	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  struct _IO_FILE *_freeres_list;$/;"	m	struct:_IO_FILE_complete	typeref:struct:_IO_FILE *
+_lock	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  _IO_lock_t *_lock;$/;"	m	struct:_IO_FILE	typeref:typename:_IO_lock_t *
+_markers	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  struct _IO_marker *_markers;$/;"	m	struct:_IO_FILE	typeref:struct:_IO_marker *
+_mode	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  int _mode;$/;"	m	struct:_IO_FILE_complete	typeref:typename:int
+_offset	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  __off64_t _offset;$/;"	m	struct:_IO_FILE_complete	typeref:typename:__off64_t
+_old_offset	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  __off_t _old_offset; \/* This used to be _offset but it's too small.  *\/$/;"	m	struct:_IO_FILE	typeref:typename:__off_t
+_shortbuf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  char _shortbuf[1];$/;"	m	struct:_IO_FILE	typeref:typename:char[1]
+_unused2	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  char _unused2[15 * sizeof (int) - 4 * sizeof (void *) - sizeof (size_t)];$/;"	m	struct:_IO_FILE_complete	typeref:typename:char[]
+_vtable_offset	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  signed char _vtable_offset;$/;"	m	struct:_IO_FILE	typeref:typename:signed char
+_wide_data	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_FILE.h	/^  struct _IO_wide_data *_wide_data;$/;"	m	struct:_IO_FILE_complete	typeref:struct:_IO_wide_data *
 abs	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@bits@std_abs.h	/^  abs(__GLIBCXX_TYPE_INT_N_0 __x) { return __x >= 0 ? __x : -__x; }$/;"	f	namespace:std	typeref:typename:_GLIBCXX_CONSTEXPR __GLIBCXX_TYPE_INT_N_0
 abs	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@bits@std_abs.h	/^  abs(__GLIBCXX_TYPE_INT_N_1 __x) { return __x >= 0 ? __x : -__x; }$/;"	f	namespace:std	typeref:typename:_GLIBCXX_CONSTEXPR __GLIBCXX_TYPE_INT_N_1
 abs	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@bits@std_abs.h	/^  abs(__GLIBCXX_TYPE_INT_N_2 __x) { return __x >= 0 ? __x : -__x; }$/;"	f	namespace:std	typeref:typename:_GLIBCXX_CONSTEXPR __GLIBCXX_TYPE_INT_N_2
@@ -1499,6 +1605,7 @@ clear	Makefile	/^clear:$/;"	t
 clear_screen	src/lib/console/console.c	/^void clear_screen() {$/;"	f	typeref:typename:void
 clock_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@clock_t.h	/^typedef __clock_t clock_t;$/;"	t	typeref:typename:__clock_t
 clockid_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@clockid_t.h	/^typedef __clockid_t clockid_t;$/;"	t	typeref:typename:__clockid_t
+close	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@cookie_io_functions_t.h	/^  cookie_close_function_t *close;	\/* Close file.  *\/$/;"	m	struct:_IO_cookie_io_functions_t	typeref:typename:cookie_close_function_t *
 cm_adv	src/lib/charmachine/charmachine.c	/^void cm_adv() {$/;"	f	typeref:typename:void
 cm_current_char	src/lib/charmachine/charmachine.c	/^char cm_current_char;$/;"	v	typeref:typename:char
 cm_eot	src/lib/charmachine/charmachine.c	/^boolean cm_eot;$/;"	v	typeref:typename:boolean
@@ -1517,6 +1624,11 @@ comparison_fn_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include
 complex_literals	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^    inline namespace complex_literals { }$/;"	n	namespace:std::literals
 configurations	.vscode/launch.json	/^  "configurations": [$/;"	a
 contents	src/lib/wordmachine/wordmachine.h	/^  char* contents;$/;"	m	struct:word	typeref:typename:char *
+cookie_close_function_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@cookie_io_functions_t.h	/^typedef int cookie_close_function_t (void *__cookie);$/;"	t	typeref:typename:int ()(void * __cookie)
+cookie_io_functions_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@cookie_io_functions_t.h	/^} cookie_io_functions_t;$/;"	t	typeref:struct:_IO_cookie_io_functions_t
+cookie_read_function_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@cookie_io_functions_t.h	/^typedef __ssize_t cookie_read_function_t (void *__cookie, char *__buf,$/;"	t	typeref:typename:__ssize_t ()(void * __cookie,char * __buf,size_t __nbytes)
+cookie_seek_function_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@cookie_io_functions_t.h	/^typedef int cookie_seek_function_t (void *__cookie, __off64_t *__pos, int __w);$/;"	t	typeref:typename:int ()(void * __cookie,__off64_t * __pos,int __w)
+cookie_write_function_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@cookie_io_functions_t.h	/^typedef __ssize_t cookie_write_function_t (void *__cookie, const char *__buf,$/;"	t	typeref:typename:__ssize_t ()(void * __cookie,const char * __buf,size_t __nbytes)
 cosf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define cosf /;"	d
 coshf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define coshf /;"	d
 coshl	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define coshl /;"	d
@@ -1571,6 +1683,7 @@ false	src/lib/boolean.h	/^#define false /;"	d
 fd_mask	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@select.h	/^typedef __fd_mask fd_mask;$/;"	t	typeref:typename:__fd_mask
 fd_set	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@select.h	/^  } fd_set;$/;"	t	typeref:struct:__anon6a176de70108
 fds_bits	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@select.h	/^    __fd_mask fds_bits[__FD_SETSIZE \/ __NFDBITS];$/;"	m	struct:__anon6a176de70108	typeref:typename:__fd_mask[]
+fgetpos	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#  define fgetpos /;"	d
 finite	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define finite /;"	d
 finitef	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define finitef /;"	d
 finitel	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define finitel /;"	d
@@ -1578,17 +1691,26 @@ floorf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1
 floorl	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define floorl /;"	d
 fmodf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define fmodf /;"	d
 fmodl	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define fmodl /;"	d
+fopen	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#  define fopen /;"	d
 fpclass	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define fpclass /;"	d
+fpos64_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^typedef __fpos64_t fpos64_t;$/;"	t	typeref:typename:__fpos64_t
+fpos_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^typedef __fpos64_t fpos_t;$/;"	t	typeref:typename:__fpos64_t
+fpos_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^typedef __fpos_t fpos_t;$/;"	t	typeref:typename:__fpos_t
 fptr	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^    int32_t *fptr;		\/* Front pointer.  *\/$/;"	m	struct:random_data	typeref:typename:int32_t *
+freopen	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#  define freopen /;"	d
 frexpf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define frexpf /;"	d
 frexpl	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define frexpl /;"	d
 fsblkcnt64_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^typedef __fsblkcnt64_t fsblkcnt64_t; \/* Type to count file system blocks.  *\/$/;"	t	typeref:typename:__fsblkcnt64_t
 fsblkcnt_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^typedef __fsblkcnt64_t fsblkcnt_t; \/* Type to count file system blocks.  *\/$/;"	t	typeref:typename:__fsblkcnt64_t
 fsblkcnt_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^typedef __fsblkcnt_t fsblkcnt_t; \/* Type to count file system blocks.  *\/$/;"	t	typeref:typename:__fsblkcnt_t
+fscanf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#  define fscanf /;"	d
+fseeko	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#   define fseeko /;"	d
+fsetpos	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#  define fsetpos /;"	d
 fsfilcnt64_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^typedef __fsfilcnt64_t fsfilcnt64_t; \/* Type to count file system inodes.  *\/$/;"	t	typeref:typename:__fsfilcnt64_t
 fsfilcnt_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^typedef __fsfilcnt64_t fsfilcnt_t; \/* Type to count file system inodes.  *\/$/;"	t	typeref:typename:__fsfilcnt64_t
 fsfilcnt_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^typedef __fsfilcnt_t fsfilcnt_t; \/* Type to count file system inodes.  *\/$/;"	t	typeref:typename:__fsfilcnt_t
 fsid_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^typedef __fsid_t fsid_t;$/;"	t	typeref:typename:__fsid_t
+ftello	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#   define ftello /;"	d
 g__get_price	src/lib/prototype/gadget/gadget.c	/^int g__get_price(int type){$/;"	f	typeref:typename:int
 g_get_name	src/lib/prototype/gadget/gadget.c	/^Gadget g_get_name(int type){$/;"	f	typeref:typename:Gadget
 gid_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^typedef __gid_t gid_t;$/;"	t	typeref:typename:__gid_t
@@ -1613,6 +1735,10 @@ idxTail	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@que
 idxTail	src/lib/structure/queue/queue.h	/^	int idxTail;$/;"	m	struct:queue	typeref:typename:int
 idxTop	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@stack@stack.h	/^  int idxTop;$/;"	m	struct:stack	typeref:typename:int
 idxTop	src/lib/structure/stack/stack.h	/^  int idxTop;$/;"	m	struct:stack	typeref:typename:int
+ig_add_item	src/lib/game/inventory_gadget/inventory_gadget.c	/^void ig_add_item(inventory_gadget* IG, Gadget G){$/;"	f	typeref:typename:void
+ig_create_ig	src/lib/game/inventory_gadget/inventory_gadget.c	/^void ig_create_ig(inventory_gadget* IG){$/;"	f	typeref:typename:void
+ig_display_ig	src/lib/game/inventory_gadget/inventory_gadget.c	/^void ig_display_ig(inventory_gadget IG) {$/;"	f	typeref:typename:void
+ig_take_item	src/lib/game/inventory_gadget/inventory_gadget.c	/^void ig_take_item(inventory_gadget* IG, Gadget* G){$/;"	f	typeref:typename:void
 ignoreFailures	.vscode/launch.json	/^          "ignoreFailures": true$/;"	b	object:configurations.0.setupCommands.0
 ignoreFailures	.vscode/launch.json	/^          "ignoreFailures": true$/;"	b	object:configurations.1.setupCommands.0
 incomingTime	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@prototype@order@order.h	/^  Time incomingTime;$/;"	m	struct:order	typeref:typename:Time
@@ -1624,7 +1750,9 @@ int16_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@st
 int32_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@stdint-intn.h	/^typedef __int32_t int32_t;$/;"	t	typeref:typename:__int32_t
 int64_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@stdint-intn.h	/^typedef __int64_t int64_t;$/;"	t	typeref:typename:__int64_t
 int8_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@stdint-intn.h	/^typedef __int8_t int8_t;$/;"	t	typeref:typename:__int8_t
-inventory_gadget	src/lib/game/inventory_gadget/inventory_gadget.h	/^typedef staticlist inventory_gadget;$/;"	t	typeref:typename:staticlist
+inventory_gadget	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@inventory_gadget@inventory_gadget.h	/^typedef StaticList inventory_gadget;$/;"	t	typeref:typename:StaticList
+inventory_gadget	src/lib/game/inventory_gadget/inventory_gadget.h	/^typedef StaticList inventory_gadget;$/;"	t	typeref:typename:StaticList
+inventory_gadget	src/lib/status_game/status_game.h	/^    inventory_gadget inventory_gadget; $/;"	m	struct:StatusGame	typeref:typename:inventory_gadget
 isiTas	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@tas@tas.h	/^    Stack isiTas;$/;"	m	struct:tas	typeref:typename:Stack
 isiTas	src/lib/game/tas/tas.h	/^    Stack isiTas;$/;"	m	struct:tas	typeref:typename:Stack
 isinf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define isinf /;"	d
@@ -1717,21 +1845,32 @@ o_create_order	src/lib/prototype/order/order.c	/^void o_create_order(Order* orde
 o_get_item	src/lib/prototype/order/order.c	/^Item o_get_item(Order order) { return order.item; }/;"	f	typeref:typename:Item
 o_is_equal	src/lib/prototype/order/order.c	/^boolean o_is_equal(Order order1, Order order2) {$/;"	f	typeref:typename:boolean
 o_is_order_todo	src/lib/prototype/order/order.c	/^boolean o_is_order_todo(Order order, Time currentTime) {$/;"	f	typeref:typename:boolean
+off64_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^typedef __off64_t off64_t;$/;"	t	typeref:typename:__off64_t
 off64_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^typedef __off64_t off64_t;$/;"	t	typeref:typename:__off64_t
+off_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^typedef __off64_t off_t;$/;"	t	typeref:typename:__off64_t
+off_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^typedef __off_t off_t;$/;"	t	typeref:typename:__off_t
 off_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^typedef __off64_t off_t;$/;"	t	typeref:typename:__off64_t
 off_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^typedef __off_t off_t;$/;"	t	typeref:typename:__off_t
 offsetof	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stddef.h	/^#define offsetof(/;"	d
+ol_add_order	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@orderlist@orderlist.c	/^void ol_add_order(OrderList* ol, Order order) { q_enqueue(ol, order); }$/;"	f	typeref:typename:void
 ol_add_order	src/lib/game/orderlist/orderlist.c	/^void ol_add_order(OrderList* ol, Order order) { q_enqueue(ol, order); }$/;"	f	typeref:typename:void
+ol_create_orederlist	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@orderlist@orderlist.c	/^void ol_create_orederlist(OrderList* ol) { q_create_queue(ol); }$/;"	f	typeref:typename:void
 ol_create_orederlist	src/lib/game/orderlist/orderlist.c	/^void ol_create_orederlist(OrderList* ol) { q_create_queue(ol); }$/;"	f	typeref:typename:void
+ol_dequeue_order	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@orderlist@orderlist.c	/^Order ol_dequeue_order(OrderList* ol) {$/;"	f	typeref:typename:Order
 ol_dequeue_order	src/lib/game/orderlist/orderlist.c	/^Order ol_dequeue_order(OrderList* ol) {$/;"	f	typeref:typename:Order
+ol_get_all_order	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@orderlist@orderlist.c	/^Order* ol_get_all_order(OrderList ol) { return ol.buffer; }$/;"	f	typeref:typename:Order *
 ol_get_all_order	src/lib/game/orderlist/orderlist.c	/^Order* ol_get_all_order(OrderList ol) { return ol.buffer; }$/;"	f	typeref:typename:Order *
+ol_get_head	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@orderlist@orderlist.c	/^Order ol_get_head(OrderList ol) { return q_get_head(ol); }$/;"	f	typeref:typename:Order
 ol_get_head	src/lib/game/orderlist/orderlist.c	/^Order ol_get_head(OrderList ol) { return q_get_head(ol); }$/;"	f	typeref:typename:Order
+ol_is_empty	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@orderlist@orderlist.c	/^boolean ol_is_empty(OrderList ol) { return q_is_empty(ol); }/;"	f	typeref:typename:boolean
 ol_is_empty	src/lib/game/orderlist/orderlist.c	/^boolean ol_is_empty(OrderList ol) { return q_is_empty(ol); }/;"	f	typeref:typename:boolean
+ol_order_count	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@orderlist@orderlist.c	/^int ol_order_count(OrderList ol) { return q_length(ol); }$/;"	f	typeref:typename:int
 ol_order_count	src/lib/game/orderlist/orderlist.c	/^int ol_order_count(OrderList ol) { return q_length(ol); }$/;"	f	typeref:typename:int
 order	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@prototype@order@order.h	/^typedef struct order {$/;"	s
 order	src/lib/prototype/order/order.h	/^typedef struct order {$/;"	s
 orderID	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@prototype@order@order.h	/^  int orderID;$/;"	m	struct:order	typeref:typename:int
 orderID	src/lib/prototype/order/order.h	/^  int orderID;$/;"	m	struct:order	typeref:typename:int
+order_list	src/lib/status_game/status_game.h	/^    OrderList order_list;$/;"	m	struct:StatusGame	typeref:typename:OrderList
 p_create_point	src/lib/prototype/order/building/point/point.c	/^void p_create_point(Point* titik, int x, int y) {$/;"	f	typeref:typename:void
 p_getX	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@prototype@order@building@point@point.h	/^#define p_getX(/;"	d
 p_getX	src/lib/prototype/order/building/point/point.h	/^#define p_getX(/;"	d
@@ -1751,6 +1890,7 @@ pl_is_empty	src/lib/game/progress_list/progress_list.c	/^boolean pl_is_empty(Pro
 pl_length	src/lib/game/progress_list/progress_list.c	/^int pl_length(ProgressList pl){$/;"	f	typeref:typename:int
 point	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@prototype@order@building@point@point.h	/^typedef struct point {$/;"	s
 point	src/lib/prototype/order/building/point/point.h	/^typedef struct point {$/;"	s
+posisi_sekarang	src/lib/status_game/status_game.h	/^    Building posisi_sekarang;$/;"	m	struct:StatusGame	typeref:typename:Building
 position	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@prototype@order@building@building.h	/^  Point position;$/;"	m	struct:building	typeref:typename:Point
 position	src/lib/prototype/order/building/building.h	/^  Point position;$/;"	m	struct:building	typeref:typename:Point
 powf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define powf /;"	d
@@ -1772,6 +1912,7 @@ program	.vscode/launch.json	/^        "program": "${workspaceRoot}\/bin\/mobilit
 program	.vscode/launch.json	/^        "program": "${workspaceRoot}\/bin\/test.exe"$/;"	s	object:configurations.1.windows
 program	.vscode/launch.json	/^      "program": "${workspaceRoot}\/",$/;"	s	object:configurations.0
 program	.vscode/launch.json	/^      "program": "${workspaceRoot}\/",$/;"	s	object:configurations.1
+progress_list	src/lib/status_game/status_game.h	/^    ProgressList progress_list;$/;"	m	struct:StatusGame	typeref:typename:ProgressList
 pthread_attr_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@pthreadtypes.h	/^typedef union pthread_attr_t pthread_attr_t;$/;"	t	typeref:union:pthread_attr_t
 pthread_attr_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@pthreadtypes.h	/^union pthread_attr_t$/;"	u
 pthread_barrier_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@pthreadtypes.h	/^} pthread_barrier_t;$/;"	t	typeref:union:__anon10847977070a
@@ -1807,6 +1948,7 @@ rand_deg	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib
 rand_sep	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^    int rand_sep;		\/* Distance between front and rear.  *\/$/;"	m	struct:random_data	typeref:typename:int
 rand_type	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^    int rand_type;		\/* Type of random number generator.  *\/$/;"	m	struct:random_data	typeref:typename:int
 random_data	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^struct random_data$/;"	s
+read	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@cookie_io_functions_t.h	/^  cookie_read_function_t *read;		\/* Read bytes.  *\/$/;"	m	struct:_IO_cookie_io_functions_t	typeref:typename:cookie_read_function_t *
 read_line	src/lib/console/console.c	/^void read_line(char* word, int length) {$/;"	f	typeref:typename:void
 read_word	src/lib/console/console.c	/^void read_word(char* word, int length) {$/;"	f	typeref:typename:void
 register_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^typedef int register_t __attribute__ ((__mode__ (__word__)));$/;"	t	typeref:typename:int
@@ -1824,18 +1966,28 @@ rowEff	src/lib/structure/matrix/matrix.h	/^  int rowEff;$/;"	m	struct:matrix	typ
 rptr	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^    int32_t *rptr;		\/* Rear pointer.  *\/$/;"	m	struct:random_data	typeref:typename:int32_t *
 rsize_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stddef.h	/^typedef __SIZE_TYPE__ rsize_t;$/;"	t	typeref:typename:__SIZE_TYPE__
 run	Makefile	/^run: build_debug$/;"	t
+s_create_stack	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@stack@stack.c	/^void s_create_stack(Stack* s) { S_IDX_TOP(*s) = IDX_UNDEF; }$/;"	f	typeref:typename:void
 s_create_stack	src/lib/structure/stack/stack.c	/^void s_create_stack(Stack* s) { S_IDX_TOP(*s) = IDX_UNDEF; }$/;"	f	typeref:typename:void
+s_get_top	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@stack@stack.c	/^SEltype s_get_top(Stack s) { return S_TOP(s); }/;"	f	typeref:typename:SEltype
 s_get_top	src/lib/structure/stack/stack.c	/^SEltype s_get_top(Stack s) { return S_TOP(s); }/;"	f	typeref:typename:SEltype
+s_is_empty	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@stack@stack.c	/^boolean s_is_empty(Stack s) { return (S_IDX_TOP(s) == IDX_UNDEF); }$/;"	f	typeref:typename:boolean
 s_is_empty	src/lib/structure/stack/stack.c	/^boolean s_is_empty(Stack s) { return (S_IDX_TOP(s) == IDX_UNDEF); }$/;"	f	typeref:typename:boolean
+s_is_full	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@stack@stack.c	/^boolean s_is_full(Stack s) { return (S_IDX_TOP(s) == S_MAX_SIZE - 1); }$/;"	f	typeref:typename:boolean
 s_is_full	src/lib/structure/stack/stack.c	/^boolean s_is_full(Stack s) { return (S_IDX_TOP(s) == S_MAX_SIZE - 1); }$/;"	f	typeref:typename:boolean
+s_pop	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@stack@stack.c	/^void s_pop(Stack* s, SEltype* item) {$/;"	f	typeref:typename:void
 s_pop	src/lib/structure/stack/stack.c	/^void s_pop(Stack* s, SEltype* item) {$/;"	f	typeref:typename:void
+s_push	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@stack@stack.c	/^void s_push(Stack* s, SEltype item) {$/;"	f	typeref:typename:void
 s_push	src/lib/structure/stack/stack.c	/^void s_push(Stack* s, SEltype item) {$/;"	f	typeref:typename:void
+scanf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#  define scanf /;"	d
+seek	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@cookie_io_functions_t.h	/^  cookie_seek_function_t *seek;		\/* Seek\/tell file position.  *\/$/;"	m	struct:_IO_cookie_io_functions_t	typeref:typename:cookie_seek_function_t *
 set_bg_color	src/lib/console/pcolor/pcolor.c	/^void set_bg_color(Color color) { set_color(color); }$/;"	f	typeref:typename:void
 set_color	src/lib/console/pcolor/pcolor.c	/^void set_color(Color color) { printf("%s", color); }$/;"	f	typeref:typename:void
 set_decorator	src/lib/console/console.c	/^void set_decorator(Decorator dec) { printf("%s", dec); }$/;"	f	typeref:typename:void
 set_text_color	src/lib/console/pcolor/pcolor.c	/^void set_text_color(Color color) { set_color(color); }$/;"	f	typeref:typename:void
 setupCommands	.vscode/launch.json	/^      "setupCommands": [$/;"	a	object:configurations.0
 setupCommands	.vscode/launch.json	/^      "setupCommands": [$/;"	a	object:configurations.1
+sg_inc_time	src/lib/status_game/status_game.c	/^void sg_inc_time(StatusGame *sg){$/;"	f	typeref:typename:void
+sg_reset_time	src/lib/status_game/status_game.c	/^void sg_reset_time(StatusGame *sg){$/;"	f	typeref:typename:void
 sigset_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@sigset_t.h	/^typedef __sigset_t sigset_t;$/;"	t	typeref:typename:__sigset_t
 sincos	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define sincos /;"	d
 sincosf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define sincosf /;"	d
@@ -1846,21 +1998,34 @@ sinhl	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.
 sinl	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define sinl /;"	d
 size_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^  typedef __SIZE_TYPE__ 	size_t;$/;"	t	namespace:std	typeref:typename:__SIZE_TYPE__
 size_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stddef.h	/^typedef __SIZE_TYPE__ size_t;$/;"	t	typeref:typename:__SIZE_TYPE__
+sl_create_list	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@staticlist@staticlist.c	/^void sl_create_list(StaticList* sl) { sl->length = 0; }$/;"	f	typeref:typename:void
 sl_create_list	src/lib/structure/staticlist/staticlist.c	/^void sl_create_list(StaticList* sl) { sl->length = 0; }$/;"	f	typeref:typename:void
+sl_delete_at	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@staticlist@staticlist.c	/^void sl_delete_at(StaticList* sl, SlEltype* deletedValue, int idx) {$/;"	f	typeref:typename:void
 sl_delete_at	src/lib/structure/staticlist/staticlist.c	/^void sl_delete_at(StaticList* sl, SlEltype* deletedValue, int idx) {$/;"	f	typeref:typename:void
+sl_delete_first	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@staticlist@staticlist.c	/^void sl_delete_first(StaticList* sl, SlEltype* deletedValue) {$/;"	f	typeref:typename:void
 sl_delete_first	src/lib/structure/staticlist/staticlist.c	/^void sl_delete_first(StaticList* sl, SlEltype* deletedValue) {$/;"	f	typeref:typename:void
+sl_delete_last	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@staticlist@staticlist.c	/^void sl_delete_last(StaticList* sl, SlEltype* deletedValue) {$/;"	f	typeref:typename:void
 sl_delete_last	src/lib/structure/staticlist/staticlist.c	/^void sl_delete_last(StaticList* sl, SlEltype* deletedValue) {$/;"	f	typeref:typename:void
 sl_elmt	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@staticlist@staticlist.h	/^#define sl_elmt(/;"	d
 sl_elmt	src/lib/structure/staticlist/staticlist.h	/^#define sl_elmt(/;"	d
+sl_index_of	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@staticlist@staticlist.c	/^int sl_index_of(StaticList sl, SlEltype value) {$/;"	f	typeref:typename:int
 sl_index_of	src/lib/structure/staticlist/staticlist.c	/^int sl_index_of(StaticList sl, SlEltype value) {$/;"	f	typeref:typename:int
+sl_insert_at	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@staticlist@staticlist.c	/^void sl_insert_at(StaticList* sl, SlEltype value, int idx) {$/;"	f	typeref:typename:void
 sl_insert_at	src/lib/structure/staticlist/staticlist.c	/^void sl_insert_at(StaticList* sl, SlEltype value, int idx) {$/;"	f	typeref:typename:void
+sl_insert_first	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@staticlist@staticlist.c	/^void sl_insert_first(StaticList* sl, SlEltype value) {$/;"	f	typeref:typename:void
 sl_insert_first	src/lib/structure/staticlist/staticlist.c	/^void sl_insert_first(StaticList* sl, SlEltype value) {$/;"	f	typeref:typename:void
+sl_insert_last	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@staticlist@staticlist.c	/^void sl_insert_last(StaticList* sl, SlEltype value) {$/;"	f	typeref:typename:void
 sl_insert_last	src/lib/structure/staticlist/staticlist.c	/^void sl_insert_last(StaticList* sl, SlEltype value) {$/;"	f	typeref:typename:void
+sl_is_empty	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@staticlist@staticlist.c	/^boolean sl_is_empty(StaticList sl) { return !sl_length(sl); }$/;"	f	typeref:typename:boolean
 sl_is_empty	src/lib/structure/staticlist/staticlist.c	/^boolean sl_is_empty(StaticList sl) { return !sl_length(sl); }$/;"	f	typeref:typename:boolean
+sl_is_full	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@staticlist@staticlist.c	/^boolean sl_is_full(StaticList sl) { return sl_length(sl) == SL_CAPACITY; }$/;"	f	typeref:typename:boolean
 sl_is_full	src/lib/structure/staticlist/staticlist.c	/^boolean sl_is_full(StaticList sl) { return sl_length(sl) == SL_CAPACITY; }$/;"	f	typeref:typename:boolean
+sl_length	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@staticlist@staticlist.c	/^int sl_length(StaticList sl) { return sl.length; }$/;"	f	typeref:typename:int
 sl_length	src/lib/structure/staticlist/staticlist.c	/^int sl_length(StaticList sl) { return sl.length; }$/;"	f	typeref:typename:int
 sqrtf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define sqrtf /;"	d
 sqrtl	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define sqrtl /;"	d
+sscanf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#  define sscanf /;"	d
+ssize_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^typedef __ssize_t ssize_t;$/;"	t	typeref:typename:__ssize_t
 ssize_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^typedef __ssize_t ssize_t;$/;"	t	typeref:typename:__ssize_t
 stack	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@stack@stack.h	/^typedef struct stack$/;"	s
 stack	src/lib/structure/stack/stack.h	/^typedef struct stack$/;"	s
@@ -1870,6 +2035,9 @@ staticlist	src/lib/structure/staticlist/staticlist.h	/^typedef struct staticlist
 std	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@bits@std_abs.h	/^namespace std _GLIBCXX_VISIBILITY(default)$/;"	n
 std	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^namespace std$/;"	n
 std	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stddef.h	/^namespace std { typedef decltype(nullptr) nullptr_t; }$/;"	n
+stderr	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#define stderr /;"	d
+stdin	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#define stdin /;"	d
+stdout	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#define stdout /;"	d
 stopAtEntry	.vscode/launch.json	/^      "stopAtEntry": false,$/;"	b	object:configurations.0
 stopAtEntry	.vscode/launch.json	/^      "stopAtEntry": false,$/;"	b	object:configurations.1
 string_literals	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^    inline namespace string_literals { }$/;"	n	namespace:std::literals
@@ -1885,14 +2053,19 @@ suite_td	test/todolist/suite.c	/^Suite* suite_td() {$/;"	f	typeref:typename:Suit
 suite_word_machine	test/wordmachine/suite.c	/^Suite* suite_word_machine() {$/;"	f	typeref:typename:Suite *
 suseconds_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@select.h	/^typedef __suseconds_t suseconds_t;$/;"	t	typeref:typename:__suseconds_t
 suseconds_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^typedef __suseconds_t suseconds_t;$/;"	t	typeref:typename:__suseconds_t
+t_add_item	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@tas@tas.c	/^void t_add_item(Tas *T, Item item) {$/;"	f	typeref:typename:void
 t_add_item	src/lib/game/tas/tas.c	/^void t_add_item(Tas *T, Item item) {$/;"	f	typeref:typename:void
 t_cap	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@tas@tas.h	/^#define t_cap(/;"	d
 t_cap	src/lib/game/tas/tas.h	/^#define t_cap(/;"	d
+t_create_tas	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@tas@tas.c	/^void t_create_tas(Tas *T) {$/;"	f	typeref:typename:void
 t_create_tas	src/lib/game/tas/tas.c	/^void t_create_tas(Tas *T) {$/;"	f	typeref:typename:void
+t_increase_capacity	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@tas@tas.c	/^void t_increase_capacity(Tas *T, int cap_inc) {$/;"	f	typeref:typename:void
 t_increase_capacity	src/lib/game/tas/tas.c	/^void t_increase_capacity(Tas *T, int cap_inc) {$/;"	f	typeref:typename:void
+t_is_empty	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@tas@tas.c	/^boolean t_is_empty(Tas T) { return s_is_empty(t_isi(T)); }$/;"	f	typeref:typename:boolean
 t_is_empty	src/lib/game/tas/tas.c	/^boolean t_is_empty(Tas T) { return s_is_empty(t_isi(T)); }$/;"	f	typeref:typename:boolean
 t_isi	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@tas@tas.h	/^#define t_isi(/;"	d
 t_isi	src/lib/game/tas/tas.h	/^#define t_isi(/;"	d
+t_take_item	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@tas@tas.c	/^Item t_take_item(Tas *T) {$/;"	f	typeref:typename:Item
 t_take_item	src/lib/game/tas/tas.c	/^Item t_take_item(Tas *T) {$/;"	f	typeref:typename:Item
 tanf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define tanf /;"	d
 tanhf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define tanhf /;"	d
@@ -1900,6 +2073,7 @@ tanhl	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.
 tanl	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define tanl /;"	d
 tas	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@tas@tas.h	/^typedef struct tas {$/;"	s
 tas	src/lib/game/tas/tas.h	/^typedef struct tas {$/;"	s
+tas_mobita	src/lib/status_game/status_game.h	/^    Tas tas_mobita;$/;"	m	struct:StatusGame	typeref:typename:Tas
 tasks	.vscode/tasks.json	/^  "tasks": [$/;"	a
 td_create	src/lib/game/td_list/td_list.c	/^void td_create(ToDoList *tdl)$/;"	f	typeref:typename:void
 td_getOrder	src/lib/game/td_list/td_list.c	/^Order td_getOrder(ToDoList tdl, int idx)$/;"	f	typeref:typename:Order
@@ -1932,6 +2106,8 @@ time_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@typ
 timer_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@timer_t.h	/^typedef __timer_t timer_t;$/;"	t	typeref:typename:__timer_t
 timespec	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_timespec.h	/^struct timespec$/;"	s
 timeval	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_timeval.h	/^struct timeval$/;"	s
+tmpfile	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#  define tmpfile /;"	d
+to_do_list	src/lib/status_game/status_game.h	/^    ToDoList to_do_list;$/;"	m	struct:StatusGame	typeref:typename:ToDoList
 true	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@boolean.h	/^#define true /;"	d
 true	src/lib/boolean.h	/^#define true /;"	d
 tv_nsec	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@struct_timespec.h	/^  __syscall_slong_t tv_nsec;	\/* Nanoseconds.  *\/$/;"	m	struct:timespec	typeref:typename:__syscall_slong_t
@@ -1959,7 +2135,16 @@ uint	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.
 ulong	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^typedef unsigned long int ulong;$/;"	t	typeref:typename:unsigned long int
 useconds_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^typedef __useconds_t useconds_t;$/;"	t	typeref:typename:__useconds_t
 ushort	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^typedef unsigned short int ushort;$/;"	t	typeref:typename:unsigned short int
+va_arg	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stdarg.h	/^#define va_arg(/;"	d
+va_copy	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stdarg.h	/^#define va_copy(/;"	d
+va_end	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stdarg.h	/^#define va_end(/;"	d
+va_list	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^typedef __gnuc_va_list va_list;$/;"	t	typeref:typename:__gnuc_va_list
+va_list	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stdarg.h	/^typedef __builtin_va_list va_list;$/;"	t	typeref:typename:__builtin_va_list
+va_start	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stdarg.h	/^#define va_start(/;"	d
 version	.vscode/tasks.json	/^  "version": "2.0.0",$/;"	s
+vfscanf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#   define vfscanf /;"	d
+vscanf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#   define vscanf /;"	d
+vsscanf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#   define vsscanf /;"	d
 windows	.vscode/launch.json	/^      "windows": {$/;"	o	object:configurations.0
 windows	.vscode/launch.json	/^      "windows": {$/;"	o	object:configurations.1
 wint_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@12.0.1@include@stddef.h	/^typedef __WINT_TYPE__ wint_t;$/;"	t	typeref:typename:__WINT_TYPE__
@@ -1969,6 +2154,7 @@ wm_end_word	src/lib/wordmachine/wordmachine.c	/^boolean wm_end_word;$/;"	v	typer
 wm_set_blank	src/lib/wordmachine/wordmachine.c	/^void wm_set_blank(char* blank, int length) {$/;"	f	typeref:typename:void
 wm_start_word	src/lib/wordmachine/wordmachine.c	/^void wm_start_word(void* stream) {$/;"	f	typeref:typename:void
 word	src/lib/wordmachine/wordmachine.h	/^typedef struct word {$/;"	s
+write	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@cookie_io_functions_t.h	/^  cookie_write_function_t *write;	\/* Write bytes.  *\/$/;"	m	struct:_IO_cookie_io_functions_t	typeref:typename:cookie_write_function_t *
 x	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@prototype@order@building@point@point.h	/^  int x;$/;"	m	struct:point	typeref:typename:int
 x	src/lib/prototype/order/building/point/point.h	/^  int x;$/;"	m	struct:point	typeref:typename:int
 y	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@prototype@order@building@point@point.h	/^  int y;$/;"	m	struct:point	typeref:typename:int
