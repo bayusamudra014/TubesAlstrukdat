@@ -25,4 +25,11 @@ void ig_add_item(inventory_gadget* IG, Gadget G);
  */
 void ig_take_item(inventory_gadget* IG, Gadget* G);
 
+/**
+ * I.S. Inventory Gadget terdefinisi
+ * F.S. Cuma ngeprint list item
+ */
+
+void ig_display_ig(inventory_gadget IG);
+
 #endif

@@ -5,6 +5,7 @@ dist/
 .vscode/*
 !.vscode/launch.json
 !.vscode/tasks.json
+.ccls-cache/
 
 # Run ADT di WSL
 run_adt.wsl.sh
