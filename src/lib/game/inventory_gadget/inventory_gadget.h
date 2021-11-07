@@ -3,7 +3,7 @@
 
 #include "../game.h"
 
-typedef staticlist inventory_gadget;
+typedef StaticList inventory_gadget;
 /**
  * I.S. Inventory Gadget belum terdefenisi
  * F.S. Inventory Gadget kosong

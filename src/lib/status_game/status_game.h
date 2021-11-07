@@ -6,8 +6,12 @@
 
 typedef struct StatusGame{
 
-    ProgressList Progress_List;
-    ToDoList ToDoList;
+    ProgressList progress_list;
+    ToDoList to_do_list;
+    Tas tas_mobita;
+    OrderList order_list;
+    inventory_gadget inventory_gadget; 
+    
     
 
 }StatusGame;

@@ -1,3 +1,6 @@
+#ifndef H_ORDER_LIST
+#define H_ORDER_LIST
+
 #include "../game.h"
 
 typedef Queue OrderList;
@@ -22,3 +25,5 @@ Order* ol_get_all_order(OrderList ol);
 
 /* Mengembalikan true bila order sudah habis */
 boolean ol_is_empty(OrderList ol);
+
+#endif
