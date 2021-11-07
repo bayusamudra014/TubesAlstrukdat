@@ -2,7 +2,7 @@
 #define H_STATUS_GAME
 
 #include <stdio.h>
-#include "game/game.h"
+#include "../game/game.h"
 
 typedef struct StatusGame{
 
