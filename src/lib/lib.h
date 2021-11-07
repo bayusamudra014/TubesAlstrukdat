@@ -5,6 +5,7 @@
 #include "prototype/prototype.h"
 #include "structure/structure.h"
 #include "game/game.h"
+#include "status_game/status_game.h"
 
 /* ADT Struktur Data */
 #include "charmachine/charmachine.h"
