@@ -11,13 +11,18 @@ typedef struct StatusGame{
     Tas tas_mobita;
     OrderList order_list;
     inventory_gadget inventory_gadget; 
+    Time Waktu_Permainan;
+    Building posisi_sekarang;
     
     
-
 }StatusGame;
 
 extern StatusGame s_status_game;
 
+/*Berfungsi untuk mereset waktu*/
+void sg_reset_time(StatusGame *sg);
 
+/*Berfungsi untuk increment waktu*/
+void sg_inc_time(StatusGame *sg);
 
 #endif
