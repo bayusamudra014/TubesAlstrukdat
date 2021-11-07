@@ -13,6 +13,8 @@ typedef struct StatusGame{
     inventory_gadget inventory_gadget; 
     Time Waktu_Permainan;
     Building posisi_sekarang;
+    Map peta_game;
+    
     
     
 }StatusGame;
@@ -20,9 +22,9 @@ typedef struct StatusGame{
 extern StatusGame s_status_game;
 
 /*Berfungsi untuk mereset waktu*/
-void sg_reset_time(StatusGame *sg);
+void sg_reset_time();
 
 /*Berfungsi untuk increment waktu*/
-void sg_inc_time(StatusGame *sg);
+void sg_inc_time();
 
 #endif

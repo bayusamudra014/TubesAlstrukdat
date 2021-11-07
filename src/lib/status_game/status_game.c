@@ -1,14 +1,18 @@
 #include "status_game.h"
 #include <stdio.h>
 
-void sg_reset_time(StatusGame *sg){
+
+
+StatusGame status_game;
+
+void sg_reset_time(){
     
-    (*sg).Waktu_Permainan = 0; 
+    status_game.Waktu_Permainan = 0; 
 
 }
 
-void sg_inc_time(StatusGame *sg){
+void sg_inc_time(){
     
-    (*sg).Waktu_Permainan++;
+    status_game.Waktu_Permainan++;
 
 }

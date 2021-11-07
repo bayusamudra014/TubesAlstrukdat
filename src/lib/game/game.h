@@ -8,6 +8,7 @@
 #include "tas/tas.h"
 #include "inventory_gadget/inventory_gadget.h"
 #include "orderlist/orderlist.h"
+#include "map/map.h"
 
 
 #endif
