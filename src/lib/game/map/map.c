@@ -3,9 +3,9 @@
 void alokasiMAP(Map *m,int row, int col){
     m_create_matrix(m, row, col);
     int i,j;
-    for(i=0;i<ROW(*m)+2;i++){
-        for(j=0;j<COL(*m)+2;j++){
-            if(i==0 || i==ROW(*m)+1 || j==0 || j==COL(*m)+1){
+    for(i=0;i<m_rows_num(*m)+2;i++){
+        for(j=0;j<m_cols_num(*m)+2;j++){
+            if(i==0 || i==m_rows_num(*m)+1 || j==0 || j==m_cols_num(*m)+1){
                 m_elmt(*m,i,j) = '*';
             }else{
                 m_elmt(*m,i,j) = ' ';
