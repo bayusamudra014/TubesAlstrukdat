@@ -61,4 +61,5 @@ boolean f_is_file(const char* path){
     else{
         return false;
     }
+    return 0;
 }
