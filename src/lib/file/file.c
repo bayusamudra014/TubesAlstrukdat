@@ -50,7 +50,7 @@ boolean f_readable(const char* path){
 
 boolean f_is_file(const char* path){
     struct stat s;
-    if(stat("hahay.txt",&s) == 0){
+    if(stat(path,&s) == 0){
         if(s.st_mode & S_IFREG){
             return true;
         }
