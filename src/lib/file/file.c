@@ -1,10 +1,6 @@
 #include "file.h"
 #include <stdio.h>
 #include "../wordmachine/wordmachine.h"
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include <stdlib.h>
 
 void f_read_file(const char* path, char* buffer, int size){
     FILE *fp;
@@ -38,28 +34,4 @@ boolean f_exist(const char* path){
         return true;
     }
     fclose(fp);
-}
-
-boolean f_writeable(const char* path){
-    return (!access(path, W_OK));
-}
-
-boolean f_readable(const char* path){
-    return (!access(path, R_OK ));
-}
-
-boolean f_is_file(const char* path){
-    struct stat s;
-    if(stat(path,&s) == 0){
-        if(s.st_mode & S_IFREG){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-    else{
-        return false;
-    }
-    return 0;
 }

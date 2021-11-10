@@ -23,12 +23,4 @@ void f_write_file(const char* path, const char* buffer, int size);
 /* Mengembalikan true bila file path tersedia */
 boolean f_exist(const char* path); 
 
-/* Mengembalikan true bila path writeable */
-boolean f_writeable(const char* path);
-
-/* Mengembalikan true bila path bisa ditulis */
-boolean f_readable(const char* path);
-
-/* Mengembalikan true bila path merupakan file */
-boolean f_is_file(const char* path);
 #endif
