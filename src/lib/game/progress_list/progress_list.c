@@ -8,7 +8,7 @@
 /*F.S. progress list kosong yang baru*/
 void pl_create_progress(ProgressList *pl){
 
-    ll_create_list(*pl);
+    ll_create_list(pl);
 
 }
 
@@ -22,7 +22,7 @@ boolean pl_is_empty(ProgressList pl){
 /*order baru tersebut menjadi elemen terakhir dari progress list*/
 void pl_insert_last(ProgressList *pl, PlElType order){
     
-    ll_insert_last(&pl, order);
+    ll_insert_last(pl, order);
 
 }
 
@@ -31,7 +31,7 @@ void pl_insert_last(ProgressList *pl, PlElType order){
 /*Hal ini terjadi ketika order telah selesai diantarkan*/
 void pl_delete_first(ProgressList *pl, PlElType *order){
 
-    ll_delete_first(*pl, &order);
+    ll_delete_first(pl, order);
 }
 
 /*Mengembalikan panjang dari progress list*/

@@ -2,7 +2,7 @@
 #define H_BUY_PAGE
 
 
-#include "../lib/lib.h"
+#include "../views.h"
 
 void show_buy();
 

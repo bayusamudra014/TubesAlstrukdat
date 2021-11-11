@@ -1,15 +1,17 @@
 #include "Inprogress_page.h"
+#include <stdio.h>
 
 ProgressList progress_list;
 
-void show_progress(){
+
+void show_progress(StatusGame s_status_game){
 
     Item item;
     Order order;
     Building tujuan;
     struct node *p;
     int num;
-
+    
     progress_list = s_status_game.progress_list;
 
     if (pl_is_empty(progress_list)){
