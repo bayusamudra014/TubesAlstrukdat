@@ -1,7 +1,7 @@
 #ifndef H_PROGRESS_VIEWS
 #define H_PROGRESS_VIEWS
 
-#include "../lib/lib.h"
+#include "../views.h"
 
 void show_progress();
 
