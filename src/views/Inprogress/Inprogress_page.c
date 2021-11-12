@@ -3,7 +3,6 @@
 
 ProgressList progress_list;
 
-
 void show_progress(StatusGame s_status_game){
 
     Item item;
@@ -52,5 +51,24 @@ void show_progress(StatusGame s_status_game){
             p = NEXT(p);
 
         }
+    }
+}
+
+void progress_dropoff(StatusGame *s_status_game){
+    Order order;
+    pl_delete_first(&s_status_game->progress_list, &order);
+    
+    if(order.item.type == 'P'){
+        t_increase_capacity(&s_status_game->tas_mobita, 100);
+        s_status_game->uang_mobita = s_status_game->uang_mobita + 400;
+    }else if(order.item.type == 'H'){
+        s_status_game->uang_mobita = s_status_game->uang_mobita + 400;
+
+    }else if(order.item.type == 'N'){
+        s_status_game->uang_mobita = s_status_game->uang_mobita + 200;
+
+    }else if(order.item.type == 'V'){
+        s_status_game->uang_mobita = s_status_game->uang_mobita + 600;
+
     }
 }

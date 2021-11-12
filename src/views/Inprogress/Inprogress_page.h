@@ -3,6 +3,7 @@
 
 #include "../views.h"
 
-void show_progress();
-
+void show_progress(StatusGame s_status_game);
+void progress_dropoff(StatusGame *s_status_game);
+void progress_pickUp(StatusGame *s_status_game);
 #endif
