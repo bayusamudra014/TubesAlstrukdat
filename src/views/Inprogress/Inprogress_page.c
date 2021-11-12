@@ -10,7 +10,7 @@ void show_progress(StatusGame s_status_game){
     Order order;
     Building tujuan;
     struct node *p;
-    int num;
+    int num = 1;
     
     progress_list = s_status_game.progress_list;
 
@@ -37,10 +37,13 @@ void show_progress(StatusGame s_status_game){
                 break;
             case 'H':
                 printf("Heavy Item");
+                break;
             case 'P':
-                printf("Perishable Item (Expired time: %d)\n",item.expired);
+                printf("Perishable Item (Expired time: %d)",item.expired);
+                break;
             case 'V':
                 printf("VIP Item");
+                break;
             }
 
             printf(" (Tujuan : %c)\n",tujuan.label);
