@@ -9,6 +9,10 @@ typedef struct building {
   char label;
 } Building;
 
+#define label(b) (b).label
+#define Absis(b) (b).position.x
+#define Ordinat(b) (b).position.y
+
 /**
  * Dibuat untuk testing point dan dynamic list
  *
