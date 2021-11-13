@@ -56,6 +56,7 @@ void show_progress(StatusGame s_status_game){
 
 void progress_dropoff(StatusGame *s_status_game){
     Order order;
+    
     pl_delete_first(&s_status_game->progress_list, &order);
     
     if(order.item.type == 'P'){
@@ -71,4 +72,19 @@ void progress_dropoff(StatusGame *s_status_game){
         s_status_game->uang_mobita = s_status_game->uang_mobita + 600;
 
     }
+}
+
+void progress_pickUp(StatusGame *s_status_game, Order order){
+
+    pl_insert_last(&s_status_game->progress_list,order);
+    if(order.item.type == 'N'){
+
+    }else if(order.item.type == 'H'){
+
+    }else if(order.item.type == 'P'){
+
+    }else if(order.item.type == 'V'){
+
+    }
+
 }
