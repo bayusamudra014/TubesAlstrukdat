@@ -14,8 +14,7 @@ typedef struct StatusGame{
     Time Waktu_Permainan;
     Building posisi_sekarang;
     Map peta_game;
-    
-    
+    int uang_mobita;
     
 }StatusGame;
 
