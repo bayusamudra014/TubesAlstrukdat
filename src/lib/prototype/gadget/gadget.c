@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "gadget.h"
 
-void set_gadget(Gadget *gadget, int type){
+void g_set_gadget(Gadget *gadget, int type){
     
     if (type == 1){
         gadget->gadgetID = 1;

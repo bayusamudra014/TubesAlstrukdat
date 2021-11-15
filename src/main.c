@@ -17,7 +17,7 @@
 /*test page to_do*/
 int main(){
   StatusGame s_status_game;
-  s_status_game.uang_mobita = 1000;
+  s_status_game.uang_mobita = 10000;
 
 //   Order order1, order2;
 //   s_status_game.uang_mobita = 0;
@@ -75,7 +75,25 @@ int main(){
 
 
   // show_to_do(s_status_game);
-  show_page_buy(s_status_game);
+//   Gadget gadget;
+//   gadget.gadgetID = 1;
+//   gadget.label = 'K';
+//   gadget.price = 800;
+  
+//   ig_create_ig(&s_status_game.inventory_gadget);
+//   printf("\n");
+//   printf("Kapasitas dari inventory gadget adalah : %d",sl_length(s_status_game.inventory_gadget));
+//   printf("\n");
+//   ig_display_ig(s_status_game.inventory_gadget);
+//   printf("\n");
+//   show_page_buy(&s_status_game);
+//   printf("\n");
+//   printf("Kapasitas dari inventory gadget adalah : %d",sl_length(s_status_game.inventory_gadget));
+//   printf("\n");
+//   ig_display_ig(s_status_game.inventory_gadget);
+//   printf("\n");
+//   printf("Uang mobita saat ini : %d Yen\n",s_status_game.uang_mobita);
+
 
   
 

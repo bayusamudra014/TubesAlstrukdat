@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct Gadget{
+typedef struct gadget{
 
     int gadgetID;
     char label;
@@ -19,4 +19,5 @@ void g_set_gadget(Gadget *gadget, int type);
 /* mengubah state game berdasarkan gadget yang diinputkan */
 /* masih menunggu beberapa adt game selesai */
 void g_change_state(int type);
+
 #endif
