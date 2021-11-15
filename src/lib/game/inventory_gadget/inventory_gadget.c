@@ -50,7 +50,8 @@ void ig_display_ig(inventory_gadget IG) {
   int i;
   for (i = 0; i < 5; i++) {
     if (i < sl_length(IG)) {
-      printf("%d. %c\n", i + 1, sl_elmt(IG, i));
+      printf("%d. %c\n", i + 1, sl_elmt(IG, i).label);
+
     } else {
       printf("%d. -\n", i + 1);
     }

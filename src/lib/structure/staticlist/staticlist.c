@@ -23,7 +23,7 @@ int sl_index_of(StaticList sl, SlEltype value) {
   int i = 0;
 
   while (i < SL_CAPACITY && !found) {
-    if (sl_elmt(sl, i) == value) {
+    if (sl_elmt(sl, i).gadgetID == value.gadgetID) {
       found = true;
     } else {
       i++;

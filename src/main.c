@@ -7,11 +7,6 @@ int main()
 {
     clear_screen();
 
-    StatusGame s_status_game;
-
-    show_load_game(&s_status_game);
-    show_save_game(s_status_game);
-
     cm_modal_error("Ini adalah contoh error.");
     cm_modal_warning("Ini adalah contoh warning.");
     cm_modal_info("Ini adalah contoh info.");
@@ -19,10 +14,12 @@ int main()
     return 0;
 }
 
-// /*test page to_do*/
+/*test page to_do*/
 // int main(){
 //   StatusGame s_status_game;
-//   Order order1, order2;
+//   s_status_game.uang_mobita = 10000;
+
+// //   Order order1, order2;
 //   s_status_game.uang_mobita = 0;
 
 //   // order1.item.expired = 5;
@@ -76,6 +73,25 @@ int main()
 //   printf("\n");
 //   printf("uang mobita saat ini : %d\n",s_status_game.uang_mobita);
 
-//   // show_to_do(s_status_game);
 
-// }
+  // show_to_do(s_status_game);
+//   Gadget gadget;
+//   gadget.gadgetID = 1;
+//   gadget.label = 'K';
+//   gadget.price = 800;
+  
+//   ig_create_ig(&s_status_game.inventory_gadget);
+//   printf("\n");
+//   printf("Kapasitas dari inventory gadget adalah : %d",sl_length(s_status_game.inventory_gadget));
+//   printf("\n");
+//   ig_display_ig(s_status_game.inventory_gadget);
+//   printf("\n");
+//   show_page_buy(&s_status_game);
+//   printf("\n");
+//   printf("Kapasitas dari inventory gadget adalah : %d",sl_length(s_status_game.inventory_gadget));
+//   printf("\n");
+//   ig_display_ig(s_status_game.inventory_gadget);
+//   printf("\n");
+//   printf("Uang mobita saat ini : %d Yen\n",s_status_game.uang_mobita);
+
+ 
