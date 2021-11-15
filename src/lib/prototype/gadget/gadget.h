@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "../../lib.h"
 
 typedef struct gadget{
 

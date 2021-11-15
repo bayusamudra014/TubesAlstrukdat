@@ -26,18 +26,24 @@ void g_set_gadget(Gadget *gadget, int type){
     }
 }
 
-// int g__get_price(int type){
-//     if (type == 1){
-//         return 800;
-//     }
-//     else if (type == 2){
-//         return 1200;
-//     }
-//     else if (type == 3){
-//         return 1500;
-//     }
-//     else if (type == 4){
-//         return 3000;
-//     }
-// }
+void change_state(int type, StatusGame *s, int mv){
+    if (type == 1){
+    
+    }
+    else if (type == 2){
+        t_increase_capacity(&s->tas_mobita, t_cap(s->tas_mobita));
+    }
+    else if (type == 3){
+        move(*s, mv, true, false);
+    }
+    else if (type == 4){
+        int tm = s->Waktu_Permainan;
+        if (s < 50){
+            s = 0;
+        }
+        else{
+            s -= 50;
+        }
+    }
+}
 
