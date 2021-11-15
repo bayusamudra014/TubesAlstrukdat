@@ -5,7 +5,7 @@
 
 #include "../structure.h"
 
-typedef boolean MEltype;
+typedef int MEltype;
 typedef struct matrix {
   int rowEff;
   int colEff;

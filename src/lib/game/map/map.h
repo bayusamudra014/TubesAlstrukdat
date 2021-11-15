@@ -10,6 +10,7 @@ typedef struct map{
     int row;
     int col;
     DynamicList reachable;
+    Matrix adj;
 } Map;
 
 typedef Matrix adj;
