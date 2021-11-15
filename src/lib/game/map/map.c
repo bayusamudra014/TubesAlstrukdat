@@ -1,45 +1,77 @@
 #include "map.h"
 
-void alokasiMAP(Map *m,int row, int col){
-    m_create_matrix(m, row, col);
+void m_allocate(Map *m,int row, int col, DynamicList bl){
+    (*m).buildinglist = bl;
+    Row(*m) = row;
+    Col(*m) = col;
     int i,j;
-    for(i=0;i<m_rows_num(*m)+2;i++){
-        for(j=0;j<m_cols_num(*m)+2;j++){
-            if(i==0 || i==m_rows_num(*m)+1 || j==0 || j==m_cols_num(*m)+1){
-                m_elmt(*m,i,j) = '*';
-            }else{
-                m_elmt(*m,i,j) = ' ';
+    for(i=0; i<Row(*m)+2; i++){
+        for(j=0; j<Col(*m)+2; j++){
+            if (i==0 || j==0 || i==Row(*m)+1 || j==Col(*m)+1){
+                map_elmt(*m,i,j) = '*';
+            }
+            else{
+                map_elmt(*m,i,j) = ' ';
             }
             
         }
     }
 }
 
-boolean m_is_eff(Map m, int x, int y){
-    return (x > 0 && x <= m.rowEff) && ( y > 0 && y <= m.colEff);
-};
-/*
+void m_assign(Map *m){
+    int i;
+    for(i=0; i<loc_nEff(*m); i++){
+        map_elmt(*m,m_elmt_x(*m,i),m_elmt_y(*m,i)) = loc_elmt(*m,i);
+    }
+    dl_create_list(&reachable(*m),loc_nEff(*m));
+}
+
+int m_get_idx(Map m, char b){
+    for(int i=0; i<loc_nEff(m); i++){
+        if(loc_elmt(m,i) == b){
+            return i;
+        }
+    }
+}
+
 void m_display(Map m){
     int i,j;
-    for(i=0;i<m.rowEff+2;i++){
-        for(j=0;j<colEff+2;j++){
-            if(m_elmt(m,i,j) != '*' && m_elmt(m,i,j) != ' '){
-                if(m_elmt(m,i,j) == 'm'){
-                    print_yellow(m_elmt(m,i,j));
-                }else if(m_elmt(m,i,j) == 'd'){
-                    print_blue(m_elmt(m,i,j));
-                }else if(m_elmt(m,i,j) == 'p'){
-                    print_red(m_elmt(m,i,j));
-                }else if(m_elmt(m,i,j) == 'r'){
-                    print_green(m_elmt(m,i,j));
-                }else{
-                    printf("%c",m_elmt(m,i,j));
+    for(i=0;i<Row(m)+2;i++){
+        for(j=0;j<Col(m)+2;j++){
+            char curr = map_elmt(m,i,j);
+            if(curr != '*' && curr != ' '){
+                int idx;
+                idx = m_get_idx(m,curr);
+                if(loc_type(m,idx) == 'm'){
+                    print_yellow(curr);
                 }
-            }else{
-                printf("%c",m_elmt(m,i,j));
+                else if(loc_type(m,idx) == 'p'){
+                    print_red(curr);
+                }
+                else if(loc_type(m,idx) == 'd'){
+                    print_blue(curr);
+                }
+                else if(loc_type(m,idx) == 'r'){
+                    print_green(curr);
+                }
+                else{
+                    printf("%c",curr);
+                }
             }
-            
+            else{
+                printf("%c",curr);
+            }
         }
         printf("\n");
     }
-}*/
+}
+
+void m_display_reachable(Map m){
+    int i;
+    printf("Tempat yang bisa dicapai: \n");
+    for(i=1; i<=neffReach(m); i++){
+        printf("%d. ",i);
+        b_display(dl_elmt(reachable(m),i));
+    }
+}
+

@@ -2,16 +2,16 @@
 
 Gadget g_get_name(int type){
     if (type == 1){
-        return "Kain Pembungkus Waktu";
+        return "K";
     }
     else if (type == 2){
-        return "Senter Pembesar";
+        return "S";
     }
     else if (type == 3){
-        return "Pintu Kemana Saja";
+        return "P";
     }
     else if (type == 4){
-        return "Mesin Waktu";
+        return "M";
     }
 }
 
@@ -29,3 +29,4 @@ int g__get_price(int type){
         return 3000;
     }
 }
+
