@@ -14,9 +14,11 @@
 //   return 0;
 // }
 
-// /*test page to_do*/
-// int main(){
-//   StatusGame s_status_game;
+/*test page to_do*/
+int main(){
+  StatusGame s_status_game;
+  s_status_game.uang_mobita = 1000;
+
 //   Order order1, order2;
 //   s_status_game.uang_mobita = 0;
 
@@ -72,7 +74,10 @@
 //   printf("uang mobita saat ini : %d\n",s_status_game.uang_mobita);
 
 
-//   // show_to_do(s_status_game);
+  // show_to_do(s_status_game);
+  show_page_buy(s_status_game);
 
-// }
+  
+
+}
  

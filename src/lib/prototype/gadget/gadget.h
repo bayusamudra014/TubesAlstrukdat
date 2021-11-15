@@ -2,13 +2,19 @@
 #define H_GADGET
 
 #include <stdio.h>
-typedef char Gadget;
+#include <stdlib.h>
 
-/* Mengembalikan nama gadget */
-Gadget g_get_name(int type);
+typedef struct Gadget{
 
-/* Mengembalikan harga beli gadget */
-int g__get_price(int type);
+    int gadgetID;
+    char label;
+    int price;
+
+}Gadget;
+
+/*I.S. Sembarang*/
+/*F.S. set gadget sesuai dengan spesifikasi*/
+void g_set_gadget(Gadget *gadget, int type);
 
 /* mengubah state game berdasarkan gadget yang diinputkan */
 /* masih menunggu beberapa adt game selesai */
