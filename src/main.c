@@ -3,16 +3,21 @@
 #include "lib/lib.h"
 #include "views/views.h"
 
-// int main()
-// {
-//   clear_screen();
+int main()
+{
+    clear_screen();
 
-//   cm_modal_error("Ini adalah contoh error.");
-//   cm_modal_warning("Ini adalah contoh warning.");
-//   cm_modal_info("Ini adalah contoh info.");
+    StatusGame s_status_game;
 
-//   return 0;
-// }
+    show_load_game(&s_status_game);
+    show_save_game(s_status_game);
+
+    cm_modal_error("Ini adalah contoh error.");
+    cm_modal_warning("Ini adalah contoh warning.");
+    cm_modal_info("Ini adalah contoh info.");
+
+    return 0;
+}
 
 // /*test page to_do*/
 // int main(){
@@ -66,13 +71,11 @@
 //   // pl_delete_first(&s_status_game.progress_list,&order1);
 //   progress_dropoff(&s_status_game);
 //   show_progress(s_status_game);
-  
+
 //   printf("kapasitas tas mobita saat ini : %d",s_status_game.tas_mobita.capacity);
 //   printf("\n");
 //   printf("uang mobita saat ini : %d\n",s_status_game.uang_mobita);
 
-
 //   // show_to_do(s_status_game);
 
 // }
- 

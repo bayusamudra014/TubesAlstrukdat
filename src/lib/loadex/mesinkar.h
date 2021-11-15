@@ -5,7 +5,7 @@
 #define __MESIN_KAR_H_
 
 #include <string.h>
-#include "boolean.h"
+#include "../lib.h"
 
 #define MARK EOF
 

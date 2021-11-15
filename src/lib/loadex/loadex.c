@@ -1,8 +1,8 @@
 #include "loadex.h"
 #include "mesinkar.h"
-// Advances until CC is not blank
-static char configFilename[] = "config.conf";
-static char savefileFilename[] = "savefile.dat";
+
+// static char configFilename[] = "config.conf";
+// static char savefileFilename[] = "savefile.dat";
 
 static FILE *savefile;
 
@@ -66,8 +66,23 @@ void readNumberSTDIN(int *X)
 }
 
 // readConfigFile will read config file and make the structure
-void readConfigFile(StatusGame *s_status_game)
+void readConfigFile(char configFilename[], StatusGame *s_status_game)
 {
+    // Persiapan untuk status Game
+    ProgressList progress_list;
+    ToDoList to_do_list;
+    Tas tas_mobita;
+    OrderList order_list;
+    inventory_gadget inventory_gadget;
+    Time Waktu_Permainan;
+    Building posisi_sekarang;
+    Map peta_game;
+    int uang_mobita;
+
+    // Persiapan Lain
+    int i, j;
+    ol_create_orederlist(&order_list);
+
     START(configFilename);
     ignoreBlank();
 
@@ -77,48 +92,198 @@ void readConfigFile(StatusGame *s_status_game)
     ignoreBlank();
     int col = readNumber();
 
+    // Membuat building List
+    DynamicList buildingList;
+    ignoreBlank();
+    int buildingN = readNumber();
+    buildingN += 1;
+    dl_create_list(&buildingList, buildingN);
+
     // alokasi map
-    Map map;
-    m_allocate(&map, row, col);
+    m_allocate(&peta_game, row, col, buildingList);
 
     // Read HQ
     Building HQ;
-    
+    ignoreBlank();
     int x = readNumber();
     ignoreBlank();
     int y = readNumber();
-    b_create_building(&HQ,x,y,'8');
+    b_create_building(&HQ, x, y, '8', '#');
+    map_elmt(peta_game, x, y) = '8';
+    dl_insert_last(&peta_game.buildinglist, HQ);
 
+    // Proses memasukkan building"
+    char buildingLabel;
+    for (i = 1; i <= buildingN; i++)
+    {
+        // Membaca label Building
+        ignoreBlank();
+        buildingLabel = CC;
+        ADV();
 
-    // Read building count
+        // membaca coordinate building
+        ignoreBlank();
+        x = readNumber();
+        ignoreBlank();
+        y = readNumber();
+
+        //Mengubah peta
+        map_elmt(peta_game, x, y) = buildingLabel;
+
+        //membuat building
+        Building currentBuilding;
+        b_create_building(&currentBuilding, x, y, buildingLabel, '#');
+
+        //memasukkannya ke dalam list building
+        dl_insert_last(&peta_game.buildinglist, currentBuilding);
+    }
+
+    Matrix adjMatrix;
+    m_create_matrix(&adjMatrix, buildingN, buildingN);
+    for (i = 0; i <= buildingN; i++)
+    {
+        for (j = 0; j <= buildingN; j++)
+        {
+            ignoreBlank();
+            x = readNumber();
+            m_elmt(adjMatrix, i, j) = x;
+        }
+    }
+
+    peta_game.adj = adjMatrix;
+
+    // Membaca orderlist
     ignoreBlank();
-    int t = readNumber();
+    int orderN = readNumber();
+
+    int waktuPesanan, expTime;
+    char pickUp, dropOff, tipeItem, expTime;
+    Building P, D;
+
+    for (i = 1; i <= orderN; i++)
+    {
+        ignoreBlank();
+        waktuPesanan = readNumber();
+
+        ignoreBlank();
+        pickUp = CC;
+        ADV();
+        for (j = 1; j <= buildingN; j++)
+        {
+            if (loc(peta_game, j).label == pickUp)
+            {
+                P = loc(peta_game, j);
+            }
+        }
+
+        ignoreBlank();
+        dropOff = CC;
+        ADV();
+        for (j = 1; j <= buildingN; j++)
+        {
+            if (loc(peta_game, j).label == dropOff)
+            {
+                D = loc(peta_game, j);
+            }
+        }
+
+        ignoreBlank();
+        tipeItem = CC;
+        ADV();
+
+        expTime = -1;
+        if (tipeItem == 'P')
+        {
+            ignoreBlank();
+            expTime = readNumber;
+        }
+
+        Item item;
+        i_create_item(&item, tipeItem, expTime);
+
+        Order order;
+        o_create_order(&order, item, P, D, waktuPesanan);
+
+        ol_add_order(&order_list, order);
+    }
+    ignoreBlank();
     
+    
+    //Finishing
+    pl_create_progress(&progress_list);
+    td_create(&to_do_list);
+    t_create_tas(&tas_mobita);
+    // o_create_order();
+    ig_create_ig(&inventory_gadget);
+    Waktu_Permainan = 0;
+    posisi_sekarang = HQ;
+    //peta_game
+    uang_mobita = 0;
 
-
-    ignoreBlank();
+    // mengubah status game
+    s_status_game->progress_list = progress_list;
+    s_status_game->to_do_list = to_do_list;
+    s_status_game->tas_mobita = tas_mobita;
+    s_status_game->order_list = order_list;
+    s_status_game->inventory_gadget = inventory_gadget;
+    s_status_game->Waktu_Permainan = Waktu_Permainan;
+    s_status_game->posisi_sekarang = posisi_sekarang;
+    s_status_game->peta_game = peta_game;
+    s_status_game->uang_mobita = uang_mobita;
 }
 
 // Print ASCII of character (for debugging purposes)
-void printASCIIFile();
+void printASCIIFile()
+{
+
+}
 
 // Print word
-void printWord(word W);
+void printWord(word W)
+{
+
+}
 
 // Save to file
-void saveToFile(StatusGame s_status_game);
+void saveToFile(StatusGame s_status_game){
+
+}
 
 // Load from file
-void loadFromFile(StatusGame *s_status_game);
+void loadFromFile(StatusGame *s_status_game){
+
+}
 
 // Word to int converter
-int intConverter(word W);
+int intConverter(word W){
+    int result = 0;
+    int temp;
+    for(int i = 0; i < W.length; i++){
+        temp = (int) W.wordArray[i] - '0';
+        result = result * 10 + temp;
+    }
+    return result;
+}
 
 // Word Compare
-boolean wordCompare(word W, char *S);
+boolean wordCompare(word W, char *S){
+    boolean result = true;
+    int i;
+    for(i = 0; i < W.length; i++){
+        char temp = (char) W.wordArray[i];
+        if(temp != S[i]){
+            result = false;
+        }
+    }
+    int a = strlen(S);
+    if(W.length != a){
+        result = false;
+    }
+    return result;
+}
 
-void ldx_newGame(const char *path, StatusGame *status_game);
+// void ldx_newGame(const char *path, StatusGame *status_game);
 
-void ldx_loadGame(const char *path, StatusGame *status_game);
+// void ldx_loadGame(const char *path, StatusGame *status_game);
 
-void ldx_saveGame(const char *path, StatusGame status_game);
+// void ldx_saveGame(const char *path, StatusGame status_game);
