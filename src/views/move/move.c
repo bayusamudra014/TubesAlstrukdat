@@ -36,3 +36,13 @@ void move_boost(StatusGame *s, int mv, int curr_move) {
     }
   }
 }
+
+void show_move(StatusGame *s){
+  Map curr_map = s->peta_game;
+  m_display_reachable(curr_map);
+  int mv;
+  scanf("%d",&mv);
+  if (mv != 0){
+    move(&s, mv, false, false);
+  }
+}

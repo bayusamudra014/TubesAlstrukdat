@@ -136,6 +136,7 @@ H_CONSOLE	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@console@con
 H_CONSOLE	src/lib/console/console.h	/^#define H_CONSOLE$/;"	d
 H_C_MODAL	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@components@modal@modal.h	/^#define H_C_MODAL$/;"	d
 H_C_MODAL	src/components/modal/modal.h	/^#define H_C_MODAL$/;"	d
+H_DROPOFF_PAGE	src/views/dropoff/dropoff_page.h	/^#define H_DROPOFF_PAGE$/;"	d
 H_DYNAMICLIST_TEST	test/dynamiclist/test.h	/^#define H_DYNAMICLIST_TEST$/;"	d
 H_DYNAMIC_LIST	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@dynamiclist@dynamiclist.h	/^#define H_DYNAMIC_LIST$/;"	d
 H_DYNAMIC_LIST	src/lib/structure/dynamiclist/dynamiclist.h	/^#define H_DYNAMIC_LIST$/;"	d
@@ -172,8 +173,10 @@ H_ORDER	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@prototype@ord
 H_ORDER	src/lib/prototype/order/order.h	/^#define H_ORDER$/;"	d
 H_ORDER_LIST	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@game@orderlist@orderlist.h	/^#define H_ORDER_LIST$/;"	d
 H_ORDER_LIST	src/lib/game/orderlist/orderlist.h	/^#define H_ORDER_LIST$/;"	d
+H_PAGE_RETURN	src/views/return/return_page.h	/^#define H_PAGE_RETURN$/;"	d
 H_PCOLOR	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@console@pcolor@pcolor.h	/^#define H_PCOLOR$/;"	d
 H_PCOLOR	src/lib/console/pcolor/pcolor.h	/^#define H_PCOLOR$/;"	d
+H_PICKUO_RETURN	src/views/pickup/pickup_page.h	/^#define H_PICKUO_RETURN$/;"	d
 H_POINT	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@prototype@order@building@point@point.h	/^#define H_POINT$/;"	d
 H_POINT	src/lib/prototype/order/building/point/point.h	/^#define H_POINT$/;"	d
 H_POINT_TEST	test/point/test.h	/^#define H_POINT_TEST$/;"	d
@@ -1240,7 +1243,7 @@ __anonbfe66a30020a	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@incl
 __anonc3f1080a0108	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^  {$/;"	s
 __anonc3f1080a0208	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^  {$/;"	s
 __anonc3f1080a0308	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^  {$/;"	s
-__ask_input	src/views/mainmenu/mainmenu.c	/^char *__ask_input() {$/;"	f	typeref:typename:char *
+__ask_input	src/views/mainmenu/mainmenu.c	/^char *__ask_input(char message[]) {$/;"	f	typeref:typename:char *
 __attr_access	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@cdefs.h	/^#  define __attr_access(/;"	d
 __attr_access	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@cdefs.h	/^#define __attr_access(/;"	d
 __attribute__	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@cdefs.h	/^# define __attribute__(/;"	d
@@ -1328,7 +1331,6 @@ __cm_tape	src/lib/charmachine/charmachine.c	/^static void* __cm_tape;$/;"	v	type
 __compar_d_fn_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^typedef int (*__compar_d_fn_t) (const void *, const void *, void *);$/;"	t	typeref:typename:int (*)(const void *,const void *,void *)
 __compar_fn_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^typedef int (*__compar_fn_t) (const void *, const void *);$/;"	t	typeref:typename:int (*)(const void *,const void *)
 __cookie_io_functions_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@cookie_io_functions_t.h	/^#define __cookie_io_functions_t_defined /;"	d
-__copyWord	src/lib/file/file.c	/^char* __copyWord(Word str){$/;"	f	typeref:typename:char *
 __count	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@struct_mutex.h	/^  unsigned int __count;$/;"	m	struct:__pthread_mutex_s	typeref:typename:unsigned int
 __count	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__mbstate_t.h	/^  int __count;$/;"	m	struct:__anonbfe66a300108	typeref:typename:int
 __cpp_lib_char8_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define __cpp_lib_char8_t /;"	d
@@ -1453,7 +1455,7 @@ __loff_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@t
 __low	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@thread-shared-types.h	/^      unsigned int __low;$/;"	m	struct:__pthread_cond_s::__anon5e0c1fd8010a::__anon5e0c1fd80208	typeref:typename:unsigned int
 __low	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@thread-shared-types.h	/^      unsigned int __low;$/;"	m	struct:__pthread_cond_s::__anon5e0c1fd8030a::__anon5e0c1fd80408	typeref:typename:unsigned int
 __mbstate_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__mbstate_t.h	/^} __mbstate_t;$/;"	t	typeref:struct:__anonbfe66a300108
-__mm_copyWord	src/views/mainmenu/mainmenu.c	/^char *__mm_copyWord(Word str) {$/;"	f	typeref:typename:char *
+__mm_copyWord	src/lib/file/file.c	/^char* __mm_copyWord(Word str) {$/;"	f	typeref:typename:char *
 __mode_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types.h	/^__STD_TYPE __MODE_T_TYPE __mode_t;	\/* Type of file attribute bitmasks.  *\/$/;"	v	typeref:typename:__STD_TYPE __MODE_T_TYPE
 __mode_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^# define __mode_t_defined$/;"	d
 __names	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__locale_t.h	/^  const char *__names[13];$/;"	m	struct:__locale_struct	typeref:typename:const char * [13]
@@ -1793,13 +1795,13 @@ expl	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0
 externalConsole	.vscode/launch.json	/^      "externalConsole": false,$/;"	b	object:configurations.0
 externalConsole	.vscode/launch.json	/^      "externalConsole": false,$/;"	b	object:configurations.1
 f_exist	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@file@file.c	/^boolean f_exist(const char* path){$/;"	f	typeref:typename:boolean
-f_exist	src/lib/file/file.c	/^boolean f_exist(const char* path){$/;"	f	typeref:typename:boolean
-f_len_file	src/lib/file/file.c	/^int f_len_file(const char *path) {$/;"	f	typeref:typename:int
+f_exist	src/lib/file/file.c	/^boolean f_exist(const char* path) {$/;"	f	typeref:typename:boolean
+f_len_file	src/lib/file/file.c	/^int f_len_file(const char* path) {$/;"	f	typeref:typename:int
 f_read_file	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@file@file.c	/^void f_read_file(const char* path, char* buffer, int size){$/;"	f	typeref:typename:void
-f_read_file	src/lib/file/file.c	/^void f_read_file(const char* path, char* buffer, int size){$/;"	f	typeref:typename:void
-f_read_file_to_buffer	src/lib/file/file.c	/^char** f_read_file_to_buffer(const char *path) {$/;"	f	typeref:typename:char **
+f_read_file	src/lib/file/file.c	/^void f_read_file(const char* path, char* buffer, int size) {$/;"	f	typeref:typename:void
+f_read_file_to_buffer	src/lib/file/file.c	/^char** f_read_file_to_buffer(const char* path) {$/;"	f	typeref:typename:char **
 f_write_file	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@file@file.c	/^void f_write_file(const char* path, const char* buffer, int size){$/;"	f	typeref:typename:void
-f_write_file	src/lib/file/file.c	/^void f_write_file(const char* path, const char* buffer, int size){$/;"	f	typeref:typename:void
+f_write_file	src/lib/file/file.c	/^void f_write_file(const char* path, const char* buffer, int size) {$/;"	f	typeref:typename:void
 fabsf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define fabsf /;"	d
 fabsl	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define fabsl /;"	d
 false	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@boolean.h	/^#define false /;"	d
@@ -1995,7 +1997,8 @@ mkostemp	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib
 mkostemps	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^#   define mkostemps /;"	d
 mkstemp	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^#   define mkstemp /;"	d
 mkstemps	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^#   define mkstemps /;"	d
-mm_dashboard	src/views/mainmenu/mainmenu.c	/^void mm_dashboard() { printf("Permainan Mobita\\n"); }$/;"	f	typeref:typename:void
+mm_dashboard	src/views/mainmenu/mainmenu.c	/^void mm_dashboard() {$/;"	f	typeref:typename:void
+mm_ending	src/views/mainmenu/mainmenu.c	/^void mm_ending(StatusGame s_status_game){$/;"	f	typeref:typename:void
 mode_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^typedef __mode_t mode_t;$/;"	t	typeref:typename:__mode_t
 modf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define modf /;"	d
 modff	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define modff /;"	d
@@ -2163,6 +2166,7 @@ s_is_empty	src/lib/structure/stack/stack.c	/^boolean s_is_empty(Stack s) { retur
 s_is_full	src/lib/structure/stack/stack.c	/^boolean s_is_full(Stack s) { return (S_IDX_TOP(s) == S_MAX_SIZE - 1); }$/;"	f	typeref:typename:boolean
 s_pop	src/lib/structure/stack/stack.c	/^void s_pop(Stack* s, SEltype* item) {$/;"	f	typeref:typename:void
 s_push	src/lib/structure/stack/stack.c	/^void s_push(Stack* s, SEltype item) {$/;"	f	typeref:typename:void
+s_status_game	src/lib/status_game/status_game.c	/^StatusGame s_status_game;$/;"	v	typeref:typename:StatusGame
 saveToFile	src/lib/loadex/loadex.c	/^void saveToFile(StatusGame s_status_game) {}$/;"	f	typeref:typename:void
 savefile	src/lib/loadex/loadex.c	/^static FILE *savefile;$/;"	v	typeref:typename:FILE *	file:
 scanf	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdio.h	/^#  define scanf /;"	d
@@ -2174,16 +2178,19 @@ set_text_color	src/lib/console/pcolor/pcolor.c	/^void set_text_color(Color color
 setupCommands	.vscode/launch.json	/^      "setupCommands": [$/;"	a	object:configurations.0
 setupCommands	.vscode/launch.json	/^      "setupCommands": [$/;"	a	object:configurations.1
 sg_inc_time	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@status_game@status_game.c	/^void sg_inc_time(){$/;"	f	typeref:typename:void
-sg_inc_time	src/lib/status_game/status_game.c	/^void sg_inc_time() { status_game.Waktu_Permainan++; }$/;"	f	typeref:typename:void
+sg_inc_time	src/lib/status_game/status_game.c	/^void sg_inc_time() { s_status_game.Waktu_Permainan++; }$/;"	f	typeref:typename:void
 sg_reset_time	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@status_game@status_game.c	/^void sg_reset_time(){$/;"	f	typeref:typename:void
-sg_reset_time	src/lib/status_game/status_game.c	/^void sg_reset_time() { status_game.Waktu_Permainan = 0; }$/;"	f	typeref:typename:void
+sg_reset_time	src/lib/status_game/status_game.c	/^void sg_reset_time() { s_status_game.Waktu_Permainan = 0; }$/;"	f	typeref:typename:void
+show_help	src/views/help/help_page.c	/^void show_help(){$/;"	f	typeref:typename:void
 show_inventory	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@views@inventory@inventory.c	/^void show_inventory(){$/;"	f	typeref:typename:void
-show_inventory	src/views/inventory/inventory.c	/^void show_inventory(StatusGame* s_status_game){$/;"	f	typeref:typename:void
+show_inventory	src/views/inventory/inventory.c	/^void show_inventory(StatusGame* s_status_game) {$/;"	f	typeref:typename:void
 show_load_game	src/views/load_save/load_save_page.c	/^void show_load_game(StatusGame *s_status_game)$/;"	f	typeref:typename:void
 show_main_menu	src/views/mainmenu/mainmenu.c	/^void show_main_menu() {$/;"	f	typeref:typename:void
 show_map	src/views/map/map_page.c	/^void show_map() {$/;"	f	typeref:typename:void
 show_page_buy	src/views/buy/buy_page.c	/^void show_page_buy(StatusGame *s_status_game){$/;"	f	typeref:typename:void
+show_pickup	src/views/pickup/pickup_page.c	/^void show_pickup() {}/;"	f	typeref:typename:void
 show_progress	src/views/progress/progress.c	/^void show_progress(StatusGame s_status_game) {$/;"	f	typeref:typename:void
+show_return	src/views/return/return_page.c	/^void show_return() {}/;"	f	typeref:typename:void
 show_save_game	src/views/load_save/load_save_page.c	/^void show_save_game(StatusGame s_status_game)$/;"	f	typeref:typename:void
 show_to_do	src/views/to_do/to_do_page.c	/^void show_to_do(StatusGame s_status_game)$/;"	f	typeref:typename:void
 sigset_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@sigset_t.h	/^typedef __sigset_t sigset_t;$/;"	t	typeref:typename:__sigset_t
@@ -2220,7 +2227,6 @@ state	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	
 staticlist	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@structure@staticlist@staticlist.h	/^typedef struct staticlist {$/;"	s
 staticlist	src/lib/structure/staticlist/staticlist.h	/^typedef struct staticlist {$/;"	s
 status_game	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@status_game@status_game.c	/^StatusGame status_game;$/;"	v	typeref:typename:StatusGame
-status_game	src/lib/status_game/status_game.c	/^StatusGame status_game;$/;"	v	typeref:typename:StatusGame
 std	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@bits@std_abs.h	/^namespace std _GLIBCXX_VISIBILITY(default)$/;"	n
 std	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^namespace std$/;"	n
 std	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@lib@clang@13.0.0@include@stddef.h	/^namespace std { typedef decltype(nullptr) nullptr_t; }$/;"	n

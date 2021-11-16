@@ -5,13 +5,9 @@
 #ifndef H_TD_LIST
 #define H_TD_LIST
 
-
-
 #include "../game.h"
 
 typedef LinkedList ToDoList;
- 
-
 
 /* PROTOTYPE */
 /****************** PEMBUATAN LIST KOSONG ******************/
