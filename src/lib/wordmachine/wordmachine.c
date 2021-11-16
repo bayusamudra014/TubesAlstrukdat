@@ -2,8 +2,8 @@
 
 #include <stdlib.h>
 
-static char* __wm_blank = "\n";
-static int __wm_blank_len = 1;
+static char* __wm_blank = " \n";
+static int __wm_blank_len = 2;
 static boolean __wm_allocated = false;
 
 Word wm_current_word;
