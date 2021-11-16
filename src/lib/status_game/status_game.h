@@ -21,6 +21,7 @@ typedef struct StatusGame {
 #define SG_TDL(StatusGame) (StatusGame).to_do_list
 #define SG_TAS(StatusGame) (StatusGame).tas_mobita
 #define SG_TIME(StatusGame) (StatusGame).Waktu_Permainan
+#define SG_OL(StatusGame) (StatusGame).order_list
 
 extern StatusGame s_status_game;
 

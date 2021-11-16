@@ -40,9 +40,9 @@ void mm_dashboard() {
   delete_color(cyan);
 }
 
-void mm_ending(StatusGame s_status_game){
-    cm_modal_info("Game Selesai!");
-    printf("Waktu Permainan: %d\n", SG_TIME(s_status_game));
+void mm_ending(StatusGame s_status_game) {
+  cm_modal_info("Game Selesai!");
+  printf("Waktu Permainan: %d\n", SG_TIME(s_status_game));
 }
 
 void show_main_menu() {
@@ -63,7 +63,6 @@ void show_main_menu() {
     main_input_command = __ask_input("ENTER COMMAND: ");
     if (__is_str_same(main_input_command, "NEW_GAME") ||
         __is_str_same(main_input_command, "LOAD_GAME")) {
-      StatusGame s_status_game;
       if (__is_str_same(main_input_command, "NEW_GAME")) {
         // Loading Config
         char *configPath = __ask_input("Path to config file: ");
@@ -71,7 +70,10 @@ void show_main_menu() {
           cm_modal_error("File tidak bisa dibaca!");
           configPath = __ask_input("Path to config file: ");
         }
-        readConfigFile(configPath, &s_status_game);
+        lx_readConfigFile_silent(configPath);
+
+        printf("\n");
+        cm_modal_info("Load Config Berhasil!");
 
         // Config file nya udah dibaca
         // configPath adalah hasil malloc, harus di free supaya gak makan memory
@@ -83,7 +85,7 @@ void show_main_menu() {
       // Game berlangsung selama ToDoList tidak Kosong dan
       // Tas (Isinya pesanan yang harus diantar) tidak kosong
       char *input_command;
-      while (!td_is_empty(SG_TDL(s_status_game)) &&
+      while (!ol_is_empty(SG_OL(s_status_game)) ||
              !t_is_empty(SG_TAS(s_status_game))) {
         // Game
         input_command = __ask_input("ENTER COMMAND: ");
@@ -102,7 +104,7 @@ void show_main_menu() {
         } else if (__is_str_same(input_command, "BUY")) {
           show_page_buy(&s_status_game);
         } else if (__is_str_same(input_command, "INVENTORY")) {
-          show_inventory();
+          show_inventory(&s_status_game);
         } else if (__is_str_same(input_command, "HELP")) {
           show_help();
         } else if (__is_str_same(input_command, "SAVE_GAME")) {

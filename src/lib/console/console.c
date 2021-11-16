@@ -41,7 +41,17 @@ void read_word(char* word, int length) {
 
 void read_line(char* word, int length) {
   cm_set_end_char(CHAR_LINEBREAK, sizeof(CHAR_LINEBREAK) - 1);
-  wm_set_blank("", 0);
+  /**
+   * Fungsi lx_readConfigFile bergantung
+   * dengan spasi untuk membaca per kata. 
+   * Kalau di set sebagai kosong, File 
+   * hanya akan dikonsumsi sebagai satu
+   * string panjang. Hal ini tentunya 
+   * akan menyebabkan masalah. 
+   *
+   * Oleh karena itu, ini di comment
+   */
+  //wm_set_blank("", 0);
 
   wm_start_word(stdin);
 
