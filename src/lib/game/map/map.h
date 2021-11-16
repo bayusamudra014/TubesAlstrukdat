@@ -40,10 +40,6 @@ void m_assign(Map *m);
 /* mengembalikan indeks bangunan di list bangunan */
 int m_get_idx(Map m, char b);
 
-/* I.S. m dan adjacency terdefinisi
-   F.S. ADJ matriks sudah terassign */
-void m_get_adj(Map m, adj Adjacency, FILE *fp);
-
 /*I.S. Map sudah teralokasi
  *F.S. Map tercetak ke layar */
 void m_display(Map m);
