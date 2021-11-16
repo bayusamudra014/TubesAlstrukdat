@@ -10,32 +10,11 @@ boolean __is_str_same(char input1[], char input2[]) {
   return same;
 }
 
-<<<<<<< HEAD
-char *__copyWord(Word str) {
-  char *res = (char *)malloc(sizeof(char) * (str.length + 1));
-  int i;
-  for (i = 0; i < str.length; i++) {
-    res[i] = str.contents[i];
-  }
-  res[i] = '\0';
-  return res;
-}
-
-char *__ask_input() {
-  printf("ENTER COMMAND: ");
-  char *input;
-  wm_start_word(stdin);
-  while (!wm_end_word) {
-    input = __copyWord(wm_current_word);
-    wm_adv_word();
-  }
-=======
 char *__ask_input(char message[]) {
   printf("%s", message);
   char *input = malloc(100 * sizeof(char));
 
   read_line(input, 100);
->>>>>>> fd0dee03b7689fcc79709a79a7f7265123af9112
   return input;
 }
 
