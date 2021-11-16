@@ -18,6 +18,10 @@ typedef struct StatusGame {
 
 } StatusGame;
 
+#define SG_TDL(StatusGame) (StatusGame).to_do_list
+#define SG_TAS(StatusGame) (StatusGame).tas_mobita
+#define SG_TIME(StatusGame) (StatusGame).Waktu_Permainan
+
 extern StatusGame s_status_game;
 
 /*Berfungsi untuk mereset waktu*/

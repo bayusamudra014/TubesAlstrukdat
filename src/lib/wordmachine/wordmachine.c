@@ -2,7 +2,7 @@
 
 #include <stdlib.h>
 
-static char* __wm_blank = " ";
+static char* __wm_blank = "\n";
 static int __wm_blank_len = 1;
 static boolean __wm_allocated = false;
 

@@ -3,6 +3,19 @@
 
 #include "../boolean.h"
 
+/**
+ * Menghasilkan panjang file path
+ */
+int f_len_file(const char *path);
+
+/**
+ * Membaca file ke array dari malloc
+ *
+ * Menghasilkan pointer ke array of strings. 
+ * Tiap elemen merupakan baris dari file
+ */
+char** f_read_file_to_buffer(const char *path);
+
 /* Membaca file yang berada di path
   
   I.S. File harus tersedia dan memiliki akses untuk membaca
