@@ -77,10 +77,11 @@ void f_write_file(const char* path, const char* buffer, int size) {
 
 boolean f_exist(const char* path) {
   FILE* fp;
-  if (fp == NULL) {
-    return false;
+  fp = fopen(path, "r");
+  if(fp){
+      fclose(fp);
+      return true;
   } else {
-    return true;
+      return false;
   }
-  fclose(fp);
 }

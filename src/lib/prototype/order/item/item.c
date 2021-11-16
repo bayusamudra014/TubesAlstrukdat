@@ -18,3 +18,18 @@ boolean i_is_expired(Item i, Time currentTime) {
 }
 
 boolean i_is_perishable(Item i) { return i.type == 'P'; }
+
+char* i_item_type_name(Item i) {
+  switch (i.type) {
+    case 'N':
+      return "Normal Item";
+    case 'P':
+      return "Perishable Item";
+    case 'H':
+      return "Heavy Item";
+    case 'V':
+      return "VIP Item";
+    default:
+      return "";
+  }
+}
