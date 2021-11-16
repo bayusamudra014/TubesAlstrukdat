@@ -6,7 +6,6 @@
 #include "dynamiclist/test.h"
 #include "matrix/test.h"
 #include "point/test.h"
-#include "staticlist/test.h"
 #include "todolist/test.h"
 #include "wordmachine/test.h"
 
@@ -17,7 +16,7 @@ int main(int argc, char* argv[]) {
   SRunner* run = srunner_create(s0);
 
   srunner_add_suite(run, suite_word_machine());
-  srunner_add_suite(run, suite_static_list());
+  // srunner_add_suite(run, suite_static_list());
   srunner_add_suite(run, suite_matrix());
   srunner_add_suite(run, suite_point());
   srunner_add_suite(run, suite_dynamic_list());
