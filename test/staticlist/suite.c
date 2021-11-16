@@ -7,7 +7,7 @@ Suite* suite_static_list() {
 
   // Add All Test Case
   suite_add_tcase(s, test_sl_konstruktor());
-  suite_add_tcase(s, test_sl_insert());
+  // suite_add_tcase(s, test_sl_insert());
   suite_add_tcase(s, test_sl_delete());
   suite_add_tcase(s, test_sl_attribut());
 

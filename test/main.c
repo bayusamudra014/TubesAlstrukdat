@@ -3,12 +3,12 @@
 #include <stdlib.h>
 
 #include "charmachine/test.h"
-#include "matrix/test.h"
-#include "staticlist/test.h"
-#include "wordmachine/test.h"
-#include "point/test.h"
 #include "dynamiclist/test.h"
+#include "matrix/test.h"
+#include "point/test.h"
+#include "staticlist/test.h"
 #include "todolist/test.h"
+#include "wordmachine/test.h"
 
 int main(int argc, char* argv[]) {
   int no_failed = 0;
