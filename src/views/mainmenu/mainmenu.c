@@ -60,17 +60,6 @@ void show_main_menu() {
 
   boolean GAME_COMPLETE = false;
   do {
-<<<<<<< HEAD
-    main_input_command = __ask_input();
-    if (__is_str_same(main_input_command, "NEW GAME") ||
-        __is_str_same(main_input_command, "LOAD GAME")) {
-
-      if (__is_str_same(main_input_command, "NEW GAME")) {
-        // Loading Config
-        printf("Path to config file: ");
-        char *configPath = __ask_input();
-        lx_readConfigFile_silent(configPath);
-=======
     main_input_command = __ask_input("ENTER COMMAND: ");
     if (__is_str_same(main_input_command, "NEW_GAME") ||
         __is_str_same(main_input_command, "LOAD_GAME")) {
@@ -83,7 +72,6 @@ void show_main_menu() {
           configPath = __ask_input("Path to config file: ");
         }
         readConfigFile(configPath, &s_status_game);
->>>>>>> fd0dee03b7689fcc79709a79a7f7265123af9112
 
         // Config file nya udah dibaca
         // configPath adalah hasil malloc, harus di free supaya gak makan memory
