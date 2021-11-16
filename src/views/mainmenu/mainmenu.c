@@ -10,8 +10,8 @@ boolean __is_str_same(char input1[], char input2[]) {
   return same;
 }
 
-char *__ask_input() {
-  printf("ENTER COMMAND: ");
+char *__ask_input(char message[]) {
+  printf("%s", message);
   char *input = malloc(100 * sizeof(char));
 
   read_line(input, 100);
@@ -40,6 +40,11 @@ void mm_dashboard() {
   delete_color(cyan);
 }
 
+void mm_ending(StatusGame s_status_game){
+    cm_modal_info("Game Selesai!");
+    printf("Waktu Permainan: %d\n", SG_TIME(s_status_game));
+}
+
 void show_main_menu() {
   // wm_start_word(stdin);
   // while (!wm_end_word){
@@ -56,14 +61,17 @@ void show_main_menu() {
 
   boolean GAME_COMPLETE = false;
   do {
-    main_input_command = __ask_input();
-    if (__is_str_same(main_input_command, "NEW GAME") ||
-        __is_str_same(main_input_command, "LOAD GAME")) {
+    main_input_command = __ask_input("ENTER COMMAND: ");
+    if (__is_str_same(main_input_command, "NEW_GAME") ||
+        __is_str_same(main_input_command, "LOAD_GAME")) {
       StatusGame s_status_game;
-      if (__is_str_same(main_input_command, "NEW GAME")) {
+      if (__is_str_same(main_input_command, "NEW_GAME")) {
         // Loading Config
-        printf("Path to config file: ");
-        char *configPath = __ask_input();
+        char *configPath = __ask_input("Path to config file: ");
+        while (!f_exist(configPath)) {
+          cm_modal_error("File tidak bisa dibaca!");
+          configPath = __ask_input("Path to config file: ");
+        }
         readConfigFile(configPath, &s_status_game);
 
         // Config file nya udah dibaca
@@ -79,13 +87,13 @@ void show_main_menu() {
       while (!td_is_empty(SG_TDL(s_status_game)) &&
              !t_is_empty(SG_TAS(s_status_game))) {
         // Game
-        input_command = __ask_input();
+        input_command = __ask_input("ENTER COMMAND: ");
         if (__is_str_same(input_command, "MOVE")) {
           // MOVE
         } else if (__is_str_same(input_command, "PICK_UP")) {
-          // PICK UP
+          show_pickup();
         } else if (__is_str_same(input_command, "DROP_OFF")) {
-          // DROP OFF
+          // show_dropoff();
         } else if (__is_str_same(input_command, "MAP")) {
           show_map();
         } else if (__is_str_same(input_command, "TO_DO")) {
@@ -97,7 +105,7 @@ void show_main_menu() {
         } else if (__is_str_same(input_command, "INVENTORY")) {
           show_inventory(&s_status_game);
         } else if (__is_str_same(input_command, "HELP")) {
-          // HELP
+          show_help();
         } else if (__is_str_same(input_command, "SAVE_GAME")) {
           show_save_game(s_status_game);
         } else {
@@ -111,14 +119,13 @@ void show_main_menu() {
       GAME_COMPLETE = true;
 
       // Tampilin Statistik Game
-      printf("Game Selesai\n");
-      printf("Time: %d\n", SG_TIME(s_status_game));
+      mm_ending(s_status_game);
       // Display berapa banyak item yang diantar
 
     } else if (__is_str_same(main_input_command, "HELP")) {
-      // SHOW HELP
+      show_help();
     } else if (__is_str_same(main_input_command, "EXIT")) {
-      printf("Exiting Game....\n");
+      cm_modal_warning("Exiting Game....");
       GAME_COMPLETE = true;
     } else {
       printf("\n");
