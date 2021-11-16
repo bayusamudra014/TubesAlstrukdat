@@ -27,4 +27,7 @@ boolean i_is_expired(Item i, Time currentTime);
 /* Mengembalikan true bila i merupakan perishable item */
 boolean i_is_perishable(Item i);
 
+/* Mengembalikan nama jenis item */
+char* i_item_type_name(Item i);
+
 #endif
