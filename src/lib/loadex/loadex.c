@@ -7,22 +7,28 @@
 
 static FILE *savefile;
 
-void ignoreBlank() {
-  while (CC != EOF && (CC == ' ' || CC == '\n')) ADV();
+void ignoreBlank()
+{
+  while (CC != EOF && (CC == ' ' || CC == '\n'))
+    ADV();
 }
 
 // Advances until CC is not blank
-void ignoreBlankSTDIN() {
+void ignoreBlankSTDIN()
+{
   // While not blank
-  while (CC != EOF && CC == ' ') ADVSTDIN();
+  while (CC != EOF && CC == ' ')
+    ADVSTDIN();
 }
 
 // readNumber parses input to be an integer
-int readNumber() {
+int readNumber()
+{
   int n = 0;
 
   ignoreBlank();
-  while (!EOP && CC != EOF && CC != ' ' && CC != '\n') {
+  while (!EOP && CC != EOF && CC != ' ' && CC != '\n')
+  {
     n = n * 10 + (CC - '0');
     ADV();
   }
@@ -31,14 +37,16 @@ int readNumber() {
 }
 
 // readSTDIN will input from STDIN and convert it to ADT Word
-void readSTDIN(word *input) {
+void readSTDIN(word *input)
+{
   STARTSTDIN();
   ignoreBlankSTDIN();
 
   // Initialize word
   (*input).length = 0;
 
-  while (!EOP && CC != '\n') {
+  while (!EOP && CC != '\n')
+  {
     (*input).wordArray[(*input).length] = CC;
     ++(*input).length;
     ADVSTDIN();
@@ -46,10 +54,12 @@ void readSTDIN(word *input) {
 }
 
 // readNumberSTDIN returns number from STDIN input
-void readNumberSTDIN(int *X) {
+void readNumberSTDIN(int *X)
+{
   STARTSTDIN();
   *X = 0;
-  while (!EOP && CC != '\n') {
+  while (!EOP && CC != '\n')
+  {
     int tmp = CC - '0';
     *X = (*X) * 10 + tmp;
     ADVSTDIN();
@@ -57,7 +67,8 @@ void readNumberSTDIN(int *X) {
 }
 
 // readConfigFile will read config file and make the structure
-void readConfigFile(char configFilename[], StatusGame *s_status_game) {
+void readConfigFile(char configFilename[])
+{
   // Persiapan untuk status Game
   ProgressList progress_list;
   ToDoList to_do_list;
@@ -77,6 +88,7 @@ void readConfigFile(char configFilename[], StatusGame *s_status_game) {
   ignoreBlank();
 
   // Read map size
+  printf("map size..\n");
   ignoreBlank();
   int row = readNumber();
   ignoreBlank();
@@ -88,10 +100,10 @@ void readConfigFile(char configFilename[], StatusGame *s_status_game) {
   int buildingN = readNumber();
   buildingN += 1;
   dl_create_list(&buildingList, buildingN);
-
+  printf("building list..\n");
   // alokasi map
   m_allocate(&peta_game, row, col, buildingList);
-
+  
   // Read HQ
   Building HQ;
   ignoreBlank();
@@ -102,9 +114,14 @@ void readConfigFile(char configFilename[], StatusGame *s_status_game) {
   map_elmt(peta_game, x, y) = '8';
   dl_insert_last(&peta_game.buildinglist, HQ);
 
+  printf("read HQ\n");
+
   // Proses memasukkan building"
   char buildingLabel;
-  for (i = 1; i <= buildingN; i++) {
+  printf("baca building..\n");
+  for (i = 1; i <= buildingN; i++)
+  {
+    printf("building ke %d\n", i);
     // Membaca label Building
     ignoreBlank();
     buildingLabel = CC;
@@ -129,8 +146,11 @@ void readConfigFile(char configFilename[], StatusGame *s_status_game) {
 
   Matrix adjMatrix;
   m_create_matrix(&adjMatrix, buildingN, buildingN);
-  for (i = 0; i <= buildingN; i++) {
-    for (j = 0; j <= buildingN; j++) {
+  printf("adj matrix\n");
+  for (i = 0; i <= buildingN; i++)
+  {
+    for (j = 0; j <= buildingN; j++)
+    {
       ignoreBlank();
       x = readNumber();
       m_elmt(adjMatrix, i, j) = x;
@@ -140,6 +160,7 @@ void readConfigFile(char configFilename[], StatusGame *s_status_game) {
   peta_game.adj = adjMatrix;
 
   // Membaca orderlist
+  printf("order list\n");
   ignoreBlank();
   int orderN = readNumber();
 
@@ -147,15 +168,19 @@ void readConfigFile(char configFilename[], StatusGame *s_status_game) {
   char pickUp, dropOff, tipeItem;
   Building P, D;
 
-  for (i = 1; i <= orderN; i++) {
+  for (i = 1; i <= orderN; i++)
+  {
+    printf("order ke %d\n", i);
     ignoreBlank();
     waktuPesanan = readNumber();
 
     ignoreBlank();
     pickUp = CC;
     ADV();
-    for (j = 1; j <= buildingN; j++) {
-      if (loc(peta_game, j).label == pickUp) {
+    for (j = 1; j <= buildingN; j++)
+    {
+      if (loc(peta_game, j).label == pickUp)
+      {
         P = loc(peta_game, j);
       }
     }
@@ -163,8 +188,10 @@ void readConfigFile(char configFilename[], StatusGame *s_status_game) {
     ignoreBlank();
     dropOff = CC;
     ADV();
-    for (j = 1; j <= buildingN; j++) {
-      if (loc(peta_game, j).label == dropOff) {
+    for (j = 1; j <= buildingN; j++)
+    {
+      if (loc(peta_game, j).label == dropOff)
+      {
         D = loc(peta_game, j);
       }
     }
@@ -174,7 +201,8 @@ void readConfigFile(char configFilename[], StatusGame *s_status_game) {
     ADV();
 
     expTime = -1;
-    if (tipeItem == 'P') {
+    if (tipeItem == 'P')
+    {
       ignoreBlank();
       expTime = readNumber;
     }
@@ -189,6 +217,7 @@ void readConfigFile(char configFilename[], StatusGame *s_status_game) {
   }
   ignoreBlank();
 
+  printf("Finishing..\n");
   // Finishing
   pl_create_progress(&progress_list);
   td_create(&to_do_list);
@@ -199,6 +228,7 @@ void readConfigFile(char configFilename[], StatusGame *s_status_game) {
   posisi_sekarang = HQ;
   // peta_game
   uang_mobita = 0;
+  printf("uang mobita\n");
 
   // mengubah status game
   s_status_game->progress_list = progress_list;
@@ -210,6 +240,9 @@ void readConfigFile(char configFilename[], StatusGame *s_status_game) {
   s_status_game->posisi_sekarang = posisi_sekarang;
   s_status_game->peta_game = peta_game;
   s_status_game->uang_mobita = uang_mobita;
+
+  printf("%d",s_status_game->uang_mobita);
+  printf("mengubah status game..\n");
 }
 
 // Print ASCII of character (for debugging purposes)
@@ -219,16 +252,25 @@ void printASCIIFile() {}
 void printWord(word W) {}
 
 // Save to file
-void saveToFile(StatusGame s_status_game) {}
+void saveToFile()
+{
+  savefile = fopen("halo.txt", "w");
+  // Output map size
+  fprintf(savefile, "Halo");
+
+  fclose(savefile);
+}
 
 // Load from file
 void loadFromFile(StatusGame *s_status_game) {}
 
 // Word to int converter
-int intConverter(word W) {
+int intConverter(word W)
+{
   int result = 0;
   int temp;
-  for (int i = 0; i < W.length; i++) {
+  for (int i = 0; i < W.length; i++)
+  {
     temp = (int)W.wordArray[i] - '0';
     result = result * 10 + temp;
   }
@@ -236,17 +278,21 @@ int intConverter(word W) {
 }
 
 // Word Compare
-boolean wordCompare(word W, char *S) {
+boolean wordCompare(word W, char *S)
+{
   boolean result = true;
   int i;
-  for (i = 0; i < W.length; i++) {
+  for (i = 0; i < W.length; i++)
+  {
     char temp = (char)W.wordArray[i];
-    if (temp != S[i]) {
+    if (temp != S[i])
+    {
       result = false;
     }
   }
   int a = strlen(S);
-  if (W.length != a) {
+  if (W.length != a)
+  {
     result = false;
   }
   return result;

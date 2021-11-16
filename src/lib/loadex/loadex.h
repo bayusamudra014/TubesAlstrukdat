@@ -39,7 +39,7 @@ void printASCIIFile();
 void printWord(word W);
 
 // Save to file
-void saveToFile(StatusGame s_status_game);
+void saveToFile();
 
 // Load from file
 void loadFromFile(StatusGame* s_status_game);
