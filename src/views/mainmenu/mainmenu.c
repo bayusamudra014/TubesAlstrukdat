@@ -18,22 +18,25 @@ boolean __is_str_same(char input1[], char input2[]) {
   return same;
 }
 
-char *__copyWord(Word str) {
-  char *res = (char *)malloc(sizeof(char) * (str.length + 1));
-  int i;
-  for (i = 0; i < str.length; i++) {
-    res[i] = str.contents[i];
-  }
-  res[i] = '\0';
-  return res;
-}
+/**
+ * Implementasi yang sama dengan copyWord di file
+ */
+// char *__mm_copyWord(Word str) {
+//   char *res = (char *)malloc(sizeof(char) * (str.length + 1));
+//   int i;
+//   for (i = 0; i < str.length; i++) {
+//     res[i] = str.contents[i];
+//   }
+//   res[i] = '\0';
+//   return res;
+// }
 
 char *__ask_input() {
   printf("ENTER COMMAND: ");
   char *input;
   wm_start_word(stdin);
   while (!wm_end_word) {
-    input = __copyWord(wm_current_word);
+    input = __mm_copyWord(wm_current_word);
     wm_adv_word();
   }
   return input;
@@ -50,6 +53,7 @@ void show_main_menu() {
 
   // Kalau mau ngeprint ascii art saat load game
   mm_dashboard();
+  cm_set_end_char("\n", 1);
 
   char *main_input_command;
 
@@ -58,7 +62,7 @@ void show_main_menu() {
     main_input_command = __ask_input();
     if (__is_str_same(main_input_command, "NEW GAME") ||
         __is_str_same(main_input_command, "LOAD GAME")) {
-
+      StatusGame s_status_game;
       if (__is_str_same(main_input_command, "NEW GAME")) {
         // Loading Config
         printf("Path to config file: ");
@@ -94,7 +98,7 @@ void show_main_menu() {
         } else if (__is_str_same(input_command, "BUY")) {
           show_page_buy(&s_status_game);
         } else if (__is_str_same(input_command, "INVENTORY")) {
-          show_inventory();
+          show_inventory(&s_status_game);
         } else if (__is_str_same(input_command, "HELP")) {
           // HELP
         } else if (__is_str_same(input_command, "SAVE_GAME")) {

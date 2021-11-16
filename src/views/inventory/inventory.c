@@ -1,5 +1,5 @@
 #include "inventory.h"
 
-void show_inventory(){
-    // Disini
+void show_inventory(StatusGame* s_status_game) {
+  // Disini
 }

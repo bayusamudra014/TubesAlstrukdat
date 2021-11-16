@@ -3,8 +3,8 @@
 char cm_current_char;
 boolean cm_eot;
 
-static char* __cm_end_char = "\n";
-static int __cm_end_char_ln = 1;
+static char* __cm_end_char;
+static int __cm_end_char_ln = -1;
 static boolean __cm_autoclose = false;
 static void* __cm_tape;
 static int __cm_retval;
