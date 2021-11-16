@@ -121,7 +121,8 @@ void show_main_menu() {
       printf("Exiting Game....\n");
       GAME_COMPLETE = true;
     } else {
-      cm_modal_error("COMMAND TIDAK DIKENALI!\n");
+      printf("\n");
+      cm_modal_error("COMMAND TIDAK DIKENALI!");
     }
     // main_input_command adalah hasil malloc, perlu free biar gak jadi zombie
     free(main_input_command);
