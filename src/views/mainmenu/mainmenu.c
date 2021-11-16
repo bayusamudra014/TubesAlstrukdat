@@ -18,15 +18,18 @@ boolean __is_str_same(char input1[], char input2[]) {
   return same;
 }
 
-char *__mm_copyWord(Word str) {
-  char *res = (char *)malloc(sizeof(char) * (str.length + 1));
-  int i;
-  for (i = 0; i < str.length; i++) {
-    res[i] = str.contents[i];
-  }
-  res[i] = '\0';
-  return res;
-}
+/**
+ * Implementasi yang sama dengan copyWord di file
+ */
+// char *__mm_copyWord(Word str) {
+//   char *res = (char *)malloc(sizeof(char) * (str.length + 1));
+//   int i;
+//   for (i = 0; i < str.length; i++) {
+//     res[i] = str.contents[i];
+//   }
+//   res[i] = '\0';
+//   return res;
+// }
 
 char *__ask_input() {
   printf("ENTER COMMAND: ");
@@ -50,6 +53,7 @@ void show_main_menu() {
 
   // Kalau mau ngeprint ascii art saat load game
   mm_dashboard();
+  cm_set_end_char("\n", 1);
 
   char *main_input_command;
 
@@ -58,6 +62,7 @@ void show_main_menu() {
     main_input_command = __ask_input();
     if (__is_str_same(main_input_command, "NEW GAME") ||
         __is_str_same(main_input_command, "LOAD GAME")) {
+      StatusGame s_status_game;
       if (__is_str_same(main_input_command, "NEW GAME")) {
         // Loading Config
         printf("Path to config file: ");

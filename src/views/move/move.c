@@ -2,7 +2,7 @@
 
 void move(StatusGame *s, int mv, boolean gadget_used, boolean bring_heavy) {
   Map m = s->peta_game;
-  if (gadget_used = false) {
+  if (gadget_used == false) {
     if (mv <= dl_length(reachable(m))) {
       s->posisi_sekarang = dl_elmt(reachable(m), mv - 1);
       if (bring_heavy) {

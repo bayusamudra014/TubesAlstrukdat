@@ -10,6 +10,6 @@
  * Lalu membiarkan player memilih mana Gadget
  * yang ingin diambil
  */
-void show_inventory();
+void show_inventory(StatusGame* s_status_game);
 
 #endif

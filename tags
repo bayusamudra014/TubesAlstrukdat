@@ -1317,8 +1317,8 @@ __clockid_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@inc
 __cm_adv_file	src/lib/charmachine/charmachine.c	/^void __cm_adv_file() {$/;"	f	typeref:typename:void
 __cm_adv_string	src/lib/charmachine/charmachine.c	/^void __cm_adv_string() {$/;"	f	typeref:typename:void
 __cm_autoclose	src/lib/charmachine/charmachine.c	/^static boolean __cm_autoclose = false;$/;"	v	typeref:typename:boolean	file:
-__cm_end_char	src/lib/charmachine/charmachine.c	/^static char* __cm_end_char = "\\n";$/;"	v	typeref:typename:char *	file:
-__cm_end_char_ln	src/lib/charmachine/charmachine.c	/^static int __cm_end_char_ln = 1;$/;"	v	typeref:typename:int	file:
+__cm_end_char	src/lib/charmachine/charmachine.c	/^static char* __cm_end_char;$/;"	v	typeref:typename:char *	file:
+__cm_end_char_ln	src/lib/charmachine/charmachine.c	/^static int __cm_end_char_ln = -1;$/;"	v	typeref:typename:int	file:
 __cm_isEndChar	src/lib/charmachine/charmachine.c	/^boolean __cm_isEndChar(char c) {$/;"	f	typeref:typename:boolean
 __cm_print_modal	src/components/modal/modal.c	/^void __cm_print_modal(Color headerColor, const char* title,$/;"	f	typeref:typename:void
 __cm_retval	src/lib/charmachine/charmachine.c	/^static int __cm_retval;$/;"	v	typeref:typename:int	file:
@@ -1329,7 +1329,6 @@ __compar_d_fn_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include
 __compar_fn_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@stdlib.h	/^typedef int (*__compar_fn_t) (const void *, const void *);$/;"	t	typeref:typename:int (*)(const void *,const void *)
 __cookie_io_functions_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@cookie_io_functions_t.h	/^#define __cookie_io_functions_t_defined /;"	d
 __copyWord	src/lib/file/file.c	/^char* __copyWord(Word str){$/;"	f	typeref:typename:char *
-__copyWord	src/views/mainmenu/mainmenu.c	/^char *__copyWord(Word str) {$/;"	f	typeref:typename:char *
 __count	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@struct_mutex.h	/^  unsigned int __count;$/;"	m	struct:__pthread_mutex_s	typeref:typename:unsigned int
 __count	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__mbstate_t.h	/^  int __count;$/;"	m	struct:__anonbfe66a300108	typeref:typename:int
 __cpp_lib_char8_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@c++@11.1.0@x86_64-pc-linux-gnu@bits@c++config.h	/^# define __cpp_lib_char8_t /;"	d
@@ -1454,6 +1453,7 @@ __loff_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@t
 __low	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@thread-shared-types.h	/^      unsigned int __low;$/;"	m	struct:__pthread_cond_s::__anon5e0c1fd8010a::__anon5e0c1fd80208	typeref:typename:unsigned int
 __low	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@thread-shared-types.h	/^      unsigned int __low;$/;"	m	struct:__pthread_cond_s::__anon5e0c1fd8030a::__anon5e0c1fd80408	typeref:typename:unsigned int
 __mbstate_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__mbstate_t.h	/^} __mbstate_t;$/;"	t	typeref:struct:__anonbfe66a300108
+__mm_copyWord	src/views/mainmenu/mainmenu.c	/^char *__mm_copyWord(Word str) {$/;"	f	typeref:typename:char *
 __mode_t	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types.h	/^__STD_TYPE __MODE_T_TYPE __mode_t;	\/* Type of file attribute bitmasks.  *\/$/;"	v	typeref:typename:__STD_TYPE __MODE_T_TYPE
 __mode_t_defined	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@sys@types.h	/^# define __mode_t_defined$/;"	d
 __names	.ccls-cache/@@home@malifpy@Alif@Git@TubesAlstrukdat/@usr@include@bits@types@__locale_t.h	/^  const char *__names[13];$/;"	m	struct:__locale_struct	typeref:typename:const char * [13]
@@ -1604,9 +1604,9 @@ __wm_allocate	src/lib/wordmachine/wordmachine.c	/^void __wm_allocate() {$/;"	f	t
 __wm_allocated	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@wordmachine@wordmachine.c	/^static boolean __wm_allocated = false;$/;"	v	typeref:typename:boolean	file:
 __wm_allocated	src/lib/wordmachine/wordmachine.c	/^static boolean __wm_allocated = false;$/;"	v	typeref:typename:boolean	file:
 __wm_blank	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@wordmachine@wordmachine.c	/^static char* __wm_blank = " ";$/;"	v	typeref:typename:char *	file:
-__wm_blank	src/lib/wordmachine/wordmachine.c	/^static char* __wm_blank = "\\n";$/;"	v	typeref:typename:char *	file:
+__wm_blank	src/lib/wordmachine/wordmachine.c	/^static char* __wm_blank = " \\n";$/;"	v	typeref:typename:char *	file:
 __wm_blank_len	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@wordmachine@wordmachine.c	/^static int __wm_blank_len = 1;$/;"	v	typeref:typename:int	file:
-__wm_blank_len	src/lib/wordmachine/wordmachine.c	/^static int __wm_blank_len = 1;$/;"	v	typeref:typename:int	file:
+__wm_blank_len	src/lib/wordmachine/wordmachine.c	/^static int __wm_blank_len = 2;$/;"	v	typeref:typename:int	file:
 __wm_copy_word	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@wordmachine@wordmachine.c	/^void __wm_copy_word() {$/;"	f	typeref:typename:void
 __wm_copy_word	src/lib/wordmachine/wordmachine.c	/^void __wm_copy_word() {$/;"	f	typeref:typename:void
 __wm_free	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@wordmachine@wordmachine.c	/^void __wm_free() {$/;"	f	typeref:typename:void
@@ -2178,7 +2178,7 @@ sg_inc_time	src/lib/status_game/status_game.c	/^void sg_inc_time() { status_game
 sg_reset_time	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@lib@status_game@status_game.c	/^void sg_reset_time(){$/;"	f	typeref:typename:void
 sg_reset_time	src/lib/status_game/status_game.c	/^void sg_reset_time() { status_game.Waktu_Permainan = 0; }$/;"	f	typeref:typename:void
 show_inventory	.ccls-cache/@home@malifpy@Alif@Git@TubesAlstrukdat/src@views@inventory@inventory.c	/^void show_inventory(){$/;"	f	typeref:typename:void
-show_inventory	src/views/inventory/inventory.c	/^void show_inventory(){$/;"	f	typeref:typename:void
+show_inventory	src/views/inventory/inventory.c	/^void show_inventory(StatusGame* s_status_game){$/;"	f	typeref:typename:void
 show_load_game	src/views/load_save/load_save_page.c	/^void show_load_game(StatusGame *s_status_game)$/;"	f	typeref:typename:void
 show_main_menu	src/views/mainmenu/mainmenu.c	/^void show_main_menu() {$/;"	f	typeref:typename:void
 show_map	src/views/map/map_page.c	/^void show_map() {$/;"	f	typeref:typename:void
