@@ -18,7 +18,7 @@ boolean __is_str_same(char input1[], char input2[]) {
   return same;
 }
 
-char *__copyWord(Word str) {
+char *__mm_copyWord(Word str) {
   char *res = (char *)malloc(sizeof(char) * (str.length + 1));
   int i;
   for (i = 0; i < str.length; i++) {
@@ -33,7 +33,7 @@ char *__ask_input() {
   char *input;
   wm_start_word(stdin);
   while (!wm_end_word) {
-    input = __copyWord(wm_current_word);
+    input = __mm_copyWord(wm_current_word);
     wm_adv_word();
   }
   return input;
@@ -58,7 +58,6 @@ void show_main_menu() {
     main_input_command = __ask_input();
     if (__is_str_same(main_input_command, "NEW GAME") ||
         __is_str_same(main_input_command, "LOAD GAME")) {
-
       if (__is_str_same(main_input_command, "NEW GAME")) {
         // Loading Config
         printf("Path to config file: ");
