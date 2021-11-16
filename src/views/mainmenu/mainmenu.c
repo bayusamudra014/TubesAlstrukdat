@@ -1,13 +1,5 @@
 #include "mainmenu.h"
 
-// void show_main_menu() {
-//   clear_screen();
-//
-//   cm_modal_error("Ini adalah contoh error.");
-//   cm_modal_warning("Ini adalah contoh warning.");
-//   cm_modal_info("Ini adalah contoh info.");
-// }
-
 boolean __is_str_same(char input1[], char input2[]) {
   int i = 0;
   boolean same = input1[i] == input2[i];
@@ -18,29 +10,14 @@ boolean __is_str_same(char input1[], char input2[]) {
   return same;
 }
 
-/**
- * Implementasi yang sama dengan copyWord di file
- */
-// char *__mm_copyWord(Word str) {
-//   char *res = (char *)malloc(sizeof(char) * (str.length + 1));
-//   int i;
-//   for (i = 0; i < str.length; i++) {
-//     res[i] = str.contents[i];
-//   }
-//   res[i] = '\0';
-//   return res;
-// }
-
 char *__ask_input() {
   printf("ENTER COMMAND: ");
-  char *input;
-  wm_start_word(stdin);
-  while (!wm_end_word) {
-    input = __mm_copyWord(wm_current_word);
-    wm_adv_word();
-  }
+  char *input = malloc(100 * sizeof(char));
+
+  read_line(input, 100);
   return input;
 }
+
 void mm_dashboard() {
   Color cyan = create_text_color_cd(0x0a9396);
   set_text_color(cyan);
