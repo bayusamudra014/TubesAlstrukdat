@@ -1,73 +1,29 @@
 #include "loadex.h"
 
-#include "mesinkar.h"
-
-// static char configFilename[] = "config.conf";
-// static char savefileFilename[] = "savefile.dat";
-
-static FILE *savefile;
-
-void ignoreBlank()
+// lx_readNumber parses input to be an integer
+int lx_readNumber(char *str)
 {
-  while (CC != EOF && (CC == ' ' || CC == '\n'))
-    ADV();
-}
+  int result;
+  int puiss;
 
-// Advances until CC is not blank
-void ignoreBlankSTDIN()
-{
-  // While not blank
-  while (CC != EOF && CC == ' ')
-    ADVSTDIN();
-}
-
-// readNumber parses input to be an integer
-int readNumber()
-{
-  int n = 0;
-
-  ignoreBlank();
-  while (!EOP && CC != EOF && CC != ' ' && CC != '\n')
+  result = 0;
+  puiss = 1;
+  while (('-' == (*str)) || ((*str) == '+'))
   {
-    n = n * 10 + (CC - '0');
-    ADV();
+      if (*str == '-')
+        puiss = puiss * -1;
+      str++;
   }
-
-  return n;
-}
-
-// readSTDIN will input from STDIN and convert it to ADT Word
-void readSTDIN(word *input)
-{
-  STARTSTDIN();
-  ignoreBlankSTDIN();
-
-  // Initialize word
-  (*input).length = 0;
-
-  while (!EOP && CC != '\n')
+  while ((*str >= '0') && (*str <= '9'))
   {
-    (*input).wordArray[(*input).length] = CC;
-    ++(*input).length;
-    ADVSTDIN();
+      result = (result * 10) + ((*str) - '0');
+      str++;
   }
-}
-
-// readNumberSTDIN returns number from STDIN input
-void readNumberSTDIN(int *X)
-{
-  STARTSTDIN();
-  *X = 0;
-  while (!EOP && CC != '\n')
-  {
-    int tmp = CC - '0';
-    *X = (*X) * 10 + tmp;
-    ADVSTDIN();
-  }
+  return (result * puiss);
 }
 
 // readConfigFile will read config file and make the structure
-void readConfigFile(char configFilename[])
+void lx_readConfigFile(char configFilename[])
 {
   // Persiapan untuk status Game
   ProgressList progress_list;
@@ -84,55 +40,63 @@ void readConfigFile(char configFilename[])
   int i, j;
   ol_create_orederlist(&order_list);
 
-  START(configFilename);
-  ignoreBlank();
+  static FILE * pita;
+  pita =  fopen(configFilename,"r");
+  wm_start_word(pita);
 
+  wm_adv_word();
+  
   // Read map size
-  printf("map size..\n");
-  ignoreBlank();
-  int row = readNumber();
-  ignoreBlank();
-  int col = readNumber();
+  // printf("map size..\n");
+  int row = lx_readNumber(wm_current_word.contents);
+  wm_adv_word();
+  int col = lx_readNumber(wm_current_word.contents);
 
+  printf("%d %d\n", row,col);
+
+  wm_adv_word();
   // Membuat building List
   DynamicList buildingList;
-  ignoreBlank();
-  int buildingN = readNumber();
+  wm_adv_word();
+  int buildingN = lx_readNumber(wm_current_word.contents);
+  printf("%d\n",buildingN);
   buildingN += 1;
   dl_create_list(&buildingList, buildingN);
-  printf("building list..\n");
+
+
   // alokasi map
   m_allocate(&peta_game, row, col, buildingList);
   
   // Read HQ
   Building HQ;
-  ignoreBlank();
-  int x = readNumber();
-  ignoreBlank();
-  int y = readNumber();
+  wm_adv_word();
+  // printf("halo %s halo\n",wm_current_word.contents);
+  int x = lx_readNumber(wm_current_word.contents);
+  wm_adv_word();
+  
+  int y = lx_readNumber(wm_current_word.contents);
+  printf("%d %d\n",x,y);
   b_create_building(&HQ, x, y, '8', '#');
   map_elmt(peta_game, x, y) = '8';
   dl_insert_last(&peta_game.buildinglist, HQ);
 
-  printf("read HQ\n");
-
   // Proses memasukkan building"
   char buildingLabel;
-  printf("baca building..\n");
-  for (i = 1; i <= buildingN; i++)
+  // printf("baca building..\n");
+  for (i = 1; i <= buildingN-1; i++)
   {
-    printf("building ke %d\n", i);
+    // printf("building ke %d\n", i);
     // Membaca label Building
-    ignoreBlank();
-    buildingLabel = CC;
-    ADV();
+    wm_adv_word();
+    buildingLabel = *wm_current_word.contents;
 
     // membaca coordinate building
-    ignoreBlank();
-    x = readNumber();
-    ignoreBlank();
-    y = readNumber();
+    wm_adv_word();
+    x = lx_readNumber(wm_current_word.contents);
+    wm_adv_word();
+    y = lx_readNumber(wm_current_word.contents);
 
+    printf("%c %d %d\n",buildingLabel,x,y);
     // Mengubah peta
     map_elmt(peta_game, x, y) = buildingLabel;
 
@@ -144,39 +108,41 @@ void readConfigFile(char configFilename[])
     dl_insert_last(&peta_game.buildinglist, currentBuilding);
   }
 
+  wm_adv_word();
+
   Matrix adjMatrix;
   m_create_matrix(&adjMatrix, buildingN, buildingN);
-  printf("adj matrix\n");
-  for (i = 0; i <= buildingN; i++)
+  for (i = 0; i < buildingN; i++)
   {
-    for (j = 0; j <= buildingN; j++)
+    for (j = 0; j < buildingN; j++)
     {
-      ignoreBlank();
-      x = readNumber();
+      wm_adv_word();
+      x = lx_readNumber(wm_current_word.contents);
+      printf("%d ",x);
       m_elmt(adjMatrix, i, j) = x;
     }
+    printf("\n");
   }
 
   peta_game.adj = adjMatrix;
 
+  wm_adv_word();
   // Membaca orderlist
-  printf("order list\n");
-  ignoreBlank();
-  int orderN = readNumber();
-
+  wm_adv_word();
+  int orderN = lx_readNumber(wm_current_word.contents);
+  printf("%d\n",orderN);
   int waktuPesanan, expTime;
   char pickUp, dropOff, tipeItem;
   Building P, D;
 
   for (i = 1; i <= orderN; i++)
   {
-    printf("order ke %d\n", i);
-    ignoreBlank();
-    waktuPesanan = readNumber();
+    // printf("order ke %d\n", i);
+    wm_adv_word();
+    waktuPesanan = lx_readNumber(wm_current_word.contents);
 
-    ignoreBlank();
-    pickUp = CC;
-    ADV();
+    wm_adv_word();
+    pickUp = *wm_current_word.contents;
     for (j = 1; j <= buildingN; j++)
     {
       if (loc(peta_game, j).label == pickUp)
@@ -185,9 +151,8 @@ void readConfigFile(char configFilename[])
       }
     }
 
-    ignoreBlank();
-    dropOff = CC;
-    ADV();
+    wm_adv_word();
+    dropOff = *wm_current_word.contents;
     for (j = 1; j <= buildingN; j++)
     {
       if (loc(peta_game, j).label == dropOff)
@@ -196,28 +161,32 @@ void readConfigFile(char configFilename[])
       }
     }
 
-    ignoreBlank();
-    tipeItem = CC;
-    ADV();
+    wm_adv_word();
+    tipeItem = *wm_current_word.contents;
 
+    printf("%d %c %c %c ", waktuPesanan, pickUp,dropOff,tipeItem);
     expTime = -1;
     if (tipeItem == 'P')
     {
-      ignoreBlank();
-      expTime = readNumber;
+      wm_adv_word();
+      expTime = lx_readNumber(wm_current_word.contents);
+      printf("%d\n",expTime);
+    } else
+    {
+      printf("\n");
     }
+    
 
     Item item;
     i_create_item(&item, tipeItem, expTime);
 
+    
     Order order;
     o_create_order(&order, item, P, D, waktuPesanan);
 
     ol_add_order(&order_list, order);
   }
-  ignoreBlank();
 
-  printf("Finishing..\n");
   // Finishing
   pl_create_progress(&progress_list);
   td_create(&to_do_list);
@@ -228,75 +197,217 @@ void readConfigFile(char configFilename[])
   posisi_sekarang = HQ;
   // peta_game
   uang_mobita = 0;
-  printf("uang mobita\n");
 
   // mengubah status game
-  s_status_game->progress_list = progress_list;
-  s_status_game->to_do_list = to_do_list;
-  s_status_game->tas_mobita = tas_mobita;
-  s_status_game->order_list = order_list;
-  s_status_game->inventory_gadget = inventory_gadget;
-  s_status_game->Waktu_Permainan = Waktu_Permainan;
-  s_status_game->posisi_sekarang = posisi_sekarang;
-  s_status_game->peta_game = peta_game;
-  s_status_game->uang_mobita = uang_mobita;
+  s_status_game.progress_list = progress_list;
+  s_status_game.to_do_list = to_do_list;
+  s_status_game.tas_mobita = tas_mobita;
+  s_status_game.order_list = order_list;
+  s_status_game.inventory_gadget = inventory_gadget;
+  s_status_game.Waktu_Permainan = Waktu_Permainan;
+  s_status_game.posisi_sekarang = posisi_sekarang;
+  s_status_game.peta_game = peta_game;
+  s_status_game.uang_mobita = uang_mobita;
 
-  printf("%d",s_status_game->uang_mobita);
-  printf("mengubah status game..\n");
 }
 
-// Print ASCII of character (for debugging purposes)
-void printASCIIFile() {}
-
-// Print word
-void printWord(word W) {}
-
-// Save to file
-void saveToFile()
+void lx_readConfigFile_silent(char configFilename[])
 {
-  savefile = fopen("halo.txt", "w");
-  // Output map size
-  fprintf(savefile, "Halo");
+  // Persiapan untuk status Game
+  ProgressList progress_list;
+  ToDoList to_do_list;
+  Tas tas_mobita;
+  OrderList order_list;
+  inventory_gadget inventory_gadget;
+  Time Waktu_Permainan;
+  Building posisi_sekarang;
+  Map peta_game;
+  int uang_mobita;
 
-  fclose(savefile);
-}
+  // Persiapan Lain
+  int i, j;
+  ol_create_orederlist(&order_list);
 
-// Load from file
-void loadFromFile(StatusGame *s_status_game) {}
+  static FILE * pita;
+  pita =  fopen(configFilename,"r");
+  wm_start_word(pita);
 
-// Word to int converter
-int intConverter(word W)
-{
-  int result = 0;
-  int temp;
-  for (int i = 0; i < W.length; i++)
+  wm_adv_word();
+  
+  // Read map size
+  // printf("map size..\n");
+  int row = lx_readNumber(wm_current_word.contents);
+  wm_adv_word();
+  int col = lx_readNumber(wm_current_word.contents);
+
+  // printf("%d %d\n", row,col);
+
+  wm_adv_word();
+  // Membuat building List
+  DynamicList buildingList;
+  wm_adv_word();
+  int buildingN = lx_readNumber(wm_current_word.contents);
+  // printf("%d\n",buildingN);
+  buildingN += 1;
+  dl_create_list(&buildingList, buildingN);
+
+
+  // alokasi map
+  m_allocate(&peta_game, row, col, buildingList);
+  
+  // Read HQ
+  Building HQ;
+  wm_adv_word();
+  // printf("halo %s halo\n",wm_current_word.contents);
+  int x = lx_readNumber(wm_current_word.contents);
+  wm_adv_word();
+  
+  int y = lx_readNumber(wm_current_word.contents);
+  // printf("%d %d\n",x,y);
+  b_create_building(&HQ, x, y, '8', '#');
+  map_elmt(peta_game, x, y) = '8';
+  dl_insert_last(&peta_game.buildinglist, HQ);
+
+  // Proses memasukkan building"
+  char buildingLabel;
+  // printf("baca building..\n");
+  for (i = 1; i <= buildingN-1; i++)
   {
-    temp = (int)W.wordArray[i] - '0';
-    result = result * 10 + temp;
+    // printf("building ke %d\n", i);
+    // Membaca label Building
+    wm_adv_word();
+    buildingLabel = *wm_current_word.contents;
+
+    // membaca coordinate building
+    wm_adv_word();
+    x = lx_readNumber(wm_current_word.contents);
+    wm_adv_word();
+    y = lx_readNumber(wm_current_word.contents);
+
+    // printf("%c %d %d\n",buildingLabel,x,y);
+    // Mengubah peta
+    map_elmt(peta_game, x, y) = buildingLabel;
+
+    // membuat building
+    Building currentBuilding;
+    b_create_building(&currentBuilding, x, y, buildingLabel, '#');
+
+    // memasukkannya ke dalam list building
+    dl_insert_last(&peta_game.buildinglist, currentBuilding);
   }
-  return result;
-}
 
-// Word Compare
-boolean wordCompare(word W, char *S)
-{
-  boolean result = true;
-  int i;
-  for (i = 0; i < W.length; i++)
+  wm_adv_word();
+
+  Matrix adjMatrix;
+  m_create_matrix(&adjMatrix, buildingN, buildingN);
+  for (i = 0; i < buildingN; i++)
   {
-    char temp = (char)W.wordArray[i];
-    if (temp != S[i])
+    for (j = 0; j < buildingN; j++)
     {
-      result = false;
+      wm_adv_word();
+      x = lx_readNumber(wm_current_word.contents);
+      // printf("%d ",x);
+      m_elmt(adjMatrix, i, j) = x;
     }
+    // printf("\n");
   }
-  int a = strlen(S);
-  if (W.length != a)
+
+  peta_game.adj = adjMatrix;
+
+  wm_adv_word();
+  // Membaca orderlist
+  wm_adv_word();
+  int orderN = lx_readNumber(wm_current_word.contents);
+  // printf("%d\n",orderN);
+  int waktuPesanan, expTime;
+  char pickUp, dropOff, tipeItem;
+  Building P, D;
+
+  for (i = 1; i <= orderN; i++)
   {
-    result = false;
+    // printf("order ke %d\n", i);
+    wm_adv_word();
+    waktuPesanan = lx_readNumber(wm_current_word.contents);
+
+    wm_adv_word();
+    pickUp = *wm_current_word.contents;
+    for (j = 1; j <= buildingN; j++)
+    {
+      if (loc(peta_game, j).label == pickUp)
+      {
+        P = loc(peta_game, j);
+      }
+    }
+
+    wm_adv_word();
+    dropOff = *wm_current_word.contents;
+    for (j = 1; j <= buildingN; j++)
+    {
+      if (loc(peta_game, j).label == dropOff)
+      {
+        D = loc(peta_game, j);
+      }
+    }
+
+    wm_adv_word();
+    tipeItem = *wm_current_word.contents;
+
+    // printf("%d %c %c %c ", waktuPesanan, pickUp,dropOff,tipeItem);
+    expTime = -1;
+    if (tipeItem == 'P')
+    {
+      wm_adv_word();
+      expTime = lx_readNumber(wm_current_word.contents);
+      // printf("%d\n",expTime);
+    } else
+    {
+      // printf("\n");
+    }
+    
+
+    Item item;
+    i_create_item(&item, tipeItem, expTime);
+
+    
+    Order order;
+    o_create_order(&order, item, P, D, waktuPesanan);
+
+    ol_add_order(&order_list, order);
   }
-  return result;
+
+  // Finishing
+  pl_create_progress(&progress_list);
+  td_create(&to_do_list);
+  t_create_tas(&tas_mobita);
+  // o_create_order();
+  ig_create_ig(&inventory_gadget);
+  Waktu_Permainan = 0;
+  posisi_sekarang = HQ;
+  // peta_game
+  uang_mobita = 0;
+
+  // mengubah status game
+  s_status_game.progress_list = progress_list;
+  s_status_game.to_do_list = to_do_list;
+  s_status_game.tas_mobita = tas_mobita;
+  s_status_game.order_list = order_list;
+  s_status_game.inventory_gadget = inventory_gadget;
+  s_status_game.Waktu_Permainan = Waktu_Permainan;
+  s_status_game.posisi_sekarang = posisi_sekarang;
+  s_status_game.peta_game = peta_game;
+  s_status_game.uang_mobita = uang_mobita;
+
 }
+
+// // Save to file
+// void saveToFile()
+// {
+//   savefile = fopen("halo.txt", "w");
+//   // Output map size
+  // fprintf(savefile, "Halo");
+
+//   fclose(savefile);
+// }
 
 // void ldx_newGame(const char *path, StatusGame *status_game);
 

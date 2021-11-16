@@ -4,15 +4,22 @@
 
 int main()
 {
-  StatusGame s_status_game;
-
-  char file_name[50];
-  scanf(" %[^\n]s", file_name);
+  // char file_name[50];
+  // scanf(" %[^\n]s", file_name);
 
   printf("loading...\n");
-  readConfigFile(file_name, &s_status_game);
+  lx_readConfigFile_silent("config.conf");
   printf("loading selesai\n");
 
-  printf("%d",s_status_game.uang_mobita);
+  printf("%d\n",s_status_game.uang_mobita);
+  printf("%d\n",q_length(s_status_game.order_list));
+  Order order = ol_get_head(s_status_game.order_list);
+  printf("%d %c %c ", order.incomingTime, order.pickUp.label,order.dropOff.label);
+
+  if (ol_is_empty(s_status_game.order_list)){
+    printf("kosong\n");
+  } else {
+    printf("gak ksoong");
+  }
   return 0;
 }

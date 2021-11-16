@@ -31,7 +31,7 @@ void f_read_file(const char* path, char* buffer, int size);
    F.S. Sebanyak size byte dari buffer akan ditulis ke file.
 
 */
-void f_write_file(const char* path, const char* buffer, int size);
+void f_write_file(const char* path, const char* buffer);
 
 /* Mengembalikan true bila file path tersedia */
 boolean f_exist(const char* path); 

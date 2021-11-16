@@ -67,8 +67,7 @@ char** f_read_file_to_buffer(const char* path) {
   return buffer;
 }
 
-void f_write_file(const char* path, const char* buffer, int size) {
-  buffer[size];
+void f_write_file(const char* path, const char* buffer) {
   FILE* fp;
   fp = fopen(path, "w");
   fputs(buffer, fp);
