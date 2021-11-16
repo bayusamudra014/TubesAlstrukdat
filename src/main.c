@@ -1,17 +1,17 @@
 #include <stdio.h>
+
 #include "components/components.h"
 #include "lib/lib.h"
 #include "views/views.h"
 
-int main()
-{
-    clear_screen();
+int main() {
+  // clear_screen();
 
-    cm_modal_error("Ini adalah contoh error.");
-    cm_modal_warning("Ini adalah contoh warning.");
-    cm_modal_info("Ini adalah contoh info.");
+  cm_modal_error("Ini adalah contoh error.");
+  cm_modal_warning("Ini adalah contoh warning.");
+  cm_modal_info("Ini adalah contoh info.");
 
-    return 0;
+  return 0;
 }
 
 /*test page to_do*/
@@ -61,37 +61,34 @@ int main()
 //   // show_to_do(s_status_game);
 //   show_progress(s_status_game);
 //   printf("\n");
-//   printf("kapasitas tas mobita saat ini : %d",s_status_game.tas_mobita.capacity);
-//   printf("\n");
-//   printf("uang mobita saat ini : %d\n",s_status_game.uang_mobita);
+//   printf("kapasitas tas mobita saat ini :
+//   %d",s_status_game.tas_mobita.capacity); printf("\n"); printf("uang mobita
+//   saat ini : %d\n",s_status_game.uang_mobita);
 //   // td_removeTask(&s_status_game.to_do_list,&order1,1);
 //   // pl_delete_first(&s_status_game.progress_list,&order1);
 //   progress_dropoff(&s_status_game);
 //   show_progress(s_status_game);
 
-//   printf("kapasitas tas mobita saat ini : %d",s_status_game.tas_mobita.capacity);
-//   printf("\n");
-//   printf("uang mobita saat ini : %d\n",s_status_game.uang_mobita);
+//   printf("kapasitas tas mobita saat ini :
+//   %d",s_status_game.tas_mobita.capacity); printf("\n"); printf("uang mobita
+//   saat ini : %d\n",s_status_game.uang_mobita);
 
-
-  // show_to_do(s_status_game);
+// show_to_do(s_status_game);
 //   Gadget gadget;
 //   gadget.gadgetID = 1;
 //   gadget.label = 'K';
 //   gadget.price = 800;
-  
+
 //   ig_create_ig(&s_status_game.inventory_gadget);
 //   printf("\n");
-//   printf("Kapasitas dari inventory gadget adalah : %d",sl_length(s_status_game.inventory_gadget));
-//   printf("\n");
+//   printf("Kapasitas dari inventory gadget adalah :
+//   %d",sl_length(s_status_game.inventory_gadget)); printf("\n");
 //   ig_display_ig(s_status_game.inventory_gadget);
 //   printf("\n");
 //   show_page_buy(&s_status_game);
 //   printf("\n");
-//   printf("Kapasitas dari inventory gadget adalah : %d",sl_length(s_status_game.inventory_gadget));
-//   printf("\n");
+//   printf("Kapasitas dari inventory gadget adalah :
+//   %d",sl_length(s_status_game.inventory_gadget)); printf("\n");
 //   ig_display_ig(s_status_game.inventory_gadget);
 //   printf("\n");
 //   printf("Uang mobita saat ini : %d Yen\n",s_status_game.uang_mobita);
-
- 

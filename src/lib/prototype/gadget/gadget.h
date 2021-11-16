@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "../../lib.h"
+#include "../prototype.h"
 
 typedef struct gadget{
 
@@ -16,9 +16,5 @@ typedef struct gadget{
 /*I.S. Sembarang*/
 /*F.S. set gadget sesuai dengan spesifikasi*/
 void g_set_gadget(Gadget *gadget, int type);
-
-/* mengubah state game berdasarkan gadget yang diinputkan */
-/* masih menunggu beberapa adt game selesai */
-void g_change_state(int type);
 
 #endif

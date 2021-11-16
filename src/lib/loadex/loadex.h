@@ -26,7 +26,7 @@ void readSTDIN(word *input);
 
 
 // readConfigFile will read config file and make the structure
-void readConfigFile(StatusGame* s_status_game);
+void readConfigFile(char configFilename[], StatusGame* s_status_game);
 
 
 // readNumberSTDIN returns number from STDIN input
