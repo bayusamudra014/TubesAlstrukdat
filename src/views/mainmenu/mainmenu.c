@@ -41,7 +41,27 @@ char *__ask_input() {
   }
   return input;
 }
-void mm_dashboard() { printf("Permainan Mobita\n"); }
+void mm_dashboard() {
+  Color cyan = create_text_color_cd(0x0a9396);
+  set_text_color(cyan);
+
+  printf("___  ___      _     _ _ _ _        \n");
+  printf("|  \\/  |     | |   (_) (_) |       \n");
+  printf("| .  . | ___ | |__  _| |_| |_ __ _ \n");
+  printf("| |\\/| |/ _ \\| '_ \\| | | | __/ _` |\n");
+  printf("| |  | | (_) | |_) | | | | || (_| |\n");
+  printf("\\_|  |_/\\___/|_.__/|_|_|_|\\__\\__,_|\n");
+
+  reset_color();
+
+  printf("\n\nVersi 1.0.0.\n\n");
+
+  cm_modal_info(
+      "Halo, Aku Mobita. Bantuin aku yuk...\nKamu bisa masukin perintah "
+      "dibawah ini yaa, Selamat bermain");
+
+  delete_color(cyan);
+}
 
 void show_main_menu() {
   // wm_start_word(stdin);
