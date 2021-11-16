@@ -94,7 +94,7 @@ void show_main_menu() {
         } else if (__is_str_same(input_command, "BUY")) {
           show_page_buy(&s_status_game);
         } else if (__is_str_same(input_command, "INVENTORY")) {
-          show_inventory();
+          show_inventory(&s_status_game);
         } else if (__is_str_same(input_command, "HELP")) {
           // HELP
         } else if (__is_str_same(input_command, "SAVE_GAME")) {
