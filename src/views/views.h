@@ -12,5 +12,6 @@
 #include "move/move_page.h"
 #include "progress/progress.h"
 #include "to_do/to_do_page.h"
+#include "inventory/inventory.h"
 
 #endif

@@ -15,4 +15,7 @@
 // Status Game
 #include "status_game/status_game.h"
 
+// loadex
+#include "loadex/loadex.h"
+
 #endif
