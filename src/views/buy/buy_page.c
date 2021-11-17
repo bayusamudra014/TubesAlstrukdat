@@ -71,6 +71,8 @@ void show_page_buy(StatusGame *s_status_game){
             }else{
                 printf("Uang tidak cukup untuk membeli gadget!\n");
             }
+        }else if (command >= 5){
+            printf("Option gadget tidak tersedia ! \n");
         }
     }while(command != 0 && !beli);
 }
