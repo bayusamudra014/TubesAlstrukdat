@@ -4,7 +4,7 @@
 
 StatusGame s_status_game;
 
-void sg_create_state() { SG_S_BTS(s_status_game) = false; }
+void sg_create_state() { SG_S_BTS(s_status_game) = 0; }
 
 void sg_reset_time() { s_status_game.Waktu_Permainan = 0; }
 
