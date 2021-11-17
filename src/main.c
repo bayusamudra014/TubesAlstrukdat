@@ -7,10 +7,7 @@ int main() {
   // char file_name[50];
   // scanf(" %[^\n]s", file_name);
 
-  printf("loading...\n");
-  lx_readConfigFile_silent("config.conf");
-  printf("loading selesai\n");
-  
-  lx_saveToFile("save.conf");
+  show_main_menu();
+  // lx_saveToFile("save.conf");
   return 0;
 }

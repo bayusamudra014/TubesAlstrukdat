@@ -1,4 +1,5 @@
 #include "mainmenu.h"
+
 #include <stdio.h>
 
 boolean __is_str_same(char input1[], char input2[]) {
@@ -61,7 +62,11 @@ void show_main_menu() {
 
   boolean GAME_COMPLETE = false;
   do {
-    main_input_command = __ask_input("ENTER COMMAND: ");
+    printf("Sebelum itu, pilihlah mode yang akan kamu mainkan:\n");
+    printf("1. NEW_GAME : Memulai permainan baru\n");
+    printf("2. LOAD_GAME : Load permainan sebelumnya\n\n");
+    main_input_command = __ask_input("Mode Permainan : ");
+
     if (__is_str_same(main_input_command, "NEW_GAME") ||
         __is_str_same(main_input_command, "LOAD_GAME")) {
       if (__is_str_same(main_input_command, "NEW_GAME")) {
@@ -116,8 +121,8 @@ void show_main_menu() {
           show_help();
         } else if (__is_str_same(input_command, "SAVE_GAME")) {
           show_save_game(s_status_game);
-        // } else if (__is_str_same(input_command, "MAX_MONEY")) {
-        //   SG_MONEY(s_status_game) = 9999;
+          // } else if (__is_str_same(input_command, "MAX_MONEY")) {
+          //   SG_MONEY(s_status_game) = 9999;
         } else {
           cm_modal_error("COMMAND TIDAK DIKENALI!");
         }
