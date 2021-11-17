@@ -28,3 +28,41 @@ int pl_length(ProgressList pl) { return ll_length(pl); }
 
 /*Menampilkan isi progress list ke layar*/
 void pl_display_progress(ProgressList pl) { ll_display_list(pl); }
+
+/* Mengembalikan true bila ada VIP Item di progress list */
+boolean pl_is_any_vip(ProgressList pl) {
+  ProgressList l = FIRST(pl);
+  boolean result = false;
+
+  while (l && !result) {
+    if (l->payload.item.itemID == 'V') {
+      result = true;
+    } else {
+      l = l->next;
+    }
+  }
+
+  return result;
+}
+
+Order *pl_get_order_by_item(ProgressList pl, Item i) {
+  ProgressList l = FIRST(pl);
+  boolean result = false;
+
+  while (l && !result) {
+    if (i_is_equal(l->payload.item, i)) {
+      result = true;
+    } else {
+      l = l->next;
+    }
+  }
+
+  return &(l->payload);
+}
+
+void pl_delete_by_order(ProgressList *pl, PlElType order) {
+  int idx = ll_index_of(FIRST(pl), order);
+
+  Order tmp;
+  ll_delete_at(FIRST(pl), &tmp, idx);
+}

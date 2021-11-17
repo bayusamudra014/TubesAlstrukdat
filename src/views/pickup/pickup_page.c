@@ -1,18 +1,6 @@
 #include "pickup_page.h"
 
-boolean pu_is_vip_taken() {
-  boolean result = false;
-  ToDoList todo = SG_TDL(s_status_game);
-  LinkedList p = FIRST(todo);
-
-  while (p && !result) {
-    if (INFO(p).item.itemID == 'V') {
-      result = true;
-    }
-  }
-
-  return result;
-}
+boolean pu_is_vip_taken() { return pl_is_any_vip(s_status_game.progress_list); }
 
 /* Mengembalikan NULL bila tidak ada item yang bisa di pickup */
 Order* pu_item_upper() {
