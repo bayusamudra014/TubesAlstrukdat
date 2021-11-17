@@ -1,5 +1,7 @@
 #include "map.h"
 
+#include <ctype.h>
+
 void m_allocate(Map *m, int row, int col, DynamicList bl) {
   (*m).buildinglist = bl;
   Row(*m) = row;
@@ -40,13 +42,13 @@ void m_display(Map m) {
       if (curr != '*' && curr != ' ') {
         int idx;
         idx = m_get_idx(m, curr);
-        if (loc_type(m, idx) == 'm') {
+        if (toupper(loc_type(m, idx)) == 'M') {
           print_yellow(curr);
-        } else if (loc_type(m, idx) == 'p') {
+        } else if (toupper(loc_type(m, idx)) == 'P') {
           print_red(curr);
-        } else if (loc_type(m, idx) == 'd') {
+        } else if (toupper(loc_type(m, idx)) == 'D') {
           print_blue(curr);
-        } else if (loc_type(m, idx) == 'r') {
+        } else if (toupper(loc_type(m, idx)) == 'R') {
           print_green(curr);
         } else {
           printf("%c", curr);
@@ -68,9 +70,9 @@ void m_display_reachable(Map m) {
   }
 }
 
-void m_clear_reachable(Map *m){
+void m_clear_reachable(Map *m) {
   DlEltype temp;
-  while (!dl_is_empty(reachable(*m))){
+  while (!dl_is_empty(reachable(*m))) {
     dl_delete_last(&reachable(*m), &temp);
   }
 }
