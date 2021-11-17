@@ -15,6 +15,6 @@ Order ol_dequeue_order(OrderList* ol) {
 
 int ol_order_count(OrderList ol) { return q_length(ol); }
 
-Order* ol_get_all_order(OrderList ol) { return ol.buffer; }
+Order* ol_get_all_order(OrderList* ol) { return ol->buffer; }
 
 boolean ol_is_empty(OrderList ol) { return q_is_empty(ol); }

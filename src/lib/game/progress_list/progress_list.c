@@ -45,8 +45,8 @@ boolean pl_is_any_vip(ProgressList pl) {
   return result;
 }
 
-Order *pl_get_order_by_item(ProgressList pl, Item i) {
-  ProgressList l = FIRST(pl);
+Order *pl_get_order_by_item(ProgressList *pl, Item i) {
+  ProgressList l = FIRST(*pl);
   boolean result = false;
 
   while (l && !result) {
@@ -61,8 +61,8 @@ Order *pl_get_order_by_item(ProgressList pl, Item i) {
 }
 
 void pl_delete_by_order(ProgressList *pl, PlElType order) {
-  int idx = ll_index_of(FIRST(pl), order);
+  int idx = ll_index_of(FIRST(*pl), order);
 
   Order tmp;
-  ll_delete_at(FIRST(pl), &tmp, idx);
+  ll_delete_at(pl, &tmp, idx);
 }

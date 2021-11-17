@@ -15,6 +15,7 @@ typedef struct StatusGame {
   Building posisi_sekarang;
   Map peta_game;
   int uang_mobita;
+  boolean back_to_sender;
 
 } StatusGame;
 
@@ -24,8 +25,15 @@ typedef struct StatusGame {
 #define SG_OL(StatusGame) (StatusGame).order_list
 #define SG_MONEY(StatusGame) (StatusGame).uang_mobita
 #define SG_IG(StatusGame) (StatusGame).inventory_gadget
+#define SG_PL(StatusGame) (StatusGame).progress_list
+#define SG_IG(StatusGame) (StatusGame).inventory_gadget
+#define SG_POS(StatusGame) (StatusGame).posisi_sekarang
+#define SG_S_BTS(StatusGame) (StatusGame).back_to_sender
 
 extern StatusGame s_status_game;
+
+/* Menginisialisasi state awal */
+void sg_create_state();
 
 /*Berfungsi untuk mereset waktu*/
 void sg_reset_time();
