@@ -1,6 +1,6 @@
 #include "pickup_page.h"
 
-boolean pu_is_vip_taken() { return pl_is_any_vip(s_status_game.progress_list); }
+boolean pu_is_vip_taken() { return pl_is_any_vip(SG_PL(s_status_game)); }
 
 /* Mengembalikan NULL bila tidak ada item yang bisa di pickup */
 Order* pu_item_upper() {
@@ -25,11 +25,11 @@ Order* pu_item_upper() {
 }
 
 void pu_add_progress(Order order) {
-  pl_insert_last(&(s_status_game.to_do_list), order);
+  pl_insert_last(&(SG_TDL(s_status_game)), order);
 }
 
 void pu_add_bag(Order order) {
-  t_add_item(&(s_status_game.tas_mobita), order.item);
+  t_add_item(&(SG_TAS(s_status_game)), order.item);
 }
 
 void show_pickup() {
@@ -37,7 +37,7 @@ void show_pickup() {
     Order* top = pu_item_upper();
 
     if (top) {
-      td_removeTask(&(s_status_game.to_do_list), NULL, top->orderID);
+      td_removeTask(&(SG_TDL(s_status_game)), NULL, top->orderID);
       pu_add_progress(*top);
       pu_add_bag(*top);
 

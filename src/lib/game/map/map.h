@@ -5,12 +5,12 @@
 #include "../../structure/dynamiclist/dynamiclist.h"
 
 typedef struct map{
-    char loc[22][32];
     DynamicList buildinglist;
-    int row;
-    int col;
     DynamicList reachable;
     Matrix adj;
+    char loc[22][32];
+    int row;
+    int col;
 } Map;
 
 typedef Matrix adj;
