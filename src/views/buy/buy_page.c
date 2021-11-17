@@ -22,7 +22,6 @@ void show_page_buy(StatusGame *s_status_game){
         printf("\n");
         printf("ENTER COMMAND: ");
         read_int_line(&command, 100);
-        printf("Command: %d\n", command);
         printf("\n");
 
         if(command == 1){
