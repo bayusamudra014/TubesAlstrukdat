@@ -29,6 +29,7 @@ typedef struct StatusGame {
 #define SG_IG(StatusGame) (StatusGame).inventory_gadget
 #define SG_POS(StatusGame) (StatusGame).posisi_sekarang
 #define SG_S_BTS(StatusGame) (StatusGame).back_to_sender
+#define SG_MAP(StatusGame) (StatusGame).peta_game
 
 extern StatusGame s_status_game;
 

@@ -47,6 +47,43 @@ void lx_saveToFile(char saveFilename[])
     //Write Adj Matrix
     lx_wAdj(buildingN);
 
+    //REACHABLE
+    fprintf(saveFile, "REACHABLE");
+    lx_wNl();
+    int reachN = reach_nEff(SG_MAP(s_status_game));
+    lx_wNum(reachN);
+    lx_wNl();
+    DynamicList reach;
+    reach = reachable(SG_MAP(s_status_game));
+
+    for (int i = 0; i < reachN; i++)
+    {
+        Building spot;
+        spot = dl_elmt(reach, i);
+        fprintf(saveFile, "%c", label(spot));
+        lx_wSpace();
+        lx_wNum(Absis(spot));
+        lx_wSpace();
+        lx_wNum(Ordinat(spot));
+        lx_wSpace();
+        fprintf(saveFile, "%c", spot.tipe);
+        lx_wNl();
+    }
+
+    // Posisi Nobita
+    fprintf(saveFile, "CURRENT_POSITION");
+    lx_wNl();
+
+    Building spot = SG_POS(s_status_game);
+    fprintf(saveFile, "%c", label(spot));
+    lx_wSpace();
+    lx_wNum(Absis(spot));
+    lx_wSpace();
+    lx_wNum(Ordinat(spot));
+    lx_wSpace();
+    fprintf(saveFile, "%c", spot.tipe);
+    lx_wNl();
+
     //Write Order list;
     fprintf(saveFile, "ORD");
     lx_wNl();
@@ -92,22 +129,16 @@ void lx_saveToFile(char saveFilename[])
     //Uang Sekarang
     fprintf(saveFile, "CURRENT_MONEY");
     lx_wNl();
-    lx_wNum(SG_MNY(s_status_game));
+    lx_wNum(SG_MONEY(s_status_game));
     lx_wNl();
 
-    // Posisi Nobita
-    fprintf(saveFile, "CURRENT_POSITION");
+    //BACK TO SENDER
+    fprintf(saveFile, "BACK_TO_SENDER");
+    lx_wNl();
+    lx_wNum(SG_S_BTS(s_status_game));
     lx_wNl();
 
-    Building spot = SG_POS(s_status_game);
-    fprintf(saveFile, "%c", label(spot));
-    lx_wSpace();
-    lx_wNum(Absis(spot));
-    lx_wSpace();
-    lx_wNum(Ordinat(spot));
-    lx_wSpace();
-    fprintf(saveFile, "%c", spot.tipe);
-    lx_wNl();
+    
 
     //GADGET MOBITA
     fprintf(saveFile, "INVENTORY_GADGET");
@@ -135,21 +166,44 @@ void lx_saveToFile(char saveFilename[])
     lx_wNum(tasN);
     lx_wNl();
     Stack isi_tas = t_isi(tas);
+    int tasNeff= 0;
+    while (!s_is_empty(isi_tas)){
+        Order order;
+        s_pop(&isi_tas, &order);
+        tasNeff++;
+    }
+
+    lx_wNum(tasNeff);
+    lx_wNl();
+
+    isi_tas = t_isi(tas);
     while (!s_is_empty(isi_tas))
     {
-        Item item;
-        s_pop(&isi_tas, &item);
+        Order order;
+        s_pop(&isi_tas, &order);
 
-        lx_wNum(item.itemID);
+        int time = order.incomingTime;
+        char pickUp = label(order.pickUp);
+        char dropOff = label(order.dropOff);
+        Item item = order.item;
+        char i_type = item.type;
+
+        lx_wNum(order.orderID);
         lx_wSpace();
-        fprintf(saveFile, "%c", item.type);
+        lx_wNum(time);
+        lx_wSpace();
+        fprintf(saveFile, "%c", pickUp);
+        lx_wSpace();
+        fprintf(saveFile, "%c", dropOff);
+        lx_wSpace();
+        fprintf(saveFile, "%c", i_type);
 
-        if (item.type == 'P')
+        if (i_type == 'P')
         {
+
             lx_wSpace();
             lx_wNum(item.expired);
         }
-
         lx_wNl();
     }
 
@@ -192,7 +246,7 @@ void lx_saveToFile(char saveFilename[])
     //Progress List
     fprintf(saveFile, "PROGRESS_LIST");
     lx_wNl();
-    ProgressList pgList = SG_PGL(s_status_game);
+    ProgressList pgList = SG_PL(s_status_game);
     int pglN = (pl_length(pgList));
     lx_wNum(pglN);
     lx_wNl();
@@ -224,7 +278,6 @@ void lx_saveToFile(char saveFilename[])
         }
         lx_wNl();
     }
-
 
     fclose(saveFile);
 }
