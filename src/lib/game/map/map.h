@@ -1,8 +1,7 @@
 #ifndef H_MAP
 #define H_MAP
 
-#include "../game.h"
-#include "../../structure/dynamiclist/dynamiclist.h"
+#include "../../lib.h"
 
 typedef struct map{
     DynamicList buildinglist;
@@ -48,5 +47,6 @@ void m_display(Map m);
  *F.S. lokasi yang terjangkau tercetak ke layar */
 void m_display_reachable(Map m);
 
+void m_clear_reachable(Map *m);
 
 #endif

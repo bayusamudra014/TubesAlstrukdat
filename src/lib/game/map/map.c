@@ -67,3 +67,10 @@ void m_display_reachable(Map m) {
     b_display(dl_elmt(reachable(m), i));
   }
 }
+
+void m_clear_reachable(Map *m){
+  DlEltype temp;
+  while (!dl_is_empty(reachable(*m))){
+    dl_delete_last(&reachable(*m), &temp);
+  }
+}
