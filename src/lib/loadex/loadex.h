@@ -20,7 +20,18 @@ void lx_readConfigFile(char configFilename[]);
 void lx_readConfigFile_silent(char configFilename[]);
 
 // Save to file
-void saveToFile();
+void lx_saveToFile();
+
+// Load
+void lx_loadSaveFile(char saveFileName[]);
+
+
+//Pembantu write
+void lx_wNum(int x);
+void lx_wNl();
+void lx_wSpace();
+void lx_wAdj(int buildingN);
+
 
 void ldx_newGame(const char *path, StatusGame *status_game);
 

@@ -10,16 +10,7 @@ int main()
   printf("loading...\n");
   lx_readConfigFile_silent("config.conf");
   printf("loading selesai\n");
-
-  printf("%d\n",s_status_game.uang_mobita);
-  printf("%d\n",q_length(s_status_game.order_list));
-  Order order = ol_get_head(s_status_game.order_list);
-  printf("%d %c %c ", order.incomingTime, order.pickUp.label,order.dropOff.label);
-
-  if (ol_is_empty(s_status_game.order_list)){
-    printf("kosong\n");
-  } else {
-    printf("gak ksoong");
-  }
+  
+  lx_saveToFile("save.conf");
   return 0;
 }
