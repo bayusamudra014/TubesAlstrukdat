@@ -98,7 +98,7 @@ void show_main_menu() {
         } else if (__is_str_same(input_command, "DROP_OFF")) {
           // show_dropoff();
         } else if (__is_str_same(input_command, "MAP")) {
-          show_map();
+          show_map(s_status_game);
         } else if (__is_str_same(input_command, "TO_DO")) {
           show_to_do(s_status_game);
         } else if (__is_str_same(input_command, "IN_PROGRESS")) {
