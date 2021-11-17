@@ -38,10 +38,10 @@ void show_dropoff() {
 
         cm_modal_info(pesan);
 
-        if (obj.item.type == 'V' && !SG_S_BTS(s_status_game)) {
+        if (obj.item.type == 'V') {
           printf("\n🎁 Hadiah dari pengirim\n");
           printf("Wah, kamu mendapatkan ability Return to Sender. Selamat..\n");
-          SG_S_BTS(s_status_game) = true;
+          SG_S_BTS(s_status_game)++;
         }
 
         pl_delete_by_order(&(SG_PL(s_status_game)), *top);

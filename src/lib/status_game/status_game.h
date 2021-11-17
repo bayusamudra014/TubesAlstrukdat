@@ -15,7 +15,7 @@ typedef struct StatusGame {
   Building posisi_sekarang;
   Map peta_game;
   int uang_mobita;
-  boolean back_to_sender;
+  int back_to_sender;
 
 } StatusGame;
 
