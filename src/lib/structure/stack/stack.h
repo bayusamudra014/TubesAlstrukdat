@@ -5,7 +5,7 @@
 
 #define S_MAX_SIZE 100
 
-typedef Item SEltype;
+typedef Order SEltype;
 
 typedef struct stack
 {

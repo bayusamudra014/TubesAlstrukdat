@@ -21,7 +21,7 @@ void show_page_buy(StatusGame *s_status_game){
         printf("Gadget mana yang ingin kau beli? (ketik 0 jika ingin kembali)\n");
         printf("\n");
         printf("ENTER COMMAND: ");
-        scanf("%d",&command);
+        read_int_line(&command, 100);
         printf("\n");
 
         if(command == 1){
@@ -71,6 +71,8 @@ void show_page_buy(StatusGame *s_status_game){
             }else{
                 printf("Uang tidak cukup untuk membeli gadget!\n");
             }
+        }else if (command >= 5 || command < 0){
+            printf("Option gadget tidak tersedia ! \n");
         }
     }while(command != 0 && !beli);
 }

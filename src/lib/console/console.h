@@ -42,4 +42,13 @@ void read_word(char* word, int length);
 
 */
 void read_line(char* word, int length);
+
+/**
+ * Membaca sebuah baris, convert ke integer
+ *
+ * scanf meninggalkan newline, sehingga __ask_input
+ * mengira itu sebagai inputan kosong. Oleh karena itu, 
+ * diganti dengan yang tidak meninggalkan newline
+ */
+void read_int_line(int* num, int digits);
 #endif

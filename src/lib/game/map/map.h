@@ -5,12 +5,12 @@
 #include "../../structure/dynamiclist/dynamiclist.h"
 
 typedef struct map{
-    char loc[22][32];
     DynamicList buildinglist;
-    int row;
-    int col;
     DynamicList reachable;
     Matrix adj;
+    char loc[22][32];
+    int row;
+    int col;
 } Map;
 
 typedef Matrix adj;
@@ -39,10 +39,6 @@ void m_allocate(Map *m,int row, int col, DynamicList bl);
 void m_assign(Map *m);
 /* mengembalikan indeks bangunan di list bangunan */
 int m_get_idx(Map m, char b);
-
-/* I.S. m dan adjacency terdefinisi
-   F.S. ADJ matriks sudah terassign */
-void m_get_adj(Map m, adj Adjacency, FILE *fp);
 
 /*I.S. Map sudah teralokasi
  *F.S. Map tercetak ke layar */

@@ -1,18 +1,6 @@
 #include "pickup_page.h"
 
-boolean pu_is_vip_taken() {
-  boolean result = false;
-  ToDoList todo = SG_TDL(s_status_game);
-  LinkedList p = FIRST(todo);
-
-  while (p && !result) {
-    if (INFO(p).item.itemID == 'V') {
-      result = true;
-    }
-  }
-
-  return result;
-}
+boolean pu_is_vip_taken() { return pl_is_any_vip(SG_PL(s_status_game)); }
 
 /* Mengembalikan NULL bila tidak ada item yang bisa di pickup */
 Order* pu_item_upper() {
@@ -37,27 +25,29 @@ Order* pu_item_upper() {
 }
 
 void pu_add_progress(Order order) {
-  pl_insert_last(&(s_status_game.to_do_list), order);
+  pl_insert_last(&(SG_TDL(s_status_game)), order);
 }
 
-void pu_add_bag(Order order) {
-  t_add_item(&(s_status_game.tas_mobita), order.item);
-}
+void pu_add_bag(Order order) { t_add_item(&(SG_TAS(s_status_game)), order); }
 
 void show_pickup() {
   if (!pu_is_vip_taken()) {
     Order* top = pu_item_upper();
 
     if (top) {
-      td_removeTask(&(s_status_game.to_do_list), NULL, top->orderID);
+      if (top->item.type == 'P') {
+        top->expiredTime = SG_TIME(s_status_game) + top->item.expired;
+      }
+
+      td_removeTask(&(SG_TDL(s_status_game)), NULL, top->orderID);
       pu_add_progress(*top);
       pu_add_bag(*top);
 
       printf("\n");
 
-      char pesan[50];
+      char pesan[100];
 
-      snprintf(pesan, 50, "Pesanan berupa %s berhasil diambil!",
+      snprintf(pesan, 100, "Pesanan berupa %s berhasil diambil!",
                i_item_type_name(top->item));
 
       cm_modal_info(pesan);

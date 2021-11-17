@@ -27,4 +27,12 @@ void pl_display_progress(ProgressList pl);
 /*Mengembalikan panjang dari progress list*/
 int pl_length(ProgressList pl);
 
+/* Mengembalikan true bila ada VIP Item di progress list */
+boolean pl_is_any_vip(ProgressList pl);
+
+/* I.S. Progress list tedefinisi
+   F.S. Menghapus order pertama yang ditemukan di progress list.
+        Bila tidak ada, maka tidak dilakukan apa-apa. */
+void pl_delete_by_order(ProgressList *pl, PlElType order);
+
 #endif

@@ -13,7 +13,7 @@ void t_increase_capacity(Tas *T, int cap_inc) {
   }
 }
 
-void t_add_item(Tas *T, Item item) {
+void t_add_item(Tas *T, Order item) {
   /**
    * idx stack dimulai dari 0, jadi
    * Tas dengan capacity 3 penuh saat
@@ -29,8 +29,8 @@ void t_add_item(Tas *T, Item item) {
 
 boolean t_is_empty(Tas T) { return s_is_empty(t_isi(T)); }
 
-Item t_take_item(Tas *T) {
-  Item I;
+Order t_take_item(Tas *T) {
+  Order I;
   s_pop(&(t_isi(*T)), &I);
   return I;
 }

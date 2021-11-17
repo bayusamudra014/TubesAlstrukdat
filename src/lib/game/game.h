@@ -2,6 +2,7 @@
 #define H_GAME
 
 #include "../structure/structure.h"
+#include "../console/console.h"
 
 /* ADT */
 #include "inventory_gadget/inventory_gadget.h"

@@ -40,9 +40,14 @@ void move_boost(StatusGame *s, int mv, int curr_move) {
 void show_move(StatusGame *s){
   Map curr_map = s->peta_game;
   m_display_reachable(curr_map);
+  printf("Posisi yang dipilih: \n");
+  printf("ENTER COMMAND: \n");
   int mv;
   scanf("%d",&mv);
   if (mv != 0){
-    move(&s, mv, false, false);
+    move(s, mv, false, false);
   }
+  printf("nobita sekarang berada di titik ");
+  b_display(s->posisi_sekarang);
+  printf("waktu: %u", SG_TIME(*s));
 }

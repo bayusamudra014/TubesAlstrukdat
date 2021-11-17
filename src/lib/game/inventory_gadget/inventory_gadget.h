@@ -18,18 +18,14 @@ void ig_create_ig(inventory_gadget* IG);
 void ig_add_item(inventory_gadget* IG, Gadget G);
 
 /**
- * I.S. Inventory Gadget terdefenisi
- * F.S. Akan print list item, kemudian 
- *      player dapat memilih untuk mengambil
- *      item yang mana.
- */
-void ig_take_item(inventory_gadget* IG, Gadget* G);
-
-/**
  * I.S. Inventory Gadget terdefinisi
  * F.S. Cuma ngeprint list item
  */
 
 void ig_display_ig(inventory_gadget IG);
 
+/**
+ * return true kalau penuh
+ */
+boolean ig_is_full(inventory_gadget IG);
 #endif
