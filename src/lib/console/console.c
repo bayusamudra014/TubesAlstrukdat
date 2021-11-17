@@ -62,3 +62,21 @@ void read_line(char* word, int length) {
 
   word[i] = '\0';
 }
+
+void read_int_line(int* num, int digits) {
+  cm_set_end_char(CHAR_LINEBREAK, sizeof(CHAR_LINEBREAK) - 1);
+
+  wm_start_word(stdin);
+    
+  *num = 0;
+  int i = 0;
+  int mul = 1;
+  if (wm_current_word.contents[0] == '-'){
+      mul = -1;
+      i++;
+  }
+  for ( ; i < digits - 1 && i < wm_current_word.length; i++) {
+      *num = 10 * (*num) + mul * ((int) wm_current_word.contents[i] - 48);
+  }
+
+}

@@ -1,4 +1,5 @@
 #include "mainmenu.h"
+#include <stdio.h>
 
 boolean __is_str_same(char input1[], char input2[]) {
   int i = 0;
@@ -67,6 +68,7 @@ void show_main_menu() {
         // Loading Config
         char *configPath = __ask_input("Path to config file: ");
         while (!f_exist(configPath)) {
+          printf("\n");
           cm_modal_error("File tidak bisa dibaca!");
           configPath = __ask_input("Path to config file: ");
         }
@@ -109,6 +111,8 @@ void show_main_menu() {
           show_help();
         } else if (__is_str_same(input_command, "SAVE_GAME")) {
           show_save_game(s_status_game);
+        // } else if (__is_str_same(input_command, "MAX_MONEY")) {
+        //   SG_MONEY(s_status_game) = 9999;
         } else {
           cm_modal_error("COMMAND TIDAK DIKENALI!");
         }
