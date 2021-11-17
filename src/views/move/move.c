@@ -49,5 +49,5 @@ void show_move(StatusGame *s){
   }
   printf("nobita sekarang berada di titik ");
   b_display(s->posisi_sekarang);
-  printf("waktu: %d", SG_TIME(*s));
+  printf("waktu: %u", SG_TIME(*s));
 }
