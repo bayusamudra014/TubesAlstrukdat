@@ -23,6 +23,7 @@ typedef struct StatusGame {
 #define SG_TIME(StatusGame) (StatusGame).Waktu_Permainan
 #define SG_OL(StatusGame) (StatusGame).order_list
 #define SG_MONEY(StatusGame) (StatusGame).uang_mobita
+#define SG_IG(StatusGame) (StatusGame).inventory_gadget
 
 extern StatusGame s_status_game;
 

@@ -43,6 +43,6 @@ void show_move(StatusGame *s){
   int mv;
   scanf("%d",&mv);
   if (mv != 0){
-    move(&s, mv, false, false);
+    move(s, mv, false, false);
   }
 }

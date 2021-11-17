@@ -92,7 +92,7 @@ void show_main_menu() {
         // Game
         input_command = __ask_input("ENTER COMMAND: ");
         if (__is_str_same(input_command, "MOVE")) {
-          // MOVE
+          show_move(&s_status_game);
         } else if (__is_str_same(input_command, "PICK_UP")) {
           show_pickup();
         } else if (__is_str_same(input_command, "DROP_OFF")) {
@@ -104,7 +104,12 @@ void show_main_menu() {
         } else if (__is_str_same(input_command, "IN_PROGRESS")) {
           show_progress(s_status_game);
         } else if (__is_str_same(input_command, "BUY")) {
-          show_page_buy(&s_status_game);
+          if (ig_is_full(SG_IG(s_status_game))) {
+            cm_modal_warning(
+                "Inventory Gadget Penuh! Tidak bisa membeli Gadget");
+          } else {
+            show_page_buy(&s_status_game);
+          }
         } else if (__is_str_same(input_command, "INVENTORY")) {
           show_inventory(&s_status_game);
         } else if (__is_str_same(input_command, "HELP")) {

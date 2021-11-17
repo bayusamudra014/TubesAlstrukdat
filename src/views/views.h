@@ -15,7 +15,7 @@
 #include "progress/progress.h"
 #include "return/return_page.h"
 #include "to_do/to_do_page.h"
-#include "inventory/inventory.h"
+#include "inventory/inventory_page.h"
 #include "help/help_page.h"
 
 #endif
