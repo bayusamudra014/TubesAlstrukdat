@@ -1,7 +1,7 @@
 #ifndef H_MAP
 #define H_MAP
 
-#include "../../lib.h"
+#include "../game.h"
 
 typedef struct map{
     DynamicList buildinglist;
