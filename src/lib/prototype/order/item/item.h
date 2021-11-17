@@ -21,9 +21,6 @@ boolean i_is_equal(Item i1, Item i2);
 */
 void i_create_item(Item* i, char type, int expired);
 
-/* Mengembalikan true bila item sudah expired */
-boolean i_is_expired(Item i, Time currentTime);
-
 /* Mengembalikan true bila i merupakan perishable item */
 boolean i_is_perishable(Item i);
 

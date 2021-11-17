@@ -11,6 +11,7 @@ typedef struct order {
   Building pickUp;
   Building dropOff;
   Time incomingTime;
+  Time expiredTime;
 } Order;
 
 /* Memeriksa apakah dua order merupakan order yang sama */
@@ -28,5 +29,8 @@ boolean o_is_order_todo(Order order, Time currentTime);
 
 /* Mendapatkan item dari sebuah order */
 Item o_get_item(Order order);
+
+/* Mengembalikan true bila sudah expired */
+boolean o_is_expired(Order o, Time currentTime);
 
 #endif

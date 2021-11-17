@@ -30,11 +30,6 @@ int pl_length(ProgressList pl);
 /* Mengembalikan true bila ada VIP Item di progress list */
 boolean pl_is_any_vip(ProgressList pl);
 
-/* I.S. Progress List terdefinisi
-   F.S. Mengembalikan referensi item bila ada. 
-        Bila tidak, mengembalikan null. */
-Order* pl_get_order_by_item(ProgressList* pl, Item i);
-
 /* I.S. Progress list tedefinisi
    F.S. Menghapus order pertama yang ditemukan di progress list.
         Bila tidak ada, maka tidak dilakukan apa-apa. */

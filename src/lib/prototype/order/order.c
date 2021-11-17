@@ -17,6 +17,7 @@ void o_create_order(Order* order, Item item, Building pickup, Building dropoff,
   order->pickUp = pickup;
   order->dropOff = dropoff;
   order->incomingTime = incommingTime;
+  order->expiredTime = (Time)-1;
 
   __o_order_id++;
 }
@@ -26,3 +27,7 @@ boolean o_is_order_todo(Order order, Time currentTime) {
 }
 
 Item o_get_item(Order order) { return order.item; }
+
+boolean o_is_expired(Order o, Time currentTime) {
+  return o.expiredTime >= currentTime;
+}

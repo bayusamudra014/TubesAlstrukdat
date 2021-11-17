@@ -28,24 +28,26 @@ void pu_add_progress(Order order) {
   pl_insert_last(&(SG_TDL(s_status_game)), order);
 }
 
-void pu_add_bag(Order order) {
-  t_add_item(&(SG_TAS(s_status_game)), order.item);
-}
+void pu_add_bag(Order order) { t_add_item(&(SG_TAS(s_status_game)), order); }
 
 void show_pickup() {
   if (!pu_is_vip_taken()) {
     Order* top = pu_item_upper();
 
     if (top) {
+      if (top->item.type == 'P') {
+        top->expiredTime = SG_TIME(s_status_game) + top->item.expired;
+      }
+
       td_removeTask(&(SG_TDL(s_status_game)), NULL, top->orderID);
       pu_add_progress(*top);
       pu_add_bag(*top);
 
       printf("\n");
 
-      char pesan[50];
+      char pesan[100];
 
-      snprintf(pesan, 50, "Pesanan berupa %s berhasil diambil!",
+      snprintf(pesan, 100, "Pesanan berupa %s berhasil diambil!",
                i_item_type_name(top->item));
 
       cm_modal_info(pesan);
