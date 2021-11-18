@@ -136,6 +136,23 @@ Dalam project ini ada beberapa folder diantaranya sebagai berikut:
    - File `main.c` adalah start point program kita
 4. Folder `test` berisi semua Unit Test.
 
+## Fitur Permainan
+
+1. Main Menu (new game, load, save, dan exit)
+2. Mekanisme Waktu (menampilkan waktu permainan)
+3. Daftar Pesanan (waktu pesanan masuk, pick up & drop off point, jenis item, dan time expired)
+4. To Do List (pick up & drop off point, jenis item, dan waktu expired)
+5. In Progress List (list berisi item yang telah dipick up tetapi belom didrop off)
+6. Tas (Menyimpan item yang bisa diambil di lokasi)
+7. Jenis Item (normal item, heavy item, Perishable item, VIP item)
+8. Ability (speed boost, increase capacity, return to sender)
+9. Gadget (kain pembungkus waktu, senter pembesar, pintu kemana saja, mesin waktu)
+10. Inventory gadget (tempat penyimpanan gadget)
+11. Peta (peta permainan)
+12. Lokasi dan Command (MOVE, PICK_UP, DROP_OFF, MAP, TO_DO, IN_PROGRESS, BUY, INVENTORY, HELP, SAVE_GAME, RETURN)
+13. Game Flow (start game, end game jika semua pesanan di antar dan perishable item hangus/diantar)
+14. Save/Load Game
+
 ## Aturan Kontribusi
 
 Bisa dilihat di [CONTRIBUTE.md](CONTRIBUTE.md)
