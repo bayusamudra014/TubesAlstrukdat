@@ -4,7 +4,8 @@ static FILE *saveFile;
 
 void lx_saveToFile(char saveFilename[])
 {
-
+    Order order;
+    Item item;
     saveFile = fopen(saveFilename, "w");
     // Output map size
     fprintf(saveFile, "MAP");
@@ -61,12 +62,6 @@ void lx_saveToFile(char saveFilename[])
         Building spot;
         spot = dl_elmt(reach, i);
         fprintf(saveFile, "%c", label(spot));
-        lx_wSpace();
-        lx_wNum(Absis(spot));
-        lx_wSpace();
-        lx_wNum(Ordinat(spot));
-        lx_wSpace();
-        fprintf(saveFile, "%c", spot.tipe);
         lx_wNl();
     }
 
@@ -76,12 +71,6 @@ void lx_saveToFile(char saveFilename[])
 
     Building spot = SG_POS(s_status_game);
     fprintf(saveFile, "%c", label(spot));
-    lx_wSpace();
-    lx_wNum(Absis(spot));
-    lx_wSpace();
-    lx_wNum(Ordinat(spot));
-    lx_wSpace();
-    fprintf(saveFile, "%c", spot.tipe);
     lx_wNl();
 
     //Write Order list;
@@ -94,12 +83,15 @@ void lx_saveToFile(char saveFilename[])
 
     for (int i = 0; i < orderN; i++)
     {
-        Order order = ol_dequeue_order(&orderL);
-        int time = order.incomingTime;
+        order = ol_dequeue_order(&orderL);
+        
+        Time time = order.incomingTime;
+        Time expTime = order.expiredTime;
         char pickUp = label(order.pickUp);
         char dropOff = label(order.dropOff);
-        Item item = order.item;
+        item = order.item;
         char i_type = item.type;
+        int item_id = item.itemID;
 
         lx_wNum(order.orderID);
         lx_wSpace();
@@ -109,7 +101,13 @@ void lx_saveToFile(char saveFilename[])
         lx_wSpace();
         fprintf(saveFile, "%c", dropOff);
         lx_wSpace();
+        lx_wNum(expTime);
+        lx_wSpace();
+        lx_wNum(item_id);
+        lx_wSpace();
         fprintf(saveFile, "%c", i_type);
+        
+        
 
         if (i_type == 'P')
         {
@@ -168,7 +166,6 @@ void lx_saveToFile(char saveFilename[])
     Stack isi_tas = t_isi(tas);
     int tasNeff= 0;
     while (!s_is_empty(isi_tas)){
-        Order order;
         s_pop(&isi_tas, &order);
         tasNeff++;
     }
@@ -179,13 +176,13 @@ void lx_saveToFile(char saveFilename[])
     isi_tas = t_isi(tas);
     while (!s_is_empty(isi_tas))
     {
-        Order order;
         s_pop(&isi_tas, &order);
 
         int time = order.incomingTime;
+        int expTime = order.expiredTime;
         char pickUp = label(order.pickUp);
         char dropOff = label(order.dropOff);
-        Item item = order.item;
+        item = order.item;
         char i_type = item.type;
 
         lx_wNum(order.orderID);
@@ -197,6 +194,8 @@ void lx_saveToFile(char saveFilename[])
         fprintf(saveFile, "%c", dropOff);
         lx_wSpace();
         fprintf(saveFile, "%c", i_type);
+        lx_wSpace();
+        lx_wNum(expTime);
 
         if (i_type == 'P')
         {
@@ -216,12 +215,13 @@ void lx_saveToFile(char saveFilename[])
     lx_wNl();
     while (!(td_is_empty(tdList)))
     {
-        Order order;
+
         ll_delete_last(&tdList, &order);
         int time = order.incomingTime;
+        int expTime = order.expiredTime;
         char pickUp = label(order.pickUp);
         char dropOff = label(order.dropOff);
-        Item item = order.item;
+        item = order.item;
         char i_type = item.type;
 
         lx_wNum(order.orderID);
@@ -233,6 +233,8 @@ void lx_saveToFile(char saveFilename[])
         fprintf(saveFile, "%c", dropOff);
         lx_wSpace();
         fprintf(saveFile, "%c", i_type);
+        lx_wSpace();
+        lx_wNum(expTime);
 
         if (i_type == 'P')
         {
@@ -252,12 +254,13 @@ void lx_saveToFile(char saveFilename[])
     lx_wNl();
     while (!(pl_is_empty(pgList)))
     {
-        Order order;
+        
         pl_delete_first(&pgList, &order);
         int time = order.incomingTime;
+        int expTime = order.expiredTime;
         char pickUp = label(order.pickUp);
         char dropOff = label(order.dropOff);
-        Item item = order.item;
+        item = order.item;
         char i_type = item.type;
 
         lx_wNum(order.orderID);
@@ -269,6 +272,9 @@ void lx_saveToFile(char saveFilename[])
         fprintf(saveFile, "%c", dropOff);
         lx_wSpace();
         fprintf(saveFile, "%c", i_type);
+        lx_wSpace();
+        lx_wNum(expTime);
+
 
         if (i_type == 'P')
         {

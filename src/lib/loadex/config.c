@@ -14,6 +14,8 @@ void lx_readConfigFile_silent(char configFilename[]) {
   int back_to_sender;
 
   // Persiapan Lain
+  Order order;
+  Item item;
   int i, j;
   ol_create_orederlist(&order_list);
   wm_set_blank(" \n", 2);
@@ -145,10 +147,10 @@ void lx_readConfigFile_silent(char configFilename[]) {
       wm_adv_word();
       expTime = lx_readNumber(wm_current_word.contents);
     }
-    Item item;
+    
     i_create_item(&item, tipeItem, expTime);
 
-    Order order;
+    
     o_create_order(&order, item, P, D, waktuPesanan);
 
     ol_add_order(&order_list, order);

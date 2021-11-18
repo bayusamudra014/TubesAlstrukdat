@@ -11,6 +11,8 @@ void i_create_item(Item* i, char type, int expired) {
   i->expired = expired;
   i->itemID = __i_item_id;
   i->type = type;
+
+  __i_item_id++;
 }
 
 boolean i_is_expired(Item i, Time currentTime) {
