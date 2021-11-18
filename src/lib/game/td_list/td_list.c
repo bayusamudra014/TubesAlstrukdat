@@ -34,7 +34,7 @@ void td_removeTask(ToDoList *tdl, Order *orderOut, int orderId) {
   q = p;
 
   if (INFO(p).orderID == orderId) {
-    FIRST(*tdl) = NULL;
+    FIRST(*tdl) = NEXT(p);
   } else {
     while (INFO(NEXT(p)).orderID != orderId) {
       p = NEXT(p);

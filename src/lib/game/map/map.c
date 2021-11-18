@@ -124,7 +124,7 @@ boolean m_is_dropoff(Map m, ProgressList pl, Building building) {
   boolean isPickup = false;
 
   while (l && !isPickup) {
-    if (b_is_equal(l->payload.pickUp, building)) {
+    if (b_is_equal(l->payload.dropOff, building)) {
       isPickup = true;
     } else {
       l = l->next;

@@ -101,8 +101,11 @@ void show_main_menu() {
       // Game berlangsung selama ToDoList tidak Kosong dan
       // Tas (Isinya pesanan yang harus diantar) tidak kosong
       char *input_command;
-      while (!ol_is_empty(SG_OL(s_status_game)) ||
-             !t_is_empty(SG_TAS(s_status_game))) {
+      boolean forceExit = false;
+      while ((!ol_is_empty(SG_OL(s_status_game)) ||
+              !t_is_empty(SG_TAS(s_status_game)) ||
+              !td_is_empty(SG_TDL(s_status_game))) &&
+             !forceExit) {
         // Game
         input_command = __ask_input("ENTER COMMAND: ");
         if (__is_str_same(input_command, "MOVE")) {
@@ -128,6 +131,8 @@ void show_main_menu() {
           show_inventory(&s_status_game);
         } else if (__is_str_same(input_command, "HELP")) {
           show_help();
+        } else if (__is_str_same(input_command, "RETURN")) {
+          show_return();
         } else if (__is_str_same(input_command, "SAVE_GAME")) {
           printf("\n");
           char *saveFilePath = __ask_input("Path to save file: ");
@@ -137,6 +142,20 @@ void show_main_menu() {
           cm_modal_info("PROGRESS PERMAINAN BERHASIL DISIMPAN");
           // } else if (__is_str_same(input_command, "MAX_MONEY")) {
           //   SG_MONEY(s_status_game) = 9999;
+        } else if (__is_str_same(input_command, "EXIT")) {
+          set_text_color(TEXT_YELLOW);
+          printf("\nPeringatan!\n");
+          reset_color();
+
+          printf("Apakah anda yakin ingin keluar dari permainan?\n");
+          printf("Semua perubahan tidak akan disimpan.\n");
+          char *jawaban = __ask_input("Jawaban [Y/n] : ");
+
+          if (__is_str_same(jawaban, "Y") || __is_str_same(jawaban, "y")) {
+            forceExit = true;
+          }
+
+          free(jawaban);
         } else if (!__is_str_same(input_command, "")) {
           cm_modal_error("COMMAND TIDAK DIKENALI!");
         }

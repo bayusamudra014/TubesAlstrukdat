@@ -7,6 +7,7 @@ void move(StatusGame *s, int mv, boolean gadget_used, int heavy_cnt) {
   Building reachable[30];
 
   m_get_accessable_b(m, SG_POS(*s), reachable, &cnt);
+  int buildNum = (*s).peta_game.buildinglist.nEff;
 
   if (gadget_used == false) {
     if (mv < cnt && 0 <= mv) {
@@ -16,7 +17,7 @@ void move(StatusGame *s, int mv, boolean gadget_used, int heavy_cnt) {
       printf("\nLokasi tidak terjangkau");
     }
   } else {
-    if (mv < cnt && 0 <= mv) {
+    if (mv <= buildNum && 0 < mv) {
       s->posisi_sekarang = dl_elmt(m.buildinglist, mv - 1);
       s->Waktu_Permainan += 1 + heavy_cnt;
     } else {
@@ -53,7 +54,7 @@ void show_move(StatusGame *s) {
   read_int_line(&mv, 3);
 
   if (mv != 0) {
-    move(s, mv - 1, false, false);
+    move(s, mv - 1, false, t_num_heavy(s->tas_mobita));
   }
 
   printf("\nNobita sekarang berada di titik ");
