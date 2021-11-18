@@ -46,4 +46,7 @@ Order t_take_item(Tas* T);
 /* Mengembalikan true bila terdapat heavy item */
 int t_num_heavy(Tas T);
 
+/* Mengembalikan true bila tas sudah penuh */
+boolean t_is_full(Tas T) ;
+
 #endif

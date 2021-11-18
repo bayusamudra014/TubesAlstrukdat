@@ -43,15 +43,15 @@ void read_line(char* word, int length) {
   cm_set_end_char(CHAR_LINEBREAK, sizeof(CHAR_LINEBREAK) - 1);
   /**
    * Fungsi lx_readConfigFile bergantung
-   * dengan spasi untuk membaca per kata. 
-   * Kalau di set sebagai kosong, File 
+   * dengan spasi untuk membaca per kata.
+   * Kalau di set sebagai kosong, File
    * hanya akan dikonsumsi sebagai satu
-   * string panjang. Hal ini tentunya 
-   * akan menyebabkan masalah. 
+   * string panjang. Hal ini tentunya
+   * akan menyebabkan masalah.
    *
    * Oleh karena itu, ini di comment
    */
-  //wm_set_blank("", 0);
+  // wm_set_blank("", 0);
 
   wm_start_word(stdin);
 
@@ -67,16 +67,15 @@ void read_int_line(int* num, int digits) {
   cm_set_end_char(CHAR_LINEBREAK, sizeof(CHAR_LINEBREAK) - 1);
 
   wm_start_word(stdin);
-    
+
   *num = 0;
   int i = 0;
   int mul = 1;
-  if (wm_current_word.contents[0] == '-'){
-      mul = -1;
-      i++;
+  if (wm_current_word.contents[0] == '-') {
+    mul = -1;
+    i++;
   }
-  for ( ; i < digits - 1 && i < wm_current_word.length; i++) {
-      *num = 10 * (*num) + mul * ((int) wm_current_word.contents[i] - 48);
+  for (; i < digits - 1 && i < wm_current_word.length; i++) {
+    *num = 10 * (*num) + mul * ((int)wm_current_word.contents[i] - 48);
   }
-
 }

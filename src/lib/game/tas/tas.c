@@ -19,13 +19,15 @@ void t_add_item(Tas *T, Order item) {
    * Tas dengan capacity 3 penuh saat
    * idxTop = 2
    */
-  if (t_cap(*T) <= (S_IDX_TOP(t_isi(*T)) + 1)) {
+  if (!t_is_full(*T)) {
     s_push(&(t_isi(*T)), item);
   } else {
     // Do something
     printf("Tas penuh!\n");
   }
 }
+
+boolean t_is_full(Tas T) { return t_cap(T) < (S_IDX_TOP(t_isi(T)) + 1); }
 
 boolean t_is_empty(Tas T) { return s_is_empty(t_isi(T)); }
 
