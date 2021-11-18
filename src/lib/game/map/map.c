@@ -66,25 +66,44 @@ void m_display(Map m, ToDoList tdl, ProgressList pl, Building pos) {
 }
 
 void m_display_reachable(Map m, Building pos) {
-  int i = 0, cnt = 0;
-  printf("Tempat yang bisa dicapai: \n");
+  // int i = 0, cnt = 0;
+  // printf("Tempat yang bisa dicapai: \n");
 
-  int length = dl_length(m.buildinglist);
+  // int length = dl_length(m.buildinglist);
 
-  // for (i = 1; i <= reach_nEff(m); i++) {
-  //   printf("%d. ", i);
-  //   b_display(dl_elmt(reachable(m), i));
+  // while (i < length) {
+  //   if (m_is_accessible(m, pos, dl_elmt(m.buildinglist, i))) {
+  //     cnt++;
+  //     printf("%d. ", cnt);
+  //     b_display(dl_elmt(m.buildinglist, i));
+  //   }
+
+  //   i++;
   // }
+  Building hasil[30];
+  int jumlah;
+  m_get_accessable_b(m, pos, hasil, &jumlah);
+
+  for (int i = 0; i < jumlah; i++) {
+    printf("%d. ", i + 1);
+    b_display(hasil[i]);
+  }
+}
+
+void m_get_accessable_b(Map m, Building pos, Building *arr, int *res_cnt) {
+  int i = 0, cnt = 0;
+  int length = dl_length(m.buildinglist);
 
   while (i < length) {
     if (m_is_accessible(m, pos, dl_elmt(m.buildinglist, i))) {
+      arr[cnt] = dl_elmt(m.buildinglist, i);
       cnt++;
-      printf("%d. ", cnt);
-      b_display(dl_elmt(m.buildinglist, i));
     }
 
     i++;
   }
+
+  *res_cnt = cnt;
 }
 
 void m_clear_reachable(Map *m) {

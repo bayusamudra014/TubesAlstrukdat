@@ -19,6 +19,8 @@ boolean i_is_expired(Item i, Time currentTime) {
 
 boolean i_is_perishable(Item i) { return i.type == 'P'; }
 
+boolean i_is_heavy(Item i) { return i.type == 'V'; }
+
 char* i_item_type_name(Item i) {
   switch (i.type) {
     case 'N':

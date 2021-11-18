@@ -25,7 +25,7 @@ Order* pu_item_upper() {
 }
 
 void pu_add_progress(Order order) {
-  pl_insert_last(&(SG_TDL(s_status_game)), order);
+  pl_insert_last(&(SG_PL(s_status_game)), order);
 }
 
 void pu_add_bag(Order order) { t_add_item(&(SG_TAS(s_status_game)), order); }

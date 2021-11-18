@@ -68,8 +68,11 @@ void show_main_menu() {
     main_input_command = __ask_input("Mode Permainan : ");
 
     if (__is_str_same(main_input_command, "NEW_GAME") ||
-        __is_str_same(main_input_command, "LOAD_GAME")) {
-      if (__is_str_same(main_input_command, "NEW_GAME")) {
+        __is_str_same(main_input_command, "LOAD_GAME") ||
+        __is_str_same(main_input_command, "1") ||
+        __is_str_same(main_input_command, "2")) {
+      if (__is_str_same(main_input_command, "NEW_GAME") ||
+          __is_str_same(main_input_command, "1")) {
         // Loading Config
         char *configPath = __ask_input("Path to config file: ");
         while (!f_exist(configPath)) {

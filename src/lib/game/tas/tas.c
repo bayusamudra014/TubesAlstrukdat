@@ -34,3 +34,16 @@ Order t_take_item(Tas *T) {
   s_pop(&(t_isi(*T)), &I);
   return I;
 }
+
+int t_num_heavy(Tas T) {
+  Stack isi = T.isiTas;
+  int cnt = 0;
+
+  for (int i = 0; i <= isi.idxTop; i++) {
+    if (i_is_heavy(isi.buffer[i].item)) {
+      cnt++;
+    }
+  }
+
+  return cnt;
+}

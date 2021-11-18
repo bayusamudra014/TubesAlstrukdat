@@ -57,4 +57,9 @@ boolean m_is_pickup(Map m, LinkedList tdl, Building building);
 /* Mengembalikan true bila building bisa dropoff */
 boolean m_is_dropoff(Map m, LinkedList pl, Building building);
 
+/* I.S. Map terdefinisi
+   F.S. Diberikan list arr yang merupakan semua bangunan yang dapat diakses
+        oleh posisi pos. Jumlahnya disimpan di cnt. */
+void m_get_accessable_b(Map m, Building pos, Building *arr, int *cnt);
+
 #endif
