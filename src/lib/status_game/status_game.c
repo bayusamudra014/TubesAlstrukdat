@@ -21,7 +21,7 @@ void sg_reload_status() {
 
   for (int i = 0; i <= mobita.isiTas.idxTop; i++) {
     if (buffer[i].expiredTime <= s_status_game.Waktu_Permainan) {
-      pl_delete_by_order(SG_PL(s_status_game), buffer[i]);
+      pl_delete_by_order(&SG_PL(s_status_game), buffer[i]);
 
       for (int j = i; j < mobita.isiTas.idxTop - 1; j++) {
         buffer[j] = buffer[j + 1];
