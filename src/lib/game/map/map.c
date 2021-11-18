@@ -80,7 +80,7 @@ void m_get_accessable_b(Map m, Building pos, Building *arr, int *res_cnt) {
   int i = 0, cnt = 0;
   int length = dl_length(m.buildinglist);
 
-  while (i < length) {
+  while (i < length && i < 30) {
     if (m_is_accessible(m, pos, dl_elmt(m.buildinglist, i))) {
       arr[cnt] = dl_elmt(m.buildinglist, i);
       cnt++;
