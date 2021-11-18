@@ -2,20 +2,17 @@
 #include <stdio.h>
 #include <string.h>
 
-void show_save_game(StatusGame s_status_game)
+void show_save_game()
 {
-    char file_name[50];
-    scanf(" %[^\n]s",file_name);
-    printf("%s", file_name);
-
-
+    printf("\n");
+    char *saveFilePath = __ask_input("Path to save file: ");
+    lx_saveToFile(saveFilePath);
 }
 
-void show_load_game(StatusGame *s_status_game)
+void show_load_game()
 {
-    char file_name[50];
-    scanf(" %[^\n]s",file_name);
-    printf("%s", file_name);
+    printf("\n");
+    char *saveFilePath = __ask_input("Path to save file: ");
 
-    
+    lx_loadSaveFile(saveFilePath);
 }

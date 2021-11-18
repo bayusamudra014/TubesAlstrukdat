@@ -9,11 +9,10 @@
 int lx_readNumber();
 
 // readConfigFile will read config file and make the structure
-void lx_readConfigFile(char configFilename[]);
 void lx_readConfigFile_silent(char configFilename[]);
 
 // Save to file
-void lx_saveToFile();
+void lx_saveToFile(char saveFileName[]);
 
 // Load
 void lx_loadSaveFile(char saveFileName[]);

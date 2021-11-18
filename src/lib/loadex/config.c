@@ -34,7 +34,7 @@ void lx_readConfigFile_silent(char configFilename[]) {
 
   // printf("%d %d\n", row,col);
 
-  wm_adv_word();
+  wm_adv_word(); //BLD
   // Membuat building List
   DynamicList buildingList;
   wm_adv_word();
@@ -57,16 +57,17 @@ void lx_readConfigFile_silent(char configFilename[]) {
   // printf("%d %d\n",x,y);
   b_create_building(&HQ, x, y, '8', '#', 0);
   map_elmt(peta_game, x, y) = '8';
-  dl_insert_last(&peta_game.buildinglist, HQ);
+  dl_insert_last(&buildingList, HQ);
 
   // Proses memasukkan building"
-  char buildingLabel;
   // printf("baca building..\n");
-  for (i = 1; i <= buildingN - 1; i++) {
+  for (i = 1; i <= buildingN - 1; i++)
+  {
     // printf("building ke %d\n", i);
     // Membaca label Building
+
     wm_adv_word();
-    buildingLabel = *wm_current_word.contents;
+    char buildingLabel = *wm_current_word.contents;
 
     // membaca coordinate building
     wm_adv_word();
@@ -74,24 +75,44 @@ void lx_readConfigFile_silent(char configFilename[]) {
     wm_adv_word();
     y = lx_readNumber(wm_current_word.contents);
 
-    // printf("%c %d %d\n",buildingLabel,x,y);
+    // printf("%c %d %d\n", buildingLabel, x, y);
     // Mengubah peta
     map_elmt(peta_game, x, y) = buildingLabel;
+    // printf("%c\n", map_elmt(peta_game,x,y));
 
     // membuat building
     Building currentBuilding;
     b_create_building(&currentBuilding, x, y, buildingLabel, '#', i);
-
     // memasukkannya ke dalam list building
-    dl_insert_last(&peta_game.buildinglist, currentBuilding);
+    // printf("Ini Baca dari config terus create building\n");
+
+    // printf("%c %d %d %c\n", label(currentBuilding), Absis(currentBuilding), Ordinat(currentBuilding), currentBuilding.tipe);
+
+    // printf("insert ke dl\n");
+    dl_insert_last(&buildingList, currentBuilding);
+
+    Building spot;
+    // printf("ambil dari dl\n");
+    spot = dl_elmt(buildingList, i);
+    // printf("%c %d %d %c\n", label(spot), Absis(spot), Ordinat(spot), spot.tipe);
   }
 
+  // for (int i = 0; i <= buildingN; i++)
+  // {
+  //   Building spot;
+  //   spot = dl_elmt(buildingList, i);
+  //   printf("%c %d %d %c\n", label(spot), Absis(spot), Ordinat(spot), spot.tipe);
+  // }
+
+  peta_game.buildinglist = buildingList;
   wm_adv_word();
 
   Matrix adjMatrix;
   m_create_matrix(&adjMatrix, buildingN, buildingN);
-  for (i = 0; i < buildingN; i++) {
-    for (j = 0; j < buildingN; j++) {
+  for (i = 0; i < buildingN; i++)
+  {
+    for (j = 0; j < buildingN; j++)
+    {
       wm_adv_word();
       x = lx_readNumber(wm_current_word.contents);
       m_elmt(adjMatrix, i, j) = x;
@@ -103,15 +124,17 @@ void lx_readConfigFile_silent(char configFilename[]) {
   // reachable
   DynamicList reachable;
   dl_create_list(&reachable, buildingN - 1);
-  for (int i = 0; i < buildingN; i++) {
-    if (m_elmt(adjMatrix, 0, i) == 1) {
+  for (int i = 0; i < buildingN; i++)
+  {
+    if (m_elmt(adjMatrix, 0, i) == 1)
+    {
       Building bIsReachable = dl_elmt(buildingList, i);
       dl_insert_last(&reachable, bIsReachable);
     }
   }
   peta_game.reachable = reachable;
 
-  wm_adv_word();
+  wm_adv_word(); // ORD
   // Membaca orderlist
   wm_adv_word();
   int orderN = lx_readNumber(wm_current_word.contents);
@@ -119,22 +142,27 @@ void lx_readConfigFile_silent(char configFilename[]) {
   char pickUp, dropOff, tipeItem;
   Building P, D;
 
-  for (i = 1; i <= orderN; i++) {
+  for (i = 1; i <= orderN; i++)
+  {
     wm_adv_word();
     waktuPesanan = lx_readNumber(wm_current_word.contents);
 
     wm_adv_word();
     pickUp = *wm_current_word.contents;
-    for (j = 1; j <= buildingN; j++) {
-      if (loc(peta_game, j).label == pickUp) {
+    for (j = 1; j <= buildingN; j++)
+    {
+      if (loc(peta_game, j).label == pickUp)
+      {
         P = loc(peta_game, j);
       }
     }
 
     wm_adv_word();
     dropOff = *wm_current_word.contents;
-    for (j = 1; j <= buildingN; j++) {
-      if (loc(peta_game, j).label == dropOff) {
+    for (j = 1; j <= buildingN; j++)
+    {
+      if (loc(peta_game, j).label == dropOff)
+      {
         D = loc(peta_game, j);
       }
     }
@@ -143,14 +171,14 @@ void lx_readConfigFile_silent(char configFilename[]) {
     tipeItem = *wm_current_word.contents;
 
     expTime = -1;
-    if (tipeItem == 'P') {
+    if (tipeItem == 'P')
+    {
       wm_adv_word();
       expTime = lx_readNumber(wm_current_word.contents);
     }
-    
+
     i_create_item(&item, tipeItem, expTime);
 
-    
     o_create_order(&order, item, P, D, waktuPesanan);
 
     ol_add_order(&order_list, order);

@@ -91,7 +91,11 @@ void show_main_menu() {
         // configPath adalah hasil malloc, harus di free supaya gak makan memory
         free(configPath);
       } else {
-        show_load_game(&s_status_game);
+        printf("\n");
+        char *loadFilePath = __ask_input("Path to save file: ");
+
+        lx_loadSaveFile(loadFilePath);
+        
       }
 
       // Game berlangsung selama ToDoList tidak Kosong dan
@@ -125,7 +129,12 @@ void show_main_menu() {
         } else if (__is_str_same(input_command, "HELP")) {
           show_help();
         } else if (__is_str_same(input_command, "SAVE_GAME")) {
-          show_save_game(s_status_game);
+          printf("\n");
+          char *saveFilePath = __ask_input("Path to save file: ");
+          lx_saveToFile(saveFilePath);
+
+          printf("\n");
+          cm_modal_info("PROGRESS PERMAINAN BERHASIL DISIMPAN");
           // } else if (__is_str_same(input_command, "MAX_MONEY")) {
           //   SG_MONEY(s_status_game) = 9999;
         } else if (!__is_str_same(input_command, "")) {
