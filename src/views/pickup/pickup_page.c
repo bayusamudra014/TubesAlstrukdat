@@ -6,21 +6,22 @@ boolean pu_is_vip_taken() { return pl_is_any_vip(SG_PL(s_status_game)); }
 boolean pu_item_upper(Order* hasil) {
   ToDoList todo = SG_TDL(s_status_game);
   int len = td_length(todo);
-
-  Order* result = NULL;
+  boolean isFound = false;
+  Order data;
 
   for (int i = 0; i < len; i++) {
-    Order data = td_getOrder(todo, i);
+    Order tmp = td_getOrder(todo, i);
 
-    if (b_is_equal(data.pickUp, s_status_game.posisi_sekarang)) {
-      if (!result || data.incomingTime > result->incomingTime) {
-        result = &data;
+    if (b_is_equal(tmp.pickUp, s_status_game.posisi_sekarang)) {
+      if (!isFound || tmp.incomingTime < data.incomingTime) {
+        data = tmp;
+        isFound = true;
       }
     }
   }
 
-  if (result) {
-    *hasil = *result;
+  if (isFound) {
+    *hasil = data;
     return true;
   } else {
     return false;

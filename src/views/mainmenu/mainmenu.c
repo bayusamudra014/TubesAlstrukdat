@@ -98,7 +98,8 @@ void show_main_menu() {
       // Tas (Isinya pesanan yang harus diantar) tidak kosong
       char *input_command;
       while (!ol_is_empty(SG_OL(s_status_game)) ||
-             !t_is_empty(SG_TAS(s_status_game))) {
+             !t_is_empty(SG_TAS(s_status_game)) ||
+             !td_is_empty(SG_TDL(s_status_game))) {
         // Game
         input_command = __ask_input("ENTER COMMAND: ");
         if (__is_str_same(input_command, "MOVE")) {

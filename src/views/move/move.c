@@ -53,7 +53,7 @@ void show_move(StatusGame *s) {
   read_int_line(&mv, 3);
 
   if (mv != 0) {
-    move(s, mv - 1, false, false);
+    move(s, mv - 1, false, t_num_heavy(s->tas_mobita));
   }
 
   printf("\nNobita sekarang berada di titik ");
