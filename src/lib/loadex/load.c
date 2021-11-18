@@ -2,7 +2,7 @@
 
 void lx_loadSaveFile(char saveFileName[])
 {
-  printf("LOADING......");
+  printf("LOADING......\n");
   // Persiapan untuk status Game
   ProgressList progress_list;
   ToDoList to_do_list;
@@ -14,6 +14,7 @@ void lx_loadSaveFile(char saveFileName[])
   Map peta_game;
   int uang_mobita;
   int back_to_sender;
+  wm_set_blank(" \n",2);
 
   // Persiapan Lain
 

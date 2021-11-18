@@ -9,4 +9,5 @@ void show_help(){
     printf("7. BUY -> Membeli gadget \n");
     printf("8. INVENTORY -> Melihat isi inventory\n");
     printf("9. HELP -> Melihat laman bantuan\n");
+    printf("10.SAVE_GAME -> Menyimpan progres permainan\n");
 }

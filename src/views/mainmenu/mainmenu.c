@@ -85,9 +85,17 @@ void show_main_menu() {
         free(configPath);
       } else {
         printf("\n");
-        char *loadFilePath = __ask_input("Path to save file: ");
+        char *loadFilePath =  __ask_input("Path to load file: ");
+        while (!f_exist(loadFilePath)) {
+          printf("\n");
+          cm_modal_error("File tidak bisa dibaca!");
+          loadFilePath = __ask_input("Path to load file: ");
+        }
 
         lx_loadSaveFile(loadFilePath);
+        printf("\n");
+        cm_modal_info("Berhasil memuat save file");
+        wm_set_blank("",0);
         
       }
 
@@ -117,7 +125,11 @@ void show_main_menu() {
           if (ig_is_full(SG_IG(s_status_game))) {
             cm_modal_warning(
                 "Inventory Gadget Penuh! Tidak bisa membeli Gadget");
-          } else {
+          } else if (SG_POS(s_status_game).label != '8')
+          {
+            cm_modal_warning(
+                "Cuma bisa beli gadget di Headquarter!");
+          }  else{
             show_page_buy(&s_status_game);
           }
         } else if (__is_str_same(input_command, "INVENTORY")) {
