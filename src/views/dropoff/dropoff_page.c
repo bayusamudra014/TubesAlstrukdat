@@ -22,6 +22,7 @@ int dp_get_prize(Item i) {
 }
 
 void show_dropoff() {
+  printf("\n");
   if (!t_is_empty(SG_TAS(s_status_game))) {
     if (!dp_is_any_vip()) {
       Order obj = S_TOP(t_isi(SG_TAS(s_status_game)));
@@ -51,13 +52,11 @@ void show_dropoff() {
         cm_modal_info("Tidak ada yang bisa di drop off disini.");
       }
     } else {
-      printf("\n");
       cm_modal_warning(
           "Anda sedang mengambil pesanan VIP.\nSilahkan antarkan terlebih "
           "dahulu.");
     }
   } else {
-    printf("\n");
     cm_modal_info("Tas kamu saat ini kosong.\nSilahkan ambil pesanan dulu.");
   }
 }
