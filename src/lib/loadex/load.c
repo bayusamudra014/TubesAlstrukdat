@@ -1,6 +1,8 @@
 #include "loadex.h"
 
-void lx_loadSaveFile(char saveFileName[]) {
+void lx_loadSaveFile(char saveFileName[])
+{
+  printf("LOADING......");
   // Persiapan untuk status Game
   ProgressList progress_list;
   ToDoList to_do_list;
@@ -14,7 +16,6 @@ void lx_loadSaveFile(char saveFileName[]) {
   int back_to_sender;
 
   // Persiapan Lain
-  
 
   static FILE *pita;
   pita = fopen(saveFileName, "r");
@@ -108,7 +109,7 @@ void lx_loadSaveFile(char saveFileName[]) {
 
   //reachable
   wm_adv_word(); //REACHABLE
-    // printf("%s\n",wm_current_word.contents);
+      // printf("%s\n",wm_current_word.contents);
 
   DynamicList reachable;
   wm_adv_word();
@@ -144,17 +145,13 @@ void lx_loadSaveFile(char saveFileName[]) {
       posisi_sekarang = loc(peta_game, j);
     }
   }
-  
-  
- 
+
   wm_adv_word(); // ORD
-  
+
   // Membaca orderlist
   ol_create_orederlist(&order_list);
   wm_adv_word();
   int orderN = lx_readNumber(wm_current_word.contents);
-  
- 
 
   for (int i = 1; i <= orderN; i++)
   {
@@ -193,14 +190,19 @@ void lx_loadSaveFile(char saveFileName[]) {
     ordExpTime = lx_readNumber(wm_current_word.contents);
     // printf("%d",ordExpTime);
 
+    __wm_free();
+    __wm_allocate();
+
     wm_adv_word();
     itemID = lx_readNumber(wm_current_word.contents);
-    
+    // printf("%s",wm_current_word.contents);
+
     wm_adv_word();
     tipeItem = *wm_current_word.contents;
 
     expTime = -1;
-    if (tipeItem == 'P') {
+    if (tipeItem == 'P')
+    {
       wm_adv_word();
       expTime = lx_readNumber(wm_current_word.contents);
     }
@@ -216,7 +218,6 @@ void lx_loadSaveFile(char saveFileName[]) {
     order.item = item;
     order.orderID = ordID;
     order.pickUp = P;
-    
 
     ol_add_order(&order_list, order);
   }
@@ -225,24 +226,272 @@ void lx_loadSaveFile(char saveFileName[]) {
   wm_adv_word(); // CURRENT_TIME
   wm_adv_word();
   Waktu_Permainan = lx_readNumber(wm_current_word.contents);
-  
+
   // uang nobita
   wm_adv_word(); // CURRENT_MONEY
   wm_adv_word();
   uang_mobita = lx_readNumber(wm_current_word.contents);
 
   // back to sender
-  wm_adv_word(); // BACK_TO_SEDER
+  wm_adv_word(); // BACK_TO_SENDER
   wm_adv_word();
   back_to_sender = lx_readNumber(wm_current_word.contents);
   
-  
-  pl_create_progress(&progress_list);
-  td_create(&to_do_list);
-  t_create_tas(&tas_mobita);
+
+  // INVENTORY_GADGET
+  wm_adv_word(); // INVENTORY_GADGET
   ig_create_ig(&inventory_gadget);
+  wm_adv_word();
+  int igN = lx_readNumber(wm_current_word.contents);
+  for (int i = 0; i < igN; i++)
+  {
+    Gadget gadget;
+    int gPrice, gId;
+    char gLabel;
+    wm_adv_word();
+    gId = lx_readNumber(wm_current_word.contents);
+    wm_adv_word();
+    gLabel = *wm_current_word.contents;
+    wm_adv_word();
+    gPrice = lx_readNumber(wm_current_word.contents);
+    gadget.gadgetID = gId;
+    gadget.label =gLabel;
+    gadget.price = gPrice;
+
+    ig_add_item(&inventory_gadget, gadget);
+  }
+
+  // TAS NOBITA
+  wm_adv_word(); // TAS_MOBITA
+  t_create_tas(&tas_mobita);
+  wm_adv_word();
+  int tasCap = lx_readNumber(wm_current_word.contents);
+  tas_mobita.capacity = tasCap;
+  wm_adv_word();
+  int tasN = lx_readNumber(wm_current_word.contents);
+
+  for (int i = 0; i < tasN; i++)
+  {
+    int waktuPesanan, ordID, itemID;
+    Time expTime, ordExpTime;
+    char pickUp, dropOff, tipeItem;
+    Building P, D;
+
+    wm_adv_word();
+    ordID = lx_readNumber(wm_current_word.contents);
+
+    wm_adv_word();
+    waktuPesanan = lx_readNumber(wm_current_word.contents);
+
+    wm_adv_word();
+    pickUp = *wm_current_word.contents;
+    for (int j = 1; j <= buildingN; j++)
+    {
+      if (loc(peta_game, j).label == pickUp)
+      {
+        P = loc(peta_game, j);
+      }
+    }
+
+    wm_adv_word();
+    dropOff = *wm_current_word.contents;
+    for (int j = 1; j <= buildingN; j++)
+    {
+      if (loc(peta_game, j).label == dropOff)
+      {
+        D = loc(peta_game, j);
+      }
+    }
+
+    wm_adv_word();
+    ordExpTime = lx_readNumber(wm_current_word.contents);
+    // printf("%d",ordExpTime);
+
+    __wm_free();
+    __wm_allocate();
+
+    wm_adv_word();
+    itemID = lx_readNumber(wm_current_word.contents);
+    printf("%s", wm_current_word.contents);
+
+    wm_adv_word();
+    tipeItem = *wm_current_word.contents;
+
+    expTime = -1;
+    if (tipeItem == 'P')
+    {
+      wm_adv_word();
+      expTime = lx_readNumber(wm_current_word.contents);
+    }
+    Item item;
+    item.expired = expTime;
+    item.itemID = itemID;
+    item.type = tipeItem;
+
+    Order order;
+    order.dropOff = D;
+    order.expiredTime = ordExpTime;
+    order.incomingTime = waktuPesanan;
+    order.item = item;
+    order.orderID = ordID;
+    order.pickUp = P;
+
+    t_add_item(&tas_mobita, order);
+  }
+
+  //To Do List
+  wm_adv_word(); // TO_DO_LIST
+  td_create(&to_do_list);
+  wm_adv_word();
+  int tdlN = lx_readNumber(wm_current_word.contents);
+
+  for (int i = 0; i < tdlN; i++)
+  {
+    int waktuPesanan, ordID, itemID;
+    Time expTime, ordExpTime;
+    char pickUp, dropOff, tipeItem;
+    Building P, D;
+
+    wm_adv_word();
+    ordID = lx_readNumber(wm_current_word.contents);
+
+    wm_adv_word();
+    waktuPesanan = lx_readNumber(wm_current_word.contents);
+
+    wm_adv_word();
+    pickUp = *wm_current_word.contents;
+    for (int j = 1; j <= buildingN; j++)
+    {
+      if (loc(peta_game, j).label == pickUp)
+      {
+        P = loc(peta_game, j);
+      }
+    }
+
+    wm_adv_word();
+    dropOff = *wm_current_word.contents;
+    for (int j = 1; j <= buildingN; j++)
+    {
+      if (loc(peta_game, j).label == dropOff)
+      {
+        D = loc(peta_game, j);
+      }
+    }
+
+    wm_adv_word();
+    ordExpTime = lx_readNumber(wm_current_word.contents);
+    // printf("%d",ordExpTime);
+
+    __wm_free();
+    __wm_allocate();
+
+    wm_adv_word();
+    itemID = lx_readNumber(wm_current_word.contents);
+    printf("%s", wm_current_word.contents);
+
+    wm_adv_word();
+    tipeItem = *wm_current_word.contents;
+
+    expTime = -1;
+    if (tipeItem == 'P')
+    {
+      wm_adv_word();
+      expTime = lx_readNumber(wm_current_word.contents);
+    }
+    Item item;
+    item.expired = expTime;
+    item.itemID = itemID;
+    item.type = tipeItem;
+
+    Order order;
+    order.dropOff = D;
+    order.expiredTime = ordExpTime;
+    order.incomingTime = waktuPesanan;
+    order.item = item;
+    order.orderID = ordID;
+    order.pickUp = P;
+
+    td_insertTask(&to_do_list, order);
+  }
+
+  //PROGRESS LIST
+  wm_adv_word(); // PROGRESS_LIST
+  pl_create_progress(&progress_list);
+  wm_adv_word();
+  int plN = lx_readNumber(wm_current_word.contents);
+
+  for (int i = 0; i < plN; i++)
+  {
+    int waktuPesanan, ordID, itemID;
+    Time expTime, ordExpTime;
+    char pickUp, dropOff, tipeItem;
+    Building P, D;
+
+    wm_adv_word();
+    ordID = lx_readNumber(wm_current_word.contents);
+
+    wm_adv_word();
+    waktuPesanan = lx_readNumber(wm_current_word.contents);
+
+    wm_adv_word();
+    pickUp = *wm_current_word.contents;
+    for (int j = 1; j <= buildingN; j++)
+    {
+      if (loc(peta_game, j).label == pickUp)
+      {
+        P = loc(peta_game, j);
+      }
+    }
+
+    wm_adv_word();
+    dropOff = *wm_current_word.contents;
+    for (int j = 1; j <= buildingN; j++)
+    {
+      if (loc(peta_game, j).label == dropOff)
+      {
+        D = loc(peta_game, j);
+      }
+    }
+
+    wm_adv_word();
+    ordExpTime = lx_readNumber(wm_current_word.contents);
+    // printf("%d",ordExpTime);
+
+    __wm_free();
+    __wm_allocate();
+
+    wm_adv_word();
+    itemID = lx_readNumber(wm_current_word.contents);
+    printf("%s", wm_current_word.contents);
+
+    wm_adv_word();
+    tipeItem = *wm_current_word.contents;
+
+    expTime = -1;
+    if (tipeItem == 'P')
+    {
+      wm_adv_word();
+      expTime = lx_readNumber(wm_current_word.contents);
+    }
+    Item item;
+    item.expired = expTime;
+    item.itemID = itemID;
+    item.type = tipeItem;
+
+    Order order;
+    order.dropOff = D;
+    order.expiredTime = ordExpTime;
+    order.incomingTime = waktuPesanan;
+    order.item = item;
+    order.orderID = ordID;
+    order.pickUp = P;
+
+    ll_insert_first(&progress_list, order);
+  }
+
 
   
+
   // mengubah status game
   SG_PL(s_status_game) = progress_list;
   SG_TDL(s_status_game) = to_do_list;

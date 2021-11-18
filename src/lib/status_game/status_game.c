@@ -43,4 +43,16 @@ void sg_reload_status() {
     Order res = ol_dequeue_order(&SG_OL(s_status_game));
     td_insertTask(&SG_TDL(s_status_game), res);
   }
+
+  Building reachable[30];
+  int cnt;
+  m_clear_reachable(&SG_MAP(s_status_game));
+  m_get_accessable_b(SG_MAP(s_status_game), SG_POS(s_status_game), reachable, &cnt);
+  for (int i = 0; i<cnt;i++){
+    Building b = reachable[i];
+    dl_insert_last(&SG_MAP(s_status_game).reachable,b);
+  }
+
+  
+  
 }

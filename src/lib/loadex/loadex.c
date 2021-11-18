@@ -23,6 +23,8 @@ int lx_readNumber(char *str)
 }
 
 
+
+
 // readConfigFile will read config file and make the structure
 
 // void ldx_newGame(const char *path, StatusGame *status_game);

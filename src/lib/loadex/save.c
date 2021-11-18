@@ -4,6 +4,7 @@ static FILE *saveFile;
 
 void lx_saveToFile(char saveFilename[])
 {
+    printf("MEMULAI SAVE......");
     Order order;
     Item item;
     saveFile = fopen(saveFilename, "w");
@@ -14,6 +15,8 @@ void lx_saveToFile(char saveFilename[])
     lx_wSpace();
     lx_wNum(Col(SG_MAP(s_status_game)));
     lx_wNl();
+    // printf("MAP\n");
+    // printf("%d %d\n", Row(SG_MAP(s_status_game)),Col(SG_MAP(s_status_game)));
 
     // Write Building List
     fprintf(saveFile, "BLD");
@@ -21,6 +24,8 @@ void lx_saveToFile(char saveFilename[])
     int buildingN = loc_nEff(SG_MAP(s_status_game)) - 1;
     lx_wNum(buildingN);
     lx_wNl();
+    // printf("BLD\n");
+    // printf("%d\n",buildingN);
 
     //Write HQ coordinate
     Building HQ;
@@ -29,6 +34,8 @@ void lx_saveToFile(char saveFilename[])
     lx_wSpace();
     lx_wNum(Ordinat(HQ));
     lx_wNl();
+
+    // printf("%d %d\n",Absis(HQ),Ordinat(HQ));
 
     //Write all Building
     for (int i = 1; i <= buildingN; i++)
@@ -43,7 +50,9 @@ void lx_saveToFile(char saveFilename[])
         lx_wSpace();
         fprintf(saveFile, "%c", spot.tipe);
         lx_wNl();
+        // printf("%c %d %d %c\n", label(spot),Absis(spot), Ordinat(spot), spot.tipe);
     }
+    //   printf("disini\n");
 
     //Write Adj Matrix
     lx_wAdj(buildingN);
@@ -101,7 +110,7 @@ void lx_saveToFile(char saveFilename[])
         lx_wSpace();
         fprintf(saveFile, "%c", dropOff);
         lx_wSpace();
-        lx_wNum(expTime);
+        fprintf(saveFile, "%u", expTime);
         lx_wSpace();
         lx_wNum(item_id);
         lx_wSpace();
@@ -111,7 +120,6 @@ void lx_saveToFile(char saveFilename[])
 
         if (i_type == 'P')
         {
-
             lx_wSpace();
             lx_wNum(item.expired);
         }
@@ -143,8 +151,10 @@ void lx_saveToFile(char saveFilename[])
     lx_wNl();
     inventory_gadget ig = SG_IG(s_status_game);
     lx_wNum(sl_length(ig));
-    if (sl_length(ig) == 0)
-        lx_wNl();
+    lx_wNl();
+    // printf("ini di Save %d\n",sl_length(ig));
+    // if (sl_length(ig) == 0)
+    //     lx_wNl();
     for (int i = 0; i < sl_length(ig); i++)
     {
         Gadget gadget = sl_elmt(ig, i);
@@ -152,7 +162,7 @@ void lx_saveToFile(char saveFilename[])
         lx_wSpace();
         fprintf(saveFile, "%c", gadget.label);
         lx_wSpace();
-        lx_wNum(gadget.gadgetID);
+        lx_wNum(gadget.price);
         lx_wNl();
     }
 
@@ -178,12 +188,13 @@ void lx_saveToFile(char saveFilename[])
     {
         s_pop(&isi_tas, &order);
 
-        int time = order.incomingTime;
-        int expTime = order.expiredTime;
+        Time time = order.incomingTime;
+        Time expTime = order.expiredTime;
         char pickUp = label(order.pickUp);
         char dropOff = label(order.dropOff);
         item = order.item;
         char i_type = item.type;
+        int item_id = item.itemID;
 
         lx_wNum(order.orderID);
         lx_wSpace();
@@ -193,9 +204,11 @@ void lx_saveToFile(char saveFilename[])
         lx_wSpace();
         fprintf(saveFile, "%c", dropOff);
         lx_wSpace();
-        fprintf(saveFile, "%c", i_type);
+        fprintf(saveFile, "%u", expTime);
         lx_wSpace();
-        lx_wNum(expTime);
+        lx_wNum(item_id);
+        lx_wSpace();
+        fprintf(saveFile, "%c", i_type);
 
         if (i_type == 'P')
         {
@@ -216,13 +229,14 @@ void lx_saveToFile(char saveFilename[])
     while (!(td_is_empty(tdList)))
     {
 
-        ll_delete_last(&tdList, &order);
-        int time = order.incomingTime;
-        int expTime = order.expiredTime;
+        ll_delete_first(&tdList, &order);
+        Time time = order.incomingTime;
+        Time expTime = order.expiredTime;
         char pickUp = label(order.pickUp);
         char dropOff = label(order.dropOff);
         item = order.item;
         char i_type = item.type;
+        int item_id = item.itemID;
 
         lx_wNum(order.orderID);
         lx_wSpace();
@@ -232,9 +246,11 @@ void lx_saveToFile(char saveFilename[])
         lx_wSpace();
         fprintf(saveFile, "%c", dropOff);
         lx_wSpace();
-        fprintf(saveFile, "%c", i_type);
+        fprintf(saveFile, "%u", expTime);
         lx_wSpace();
-        lx_wNum(expTime);
+        lx_wNum(item_id);
+        lx_wSpace();
+        fprintf(saveFile, "%c", i_type);
 
         if (i_type == 'P')
         {
@@ -256,12 +272,13 @@ void lx_saveToFile(char saveFilename[])
     {
         
         pl_delete_first(&pgList, &order);
-        int time = order.incomingTime;
-        int expTime = order.expiredTime;
+        Time time = order.incomingTime;
+        Time expTime = order.expiredTime;
         char pickUp = label(order.pickUp);
         char dropOff = label(order.dropOff);
         item = order.item;
         char i_type = item.type;
+        int item_id = item.itemID;
 
         lx_wNum(order.orderID);
         lx_wSpace();
@@ -271,9 +288,11 @@ void lx_saveToFile(char saveFilename[])
         lx_wSpace();
         fprintf(saveFile, "%c", dropOff);
         lx_wSpace();
-        fprintf(saveFile, "%c", i_type);
+        fprintf(saveFile, "%u", expTime);
         lx_wSpace();
-        lx_wNum(expTime);
+        lx_wNum(item_id);
+        lx_wSpace();
+        fprintf(saveFile, "%c", i_type);
 
 
         if (i_type == 'P')

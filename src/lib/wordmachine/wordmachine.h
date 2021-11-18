@@ -53,4 +53,8 @@ void wm_adv_word();
    F.S. Blank dari mesin kata diset */
 void wm_set_blank(char* blank, int length);
 
+void __wm_free();
+
+void __wm_allocate();
+
 #endif
