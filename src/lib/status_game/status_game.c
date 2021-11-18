@@ -19,13 +19,19 @@ void sg_reload_status() {
   Tas mobita = SG_TAS(s_status_game);
   Order *buffer = mobita.isiTas.buffer;
 
-  for (int i = 0; i <= mobita.isiTas.idxTop; i++) {
+  for (int i = 0; i <= mobita.isiTas.idxTop;) {
     if (buffer[i].expiredTime <= s_status_game.Waktu_Permainan) {
       pl_delete_by_order(&SG_PL(s_status_game), buffer[i]);
 
-      for (int j = i; j < mobita.isiTas.idxTop - 1; j++) {
-        buffer[j] = buffer[j + 1];
+      int len = mobita.isiTas.idxTop;
+
+      for (int j = 1; j <= len; j++) {
+        buffer[j - 1] = buffer[j];
       }
+
+      mobita.isiTas.idxTop--;
+    } else {
+      i++;
     }
   }
 

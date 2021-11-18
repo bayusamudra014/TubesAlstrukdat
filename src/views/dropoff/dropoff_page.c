@@ -24,37 +24,35 @@ int dp_get_prize(Item i) {
 void show_dropoff() {
   printf("\n");
   if (!t_is_empty(SG_TAS(s_status_game))) {
-    if (!dp_is_any_vip()) {
-      Order obj = S_TOP(t_isi(SG_TAS(s_status_game)));
-      Order* top = &obj;
+    Order obj = S_TOP(t_isi(SG_TAS(s_status_game)));
+    Order* top = &obj;
 
-      if (top && b_is_equal(top->dropOff, s_status_game.posisi_sekarang)) {
-        int harga = dp_get_prize(obj.item);
+    if (top && b_is_equal(top->dropOff, s_status_game.posisi_sekarang)) {
+      int harga = dp_get_prize(obj.item);
 
-        char pesan[200];
-        snprintf(pesan, 200,
-                 "Yaay 🎉, kamu berhasil mengantarkan barang %s.\nKamu "
-                 "mendapatkan %d Yen.",
-                 i_item_type_name(obj.item), harga);
+      char pesan[200];
+      snprintf(pesan, 200,
+               "Yaay 🎉, kamu berhasil mengantarkan barang %s.\nKamu "
+               "mendapatkan %d Yen.",
+               i_item_type_name(obj.item), harga);
 
-        cm_modal_info(pesan);
+      cm_modal_info(pesan);
 
-        if (obj.item.type == 'V') {
-          printf("\n🎁 Hadiah dari pengirim\n");
-          printf("Wah, kamu mendapatkan ability Return to Sender. Selamat..\n");
-          SG_S_BTS(s_status_game)++;
-        }
-
-        pl_delete_by_order(&(SG_PL(s_status_game)), *top);
-        t_take_item(&(SG_TAS(s_status_game)));
-        SG_MONEY(s_status_game) += harga;
-      } else {
-        cm_modal_info("Tidak ada yang bisa di drop off disini.");
+      if (obj.item.type == 'V') {
+        printf("\n🎁 Hadiah dari pengirim\n");
+        printf("Wah, kamu mendapatkan ability Return to Sender. Selamat..\n");
+        SG_S_BTS(s_status_game)++;
       }
-    } else {
+
+      pl_delete_by_order(&(SG_PL(s_status_game)), *top);
+      t_take_item(&(SG_TAS(s_status_game)));
+      SG_MONEY(s_status_game) += harga;
+    } else if (dp_is_any_vip()) {
       cm_modal_warning(
           "Anda sedang mengambil pesanan VIP.\nSilahkan antarkan terlebih "
           "dahulu.");
+    } else {
+      cm_modal_info("Tidak ada barang yang bisa diturunkan disini");
     }
   } else {
     cm_modal_info("Tas kamu saat ini kosong.\nSilahkan ambil pesanan dulu.");
