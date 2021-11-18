@@ -133,9 +133,6 @@ void show_main_menu() {
 
           printf("\n");
           cm_modal_info("PROGRESS PERMAINAN BERHASIL DISIMPAN");
-          // } else if (__is_str_same(input_command, "MAX_MONEY")) {
-          //   SG_MONEY(s_status_game) = 9999;
-          show_save_game(s_status_game);
         } else if (__is_str_same(input_command, "STATUS")) {
           printf("\n");
           set_text_color(TEXT_GREEN);
