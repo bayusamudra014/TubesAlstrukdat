@@ -48,7 +48,7 @@ void m_display(Map m, ToDoList tdl, ProgressList pl, Building pos) {
         idx = m_get_building(m, curr);
         if (b_is_equal(idx, pos)) {
           print_yellow(curr);
-        } else if (m_is_dropoff(m, pl, idx)) {
+        } else if (m_is_dropoff(m, tdl, idx)) {
           print_blue(curr);
         } else if (m_is_pickup(m, pl, idx)) {
           print_red(curr);
@@ -66,20 +66,6 @@ void m_display(Map m, ToDoList tdl, ProgressList pl, Building pos) {
 }
 
 void m_display_reachable(Map m, Building pos) {
-  // int i = 0, cnt = 0;
-  // printf("Tempat yang bisa dicapai: \n");
-
-  // int length = dl_length(m.buildinglist);
-
-  // while (i < length) {
-  //   if (m_is_accessible(m, pos, dl_elmt(m.buildinglist, i))) {
-  //     cnt++;
-  //     printf("%d. ", cnt);
-  //     b_display(dl_elmt(m.buildinglist, i));
-  //   }
-
-  //   i++;
-  // }
   Building hasil[30];
   int jumlah;
   m_get_accessable_b(m, pos, hasil, &jumlah);
