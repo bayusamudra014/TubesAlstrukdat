@@ -1,7 +1,6 @@
 #include "loadex.h"
 
-void lx_loadSaveFile(char saveFileName[])
-{
+void lx_loadSaveFile(char saveFileName[]) {
   // Persiapan untuk status Game
   ProgressList progress_list;
   ToDoList to_do_list;
@@ -28,7 +27,6 @@ void lx_loadSaveFile(char saveFileName[])
   wm_adv_word();
   int col = lx_readNumber(wm_current_word.contents);
 
-
   wm_adv_word();
   // Membuat building List
   DynamicList buildingList;
@@ -50,15 +48,14 @@ void lx_loadSaveFile(char saveFileName[])
 
   int y = lx_readNumber(wm_current_word.contents);
   // printf("%d %d\n",x,y);
-  b_create_building(&HQ, x, y, '8', '#');
+  b_create_building(&HQ, x, y, '8', '#', 0);
   map_elmt(peta_game, x, y) = '8';
   dl_insert_last(&peta_game.buildinglist, HQ);
 
   // Proses memasukkan building"
   char buildingLabel;
   // printf("baca building..\n");
-  for (i = 1; i <= buildingN - 1; i++)
-  {
+  for (i = 1; i <= buildingN - 1; i++) {
     // printf("building ke %d\n", i);
     // Membaca label Building
     wm_adv_word();
@@ -78,7 +75,7 @@ void lx_loadSaveFile(char saveFileName[])
 
     // membuat building
     Building currentBuilding;
-    b_create_building(&currentBuilding, x, y, buildingLabel, bTipe);
+    b_create_building(&currentBuilding, x, y, buildingLabel, bTipe, i);
 
     // memasukkannya ke dalam list building
     dl_insert_last(&peta_game.buildinglist, currentBuilding);
@@ -88,10 +85,8 @@ void lx_loadSaveFile(char saveFileName[])
 
   Matrix adjMatrix;
   m_create_matrix(&adjMatrix, buildingN, buildingN);
-  for (i = 0; i < buildingN; i++)
-  {
-    for (j = 0; j < buildingN; j++)
-    {
+  for (i = 0; i < buildingN; i++) {
+    for (j = 0; j < buildingN; j++) {
       wm_adv_word();
       x = lx_readNumber(wm_current_word.contents);
       // printf("%d ",x);
@@ -111,28 +106,23 @@ void lx_loadSaveFile(char saveFileName[])
   char pickUp, dropOff, tipeItem;
   Building P, D;
 
-  for (i = 1; i <= orderN; i++)
-  {
+  for (i = 1; i <= orderN; i++) {
     // printf("order ke %d\n", i);
     wm_adv_word();
     waktuPesanan = lx_readNumber(wm_current_word.contents);
 
     wm_adv_word();
     pickUp = *wm_current_word.contents;
-    for (j = 1; j <= buildingN; j++)
-    {
-      if (loc(peta_game, j).label == pickUp)
-      {
+    for (j = 1; j <= buildingN; j++) {
+      if (loc(peta_game, j).label == pickUp) {
         P = loc(peta_game, j);
       }
     }
 
     wm_adv_word();
     dropOff = *wm_current_word.contents;
-    for (j = 1; j <= buildingN; j++)
-    {
-      if (loc(peta_game, j).label == dropOff)
-      {
+    for (j = 1; j <= buildingN; j++) {
+      if (loc(peta_game, j).label == dropOff) {
         D = loc(peta_game, j);
       }
     }
@@ -142,14 +132,11 @@ void lx_loadSaveFile(char saveFileName[])
 
     // printf("%d %c %c %c ", waktuPesanan, pickUp,dropOff,tipeItem);
     expTime = -1;
-    if (tipeItem == 'P')
-    {
+    if (tipeItem == 'P') {
       wm_adv_word();
       expTime = lx_readNumber(wm_current_word.contents);
       // printf("%d\n",expTime);
-    }
-    else
-    {
+    } else {
       // printf("\n");
     }
 

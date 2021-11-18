@@ -39,7 +39,7 @@ void move_boost(StatusGame *s, int mv, int curr_move) {
 
 void show_move(StatusGame *s) {
   Map curr_map = s->peta_game;
-  m_display_reachable(curr_map);
+  m_display_reachable(curr_map, s->posisi_sekarang);
   printf("Posisi yang dipilih: ");
   int mv;
   read_int_line(&mv, 3);

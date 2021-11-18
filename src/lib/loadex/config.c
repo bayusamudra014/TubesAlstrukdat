@@ -52,7 +52,7 @@ void lx_readConfigFile_silent(char configFilename[]) {
 
   int y = lx_readNumber(wm_current_word.contents);
   // printf("%d %d\n",x,y);
-  b_create_building(&HQ, x, y, '8', '#');
+  b_create_building(&HQ, x, y, '8', '#', 0);
   map_elmt(peta_game, x, y) = '8';
   dl_insert_last(&peta_game.buildinglist, HQ);
 
@@ -77,7 +77,7 @@ void lx_readConfigFile_silent(char configFilename[]) {
 
     // membuat building
     Building currentBuilding;
-    b_create_building(&currentBuilding, x, y, buildingLabel, '#');
+    b_create_building(&currentBuilding, x, y, buildingLabel, '#', i);
 
     // memasukkannya ke dalam list building
     dl_insert_last(&peta_game.buildinglist, currentBuilding);

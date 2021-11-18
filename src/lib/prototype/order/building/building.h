@@ -8,6 +8,7 @@ typedef struct building {
   Point position;
   char label;
   char tipe;
+  int index;
 } Building;
 
 #define label(b) (b).label
@@ -20,7 +21,8 @@ typedef struct building {
  * Membuat Building dengan koordinat x, y dan
  * memiliki label lab
  */
-void b_create_building(Building* B, int x, int y, char lab, char jenis);
+void b_create_building(Building* B, int x, int y, char lab, char jenis,
+                       int index);
 
 /**
  * Diperlukan di fungsi dl_index_of
