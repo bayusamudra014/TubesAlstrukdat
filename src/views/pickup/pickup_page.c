@@ -13,7 +13,7 @@ boolean pu_item_upper(Order* hasil) {
     Order data = td_getOrder(todo, i);
 
     if (b_is_equal(data.pickUp, s_status_game.posisi_sekarang)) {
-      if (!result || data.incomingTime < result->incomingTime) {
+      if (!result || data.incomingTime > result->incomingTime) {
         result = &data;
       }
     }

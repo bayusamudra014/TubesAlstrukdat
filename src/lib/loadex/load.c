@@ -15,6 +15,7 @@ void lx_loadSaveFile(char saveFileName[]) {
   // Persiapan Lain
   int i, j;
   ol_create_orederlist(&order_list);
+  wm_set_blank(" \n", 2);
 
   static FILE *pita;
   pita = fopen(saveFileName, "r");

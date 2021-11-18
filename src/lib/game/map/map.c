@@ -48,9 +48,9 @@ void m_display(Map m, ToDoList tdl, ProgressList pl, Building pos) {
         idx = m_get_building(m, curr);
         if (b_is_equal(idx, pos)) {
           print_yellow(curr);
-        } else if (m_is_dropoff(m, tdl, idx)) {
+        } else if (m_is_dropoff(m, pl, idx)) {
           print_blue(curr);
-        } else if (m_is_pickup(m, pl, idx)) {
+        } else if (m_is_pickup(m, tdl, idx)) {
           print_red(curr);
         } else if (m_is_accessible(m, pos, idx)) {
           print_green(curr);
