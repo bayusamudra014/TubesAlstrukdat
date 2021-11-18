@@ -4,13 +4,6 @@
 #include "../lib.h"
 #define maxLength 100
 
-typedef struct
-{
-    char wordArray[maxLength + 1];
-    int length;
-} word;
-
-extern boolean EndKata;
 
 // readNumber parses input to be an integer
 int lx_readNumber();
