@@ -48,14 +48,7 @@ void mm_ending(StatusGame s_status_game) {
 }
 
 void show_main_menu() {
-  // wm_start_word(stdin);
-  // while (!wm_end_word){
-  //     printf("%s\n", wm_current_word.contents);
-  //     wm_adv_word();
-  // }
   clear_screen();
-
-  // Kalau mau ngeprint ascii art saat load game
   mm_dashboard();
 
   char *main_input_command;
@@ -131,8 +124,16 @@ void show_main_menu() {
           show_return();
         } else if (__is_str_same(input_command, "SAVE_GAME")) {
           show_save_game(s_status_game);
-          // } else if (__is_str_same(input_command, "MAX_MONEY")) {
-          //   SG_MONEY(s_status_game) = 9999;
+        } else if (__is_str_same(input_command, "STATUS")) {
+          printf("\n");
+          set_text_color(TEXT_GREEN);
+          printf("Status Kamu\n\n");
+          reset_color();
+          printf("💰 Uang  : %d yen\n", s_status_game.uang_mobita);
+          printf("🕑 Waktu : %d\n", s_status_game.Waktu_Permainan);
+          printf("📦 In Progress : %d barang\n",
+                 pl_length(s_status_game.progress_list));
+          printf("📝 To do : %d barang\n", td_length(s_status_game.to_do_list));
         } else if (__is_str_same(input_command, "EXIT")) {
           set_text_color(TEXT_YELLOW);
           printf("\nPeringatan!\n");
