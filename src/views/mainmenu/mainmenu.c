@@ -127,6 +127,8 @@ void show_main_menu() {
           show_inventory(&s_status_game);
         } else if (__is_str_same(input_command, "HELP")) {
           show_help();
+        } else if (__is_str_same(input_command, "RETURN")) {
+          show_return();
         } else if (__is_str_same(input_command, "SAVE_GAME")) {
           show_save_game(s_status_game);
           // } else if (__is_str_same(input_command, "MAX_MONEY")) {

@@ -35,7 +35,7 @@ boolean pl_is_any_vip(ProgressList pl) {
   boolean result = false;
 
   while (l && !result) {
-    if (l->payload.item.itemID == 'V') {
+    if (l->payload.item.type == 'V') {
       result = true;
     } else {
       l = l->next;

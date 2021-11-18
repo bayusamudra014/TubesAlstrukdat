@@ -1,6 +1,7 @@
 #include "return_page.h"
 
 void show_return() {
+  printf("\n");
   if (SG_S_BTS(s_status_game) > 0) {
     Order i = S_TOP(t_isi(SG_TAS(s_status_game)));
 
@@ -20,8 +21,8 @@ void show_return() {
     }
 
   } else {
-    cm_modal_error(
-        "Kamu belum punya ability \"Return to Sende\"\nSilahkan antarkan "
+    cm_modal_info(
+        "Kamu belum punya ability \"Return to Sender\"\nSilahkan antarkan "
         "barang VIP terlebih dahulu.");
   }
 }

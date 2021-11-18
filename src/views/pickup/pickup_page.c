@@ -61,11 +61,9 @@ void show_pickup() {
             "Yah kamu ga bisa ngambil barang karena tas kamu penuh.");
       }
     } else {
-      printf("\n");
       cm_modal_warning("Tidak ada pesanan disini");
     }
   } else {
-    printf("\n");
     cm_modal_warning(
         "Anda sedang mengambil pesanan VIP.\nSilahkan antarkan terlebih "
         "dahulu.");
