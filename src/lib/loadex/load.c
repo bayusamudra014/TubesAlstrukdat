@@ -1,7 +1,6 @@
 #include "loadex.h"
 
-void lx_loadSaveFile(char saveFileName[])
-{
+void lx_loadSaveFile(char saveFileName[]) {
   // Persiapan untuk status Game
   ProgressList progress_list;
   ToDoList to_do_list;
@@ -52,7 +51,7 @@ void lx_loadSaveFile(char saveFileName[])
 
   int y = lx_readNumber(wm_current_word.contents);
   // printf("%d %d\n",x,y);
-  b_create_building(&HQ, x, y, '8', '#');
+  b_create_building(&HQ, x, y, '8', '#', 0);
   map_elmt(peta_game, x, y) = '8';
   dl_insert_last(&peta_game.buildinglist, HQ);
 
@@ -80,7 +79,7 @@ void lx_loadSaveFile(char saveFileName[])
 
     // membuat building
     Building currentBuilding;
-    b_create_building(&currentBuilding, x, y, buildingLabel, bTipe);
+    b_create_building(&currentBuilding, x, y, buildingLabel, bTipe, i);
 
     // memasukkannya ke dalam list building
     dl_insert_last(&peta_game.buildinglist, currentBuilding);
@@ -201,8 +200,7 @@ void lx_loadSaveFile(char saveFileName[])
     tipeItem = *wm_current_word.contents;
 
     expTime = -1;
-    if (tipeItem == 'P')
-    {
+    if (tipeItem == 'P') {
       wm_adv_word();
       expTime = lx_readNumber(wm_current_word.contents);
     }

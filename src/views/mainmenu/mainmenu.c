@@ -1,4 +1,5 @@
 #include "mainmenu.h"
+
 #include <stdio.h>
 
 boolean __is_str_same(char input1[], char input2[]) {
@@ -36,7 +37,7 @@ void mm_dashboard() {
 
   cm_modal_info(
       "Halo, Aku Mobita. Bantuin aku yuk...\nKamu bisa masukin perintah "
-      "dibawah ini yaa, Selamat bermain");
+      "dibawah ini yaa.");
 
   delete_color(cyan);
 }
@@ -61,10 +62,17 @@ void show_main_menu() {
 
   boolean GAME_COMPLETE = false;
   do {
-    main_input_command = __ask_input("ENTER COMMAND: ");
+    printf("Sebelum itu, pilihlah mode yang akan kamu mainkan:\n");
+    printf("1. NEW_GAME : Memulai permainan baru\n");
+    printf("2. LOAD_GAME : Load permainan sebelumnya\n\n");
+    main_input_command = __ask_input("Mode Permainan : ");
+
     if (__is_str_same(main_input_command, "NEW_GAME") ||
-        __is_str_same(main_input_command, "LOAD_GAME")) {
-      if (__is_str_same(main_input_command, "NEW_GAME")) {
+        __is_str_same(main_input_command, "LOAD_GAME") ||
+        __is_str_same(main_input_command, "1") ||
+        __is_str_same(main_input_command, "2")) {
+      if (__is_str_same(main_input_command, "NEW_GAME") ||
+          __is_str_same(main_input_command, "1")) {
         // Loading Config
         char *configPath = __ask_input("Path to config file: ");
         while (!f_exist(configPath)) {
@@ -72,10 +80,12 @@ void show_main_menu() {
           cm_modal_error("File tidak bisa dibaca!");
           configPath = __ask_input("Path to config file: ");
         }
+
         lx_readConfigFile_silent(configPath);
+        sg_reload_status();
 
         printf("\n");
-        cm_modal_info("Load Config Berhasil!");
+        cm_modal_info("Oke, Load Config Berhasil. Selamat Bermain!");
 
         // Config file nya udah dibaca
         // configPath adalah hasil malloc, harus di free supaya gak makan memory
@@ -96,7 +106,7 @@ void show_main_menu() {
         } else if (__is_str_same(input_command, "PICK_UP")) {
           show_pickup();
         } else if (__is_str_same(input_command, "DROP_OFF")) {
-          // show_dropoff();
+          show_dropoff();
         } else if (__is_str_same(input_command, "MAP")) {
           show_map(s_status_game);
         } else if (__is_str_same(input_command, "TO_DO")) {
@@ -116,11 +126,13 @@ void show_main_menu() {
           show_help();
         } else if (__is_str_same(input_command, "SAVE_GAME")) {
           show_save_game(s_status_game);
-        // } else if (__is_str_same(input_command, "MAX_MONEY")) {
-        //   SG_MONEY(s_status_game) = 9999;
-        } else {
+          // } else if (__is_str_same(input_command, "MAX_MONEY")) {
+          //   SG_MONEY(s_status_game) = 9999;
+        } else if (!__is_str_same(input_command, "")) {
           cm_modal_error("COMMAND TIDAK DIKENALI!");
         }
+
+        printf("\n");
         // input_command merupakan hasil malloc,
         // jadinya perlu di dealokasi
         free(input_command);
@@ -137,10 +149,13 @@ void show_main_menu() {
     } else if (__is_str_same(main_input_command, "EXIT")) {
       cm_modal_warning("Exiting Game....");
       GAME_COMPLETE = true;
-    } else {
+    } else if (!__is_str_same(main_input_command, "")) {
       printf("\n");
       cm_modal_error("COMMAND TIDAK DIKENALI!");
+    } else {
+      printf("\n");
     }
+
     // main_input_command adalah hasil malloc, perlu free biar gak jadi zombie
     free(main_input_command);
   } while (!GAME_COMPLETE);

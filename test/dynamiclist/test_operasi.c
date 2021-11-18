@@ -6,7 +6,7 @@ START_TEST(tc_dl_operasi_1) {
   dl_create_list(&D1, dlSize);
 
   Building B1;
-  b_create_building(&B1, 7, 3, 'A', 'A');
+  b_create_building(&B1, 7, 3, 'A', 'A', 1);
   dl_insert_first(&D1, B1);
 
   ck_assert(b_is_equal(dl_elmt(D1, 0), B1));
@@ -14,7 +14,7 @@ START_TEST(tc_dl_operasi_1) {
   ck_assert_int_eq(dl_capacity(D1), dlSize);
 
   Building B2;
-  b_create_building(&B2, 9, 11, 'B', 'A');
+  b_create_building(&B2, 9, 11, 'B', 'A', 2);
   dl_insert_first(&D1, B2);
 
   ck_assert(b_is_equal(dl_elmt(D1, 0), B2));
@@ -22,7 +22,7 @@ START_TEST(tc_dl_operasi_1) {
   ck_assert_int_eq(dl_capacity(D1), dlSize);
 
   Building B3;
-  b_create_building(&B3, 9, 13, 'C', 'A');
+  b_create_building(&B3, 9, 13, 'C', 'A', 3);
   dl_insert_first(&D1, B3);
 
   ck_assert(b_is_equal(dl_elmt(D1, 0), B3));
@@ -39,7 +39,7 @@ START_TEST(tc_dl_operasi_2) {
   dl_create_list(&D1, dlSize);
 
   Building B1;
-  b_create_building(&B1, 7, 3, 'A', 'A');
+  b_create_building(&B1, 7, 3, 'A', 'A', 1);
   dl_insert_last(&D1, B1);
 
   ck_assert(b_is_equal(dl_elmt(D1, dl_length(D1) - 1), B1));
@@ -47,7 +47,7 @@ START_TEST(tc_dl_operasi_2) {
   ck_assert_int_eq(dl_capacity(D1), dlSize);
 
   Building B2;
-  b_create_building(&B2, 9, 11, 'B', 'A');
+  b_create_building(&B2, 9, 11, 'B', 'A', 2);
   dl_insert_last(&D1, B2);
 
   ck_assert(b_is_equal(dl_elmt(D1, dl_length(D1) - 1), B2));
@@ -55,7 +55,7 @@ START_TEST(tc_dl_operasi_2) {
   ck_assert_int_eq(dl_capacity(D1), dlSize);
 
   Building B3;
-  b_create_building(&B3, 9, 13, 'C', 'A');
+  b_create_building(&B3, 9, 13, 'C', 'A', 3);
   dl_insert_last(&D1, B3);
 
   ck_assert(b_is_equal(dl_elmt(D1, dl_length(D1) - 1), B3));
@@ -72,28 +72,28 @@ START_TEST(tc_dl_operasi_3) {
   dl_create_list(&D1, dlSize);
 
   Building B1;
-  b_create_building(&B1, 7, 3, 'A', 'A');
+  b_create_building(&B1, 7, 3, 'A', 'A', 0);
   dl_insert_first(&D1, B1);
 
   ck_assert_int_eq(dl_length(D1), 1);
   ck_assert_int_eq(dl_capacity(D1), dlSize);
 
   Building B2;
-  b_create_building(&B2, 9, 11, 'B', 'A');
+  b_create_building(&B2, 9, 11, 'B', 'A', 1);
   dl_insert_last(&D1, B2);
 
   ck_assert_int_eq(dl_length(D1), 2);
   ck_assert_int_eq(dl_capacity(D1), dlSize);
 
   Building B3;
-  b_create_building(&B3, 9, 13, 'C', 'A');
+  b_create_building(&B3, 9, 13, 'C', 'A', 1);
   dl_insert_last(&D1, B3);
 
   ck_assert_int_eq(dl_length(D1), 3);
   ck_assert_int_eq(dl_capacity(D1), dlSize + 1);
 
   Building B4;
-  b_create_building(&B4, 9, 14, 'D', 'A');
+  b_create_building(&B4, 9, 14, 'D', 'A', 1);
   dl_insert_at(&D1, B4, 1);
 
   ck_assert_int_eq(dl_length(D1), 4);
@@ -114,7 +114,7 @@ START_TEST(tc_dl_operasi_4) {
   dl_create_list(&D1, dlSize);
 
   Building B1;
-  b_create_building(&B1, 7, 3, 'A', 'A');
+  b_create_building(&B1, 7, 3, 'A', 'A', 1);
   dl_insert_first(&D1, B1);
 
   ck_assert(b_is_equal(dl_elmt(D1, 0), B1));
@@ -122,7 +122,7 @@ START_TEST(tc_dl_operasi_4) {
   ck_assert_int_eq(dl_capacity(D1), dlSize);
 
   Building B2;
-  b_create_building(&B2, 7, 9, 'V', 'A');
+  b_create_building(&B2, 7, 9, 'V', 'A', 2);
   dl_insert_last(&D1, B2);
 
   ck_assert(b_is_equal(dl_elmt(D1, 1), B2));

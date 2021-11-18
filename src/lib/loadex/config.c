@@ -1,7 +1,6 @@
 #include "loadex.h"
 
-void lx_readConfigFile_silent(char configFilename[])
-{
+void lx_readConfigFile_silent(char configFilename[]) {
   // Persiapan untuk status Game
   ProgressList progress_list;
   ToDoList to_do_list;
@@ -19,6 +18,7 @@ void lx_readConfigFile_silent(char configFilename[])
   Item item;
   int i, j;
   ol_create_orederlist(&order_list);
+  wm_set_blank(" \n", 2);
 
   static FILE *pita;
   pita = fopen(configFilename, "r");
@@ -55,15 +55,14 @@ void lx_readConfigFile_silent(char configFilename[])
 
   int y = lx_readNumber(wm_current_word.contents);
   // printf("%d %d\n",x,y);
-  b_create_building(&HQ, x, y, '8', '#');
+  b_create_building(&HQ, x, y, '8', '#', 0);
   map_elmt(peta_game, x, y) = '8';
   dl_insert_last(&peta_game.buildinglist, HQ);
 
   // Proses memasukkan building"
   char buildingLabel;
   // printf("baca building..\n");
-  for (i = 1; i <= buildingN - 1; i++)
-  {
+  for (i = 1; i <= buildingN - 1; i++) {
     // printf("building ke %d\n", i);
     // Membaca label Building
     wm_adv_word();
@@ -81,7 +80,7 @@ void lx_readConfigFile_silent(char configFilename[])
 
     // membuat building
     Building currentBuilding;
-    b_create_building(&currentBuilding, x, y, buildingLabel, '#');
+    b_create_building(&currentBuilding, x, y, buildingLabel, '#', i);
 
     // memasukkannya ke dalam list building
     dl_insert_last(&peta_game.buildinglist, currentBuilding);
@@ -91,10 +90,8 @@ void lx_readConfigFile_silent(char configFilename[])
 
   Matrix adjMatrix;
   m_create_matrix(&adjMatrix, buildingN, buildingN);
-  for (i = 0; i < buildingN; i++)
-  {
-    for (j = 0; j < buildingN; j++)
-    {
+  for (i = 0; i < buildingN; i++) {
+    for (j = 0; j < buildingN; j++) {
       wm_adv_word();
       x = lx_readNumber(wm_current_word.contents);
       m_elmt(adjMatrix, i, j) = x;
@@ -103,17 +100,16 @@ void lx_readConfigFile_silent(char configFilename[])
 
   peta_game.adj = adjMatrix;
 
-  //reachable
+  // reachable
   DynamicList reachable;
-  dl_create_list(&reachable,buildingN-1);
-  for (int i = 0; i < buildingN; i++){
-    if(m_elmt(adjMatrix,0,i) == 1){
-        Building bIsReachable = dl_elmt(buildingList,i);
-        dl_insert_last(&reachable,bIsReachable);
+  dl_create_list(&reachable, buildingN - 1);
+  for (int i = 0; i < buildingN; i++) {
+    if (m_elmt(adjMatrix, 0, i) == 1) {
+      Building bIsReachable = dl_elmt(buildingList, i);
+      dl_insert_last(&reachable, bIsReachable);
     }
   }
   peta_game.reachable = reachable;
-
 
   wm_adv_word();
   // Membaca orderlist
@@ -123,27 +119,22 @@ void lx_readConfigFile_silent(char configFilename[])
   char pickUp, dropOff, tipeItem;
   Building P, D;
 
-  for (i = 1; i <= orderN; i++)
-  {
+  for (i = 1; i <= orderN; i++) {
     wm_adv_word();
     waktuPesanan = lx_readNumber(wm_current_word.contents);
 
     wm_adv_word();
     pickUp = *wm_current_word.contents;
-    for (j = 1; j <= buildingN; j++)
-    {
-      if (loc(peta_game, j).label == pickUp)
-      {
+    for (j = 1; j <= buildingN; j++) {
+      if (loc(peta_game, j).label == pickUp) {
         P = loc(peta_game, j);
       }
     }
 
     wm_adv_word();
     dropOff = *wm_current_word.contents;
-    for (j = 1; j <= buildingN; j++)
-    {
-      if (loc(peta_game, j).label == dropOff)
-      {
+    for (j = 1; j <= buildingN; j++) {
+      if (loc(peta_game, j).label == dropOff) {
         D = loc(peta_game, j);
       }
     }
@@ -152,8 +143,7 @@ void lx_readConfigFile_silent(char configFilename[])
     tipeItem = *wm_current_word.contents;
 
     expTime = -1;
-    if (tipeItem == 'P')
-    {
+    if (tipeItem == 'P') {
       wm_adv_word();
       expTime = lx_readNumber(wm_current_word.contents);
     }
@@ -171,14 +161,13 @@ void lx_readConfigFile_silent(char configFilename[])
   td_create(&to_do_list);
   t_create_tas(&tas_mobita);
   ig_create_ig(&inventory_gadget);
-  Waktu_Permainan = 0;
+  Waktu_Permainan = 1;
   posisi_sekarang = HQ;
   // uang nobita
   uang_mobita = 0;
 
   // back to sender
   back_to_sender = 0;
-
 
   // mengubah status game
   SG_PL(s_status_game) = progress_list;
@@ -192,4 +181,3 @@ void lx_readConfigFile_silent(char configFilename[])
   SG_MONEY(s_status_game) = uang_mobita;
   SG_S_BTS(s_status_game) = back_to_sender;
 }
-

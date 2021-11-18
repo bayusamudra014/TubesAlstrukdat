@@ -42,5 +42,7 @@ int main() {
   // SG_POS(s_status_game) = pos;
   lx_saveToFile("save1.conf");
 
+  show_main_menu();
+  // lx_saveToFile("save.conf");
   return 0;
 }

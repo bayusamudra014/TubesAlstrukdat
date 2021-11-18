@@ -24,6 +24,9 @@ void i_create_item(Item* i, char type, int expired);
 /* Mengembalikan true bila i merupakan perishable item */
 boolean i_is_perishable(Item i);
 
+/* Mengemmbalikan true bila i adalah heavy item */
+boolean i_is_heavy(Item i);
+
 /* Mengembalikan nama jenis item */
 char* i_item_type_name(Item i);
 
