@@ -44,7 +44,7 @@ void sg_inc_time();
 
 /* mengubah state game berdasarkan gadget yang diinputkan */
 /* masih menunggu beberapa adt game selesai */
-void g_change_state(int type, int mv, StatusGame s_status_game);
+// void g_change_state(int type, int mv, StatusGame s_status_game);
 
 /* Mereload status game setelah waktu ditambahkan */
 void sg_reload_status();
