@@ -40,7 +40,12 @@ void show_dropoff() {
 
       if (obj.item.type == 'V') {
         printf("\n🎁 Hadiah dari pengirim\n");
-        printf("Wah, kamu mendapatkan ability Return to Sender. Selamat..\n");
+        printf("Wah, kamu mendapatkan ability ");
+        set_text_color(TEXT_GREEN);
+        printf("Return to Sender");
+        reset_color();
+
+        printf(". Selamat..\n");
         SG_S_BTS(s_status_game)++;
       }
 
