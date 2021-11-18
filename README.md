@@ -138,20 +138,28 @@ Dalam project ini ada beberapa folder diantaranya sebagai berikut:
 
 ## Fitur Permainan
 
-1. Main Menu (new game, load, save, dan exit)
-2. Mekanisme Waktu (menampilkan waktu permainan)
-3. Daftar Pesanan (waktu pesanan masuk, pick up & drop off point, jenis item, dan time expired)
-4. To Do List (pick up & drop off point, jenis item, dan waktu expired)
-5. In Progress List (list berisi item yang telah dipick up tetapi belom didrop off)
-6. Tas (Menyimpan item yang bisa diambil di lokasi)
-7. Jenis Item (normal item, heavy item, Perishable item, VIP item)
-8. Ability (speed boost, increase capacity, return to sender)
-9. Gadget (kain pembungkus waktu, senter pembesar, pintu kemana saja, mesin waktu)
-10. Inventory gadget (tempat penyimpanan gadget)
-11. Peta (peta permainan)
-12. Lokasi dan Command (MOVE, PICK_UP, DROP_OFF, MAP, TO_DO, IN_PROGRESS, BUY, INVENTORY, HELP, SAVE_GAME, RETURN)
-13. Game Flow (start game, end game jika semua pesanan di antar dan perishable item hangus/diantar)
-14. Save/Load Game
+1. Main Menu (new game, load, save, dan exit) (selesai)
+2. Mekanisme Waktu (menampilkan waktu permainan) (selesai)
+3. Daftar Pesanan (waktu pesanan masuk, pick up & drop off point, jenis item, dan time expired) (selesai)
+4. To Do List (pick up & drop off point, jenis item, dan waktu expired) (selesai)
+5. In Progress List (list berisi item yang telah dipick up tetapi belom didrop off) (selesai)
+6. Tas (Menyimpan item yang bisa diambil di lokasi) (selesai)
+7. Jenis Item (normal item, heavy item, Perishable item, VIP item) (selesai)
+8. Ability (speed boost, increase capacity, return to sender) (selesai)
+9. Gadget (kain pembungkus waktu, senter pembesar, pintu kemana saja, mesin waktu) (selesai)
+10. Inventory gadget (tempat penyimpanan gadget) (selesai)
+11. Peta (peta permainan) (selesai)
+12. Lokasi dan Command (MOVE, PICK_UP, DROP_OFF, MAP, TO_DO, IN_PROGRESS, BUY, INVENTORY, HELP, SAVE_GAME, RETURN) (selesai)
+13. Game Flow (start game, end game jika semua pesanan di antar dan perishable item hangus/diantar) (selesai)
+14. Save/Load Game (selesai)
+
+## Pembagian Tugas
+1.	Kevin Roni : merapihkan laporan, membuat page help, membuat page move, membuat page map, abstraksi ADT gadget, impelementasi ADT gadget, abstraksi ADT map, implementasi ADT map, beberapa ADT wajib
+2. Bayu Samudra : menulis laporan bab 2, membuat page return, membuat page drop-off, membuat page pick-up,membuat page return, abstraksi ADT order, implementasi ADT order, abstraksi dan impelementasi item, abstraksi dan impelmentasi data pesanan, beberapa ADT wajib
+3.	Muhammad Alif Putra Yasa : menulis laporan bab 3, membuat page page inventory, membuat page main menu, implementasi dan abstraksi ADT tas, implementasi ADT dan abstraksi inventory gadget, beberapa ADT wajib
+4.	Dimas Faidh Muzaki : membuat page save game dan load game, menulis laporan bab 4, membuat page to-do list, implementasi dan abstraksi ADT todo list, implementasi dan abstraksi modul file loader dan exporter, beberapa ADT wajib
+5.	Ghazian Tsabit Alkamil : menulis laporan bab 1, membuat page progress list, membuat page buy, abstraksi dan implementasi ADT progress list dan status game, beberapa ADT wajib
+
 
 ## Aturan Kontribusi
 
